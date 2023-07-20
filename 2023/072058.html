@@ -281,7 +281,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-13
+                    2023-07-20
                 </div>
                 
 
@@ -324,60 +324,94 @@
 <h4 id="1-路由概念"><a href="#1-路由概念" class="headerlink" title="1.路由概念"></a>1.路由概念</h4><p>路径(hash值) 与 页面 一一对应关系<br><strong>原理：</strong> 监听网页hash值</p>
 <h4 id="2-路由作用-场景-："><a href="#2-路由作用-场景-：" class="headerlink" title="2.路由作用&#x2F;场景 ："></a>2.路由作用&#x2F;场景 ：</h4><p>单页面应用： <code>SPA（singal page application）</code><br>            （1）加载快：局部刷新<br>            （2）数据传输方便</p>
 <h4 id="3-路由配置"><a href="#3-路由配置" class="headerlink" title="3.路由配置"></a>3.路由配置</h4><p>自动生成路由配置：vue add router</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">0.导入vue-router</span><br><span class="line">    import VueRouter from &#x27;vue-router&#x27;</span><br><span class="line">    Vue.use(VueRouter)</span><br><span class="line">1.导入 页面组件</span><br><span class="line">	import 组件名 from &#x27;组件路径&#x27;</span><br><span class="line">2.配置 路由规则(地址和页面一一对应)</span><br><span class="line">		const routes = [</span><br><span class="line">              &#123; path: &#x27;/路径&#x27; , component : 组件名  &#125;</span><br><span class="line">          ]</span><br><span class="line">3.创建 路由对象</span><br><span class="line">4.挂载 App根组件</span><br><span class="line">5.路由 出口</span><br><span class="line">6.路由 导航</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">0.导入vue-router
+    import VueRouter from &#39;vue-router&#39;
+    Vue.use(VueRouter)
+1.导入 页面组件
+	import 组件名 from &#39;组件路径&#39;
+2.配置 路由规则(地址和页面一一对应)
+		const routes &#x3D; [
+              &#123; path: &#39;&#x2F;路径&#39; , component : 组件名  &#125;
+          ]
+3.创建 路由对象
+4.挂载 App根组件
+5.路由 出口
+6.路由 导航</code></pre>
 
 <h4 id="4-路由模式"><a href="#4-路由模式" class="headerlink" title="4.路由模式"></a>4.路由模式</h4><p>​	hash模式：路径有#号， 不会给服务器发请求<br>​	history模式: 路径没有#号， 会给服务器发请求。需要服务器单独配置</p>
 <h4 id="5-重定向"><a href="#5-重定向" class="headerlink" title="5.重定向"></a>5.重定向</h4><p>把 路径a 变成 路径b<br>在配置路由规则中，<code>&#123;path:&#39; / &#39;,redirect:&#39;/路径&#39;&#125;</code><br>重定向只是修改路径，不会路由匹配</p>
 <h4 id="6-路由导航-跳转-传参（A页面-B页面）"><a href="#6-路由导航-跳转-传参（A页面-B页面）" class="headerlink" title="6.路由导航(跳转)传参（A页面-&gt;B页面）"></a>6.路由导航(跳转)传参（A页面-&gt;B页面）</h4><h5 id="声明式导航-a标签"><a href="#声明式导航-a标签" class="headerlink" title="声明式导航(a标签)"></a>声明式导航(a标签)</h5><p><strong>query参数</strong><br>            A页面传 ：<code> url?参数名=参数值</code><br>            B页面收:<code>  $route.query.参数名</code>  </p>
 <p><strong>params参数</strong><br>路由规则中配置：参数名			</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">path</span>:<span class="string">&#x27;/路径/:参数名1/:参数名2&#x27;</span> , <span class="attr">component</span>:组件名&#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径/:参数名1/:参数名2'</span> <span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span>组件名<span class="token punctuation">&#125;</span></code></pre>
 
 <p>​          A页面传 ：<code> url/参数值</code><br>​          B页面收:  <code>$router.params.参数名</code></p>
 <h5 id="编程式导航-push方法"><a href="#编程式导航-push方法" class="headerlink" title="编程式导航(push方法)"></a>编程式导航(push方法)</h5><p><strong>query参数</strong><br>特点： (1)参数会在地址栏显示  (2)页面刷新之后还在</p>
 <p>A页面传 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">path</span>:<span class="string">&#x27;/路径&#x27;</span>,</span><br><span class="line">    <span class="attr">query</span>:&#123; 参数名:参数值  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">query</span><span class="token operator">:</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">参数名</span><span class="token operator">:</span>参数值  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <p>B页面收:  <code> $route.query.参数名</code></p>
 <p><strong>params参数</strong><br>特点：需要在路由文件中配置路由名(内存传参，刷新就会消失)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">path</span>:<span class="string">&#x27;/路径名&#x27;</span>, <span class="attr">name</span>:<span class="string">&#x27;路由名&#x27;</span> , <span class="attr">component</span>:组件名 &#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径名'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'路由名'</span> <span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span>组件名 <span class="token punctuation">&#125;</span></code></pre>
 
 <p>A页面传 ： 				</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$router</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;路由名&#x27;</span>,</span><br><span class="line">    <span class="attr">params</span>:&#123; 参数名:参数值  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'路由名'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">params</span><span class="token operator">:</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">参数名</span><span class="token operator">:</span>参数值  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <p>B页面收:  <code> $route.params</code>.参数名</p>
 <h4 id="7-二级路由"><a href="#7-二级路由" class="headerlink" title="7.二级路由"></a>7.二级路由</h4><p>1.在router&#x2F;index.js中配置二级路由规则</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> &#123; <span class="attr">path</span>:<span class="string">&#x27;/路径&#x27;</span>, <span class="attr">component</span>:组件, children : [ </span><br><span class="line">   <span class="comment">// 二级路由配置</span></span><br><span class="line">] &#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"> <span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span>组件<span class="token punctuation">,</span> <span class="token literal-property property">children</span> <span class="token operator">:</span> <span class="token punctuation">[</span> 
+   <span class="token comment">// 二级路由配置</span>
+<span class="token punctuation">]</span> <span class="token punctuation">&#125;</span></code></pre>
 
 <p>2.给页面添加二级路由出口</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-view&gt;&lt;/router-view&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span></code></pre>
 
 <h4 id="8-路由导航守卫"><a href="#8-路由导航守卫" class="headerlink" title="8.路由导航守卫"></a>8.路由导航守卫</h4><h5 id="全局前置路由守卫"><a href="#全局前置路由守卫" class="headerlink" title="全局前置路由守卫"></a>全局前置路由守卫</h5><p><code>beforeEach</code></p>
 <p><strong>何时被调用？</strong><br>1.初始化时被调用<br>2.每次路由被切换之前被调用</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.<span class="title function_">beforeEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;</span><br><span class="line">         执行代码</span><br><span class="line">         <span class="title function_">next</span>()  <span class="comment">//同意放行   不写这个调用则是不放行</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//to：去哪里？   meta，程序员自定义配置的属性</span></span><br><span class="line"><span class="comment">//from:从哪来？</span></span><br><span class="line"><span class="comment">//next:是否放行</span></span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+         执行代码
+         <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//同意放行   不写这个调用则是不放行</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">//to：去哪里？   meta，程序员自定义配置的属性</span>
+<span class="token comment">//from:从哪来？</span>
+<span class="token comment">//next:是否放行</span></code></pre>
 
 <h5 id="全局后置路由守卫"><a href="#全局后置路由守卫" class="headerlink" title="全局后置路由守卫"></a>全局后置路由守卫</h5><p><code>afterEach</code></p>
 <p><strong>何时被调用？</strong>				<br>1.初始化时被调用<br>2.每次路由被切换之后被调用</p>
 <p><strong>语法：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.<span class="title function_">afterEach</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span></span>)=&gt;</span>&#123;</span><br><span class="line">         执行代码</span><br><span class="line">         </span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//to：去哪里？   meta，程序员自定义配置的属性</span></span><br><span class="line"><span class="comment">//from:从哪来？</span></span><br><span class="line"><span class="comment">//next:是否放行</span></span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span></span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+         执行代码
+         
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">//to：去哪里？   meta，程序员自定义配置的属性</span>
+<span class="token comment">//from:从哪来？</span>
+<span class="token comment">//next:是否放行</span></code></pre>
 
 
 <h5 id="独享路由守卫-写在路由配置信息中，与path-component-meta同级"><a href="#独享路由守卫-写在路由配置信息中，与path-component-meta同级" class="headerlink" title="独享路由守卫(写在路由配置信息中，与path,component,meta同级)"></a>独享路由守卫(写在路由配置信息中，与path,component,meta同级)</h5><p><code>beforeEnter</code><br><strong>语法：</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">beforeEnter</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;</span><br><span class="line">         执行代码       </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">beforeEnter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+         执行代码       
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <p><code>只有前置，没有后置</code><br><code>由于他没有后置路由守卫，那么它可以配合全局的后置路由守卫一起使用</code></p>
 <h5 id="组件内路由守卫"><a href="#组件内路由守卫" class="headerlink" title="组件内路由守卫"></a>组件内路由守卫</h5><p>顾名思义：是写在组件之中的<br><code>beforeRouteEnter</code><br>通过路由规则，进入该组件时被调用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">beforeRouteEnter</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;</span><br><span class="line">         执行代码  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">beforeRouteEnter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+         执行代码  
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <p><code>beforeRouteLeave</code><br>通过路由规则，离开该组件时被调用</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">beforeRouteLeave</span>(<span class="function">(<span class="params">to,<span class="keyword">from</span>,next</span>)=&gt;</span>&#123;</span><br><span class="line">         执行代码</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">beforeRouteLeave</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+         执行代码
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <p><strong>路由导航守卫作用：</strong><br>示例1： 有的页面需要登录才能进入， 有的页面不需要。 可以通过导航守卫进行拦截，如果是需要登录权限的。就可以判断用户是否登录。 如果登录了，就正常跳转。 没登录，就主动跳转到登录页。<br>示例2：有的会员页面，需要开通会员才能进入。  可以通过导航守卫进行拦截，当用户想要跳转会员页面的时候，可以判断用户是否已经是会员。 如果是，就正常跳转。 如果不是，就跳转到开通会员页面</p>
-<h4 id="混淆单词"><a href="#混淆单词" class="headerlink" title="混淆单词"></a>混淆单词</h4><pre><code>routes    路由规则 数组
-router    路由实例对象
-$route    路由信息（获取参数）
-$router   路由实例对象( 页面跳转)
-</code></pre>
+<h4 id="混淆单词"><a href="#混淆单词" class="headerlink" title="混淆单词"></a>混淆单词</h4><p>routes    路由规则 数组<br>router    路由实例对象<br>$route    路由信息（获取参数）<br>$router   路由实例对象( 页面跳转)</p>
 
                 
             </div>
@@ -542,7 +576,7 @@ $router   路由实例对象( 页面跳转)
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/0720448.html">
+                <a href="/star/2023/07204488.html">
                     <div class="card-image">
                         
                         
@@ -758,7 +792,7 @@ $router   路由实例对象( 页面跳转)
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">59.6k</span>
+                        class="white-color">58.7k</span>
             
             
             

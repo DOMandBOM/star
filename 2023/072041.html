@@ -279,14 +279,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    797
+                    795
                 </div>
                 
 
@@ -319,12 +319,32 @@
                 <h2 id="高阶函数-Set-var-let-const的区别"><a href="#高阶函数-Set-var-let-const的区别" class="headerlink" title="高阶函数&amp;Set&amp;var&#x2F;let&#x2F;const的区别"></a>高阶函数&amp;Set&amp;var&#x2F;let&#x2F;const的区别</h2><p><code>这篇总结主要讲解了高阶函数&amp;Set&amp;var/let/const的区别</code></p>
 <span id="more"></span>
 <h3 id="1-闭包函数"><a href="#1-闭包函数" class="headerlink" title="1.闭包函数"></a>1.闭包函数</h3><p><strong>是什么？</strong><code>一个函数对周围状态的引用捆绑在一起，内层函数中访问到其外层函数的作用域</code><br>闭包&#x3D;内层函数+外层函数的变量<br><strong>作用</strong>：<code>解决全局变量污染</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">10</span></span><br><span class="line">    fuction <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(a)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> fun = <span class="title function_">outer</span>()</span><br><span class="line"><span class="title function_">fun</span>()</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token number">10</span>
+  fuction <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">return</span> fn
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">const</span> fun <span class="token operator">=</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token function">fun</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 <p><strong>闭包应用</strong><br>            <code>1.实现数据私有</code><br>            <code>2.可能会内存泄漏</code></p>
 <h3 id="2-递归函数"><a href="#2-递归函数" class="headerlink" title="2.递归函数"></a>2.递归函数</h3><p>函数自己调用自己，他的功能十分强大，自己去查文档去了解了解</p>
 <h2 id="数据类型Set与Map"><a href="#数据类型Set与Map" class="headerlink" title="数据类型Set与Map"></a>数据类型Set与Map</h2><p><strong>Set数组类型</strong><br><strong>语法</strong>：<code>const set = new Set(数组)</code><br>由于是Set类型，而不是数组类型，因此想要使用数组的方法，利用Array.from(set)<br>Set相当于是数组类型, 和数组Array唯一的区别是不能存储重复元素<br><strong>场景 :</strong>  <code>数组去重</code>     <code>let newArr = [ ...new Set(需要去重的数组) ]</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>,]);</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="title class_">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]);</span><br><span class="line"><span class="comment">// //并集</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Set</span>([...a, ...b]));</span><br><span class="line"></span><br><span class="line"><span class="comment">//交集</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Set</span>(</span><br><span class="line">    [...a].<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> b.<span class="title function_">has</span>(item))</span><br><span class="line">));</span><br><span class="line"><span class="comment">//差集</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span> <span class="title class_">Set</span>(</span><br><span class="line">    [...a].<span class="title function_">filter</span>(<span class="function"><span class="params">item</span> =&gt;</span> !b.<span class="title function_">has</span>(item))</span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// //并集</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">,</span> <span class="token operator">...</span>b<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//交集</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//差集</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span><span class="token operator">...</span>a<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token operator">!</span>b<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 <p>map内置对象自己去查文档，与set的语法差不多</p>
 <h2 id="var-let-const"><a href="#var-let-const" class="headerlink" title="var/let/const"></a><code>var/let/const</code></h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a><code>let</code></h3><p>let声明的变量，<br>        1.具有块级块级作用域，只在所处于的块级有效<br>        2.变量名不能重复声明<br>        3.不存在变量提升<br>        4.具有暂时性死区<br><code>比如就是在if语句（块级作用域）中，外面定义了var a = 1，里面再写一个a=3；后面写一个let  a;，此时if里面的a = 3就与let  a;进行绑定，无法再去访问外部的那个a,这就叫暂时性死区</code></p>
@@ -714,7 +734,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">59.6k</span>
+                        class="white-color">58.7k</span>
             
             
             

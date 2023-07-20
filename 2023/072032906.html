@@ -283,7 +283,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-20
                 </div>
                 
 
@@ -347,12 +347,10 @@
 <h4 id="3-SSH配置流程"><a href="#3-SSH配置流程" class="headerlink" title="3.SSH配置流程"></a>3.SSH配置流程</h4><p>(1)打开 Git Bash</p>
 <p>(2)输入命令： ssh-keygen -t rsa -b 4096 -C “你的码云邮箱”</p>
 <p>(3)连续敲击 3 次回车，即可在 C:\Users\用户名文件夹.ssh 目录中生成 id_rsa 和 id_rsa.pub 两个文件</p>
-<p><img src="E:/ajax/05-88期可视化/01-课程笔记/01-Git教程.assets/1652210047075.png" alt="1652210047075"></p>
 <p>(4)使用记事本打开 id_rsa.pub 文件，复制里面的文本内容</p>
 <p>(5)在你的远程仓库网址, <code>点击头像 -&gt; 设置 -&gt; SSH 公钥 -&gt; 粘贴</code></p>
-<p><img src="E:/ajax/05-88期可视化/01-课程笔记/01-Git教程.assets/1652210095270.png" alt="1652210095270"></p>
-<h3 id="远程仓库使用流程总结"><a href="#远程仓库使用流程总结" class="headerlink" title="远程仓库使用流程总结"></a>远程仓库使用流程总结</h3><p><img src="E:/ajax/05-88期可视化/01-课程笔记/01-Git教程.assets/1570506312447.png" alt="1570506312447"></p>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p><strong>git branch 分支名</strong>    新建分支名     分支名不需要加引号<br><strong>git checkout 分支名</strong>   切换分支名<br>**git merge ** 分支名      合并分支</p>
+<h3 id="远程仓库使用流程总结"><a href="#远程仓库使用流程总结" class="headerlink" title="远程仓库使用流程总结"></a>远程仓库使用流程总结</h3><p>1.新建远程仓库<br>2.git clone 远程仓库<br>3.在本地电脑编码 git add .   git commit -m””<br>4.git pull<br>5.git push</p>
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p><strong>git branch 分支名</strong>    新建分支名     分支名不需要加引号<br><strong>git checkout 分支名</strong>   切换分支名<br><strong>git merge</strong> 分支名      合并分支</p>
 <h4 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h4><p>1.创建分支 git branch 分支名<br>2.切换分支  git  checkout  分支名<br>3.查看当前分支 git  branch<br>4.切换到你创建分支之后，你就可以开始写你的代码，照样通过以前的方式进行  文件放入暂存区&#x3D;&gt;文件提交给本地仓库&#x3D;&gt;文件上传至远程仓库<br>示例：git add . &#x3D;&gt; git commit -m”文件信息” &#x3D;&gt;git push  通过反复操作，完善分支文件功能<br>5.当文件反复进行上传，直到你完成这个分支的所有功能,此时你就能进行主支与分支合并<br>6.先通过git checkout  主支(master)，切换到主支上，通过git merge 分支名<br>将分支新写的功能合并到主支<br>7.然后通过git add .放入本地暂存区，通过git commit -m”文件信息” ，将文件提交给本地仓库，最后git push提交给远程仓库，就ok了</p>
 
                 
@@ -734,7 +732,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">59.6k</span>
+                        class="white-color">58.7k</span>
             
             
             
