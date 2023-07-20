@@ -4,10 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="node.js, 星星">
-    <meta name="description" content="node.js这篇总结了node.js的基本概念与使用,如果公司需要，建议去查相关文档
+    <meta name="keywords" content="如何搭建一个Hexo, 星星">
+    <meta name="description" content="如何搭建一个Hexo这篇总结主要讲解了如何搭建一个hexo
 
-介绍是什么？是一个基于谷歌V8引擎的开源的，跨平台的JS运行时环境作用：让js可以做后端功能如何运行？打开终端，输入       node js文件路">
+一.初次准备1.进入Hexo官网
+2.全局安装hexo脚手架
+npm install hexo-cli -g   //全局安装hexo-cli脚手架
+hexo init blog">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +22,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>node.js | 星星</title>
+    <title>如何搭建一个Hexo | 星星</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -223,12 +226,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">node.js</h1>
+                    <h1 class="description center-align post-title">如何搭建一个Hexo</h1>
                 </div>
             </div>
         </div>
@@ -252,8 +255,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/JavaScript%E8%BF%9B%E9%98%B6/">
-                                <span class="chip bg-color">JavaScript进阶</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -264,8 +267,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/node-js/" class="post-category">
-                                node.js
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
                             </a>
                         
                     </div>
@@ -279,14 +282,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.2k
                 </div>
                 
 
@@ -316,40 +319,98 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h2><p><code>这篇总结了node.js的基本概念与使用,如果公司需要，建议去查相关文档</code></p>
+                <h2 id="如何搭建一个Hexo"><a href="#如何搭建一个Hexo" class="headerlink" title="如何搭建一个Hexo"></a>如何搭建一个Hexo</h2><p><code>这篇总结主要讲解了如何搭建一个hexo</code></p>
 <span id="more"></span>
-<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><strong>是什么？</strong>是一个基于谷歌V8引擎的开源的，跨平台的JS运行时环境<br><strong>作用</strong>：让js可以做后端功能<br><strong>如何运行？</strong>打开终端，输入       node js文件路径</p>
-<h4 id="前端js与后端js的区别"><a href="#前端js与后端js的区别" class="headerlink" title="前端js与后端js的区别"></a>前端js与后端js的区别</h4><p>前端js三部分  ECMAScript ，DOM , BOM<br>后端js一个部分： ECMAScript</p>
-<h4 id="node-js模块化开发"><a href="#node-js模块化开发" class="headerlink" title="node.js模块化开发"></a>node.js模块化开发</h4><p><strong>是什么？</strong>把一个大文件按照功能拆分为小文件，，再使用特定的语法(模块化语法)组合在一起</p>
-<p><strong>优点</strong>：<br>1.按需导入，节省内存资源<br>2.避免全局变量污染，每个模块都是一个独立的作用域<br>3.业务分离：每个模块只负责某一个功能，便于维护</p>
-<p>语法：CommonJS<br>导出：module.exports &#x3D; { }<br>导入：const 对象名 &#x3D; require(‘文件路径’)</p>
-<h3 id="fs模块"><a href="#fs模块" class="headerlink" title="fs模块"></a>fs模块</h3><p>作用：读写文件<br><strong>语法1：读取文件</strong><br>第一步：导入：const 对象 &#x3D; require(‘fs’)<br>第二步：使用：对象.readFile(‘文件路径’，’文件编码’，回调函数)<br>读取文件的文件编码默认是二进制</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> 对象名 = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)  <span class="comment">//fs是模块名</span></span><br><span class="line">对象名.<span class="title function_">readFile</span>(<span class="string">&#x27;文件路径&#x27;</span>,<span class="string">&#x27;文件编码&#x27;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123; <span class="comment">//失败与成功</span></span><br><span class="line">    err?<span class="keyword">throw</span> <span class="attr">error</span>:<span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="一-初次准备"><a href="#一-初次准备" class="headerlink" title="一.初次准备"></a>一.初次准备</h2><p>1.进入<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo官网</a></p>
+<p>2.全局安装<code>hexo</code>脚手架</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm install hexo<span class="token operator">-</span>cli <span class="token operator">-</span>g   <span class="token comment">//全局安装hexo-cli脚手架</span>
+hexo init blog            <span class="token comment">//创建一个名为blog的文件夹，这个可以任意命名</span>
+cd blog                   <span class="token comment">//切换至这个文件夹，你也可以进去编译软件，</span>
+                          <span class="token comment">//则无需进入，但必须保证blog为输入命令行时的根目录</span>
+npm install               <span class="token comment">//下载依赖包</span>
+hexo server               <span class="token comment">//运行hexo，也可以写成缩写，hexo s</span></code></pre>
 
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fd = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line">fd.<span class="title function_">readFile</span>(<span class="string">&#x27;./data/aaa.txt&#x27;</span>,<span class="string">&#x27;utf8&#x27;</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) &#123;</span><br><span class="line">        <span class="keyword">throw</span> error</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里你完成以后，你就可以看见原始的<code>hexo</code>的博客页面</p>
+<h2 id="二-关联gitee"><a href="#二-关联gitee" class="headerlink" title="二.关联gitee"></a>二.关联gitee</h2><p>1.完成关联，进入国内<code>gitee</code>中，新建一个仓库，配置<code>deploy</code></p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git          <span class="token comment"># 类型为git      </span>
+  <span class="token key atrule">repo</span><span class="token punctuation">:</span>              <span class="token comment"># 这里写你的Gitee仓库地址</span>
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master     <span class="token comment"># 这里写你的分支</span></code></pre>
 
-<p><strong>语法2：写入文件</strong><br>第一步：导入：const 对象 &#x3D; require(‘fs’)<br>第二步：使用：对象.writeFile(‘文件路径’，’要写入的数据’，’文件编码’，回调函数)<br>写入文件的文件编码默认是数据编码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.导入模块</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="comment">//2.使用模块</span></span><br><span class="line">fs.<span class="title function_">writeFile</span>(<span class="string">&#x27;./data/ddd.txt&#x27;</span>,<span class="string">&#x27;肾虚哥肾虚了&#x27;</span>,<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err) &#123;</span><br><span class="line">        <span class="keyword">throw</span> err</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;写入成功&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>2.创建git仓库   <code>git init</code></p>
+<p>3.下载一键部署插件</p>
+<pre class="language-none"><code class="language-none">npm install hexo-deployer-git --save</code></pre>
 
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>decodeURL()  将乱码转换为原本的样子</p>
-<h3 id="path模块"><a href="#path模块" class="headerlink" title="path模块"></a>path模块</h3><p>作用：处理路径<br>导入：const 对象名 &#x3D; require(‘path’)</p>
-<p>常用语法：<br>拼接绝对路径：path.resolve(‘文件名’)     需要导入path模块<br>文件夹绝对路径：_ _dirname                    不需要导入path模块</p>
-<h3 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h3><p>作用：搭建服务器</p>
-<p>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.导入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="comment">//2.创建服务器</span></span><br><span class="line"><span class="keyword">const</span> app = http.<span class="title function_">createServer</span>()</span><br><span class="line"><span class="comment">//3.开启服务器</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="string">&#x27;端口号&#x27;</span>,<span class="string">&#x27;主机名(ip地址)&#x27;</span>,成功的回调)</span><br></pre></td></tr></table></figure>
+<p>4.检测是否有git</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">git status  <span class="token comment">//如果发现没有，再执行一遍git init</span></code></pre>
 
-<p>端口号：识别具体软件的编号<br>ip地址：每一个电脑在网络中都有一个唯一的身份标识<br>res.writeHeader(响应码，对象)   改变请求头<br>res.end(‘显示页面的内容’)     显示页面的内容</p>
-<p>示例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//导入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="comment">//创建服务器</span></span><br><span class="line"><span class="keyword">const</span> app = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(req.<span class="property">url</span>)</span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span>===<span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">        res.<span class="title function_">writeHeader</span>(<span class="number">200</span>,&#123;</span><br><span class="line">            <span class="string">&#x27;Content-Type&#x27;</span>:<span class="string">&#x27;text/html;charset=utf8&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">        res.<span class="title function_">end</span>(<span class="string">&#x27;我是首页&#x27;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(req.<span class="property">url</span> === <span class="string">&#x27;/list&#x27;</span>) &#123;</span><br><span class="line">        res.<span class="title function_">writeHeader</span>(<span class="number">200</span>,&#123;</span><br><span class="line">            <span class="string">&#x27;Content-Type&#x27;</span>:<span class="string">&#x27;text/html;charset=utf8&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">        res.<span class="title function_">end</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;<span class="attr">name</span>:<span class="string">&#x27;李小2&#x27;</span>&#125;))</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        res.<span class="title function_">writeHeader</span>(<span class="number">302</span>,&#123;</span><br><span class="line">            <span class="string">&#x27;Content-type&#x27;</span>:<span class="string">&#x27;text/html;charset=utf8&#x27;</span>,</span><br><span class="line">            <span class="string">&#x27;location&#x27;</span>:<span class="string">&#x27;http://127.0.0.1:3000&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">        res.<span class="title function_">end</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//开启服务器</span></span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;服务器已开启&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>5.上传部署</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">hexo c <span class="token operator">&amp;&amp;</span> hexo g <span class="token operator">&amp;&amp;</span> hexo d
+<span class="token comment">// hexo c</span>
+<span class="token comment">// hexo g</span>
+<span class="token comment">// hexo d</span></code></pre>
 
+<p>6.此时你会发现你的代码已经上传上去了</p>
+<h2 id="三-开启Pages，完成部署"><a href="#三-开启Pages，完成部署" class="headerlink" title="三.开启Pages，完成部署"></a>三.开启Pages，完成部署</h2><p>1..点击管理，允许公开–&gt;服务中的<code>gitee pages</code>–&gt;选中启用https，并启动</p>
+<p>此时他会给你一个网址</p>
+<p>注意：以后你每次的代码上传部署，都需要重新在这里面点击更新</p>
+<p>2.在你的<code>Hexo</code>中的<code>_config.yml</code>文件中，将你的URL的地址改为<code>page</code>给你的地址，并配置root选项</p>
+<pre class="language-none"><code class="language-none">url: 这里写Page给你的地址
+root: 这里写Page给你的地址中最后的文件路径，要写出这样  &#x2F;文件路径&#x2F;</code></pre>
 
+<p>什么是文件路径你们应该分的清楚吧，<code>https协议：//主机ip:端口号/文件路径/</code></p>
+<p><code>hexo c &amp;&amp; hexo g &amp;&amp; hexo d</code>进行上传部署 –&gt; 更新<code>pages</code> –&gt; 此时访问<code>Pages</code>中的地址即可访问你的博客</p>
+<h2 id="四-美化主题"><a href="#四-美化主题" class="headerlink" title="四.美化主题"></a>四.美化主题</h2><p>1.使用<code>hexo-theme-matery</code>替代原生页面，<a target="_blank" rel="noopener" href="https://gitcode.net/mirrors/blinkfox/hexo-theme-matery">hexo-theme-matery配置文档</a></p>
+<p>2.下载<code>hexo-theme-matery</code>包</p>
+<pre class="language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;blinkfox&#x2F;hexo-theme-matery.git</code></pre>
 
-<h3 id="综合代码"><a href="#综合代码" class="headerlink" title="综合代码"></a>综合代码</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = http.<span class="title function_">createServer</span>(<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(req.<span class="property">url</span>===<span class="string">&#x27;/&#x27;</span>) &#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(<span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/www/index.html`</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                <span class="keyword">throw</span> err</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.<span class="title function_">end</span>(data)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(<span class="string">`<span class="subst">$&#123;__dirname&#125;</span>/www/<span class="subst">$&#123;<span class="built_in">decodeURI</span>(req.url)&#125;</span>`</span>,<span class="function">(<span class="params">err,data</span>)=&gt;</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                <span class="keyword">throw</span> err</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                res.<span class="title function_">end</span>(data)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">app.<span class="title function_">listen</span>(<span class="number">3000</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;服务器已开启&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里可能下载不好，由于你的网络等出现问题，同时不要去他的文档中下载稳定版，因为他的稳定版是缺少<code>script</code>等几个文件夹的。因为git在拉取或者提交项目时，中间会有git的http和https代理，但是我们本地环境本身就有SSL协议了，所以取消git的https代理即可，不行再取消http的代理</p>
+<p>解决：</p>
+<pre class="language-none"><code class="language-none">&#x2F;&#x2F;取消http代理
+git config --global --unset http.proxy
+&#x2F;&#x2F;取消https代理 
+git config --global --unset https.proxy</code></pre>
 
+<p>再去执行克隆拉取代码，如果仍然不成功，由于github并非国内的，则需要<code>科学上网</code>。你多试几次一定能成功的。</p>
+<p>3.当你把<code>hexo-theme-matery</code>包下载完毕以后，将它放在<code>Hexo</code>下的<code>themes</code>文件夹中</p>
+<p>4.修改<code>Hexo</code>根目录的<code>_config.yml</code> 的  <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
+<p>5.根据官方文档自己去配置文件即可</p>
+<p><a target="_blank" rel="noopener" href="https://gitcode.net/mirrors/blinkfox/hexo-theme-matery">hexo-theme-matery配置文档</a></p>
+<p>我说几个可能产生的问题</p>
+<p>1.取消首页渐变颜色动画<br>在<code>themes\Matery\source\css\matery.css</code>，<code>ctrl+F</code>快捷键查找<code>.bg-cover:after</code>，注释掉即可。</p>
+<p>2.改变导航栏的绿色<br>打开 <code>themes/matery/source/css/matery.css</code> 文件，找到<code>bg-color </code>这个属性，即为导航栏和底部的颜色</p>
+<p>3.取消底部说明<br>直接打开页面，找到他的类名，去搜索这个类名，找到这个<code>footer.ejs</code>文件，给他注释或者删除</p>
+<p>4.对于关于页面的底部可视化图表<br>找到<code>post-charts.ejs</code>,对他的可视化的<code>HTML</code>结构进行注释</p>
+<p>5.代码块{}括号乱码</p>
+<p><code>npm uninstall hexo-prism-plugin</code> 来卸载掉它</p>
+<p>修改 Hexo 根目录下 <code>_config.yml</code> 文件</p>
+<pre class="language-none"><code class="language-none">highlight:
+  enable: false
+  line_number: true
+  auto_detect: false
+  tab_replace: &#39;&#39;
+  wrap: true
+  hljs: false
+prismjs:
+  enable: true
+  preprocess: true
+  line_number: true
+  tab_replace: &#39;&#39;</code></pre>
 
+<p>6.你如果没下载<code>hexo-prism-plugin</code>，可能会出现代码大小不一致，对不齐</p>
+<p>在你的代码中，找到你不一致的文档，对他的代码块**&#96;&#96;&#96;&#96;&#96;&#96;**,将他的语言在重新写一遍，没有定义语言的，则把这几个点重新写一遍。</p>
+<h2 id="五-上传至Github"><a href="#五-上传至Github" class="headerlink" title="五.上传至Github"></a>五.上传至Github</h2><p>之前配置的不要</p>
+<pre class="language-none"><code class="language-none">这里都给他注释掉
+url: 这里写Page给你的地址
+root: 这里写Page给你的地址中最后的文件路径，要写出这样  &#x2F;文件路径&#x2F;</code></pre>
 
-<h3 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h3><p>WEB特点01 ：  html中所有的外部资源(src href)都会变成网络请求<br>要想HTML页面可以加载静态资源(css、图片、音视频),服务器就需要响应这些文件</p>
-<p>WEB特点02 :  静态资源网络请求url 一般与 文件路径 一致, 一般会自动拼接文件路径响应返回<br>静态资源服务器 : 自动响应返回页面每一个静态资源请求</p>
+<p>将你的<code>deploy</code>修改</p>
+<pre class="language-none"><code class="language-none">deploy:
+  type: git          # 类型为git      
+  repo:              # 这里写你的Github仓库地址
+  branch: master     # 这里写你的分支</code></pre>
+
+<p>可能会出现上传不上去的问题<br>1.换检查网络<br>2.使用SSH网址进行上传</p>
 
                 
             </div>
@@ -376,7 +437,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/0720477.html">http://example.com/2023/0720477.html</a>
+                    <a href="http://example.com/2023/07208946.html">http://example.com/2023/07208946.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -414,8 +475,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/JavaScript%E8%BF%9B%E9%98%B6/">
-                                    <span class="chip bg-color">JavaScript进阶</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -461,46 +522,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07203.html">
+                <a href="/2023/07208946.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript基础">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="如何搭建一个Hexo">
                         
-                        <span class="card-title">JavaScript基础</span>
+                        <span class="card-title">如何搭建一个Hexo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            JavaScript基础JavaScript基础这篇笔记是关于JavaScript基础语法的总结
+                            如何搭建一个Hexo这篇总结主要讲解了如何搭建一个hexo
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/web%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">web基础</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -514,19 +577,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/072046.html">
+                <a href="/2023/07204.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="js面向对象">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="交换两个变量的值的几种方法">
                         
-                        <span class="card-title">js面向对象</span>
+                        <span class="card-title">交换两个变量的值的几种方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js面向对象这篇总结主要讲解了js面向对象，编程思想+构造函数+原型对象
+                            JavaScript扩展1--这篇主要是交换两个变量的值的几种方法的总结
                         
                     </div>
                     <div class="publish-info">
@@ -537,8 +600,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    JavaScript高级
+                            <a href="/categories/JavaScript%E6%89%A9%E5%B1%95/" class="post-category">
+                                    JavaScript扩展
                                 </a>
                             
                             
@@ -548,8 +611,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">JavaScript高级</span>
+                    <a href="/tags/web%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">web基础</span>
                     </a>
                     
                 </div>

@@ -8,7 +8,7 @@
     <meta name="description" content="Vue3配合TypeScript的使用这篇文章主要总结了Vue3如何配合TypeScript使用
 
 
-一.defineProps&amp;lt;&amp;gt;() 泛型函数1.defineProps&amp;lt;&amp;gt;()泛型函数接收值1234defineP">
+一.defineProps&amp;lt;&amp;gt;() 泛型函数1.defineProps&amp;lt;&amp;gt;()泛型函数接收值defineProps">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -280,7 +280,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-18
+                    2023-07-20
                 </div>
                 
 
@@ -320,28 +320,59 @@
                 <h1 id="Vue3配合TypeScript的使用"><a href="#Vue3配合TypeScript的使用" class="headerlink" title="Vue3配合TypeScript的使用"></a>Vue3配合TypeScript的使用</h1><p>这篇文章主要总结了Vue3如何配合TypeScript使用</p>
 <span id="more"></span>
 
-<h2 id="一-defineProps-泛型函数"><a href="#一-defineProps-泛型函数" class="headerlink" title="一.defineProps&lt;&gt;() 泛型函数"></a>一.defineProps&lt;&gt;() 泛型函数</h2><h3 id="1-defineProps-泛型函数接收值"><a href="#1-defineProps-泛型函数接收值" class="headerlink" title="1.defineProps&lt;&gt;()泛型函数接收值"></a>1.defineProps&lt;&gt;()泛型函数接收值</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">defineProps &lt; &#123;</span><br><span class="line">        <span class="attr">money</span>: <span class="built_in">number</span></span><br><span class="line">        car ? : <span class="built_in">string</span></span><br><span class="line">    &#125; &gt; ()</span><br></pre></td></tr></table></figure>
+<h2 id="一-defineProps-泛型函数"><a href="#一-defineProps-泛型函数" class="headerlink" title="一.defineProps&lt;&gt;() 泛型函数"></a>一.defineProps&lt;&gt;() 泛型函数</h2><h3 id="1-defineProps-泛型函数接收值"><a href="#1-defineProps-泛型函数接收值" class="headerlink" title="1.defineProps&lt;&gt;()泛型函数接收值"></a>1.defineProps&lt;&gt;()泛型函数接收值</h3><pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token generic-function"><span class="token function">defineProps</span> <span class="token generic class-name"><span class="token operator">&lt;</span> <span class="token punctuation">&#123;</span>
+        money<span class="token operator">:</span> <span class="token builtin">number</span>
+        car <span class="token operator">?</span> <span class="token operator">:</span> <span class="token builtin">string</span>
+    <span class="token punctuation">&#125;</span> <span class="token operator">></span></span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 
 
-<h3 id="2-使用withDefaults指定默认值"><a href="#2-使用withDefaults指定默认值" class="headerlink" title="2.使用withDefaults指定默认值"></a>2.使用withDefaults指定默认值</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> props = <span class="title function_">withDefaults</span>(defineProps &lt; &#123;</span><br><span class="line">       <span class="attr">money</span>: <span class="built_in">number</span></span><br><span class="line">       car ? : <span class="built_in">string</span></span><br><span class="line">   &#125; &gt; (), &#123;</span><br><span class="line">       <span class="attr">car</span>: <span class="string">&#x27;小黄车&#x27;</span></span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-使用withDefaults指定默认值"><a href="#2-使用withDefaults指定默认值" class="headerlink" title="2.使用withDefaults指定默认值"></a>2.使用withDefaults指定默认值</h3><pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> props <span class="token operator">=</span> <span class="token function">withDefaults</span><span class="token punctuation">(</span><span class="token generic-function"><span class="token function">defineProps</span> <span class="token generic class-name"><span class="token operator">&lt;</span> <span class="token punctuation">&#123;</span>
+       money<span class="token operator">:</span> <span class="token builtin">number</span>
+       car <span class="token operator">?</span> <span class="token operator">:</span> <span class="token builtin">string</span>
+   <span class="token punctuation">&#125;</span> <span class="token operator">></span></span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+       car<span class="token operator">:</span> <span class="token string">'小黄车'</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 
 
-<h3 id="3-使用解构-defineProps响应式语法糖"><a href="#3-使用解构-defineProps响应式语法糖" class="headerlink" title="3.使用解构+defineProps响应式语法糖"></a>3.使用解构+defineProps响应式语法糖</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;</span><br><span class="line">      money,</span><br><span class="line">      car = <span class="string">&#x27;小黄车&#x27;</span></span><br><span class="line">  &#125; = defineProps &lt; &#123;</span><br><span class="line">      <span class="attr">money</span>: <span class="built_in">number</span></span><br><span class="line">      car ? : <span class="built_in">string</span></span><br><span class="line">  &#125; &gt; ()</span><br></pre></td></tr></table></figure>
+<h3 id="3-使用解构-defineProps响应式语法糖"><a href="#3-使用解构-defineProps响应式语法糖" class="headerlink" title="3.使用解构+defineProps响应式语法糖"></a>3.使用解构+defineProps响应式语法糖</h3><pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+      money<span class="token punctuation">,</span>
+      car <span class="token operator">=</span> <span class="token string">'小黄车'</span>
+  <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token generic-function"><span class="token function">defineProps</span> <span class="token generic class-name"><span class="token operator">&lt;</span> <span class="token punctuation">&#123;</span>
+      money<span class="token operator">:</span> <span class="token builtin">number</span>
+      car <span class="token operator">?</span> <span class="token operator">:</span> <span class="token builtin">string</span>
+  <span class="token punctuation">&#125;</span> <span class="token operator">></span></span></span> <span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 <p>该写法需要在vite.config.js中添加以下配置</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">    defineConfig</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&#x27;vite&#x27;</span></span><br><span class="line"><span class="keyword">import</span> vue <span class="keyword">from</span> <span class="string">&#x27;@vitejs/plugin-vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// https://vitejs.dev/config/</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">    <span class="attr">plugins</span>: [</span><br><span class="line">        <span class="title function_">vue</span>(&#123;</span><br><span class="line">            <span class="attr">reactivityTransform</span>: <span class="literal">true</span>,</span><br><span class="line">        &#125;),</span><br><span class="line">    ],</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>
+    defineConfig
+<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vite'</span>
+<span class="token keyword">import</span> vue <span class="token keyword">from</span> <span class="token string">'@vitejs/plugin-vue'</span>
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">defineConfig</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token function">vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+            reactivityTransform<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <h2 id="二-defineEmits-泛型函数"><a href="#二-defineEmits-泛型函数" class="headerlink" title="二.defineEmits&lt;&gt;() 泛型函数"></a>二.defineEmits&lt;&gt;() 泛型函数</h2><p>对于子传父时，在子组件中的传递数据时，数据类型检测的校验</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//e表示事件类型</span></span><br><span class="line"><span class="keyword">const</span> emit = defineEmits&lt;&#123;</span><br><span class="line">    (<span class="attr">e</span>:<span class="string">&#x27;自定义的事件名&#x27;</span>,传播数据名:传播数据类型):<span class="built_in">void</span></span><br><span class="line">&#125;&gt;()</span><br></pre></td></tr></table></figure>
+<pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">//e表示事件类型</span>
+<span class="token keyword">const</span> emit <span class="token operator">=</span> <span class="token generic-function"><span class="token function">defineEmits</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token punctuation">&#123;</span>
+    <span class="token punctuation">(</span>e<span class="token operator">:</span><span class="token string">'自定义的事件名'</span><span class="token punctuation">,</span>传播数据名<span class="token operator">:</span>传播数据类型<span class="token punctuation">)</span><span class="token operator">:</span><span class="token keyword">void</span>
+<span class="token punctuation">&#125;</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 <h2 id="三-ref-数据-泛型函数"><a href="#三-ref-数据-泛型函数" class="headerlink" title="三.ref&lt;数据类型&gt;(数据)   泛型函数"></a>三.ref&lt;数据类型&gt;(数据)   泛型函数</h2><p>指定ref中的数据类型</p>
 <p>方式1：ref是一个内置的泛型函数，通过泛型函数指定数据类型</p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;ref&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line">cosnt m = ref&lt;<span class="built_in">number</span>&gt;(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>ref<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+cosnt m <span class="token operator">=</span> <span class="token generic-function"><span class="token function">ref</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span></code></pre>
 
 <p>方式2：通过Vue内置的泛型工具可以指定初始值的类型  <code>Ref</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Ref</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">const</span> <span class="attr">m</span>:<span class="title class_">Ref</span>&lt;<span class="built_in">number</span>&gt; = <span class="title function_">ref</span>(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>Ref<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">const</span> m<span class="token operator">:</span>Ref<span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span></code></pre>
 
 
 
@@ -353,14 +384,48 @@
 <p><code>?  可选链接，表示前面不为undefined或null时，才会向后面取值</code></p>
 <p><code>如何获取DOM类型？</code>  <strong>一定是原生标签</strong><br>例如：<code>const o = document.querySelector(&#39;img&#39;)</code>，这样能查看img类型</p>
 <p><strong>示例：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;img src=&quot;https://pinia.vuejs.org/logo.svg&quot; ref=&quot;imgRef&quot; /&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref, onMounted &#125; from &#x27;vue&#x27;</span><br><span class="line">const imgRef = ref&lt;HTMLImageElement | null&gt;(null)</span><br><span class="line"></span><br><span class="line">onMounted(() =&gt; &#123;</span><br><span class="line">  console.log(imgRef.value?.src)</span><br><span class="line">&#125;),</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">&lt;template&gt;
+  &lt;div&gt;
+    &lt;img src&#x3D;&quot;https:&#x2F;&#x2F;pinia.vuejs.org&#x2F;logo.svg&quot; ref&#x3D;&quot;imgRef&quot; &#x2F;&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script setup lang&#x3D;&quot;ts&quot;&gt;
+import &#123; ref, onMounted &#125; from &#39;vue&#39;
+const imgRef &#x3D; ref&lt;HTMLImageElement | null&gt;(null)
+
+onMounted(() &#x3D;&gt; &#123;
+  console.log(imgRef.value?.src)
+&#125;),
+
+&lt;&#x2F;script&gt;</code></pre>
 
 <h2 id="八-ref-操作组件"><a href="#八-ref-操作组件" class="headerlink" title="八.ref 操作组件"></a>八.ref 操作组件</h2><p><code>如何获取组件类型？</code>  一定是组件标签，不能使用在原生标签</p>
 <p><code>InstanceType</code>是vue3内置的泛型工具   首字母大写</p>
 <p>语法：<code>InstanceType&lt;typeof Children&gt;</code></p>
 <p>例如：<code>const childCmp = ref&lt;InstanceType&lt;typeof Children&gt; | null&gt;(null)</code></p>
 <p><code>示例：</code></p>
-<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">section</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">h3</span>&gt;</span>App<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;handleClick&quot;</span>&gt;</span>click<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Children</span> <span class="attr">ref</span>=<span class="string">&quot;childCmp&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;</span><br><span class="line">import Children from &#x27;./Children.vue&#x27;;</span><br><span class="line"></span><br><span class="line">const childCmp = ref&lt;InstanceType&lt;typeof Children&gt; | null&gt;(null)</span><br><span class="line"></span><br><span class="line">const handleClick = () =&gt; &#123;</span><br><span class="line">  childCmp.value?.log();</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-typescript" data-language="typescript"><code class="language-typescript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>section<span class="token operator">></span>
+      <span class="token operator">&lt;</span>h3<span class="token operator">></span>App<span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span>
+      <span class="token operator">&lt;</span>button <span class="token decorator"><span class="token at operator">@</span><span class="token function">click</span></span><span class="token operator">=</span><span class="token string">"handleClick"</span><span class="token operator">></span>click<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+      <span class="token operator">&lt;</span>hr <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Children ref<span class="token operator">=</span><span class="token string">"childCmp"</span> <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>section<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>script setup lang<span class="token operator">=</span><span class="token string">"ts"</span><span class="token operator">></span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ref <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Children <span class="token keyword">from</span> <span class="token string">'./Children.vue'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> childCmp <span class="token operator">=</span> <span class="token generic-function"><span class="token function">ref</span><span class="token generic class-name"><span class="token operator">&lt;</span>InstanceType<span class="token operator">&lt;</span><span class="token keyword">typeof</span> Children<span class="token operator">></span> <span class="token operator">|</span> <span class="token keyword">null</span><span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">handleClick</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  childCmp<span class="token punctuation">.</span>value<span class="token operator">?.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 
 
 
@@ -768,7 +833,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">58.7k</span>
+                        class="white-color">59.7k</span>
             
             
             
