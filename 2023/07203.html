@@ -1,0 +1,1078 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="JavaScript基础, 星星">
+    <meta name="description" content="JavaScript基础JavaScript基础这篇笔记是关于JavaScript基础语法的总结
+
+1.js基础语法1.1js介绍是什么？：是一种运行在客户端的编程语言，实现人机交互作用：网页特效，表单验证，数据交互，服务端编程组成：ECM">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>JavaScript基础 | 星星</title>
+    <link rel="icon" type="image/png" href="/star/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/star/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/star/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/star/css/my.css">
+<link rel="stylesheet" type="text/css" href="/star/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/star/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/star/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/star/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/star/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">星星</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">星星</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">JavaScript基础</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">web基础</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/star/categories/JavaScript/" class="post-category">
+                                JavaScript
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-07-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    11 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/star/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h1><p><code>JavaScript基础这篇笔记是关于JavaScript基础语法的总结</code></p>
+<span id="more"></span>
+<h2 id="1-js基础语法"><a href="#1-js基础语法" class="headerlink" title="1.js基础语法"></a>1.js基础语法</h2><h3 id="1-1js介绍"><a href="#1-1js介绍" class="headerlink" title="1.1js介绍"></a>1.1js介绍</h3><p>是什么？：是一种运行在客户端的编程语言，实现人机交互<br>作用：网页特效，表单验证，数据交互，服务端编程<br>组成：<code>ECMAScript</code>，<code>Web APIS</code></p>
+<h3 id="1-2-js的书写位置"><a href="#1-2-js的书写位置" class="headerlink" title="1.2 js的书写位置"></a>1.2 js的书写位置</h3><p>1.内联  写在标签里面<br>2.内部  直接写在html文件  放入底部<br>3.外部  写在js文件中  <code>&lt;script src=&quot;&quot;&gt;</code><br>注意：引入的<code>script</code>标签中间就不要写代码了</p>
+<h3 id="1-3js的注释"><a href="#1-3js的注释" class="headerlink" title="1.3js的注释"></a>1.3js的注释</h3><p>1.单行注释  <code>//</code>   快捷键<code>Ctrl+/</code><br>2.多行注释 <code>/* */</code></p>
+<h3 id="1-4js的结束符"><a href="#1-4js的结束符" class="headerlink" title="1.4js的结束符"></a>1.4js的结束符</h3><p>1.代表语句结束   英文分号<br>2.换行符会自动标识为结束符</p>
+<h3 id="1-5js输入输出语法"><a href="#1-5js输入输出语法" class="headerlink" title="1.5js输入输出语法"></a>1.5js输入输出语法</h3><p>1.向<code>body</code>输出内容 <code>document.write(&#39;输出内容&#39;)</code><br>2.页面弹出警示框  <code>alert（‘输出内容’）</code><br>3.控制台输出语法  <code>console.log(&#39;输出内容&#39;)</code><br>4.<code>prompt()</code>输入语法</p>
+<h3 id="1-6变量"><a href="#1-6变量" class="headerlink" title="1.6变量"></a>1.6变量</h3><p>1.<strong>是什么？</strong>存储数据的容器，注意：<strong>变量不是数据本身，而是存储数据的容器</strong><br>2.声明变量  :  <code>let 变量名;</code>  赋值： <code>变量名 = 18;</code><br>变量初始化<code> let age =18;</code><br><strong>let不允许多次声明一个变量</strong><br>3.<strong>变量的本质</strong>  是内存中的一块空间，用来存储数据<br>4.<strong>变量名规则与规范</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">规则：1.不能出现关键字</span><br><span class="line">            2.只能用下划线，字母，数字，$符号组成，且不能数字开头</span><br><span class="line">            3.字母严格区分大小写</span><br><span class="line">规范：1.见名知意</span><br><span class="line">            2.遵循小驼峰命名法</span><br></pre></td></tr></table></figure>
+
+<p>5.<strong>变量扩展-数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.保存多个数据</span><br><span class="line">2.let 变量名 = [数据1,数据2,数据3]</span><br><span class="line">3.数组中的每个数据都有自己的编号，第一个编号是从0开始</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-7数据类型"><a href="#1-7数据类型" class="headerlink" title="1.7数据类型"></a>1.7数据类型</h3><h4 id="1-基本数据类型"><a href="#1-基本数据类型" class="headerlink" title="1.基本数据类型"></a>1.基本数据类型</h4><p><strong>number</strong> 数字型<br><strong>string</strong>  字符串型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.引号必须成对  推荐使用单引号</span><br><span class="line">2.外单内双，外双内单</span><br><span class="line">3.转义符  \</span><br><span class="line">4.字符串拼接  console.log(变量名1+变量名2)</span><br><span class="line">5.模板字符串 `我叫$&#123;name&#125;`</span><br></pre></td></tr></table></figure>
+
+<p><strong>boolean</strong>  布尔型  true  false<br><strong>undefined</strong> 未定义<br><strong>null</strong>  空引用</p>
+<h4 id="2-引用数据类型"><a href="#2-引用数据类型" class="headerlink" title="2.引用数据类型"></a>2.引用数据类型</h4><p>对象，函数，数组</p>
+<p><strong>检测数据类型</strong><br><code>typeof</code>    例如：<code>console.log(typeof 123)</code></p>
+<h3 id="1-8类型的转换"><a href="#1-8类型的转换" class="headerlink" title="1.8类型的转换"></a>1.8类型的转换</h3><p><strong>隐式转换</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+号两边只要有一个是字符串，那么就会把另一个转换为字符串</span><br><span class="line">除了+以外的算数运算符,-*/等都会把数据转换为数字类型</span><br><span class="line">+号作为正号解析时，可以转换为数字类型</span><br></pre></td></tr></table></figure>
+
+<p><strong>显式转换</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.转换为数字型</span><br><span class="line">       Number(&#x27;10&#x27;)</span><br><span class="line">       parseInt(&#x27;10&#x27;)   转换为数字型，只保留整数，没有四舍五入</span><br><span class="line">       parseFloat(&#x27;10.99&#x27;) 转换为数字型，会保留小数</span><br><span class="line">区别</span><br><span class="line">1.1Number()：只能放数字类型的字符，否则返回NaN</span><br><span class="line">1.2pasreFloat(): 能放以数字开头的所有类型的字符串，pasreFloat 会自动过滤，只返回数字</span><br><span class="line"></span><br><span class="line">2.转换为字符型</span><br><span class="line">       1.String(数据)</span><br><span class="line">       2.变量.toString(进制)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-流程控制"><a href="#2-流程控制" class="headerlink" title="2.流程控制"></a>2.流程控制</h2><h3 id="2-1运算符"><a href="#2-1运算符" class="headerlink" title="2.1运算符"></a>2.1运算符</h3><p><strong>算数运算符</strong>  +  -  *  &#x2F;  %<br>优先级 ：*&#x2F; %同等级，先乘除后加减，有括号先算括号<br><strong>赋值运算符</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">= 赋值</span><br><span class="line">+=    num += 1  等同于 num = num + 1</span><br><span class="line">-=  *=  /=  %=</span><br></pre></td></tr></table></figure>
+
+<p><strong>一元运算符</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">++ 自增</span><br><span class="line">++num  前置自增  先自加，再使用  等同于num += 1</span><br><span class="line">num++  后置自增  先使用，再自加  等同于num += 1</span><br><span class="line">--  自减</span><br></pre></td></tr></table></figure>
+
+<p><strong>比较运算符</strong><br>     &gt;  &lt;  &gt;&#x3D;  &lt;&#x3D;<br><strong>相等运算符</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">==  左右两边值是否相等，不管数据类型</span><br><span class="line">=== 左右两边数据类型 ，值， 引用地址全等  常用</span><br><span class="line">！== 值不等于</span><br><span class="line">得到的结果true  flase</span><br><span class="line">注意：</span><br><span class="line">       1.NaN不等于任何值，包括它本身</span><br><span class="line">       2.尽量不要比较小数</span><br><span class="line">       3.不同类型之间比较会发生隐式转换</span><br><span class="line">       4.开发中请用===</span><br></pre></td></tr></table></figure>
+
+<p><strong>逻辑运算符</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp;  并且  一假则假</span><br><span class="line">|| 或者  一真则真</span><br><span class="line">！ 取反 真变假 假变真</span><br><span class="line"></span><br><span class="line">逻辑运算符里的短路  只存在于&amp;&amp;和||</span><br><span class="line">&amp;&amp;左边为假flase就不判断右边了</span><br><span class="line">||左边为真true就不判断右边了</span><br><span class="line">注意：有5个值是当false来看的</span><br><span class="line">      false为假</span><br><span class="line">      数字0为假</span><br><span class="line">      ‘’ 空字符串为假</span><br><span class="line">      undefined为假</span><br><span class="line">      null 为假</span><br><span class="line">      NaN为假</span><br></pre></td></tr></table></figure>
+
+<p><strong>运算符优先级</strong><br><strong>小括号&gt; 一元运算符和取反！&gt; 算数运算符&gt;比较运算符&gt;相等运算符&gt;&amp;&amp;&gt;||&gt;赋值运算符&#x3D;&gt;逗号</strong></p>
+<h3 id="2-2语句"><a href="#2-2语句" class="headerlink" title="2.2语句"></a>2.2语句</h3><p>   顺序语句 从上到下依次执行</p>
+<h3 id="2-3分支语句"><a href="#2-3分支语句" class="headerlink" title="2.3分支语句"></a>2.3分支语句</h3><p><strong>2.3.1if分支语句</strong><br>       <code>if()&#123;&#125; else if()&#123;&#125; else&#123;&#125;</code><br> <strong>三元表达式</strong><br>       条件？输出1：输出2<br><strong>switch语句</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(数据)&#123;</span><br><span class="line">            <span class="keyword">case</span> 数据<span class="number">1</span>:</span><br><span class="line">                <span class="title function_">alert</span>(<span class="string">&#x27;取款&#x27;</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">case</span> 数据<span class="number">2</span>:</span><br><span class="line">                <span class="title function_">alert</span>(<span class="string">&#x27;存款&#x27;</span>)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="attr">default</span>:</span><br><span class="line">                <span class="title function_">alert</span>(<span class="string">&#x27;重新输入&#x27;</span>)</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.3.2循环语句</strong><br><strong>while循环</strong> </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> i = <span class="number">1</span>  <span class="comment">//变量起始值</span></span><br><span class="line"><span class="keyword">while</span> (i &lt;= <span class="number">100</span>) &#123;  <span class="comment">//变量终止条件</span></span><br><span class="line">     <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`hh`</span>)</span><br><span class="line">        i++   <span class="comment">//变量变化</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>for循环</strong><br>       1.<code>for(let i = 1; i &lt;= 10; i++) &#123;循环体&#125;</code><br>       2.<code>for循环的嵌套</code><br><strong>continue和break的区别</strong><br>      1.<code>continue</code> 结束本次循环，继续下一次循环<br>       2.<code>break</code> 直接退出本次循环</p>
+<h2 id="3-数组"><a href="#3-数组" class="headerlink" title="3.数组"></a>3.数组</h2><p>语法：<code>let 数组名 = []</code><br>数组长度   <code>数组名.length</code><br><strong>添加数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.push(元素1，元素2)   在数组后面添加  返回新数组</span><br><span class="line">arr.unshit(元素1，元素2)  在数组前面添加  返回新数组</span><br></pre></td></tr></table></figure>
+
+<p><strong>删除数组</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.pop()  只能删除最后一个元素  返回新数组</span><br><span class="line">arr.shift()  只能删除第一个元素  返回新数组</span><br><span class="line">arr.splice(从哪里删,删除几个)  删除指定元素</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-函数"><a href="#4-函数" class="headerlink" title="4.函数"></a>4.函数</h2><h3 id="4-1函数的基础使用"><a href="#4-1函数的基础使用" class="headerlink" title="4.1函数的基础使用"></a>4.1函数的基础使用</h3><p><strong>是什么？</strong>执行特定任务的代码块，可以实现代码复用<br><code>function  函数名() &#123; 函数体 &#125;</code>     调用函数：<code>函数名()</code></p>
+<h3 id="4-2函数传参"><a href="#4-2函数传参" class="headerlink" title="4.2函数传参"></a>4.2函数传参</h3><p>作用：提高函数的灵活性<br><code>function  函数名(形参1,形参2) &#123; 函数体 &#125;</code>     调用函数:<code>函数名(实参1,实参2)</code></p>
+<h3 id="4-3函数的返回值"><a href="#4-3函数的返回值" class="headerlink" title="4.3函数的返回值"></a>4.3函数的返回值</h3><p><strong>return</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.函数内部可以有多个return，但返回值只能有一个，return后面的数据不要换行写</span><br><span class="line">2.return会立即结束当前函数</span><br><span class="line">3.函数可以没有return，但返回值会是undefined</span><br><span class="line">4.return只能返回一个值</span><br><span class="line">     例如  return a,b 那么此时，不会返回b</span><br><span class="line">     解决:写成数组  return[a,b]</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4-4作用域"><a href="#4-4作用域" class="headerlink" title="4.4作用域"></a>4.4作用域</h3><p><strong>全局作用域</strong><br>整个script标签内部或者一个独立的文件，全局作用域下的变量谁都能使用<br><strong>局部作用域</strong><br>函数内的代码环境，因为跟环境有关，也被称为函数作用域，局部作用域只能在局部使用<br><strong>块级作用域</strong><br><code>块级作用域由&#123; &#125;包括，if语句，for语句等</code>，块级作用域只能在块级之中用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">注意1：</span><br><span class="line">如果函数内部或者块级作用域内部，没有用let声明的变量，却直接使用，也要把它当作全局变量</span><br><span class="line">注意2：</span><br><span class="line">函数内部的形参可以看做是局部变量</span><br><span class="line"></span><br><span class="line">总结一句话：全局&gt;局部=块级</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-5作用域链"><a href="#4-5作用域链" class="headerlink" title="4.5作用域链"></a>4.5作用域链</h3><p>是什么？根据在内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就称为作用域链<br><strong>查找变量的原则</strong>：就近原则<br><strong>匿名函数(函数表达式)</strong><br>语法:<code>let fn  =  function (x,y) &#123;函数体&#125;</code>    调用:<code>fn(x,y)</code><br><strong>立即执行函数</strong>     立即执行，无需调用<br><strong>作用</strong>：能有效避免全局变量之间的污染<br>两种写法：<br><code>(function (x,y) &#123;函数体&#125;)(x,y);</code><br><code>(function (x,y) &#123;函数体&#125;(x,y));</code><br><strong>注意：必须加分号；结束符</strong></p>
+<p><strong>arguments</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.伪数组，无法使用数组中的方法</span><br><span class="line">2.有length</span><br><span class="line">3.仅仅只在函数内有效</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//示例：</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123; </span><br><span class="line">            <span class="keyword">let</span> sum = <span class="number">0</span>  </span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; <span class="variable language_">arguments</span>.<span class="property">length</span>;i++) &#123;</span><br><span class="line">                sum += <span class="variable language_">arguments</span>[i]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">fn</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>在写了实参却没有写形参时，可以使用argument伪数组</strong></p>
+<h2 id="5-对象"><a href="#5-对象" class="headerlink" title="5.对象"></a>5.对象</h2><h3 id="5-1什么是对象"><a href="#5-1什么是对象" class="headerlink" title="5.1什么是对象"></a>5.1什么是对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.无序的数据集合</span><br><span class="line">2.是一种数据类型</span><br><span class="line">3.是由属性和方法组成</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-2对象的基本使用"><a href="#5-2对象的基本使用" class="headerlink" title="5.2对象的基本使用"></a>5.2对象的基本使用</h3><p><code>let 对象名 = &#123;属性名:属性值,方法名:匿名函数&#125;</code><br><strong>对象两种访问属性的方法</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> goods = &#123;</span><br><span class="line">            <span class="attr">name</span>:<span class="string">&#x27;小米10&#x27;</span>,</span><br><span class="line">            <span class="attr">num</span>:<span class="number">1000128164</span>,</span><br><span class="line">            <span class="attr">weight</span>:<span class="string">&#x27;0.55kg&#x27;</span>,</span><br><span class="line">            <span class="attr">address</span>:<span class="string">&#x27;中国大陆&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(goods.<span class="property">name</span>);</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(goods[<span class="string">&#x27;name&#x27;</span>]);</span><br></pre></td></tr></table></figure>
+
+<p> <strong>访问方法：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.对象名.属性名</span><br><span class="line">2.对象名[&#x27;属性名&#x27;]</span><br><span class="line">3.对象访问方法    对象.方法名()</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3操作对象"><a href="#5-3操作对象" class="headerlink" title="5.3操作对象"></a>5.3操作对象</h3><p><strong>查</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对象名.属性名</span><br><span class="line">对象名[&#x27;属性名&#x27;]</span><br></pre></td></tr></table></figure>
+
+<p><strong>增</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象名.新属性名= 新属性值</span><br></pre></td></tr></table></figure>
+
+<p><strong>改</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对象.属性名 = 值</span><br><span class="line">对象.方法 = 匿名函数</span><br></pre></td></tr></table></figure>
+
+<p><strong>删</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete 对象名.属性</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-4遍历对象"><a href="#5-4遍历对象" class="headerlink" title="5.4遍历对象"></a>5.4遍历对象</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.对象没有数组的length属性，无法确定长度</span><br><span class="line">2.对象里面是无序的键值对，没有规律，不想数组有下标</span><br></pre></td></tr></table></figure>
+
+<p><strong>语法</strong>：<code>for(let k(变量名) in  对象名) &#123;&#125;</code><br><strong>k是变量名</strong><br>       因此，获得对象属性的是k<br>       获得对象值是obj[k]<br><strong>遍历数组对象</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`    &lt;table&gt;</span></span><br><span class="line"><span class="string">    &lt;caption&gt;&lt;h2&gt;学生信息&lt;/h2&gt;&lt;/caption&gt;</span></span><br><span class="line"><span class="string">    &lt;tr&gt;</span></span><br><span class="line"><span class="string">        &lt;th&gt;序号&lt;/th&gt;</span></span><br><span class="line"><span class="string">        &lt;th&gt;姓名&lt;/th&gt;</span></span><br><span class="line"><span class="string">        &lt;th&gt;年龄&lt;/th&gt;</span></span><br><span class="line"><span class="string">        &lt;th&gt;性别&lt;/th&gt;</span></span><br><span class="line"><span class="string">        &lt;th&gt;家乡&lt;/th&gt;</span></span><br><span class="line"><span class="string">    &lt;/tr&gt;</span></span><br><span class="line"><span class="string">    `</span>)</span><br><span class="line">    <span class="keyword">let</span> arr = [</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="string">&#x27;小民&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>, <span class="attr">address</span>: <span class="string">&#x27;河北&#x27;</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="string">&#x27;小民&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>, <span class="attr">address</span>: <span class="string">&#x27;河北&#x27;</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="string">&#x27;小民&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>, <span class="attr">address</span>: <span class="string">&#x27;河北&#x27;</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="string">&#x27;小民&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>, <span class="attr">address</span>: <span class="string">&#x27;河北&#x27;</span> &#125;,</span><br><span class="line">        &#123; <span class="attr">name</span>: <span class="string">&#x27;小民&#x27;</span>, <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>, <span class="attr">address</span>: <span class="string">&#x27;河北&#x27;</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">            <span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">`</span></span><br><span class="line"><span class="string">            &lt;tr&gt;</span></span><br><span class="line"><span class="string">                &lt;td&gt;<span class="subst">$&#123;i + <span class="number">1</span>&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">                &lt;td&gt;<span class="subst">$&#123;arr[i].name&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">                &lt;td&gt;<span class="subst">$&#123;arr[i].age&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">                &lt;td&gt;<span class="subst">$&#123;arr[i].sex&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">                &lt;td&gt;<span class="subst">$&#123;arr[i].address&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">            &lt;/tr&gt;</span></span><br><span class="line"><span class="string">            `</span>)</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">&lt;/table&gt;<span class="string">`)</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-5内置对象"><a href="#5-5内置对象" class="headerlink" title="5.5内置对象"></a>5.5内置对象</h3><p><strong>数学对象Math</strong><br>math.pi  圆周率</p>
+<p>math.abs  绝对值  如果是字符串的’-1’,输出也会是1，隐式转换</p>
+<p>math.max 取最大值<br>如果未输入数字进去，返回-Infinity，<br>如果输入数字进去，则是取最大值<br>如果输入数字和字符串混合的，则是NAN</p>
+<p>math.min  取最小值<br>math.ceil  向上取整<br>math.floor 向下取整</p>
+<p>math.round 四舍五入  0.5  是往大的方向四舍五入</p>
+<p>math.random（） 随机数<br>返回一个0-1之间随机的小数，包括0，不包括1<br>这个方法里面不跟参数</p>
+<p>1-10之间的随机数<br>return Math.floor(Math.random() * (max-min+1)+min);</p>
+<h3 id="5-6数据类型的存储方式"><a href="#5-6数据类型的存储方式" class="headerlink" title="5.6数据类型的存储方式"></a>5.6数据类型的存储方式</h3><p>简单数据类型按照值存储   存放在栈<br>复杂数据类型按照地址存储  存放在堆</p>
+<p>复杂数据类型的地址</p>
+<p>简单数据类型的值</p>
+<p>总结：简单数据类型开辟的地址是不同的，无论几个简单数据去开辟同样的值，那他的地址照样不会改</p>
+<p>总结：复杂数据类型的值是存放在堆里面的，而找到堆的值要通过栈的复杂数据类型的地址，复杂数据1只要赋值于复杂数据2，那么就获得了与复杂数据1同样的地址，同时能够读取到堆里面的值，而复杂数据2如果一改变，则会通过栈里面的地址找到堆里面的数据，同时会改变对里面数字的值，而此时复杂数据1的值也会因此改变</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/star/about" rel="external nofollow noreferrer">冷杨威</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://leng-yangwei.gitee.io/star/star/2023/07203.html">https://leng-yangwei.gitee.io/star/star/2023/07203.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/star/about" target="_blank">冷杨威</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">web基础</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/star/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/star/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/star/2023/07201.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/3.jpg" class="responsive-img" alt="Html">
+                        
+                        <span class="card-title">Html</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            HTMLHTML这篇笔记是关于html的一些语法，它包含了对html的认知与使用
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/HTML/" class="post-category">
+                                    HTML
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">web基础</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/star/2023/0720477.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/21.jpg" class="responsive-img" alt="node.js">
+                        
+                        <span class="card-title">node.js</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            node.js这篇总结了node.js的基本概念与使用,如果公司需要，建议去查相关文档
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/node-js/" class="post-category">
+                                    node.js
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
+                        <span class="chip bg-color">JavaScript进阶</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 星星<br />'
+            + '文章作者: 冷杨威<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/star/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/star/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/star/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <!-- <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/star/about" target="_blank">冷杨威</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">43.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <br>
+
+            运行天数提醒.
+             -->
+<!-- //             <br> -->
+<!-- //             
+//         </div>
+//         <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:428811986@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=428811986" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 428811986" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+//     </div> -->
+<!-- // </footer> -->
+
+<!-- <div class="progress-bar"></div> --> -->
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/star/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/star/libs/materialize/materialize.min.js"></script>
+    <script src="/star/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/star/libs/aos/aos.js"></script>
+    <script src="/star/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/star/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/star/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/star/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/star/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/star/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/star/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/star/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/star/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

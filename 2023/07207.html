@@ -1,0 +1,1141 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Web APIs, 星星">
+    <meta name="description" content="Web APIsWeb APIs主要总结了DOM和BOM的相关语法与使用
+
+​使用js去操作html元素​DOM(文档对象模型)，BOM(浏览器对象模型)
+DOM1.1DOM的认知是什么？：DOM是浏览器提供的一套专门用来操作网页内容的功能">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Web APIs | 星星</title>
+    <link rel="icon" type="image/png" href="/star/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/star/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/star/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/star/css/my.css">
+<link rel="stylesheet" type="text/css" href="/star/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/star/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/star/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/star/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/star/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">星星</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">星星</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Web APIs</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
+                                <span class="chip bg-color">JavaScript进阶</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/star/categories/JavaScript/" class="post-category">
+                                JavaScript
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-07-10
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/star/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Web-APIs"><a href="#Web-APIs" class="headerlink" title="Web APIs"></a>Web APIs</h1><p><code>Web APIs主要总结了DOM和BOM的相关语法与使用</code></p>
+<span id="more"></span>
+<p>​使用js去操作html元素<br>​DOM(文档对象模型)，BOM(浏览器对象模型)</p>
+<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="1-1DOM的认知"><a href="#1-1DOM的认知" class="headerlink" title="1.1DOM的认知"></a>1.1DOM的认知</h3><p><strong>是什么？</strong>：DOM是浏览器提供的一套专门用来操作网页内容的功能，用于开发网页内容特效和实现用户交互<br><strong>DOM树</strong>：将html文档以树状结构直观表现出来，文档树直观体现了标签与标签的关系<br><strong>DOM对象</strong>：浏览器根据html生成的标签生成js对象，即把网页内容当对象来处理<br><strong>document</strong>：是<code>dom</code>里提供的一个对象，网页所有内容都在<code>document</code>里面</p>
+<h3 id="1-2DOM获取元素"><a href="#1-2DOM获取元素" class="headerlink" title="1.2DOM获取元素"></a>1.2DOM获取元素</h3><h4 id="获取DOM对象"><a href="#获取DOM对象" class="headerlink" title="获取DOM对象"></a>获取DOM对象</h4><p><strong>选择匹配第一个元素</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.querySelecter(&#x27;css选择器&#x27;)</span><br><span class="line">参数：包含一个或多个有效的css选择器的字符串</span><br><span class="line">返回css选择器匹配的第一个元素，如果没匹配到，则返回null</span><br></pre></td></tr></table></figure>
+
+<p><strong>选择匹配多个元素</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.querySelecterAll(&#x27;css选择器&#x27;)</span><br><span class="line">参数：包含一个或多个有效的css选择器的字符串</span><br><span class="line">返回一个伪数组</span><br></pre></td></tr></table></figure>
+
+<p><strong>了解</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.document.getElementById(&#x27;css选择器&#x27;)</span><br><span class="line">根据id获取一个id元素</span><br><span class="line">2.document.getElementByTagName(&#x27;div&#x27;)</span><br><span class="line">根据标签获取一类元素，获取页面所有div</span><br><span class="line">3.document.getElementByClassName(&#x27;w&#x27;)</span><br><span class="line">根据类名获取此类名的所有元素，获取所有类名为w</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-3设置-修改DOM元素内容"><a href="#1-3设置-修改DOM元素内容" class="headerlink" title="1.3设置&#x2F;修改DOM元素内容"></a>1.3设置&#x2F;修改DOM元素内容</h3><p><strong>document.write() 方法</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.只能将文本内容最追加body中</span><br><span class="line">2.文本中包含的标签会解析</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象.innerText 属性</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.能将文本内容添加到任意标签位置</span><br><span class="line">2.文本包含的标签不会被解析</span><br></pre></td></tr></table></figure>
+
+<p><strong>对象.innerHTML属性</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.能将文本内容添加到任意标签位置</span><br><span class="line">2.文本包含的标签会被解析</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-4设置-修改DOM元素属性"><a href="#1-4设置-修改DOM元素属性" class="headerlink" title="1.4设置&#x2F;修改DOM元素属性"></a>1.4设置&#x2F;修改DOM元素属性</h3><p><strong>设置&#x2F;修改元素常用属性(元素自带的属性)</strong><br>对象.属性名&#x3D;属性值<br>例如：<code>img</code>内部还有的属性<code>src</code>等，先获取过来后，<code>img.src=’./images/.png‘</code></p>
+<p><strong>设置&#x2F;修改元素样式属性(css属性)</strong><br><code>通过style属性操作css</code><br><code>对象.style.样式属性 = ‘值’</code><br><strong>注意</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.修改样式通过style属性引出</span><br><span class="line">2.如果属性有-连接符，需要转换为小驼峰命名法</span><br><span class="line">3.赋值的时候不要忘记加单位</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过类名（className）操作css</strong><br><code>对象.className = &#39;类名1  类名2&#39;</code><br><strong>注意</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">className是使用新值换旧值，会把之前的类干掉，如果需要保存之前的那个类，则也要把之前的类写在className中</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过classList操作类控制css</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">对象.classList.add(&#x27;类名&#x27;)      追加一个类</span><br><span class="line">对象.classList.remove(&#x27;类名&#x27;)   删除一个类</span><br><span class="line">对象.classList.toggle(&#x27;类名&#x27;)   切换一个类</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置&#x2F;修改表单元素属性(表单自带的属性)</strong><br>对象.属性名 &#x3D; 属性值<br><code>特殊:对象.属性名 = true/false    例如：disabled，checked，selected</code></p>
+<h3 id="1-5定时器-间歇函数"><a href="#1-5定时器-间歇函数" class="headerlink" title="1.5定时器-间歇函数"></a>1.5定时器-间歇函数</h3><p>每隔一段时间会自动调用<br><strong>1.开始定时器</strong><br><code>setInterval(函数,间隔时间)</code><br><code>setInterval(function()&#123;&#125;,间歇时间)</code><br>单位：毫秒   1000毫秒&#x3D;1秒<br><strong>2.关闭定时器</strong><br><code>let 变量名 = setInterval(函数,间隔时间)</code><br><code>clearInterval(变量名)</code></p>
+<h3 id="1-6DOM事件基础"><a href="#1-6DOM事件基础" class="headerlink" title="1.6DOM事件基础"></a>1.6DOM事件基础</h3><p>事件监听语法：<code>对象.addEventListener(&#39;事件&#39;,要执行的函数)</code><br><strong>事件三要素</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.事件源：被哪个dom元素触发</span><br><span class="line">2.事件：用哪种事件触发</span><br><span class="line">3.事件调用的函数：触发了要做什么事</span><br></pre></td></tr></table></figure>
+
+<p><strong>事件类型</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1.鼠标事件</span><br><span class="line">click  点击</span><br><span class="line">mouseenter 鼠标经过   没有冒泡效果</span><br><span class="line">mouseleave  鼠标离开   没有冒泡效果</span><br><span class="line">mousemove  鼠标移动</span><br><span class="line"></span><br><span class="line">2.焦点事件</span><br><span class="line">focus  获得焦点</span><br><span class="line">blur  失去焦点</span><br><span class="line"></span><br><span class="line">3.键盘事件</span><br><span class="line">Keydown  键盘按下触发</span><br><span class="line">Keyup  键盘抬起触发</span><br><span class="line"></span><br><span class="line">4.文本事件</span><br><span class="line">input 用户输入</span><br><span class="line">change</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-7高阶函数"><a href="#1-7高阶函数" class="headerlink" title="1.7高阶函数"></a>1.7高阶函数</h3><p>可以被简单理解为函数的高级应用<br><strong>1.函数表达式</strong><br>把函数当值来看就是高阶函数<br><code>let fn = function()&#123;&#125;</code><br><strong>2.回调函数</strong><br>把函数1作为参数传递给函数2时，称函数1为回调函数</p>
+<h3 id="1-8环境对象-this"><a href="#1-8环境对象-this" class="headerlink" title="1.8环境对象 this"></a>1.8环境对象 this</h3><p><code>this   他就是一个对象     谁调用，this就指向谁</code></p>
+<p><code>直接调用函数，其实就相当于window.函数，所以this指代window</code></p>
+<h3 id="1-9排他编程思想"><a href="#1-9排他编程思想" class="headerlink" title="1.9排他编程思想"></a>1.9排他编程思想</h3><p>如何使用：<br>1.干掉所有人<br>​     使用for循环</p>
+<p>2.复活他自己<br>     通过this或者下标找到自己或者对应的元素</p>
+<h3 id="1-10DOM节点操作"><a href="#1-10DOM节点操作" class="headerlink" title="1.10DOM节点操作"></a>1.10DOM节点操作</h3><p><strong>DOM节点</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DOM树里面的每一个内容都称之为节点</span><br><span class="line">1.元素节点  所以html标签  html是根节点</span><br><span class="line">2.属性节点  所以html标签内部的属性</span><br><span class="line">3.文本节点 所有文本</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-增"><a href="#1-增" class="headerlink" title="1.增"></a>1.增</h4><p><strong>第一步：创建节点</strong><br><code>let 对象 = document.createElement(&#39;标签名&#39;)</code><br><strong>第二步：增加节点</strong><br>方法1：插入到父元素的最后一个子元素：<br><code>父元素.appendChild(子元素)</code><br>方法2：插入到父元素中某个子元素的前面：<br><code>父元素.insertBefore(子元素，在哪个元素前面)</code><br><strong>克隆节点</strong><br>同样也是需要上面的两步走<br><strong>特殊情况下，我们新增节点，按照如下操作</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.复制一个原有的节点</span><br><span class="line">2.把复制的节点放入到指定的元素内部</span><br><span class="line">				let对象=克隆对象.cloneNode(布尔值)</span><br><span class="line">				cloneNode会克隆出一个跟原标签一样的元素，括号内传入布尔值</span><br><span class="line">3.若为true，则代表克隆时会包含后代节点一起克隆</span><br><span class="line">4.若为false，则代表克隆时，只克隆当前，不包含后代节点</span><br><span class="line">默认：false</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-删"><a href="#2-删" class="headerlink" title="2.删"></a>2.删</h4><p>在js原生DOM中，删除元素必须通过父元素删除<br>语法：<strong>父元素.removeChild(子元素)</strong><br><strong>注意：</strong><br>如果不存在父子关系则删除不成功<br>删除节点和隐藏节点（display:none）有区别：隐藏则还存在，删除则在html中删除节点</p>
+<h4 id="3-查"><a href="#3-查" class="headerlink" title="3.查"></a>3.查</h4><p><strong>父节点查找</strong><br><code>parentNode 属性</code><br>返回最近一级的父节点   找不到返回null</p>
+<p><code>子元素.parentNode</code></p>
+<p><strong>子节点查找</strong><br><code>父元素.children</code>  （重点）  仅获得所有元素节点,返回的还是一个伪数组<br><code>childNodes</code>     获得所有子节点，包括文本节点（空格，换行），注释节点</p>
+<p><strong>兄弟节点查找</strong><br>1.下一个兄弟节点    <code>nextElementSibling 属性</code><br>2.上一个兄弟节点    <code>previousElementSibling 属性</code></p>
+<h2 id="1-11-时间对象"><a href="#1-11-时间对象" class="headerlink" title="1.11 时间对象"></a>1.11 时间对象</h2><p>时间对象：<strong>用来表示时间的对象</strong><br><strong>作用：可以得到当前系统时间</strong><br><strong>如何使用</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.实例化</span><br><span class="line">在代码中发现了new关键字，一般将这个操作称为实例化</span><br><span class="line"></span><br><span class="line">2.获得当前的时间：</span><br><span class="line">let  date  =  new   Date()</span><br><span class="line"></span><br><span class="line">3.获得指定的时间：</span><br><span class="line">let date  =  new  Date(&#x27;2022-07-01&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.小括号为空，则是得到当前的时间</span><br><span class="line">2.小括号里面写上时间，可以返回指定的时间</span><br><span class="line">时间对象方法</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-12-时间对象方法"><a href="#1-12-时间对象方法" class="headerlink" title="1.12 时间对象方法"></a>1.12 时间对象方法</h2><h3 id="1-常用方法"><a href="#1-常用方法" class="headerlink" title="1.常用方法"></a>1.常用方法</h3><p>date（方法名，方法名可以是任意的）.getFullyear()<br>date.getMonth()           获取当月（0-11）从0开始的，如果参数是5月，输出则是4月,记得月份+1<br>date.getDate()     获取当天日期<br>date.getDay()      获取星期几    0-6    与month一样  0是周日，周一是1，周六是6<br>date.getHours    获取小时 0-23<br>date.getMinutes      获取分钟 0-59<br>date.getSeconds    获取秒 0-59<br>利用对象.innerHTML &#x3D; ‘ ‘     将时间带入html页面中</p>
+<h3 id="1-时间戳"><a href="#1-时间戳" class="headerlink" title="1.时间戳"></a>1.时间戳</h3><p>时间戳<br>不需要new创建对象<br><strong>简单写法（常用）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let  date1  =  +new   Date();</span><br><span class="line">这里面的+new   Date()    返回的就是总的毫秒数</span><br></pre></td></tr></table></figure>
+
+<p><strong>H5新增的    获取总的毫秒数（不需要new创建对象）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">con.log(Date.now());</span><br></pre></td></tr></table></figure>
+
+<p><strong>只能得到当前的时间戳，前面两种可以返回指定的时间戳</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d = parseInt(总秒数/60/60/24)     计算天数</span><br><span class="line">h = parseInt(总秒数/60/60%24)    计算小时</span><br><span class="line">m = parseInt(总秒数/60%60)      计算分</span><br><span class="line">s = parseInt(总秒数%60)      计算秒</span><br><span class="line">toLocaleString()`方法返回该日期对象的字符串</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-12DOM事件高级"><a href="#1-12DOM事件高级" class="headerlink" title="1.12DOM事件高级"></a>1.12DOM事件高级</h2><h3 id="1-事件对象"><a href="#1-事件对象" class="headerlink" title="1.事件对象"></a>1.事件对象</h3><p><strong>获取事件对象</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">事件对象就是一个对象</span><br><span class="line">在事件绑定的回调函数的第一个参数就是事件对象</span><br><span class="line">事件对象一般命名为e,ev,event</span><br></pre></td></tr></table></figure>
+
+<p><strong>事件对象的常用属性</strong>   e.事件属性<br>type  获取当前的事件类型<br><strong>鼠标事件</strong>     e.鼠标事件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">clientX/clientY   获取光标对于浏览器可见窗口左上角的位置</span><br><span class="line">offsetX/offsetY    获取光标相对于DOM元素左上角的位置     &lt;div&gt;&lt;/div&gt;    就是在这个div左上角的距离</span><br><span class="line">pageX/pageY 获取光标相对于文档坐标</span><br></pre></td></tr></table></figure>
+
+<p><strong>键盘事件</strong>  e.key</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">key 用户按下的键盘键的值</span><br><span class="line">例如：e.key===&#x27;enter&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-事件流"><a href="#2-事件流" class="headerlink" title="2.事件流"></a>2.事件流</h3><p>捕获阶段   –&gt; 事件目标 –&gt;   冒泡阶段<br><strong>捕获阶段</strong>  从父到子   <code>document -&gt;html -&gt;body -&gt;div</code><br>事件捕获：<code>addEventListener第三个参数传入true</code>，代表捕获阶段触发（很少使用）<br><code>若传入false代表冒泡阶段触发，默认false</code><br><strong>冒泡阶段</strong>  从子到父   <code>div -&gt; body -&gt; html -&gt; document</code><br>事件冒泡：当一个元素触发事件后，会依次调用所有父级元素的同名事件<br><strong>阻止事件流</strong><br><code>事件对象.stopPropagation()</code><br>​					此方法可以阻断事件流动传播，对于冒泡与捕获都有效<br><code>事件对象.preventDefault()</code><br>​					阻止默认行为，比如链接点击不跳转，表单域的跳转<br><strong>事件委托</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">事件委托是给父级添加事件 而不是孩子添加事件</span><br><span class="line">事件对象.target.style.color = &#x27;red&#x27;</span><br><span class="line">孩子相当于      事件对象.target</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="1-13网页特效"><a href="#1-13网页特效" class="headerlink" title="1.13网页特效"></a>1.13网页特效</h2><h3 id="1-滚动事件和加载事件"><a href="#1-滚动事件和加载事件" class="headerlink" title="1.滚动事件和加载事件"></a>1.滚动事件和加载事件</h3><p><strong>滚动事件</strong><br>事件名  scroll<br><code>window.addEventListener(&#39;scroll&#39;,function()&#123;&#125;)</code><br><strong>加载事件</strong><br><code>load加载事件</code>      <strong>事件名 load</strong><br><code>window.addEventListener(&#39;load&#39;,function()&#123;&#125;)</code>     等着整个页面加载完毕才回去执行<br><strong>使用场景</strong><br>有些时候需要等页面资源全部处理完了做一些事情<br>老代码喜欢将scrpt写在head中，这时候直接找DOM元素找不到<br><strong>DOMContentLoaded加载事件</strong><br>在html被加载完后去执行，不需要等待css，图片等完全加载<br><code>document.addEventListener(&#39;DOMContentLoaded&#39;,function()&#123;&#125;)</code></p>
+<h3 id="2-元素大小和位置"><a href="#2-元素大小和位置" class="headerlink" title="2.元素大小和位置"></a>2.元素大小和位置</h3><p><strong>scroll （配合offset使用）</strong><br><code>获取宽高（了解）</code><br>获取元素内容的宽高（不包含滚动条），返回值不带单位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scrollWidth </span><br><span class="line">scrollHight</span><br></pre></td></tr></table></figure>
+
+<p><code>获取位置</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">获取元素内容向左向上滚出去看不到的距离</span><br><span class="line">scrollLeft和scrollTop</span><br><span class="line">这两个属性是可以修改的</span><br><span class="line">第一步：先做页面滚动事件，给window添加滚动事件</span><br><span class="line">第二步：得到页面滚动距离</span><br><span class="line">document.documentElement    是html标签</span><br><span class="line">document.documentElement.scrollTop  &gt;= sk.offsetTop</span><br></pre></td></tr></table></figure>
+
+<p><strong>offset  （配合scroll使用）</strong><br>自动获取某个盒子到顶部的距离<br><strong>获取宽高</strong>：获取元素盒子的宽高，包括元素自身设置的宽高，padding，border</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">offsetWidth</span><br><span class="line">offsetHeight</span><br></pre></td></tr></table></figure>
+
+<p><code>获取位置</code><br><code>获取元素距离自己定位父级元素的左，上距离，如果父亲没有定位就以body为主</code><br>offsetLeft和offsetTop<br>注意是只读属性  不能修改</p>
+<p><strong>client</strong><br><code>获取宽高</code><br>获取元素的浏览器可视区部分宽高，不包含滚动条和border等<br><code>clientWidth和clientHeight</code><br><code>获取位置</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">获取左边框和上边框宽度</span><br><span class="line">clientLeft和clientTop   只读属性</span><br><span class="line">resize事件</span><br><span class="line">会在窗口尺寸改变的时候触发事件</span><br><span class="line">检测屏幕宽度</span><br><span class="line">let  w  =  document.documentElement.clientWidth</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><h2 id="Window对象"><a href="#Window对象" class="headerlink" title="Window对象"></a>Window对象</h2><h3 id="BOM（浏览器对象模型）"><a href="#BOM（浏览器对象模型）" class="headerlink" title="BOM（浏览器对象模型）"></a>BOM（浏览器对象模型）</h3><p>BOM是<strong>浏览器对象模型</strong><br><strong>​window是浏览器内置中的全局对象</strong>，我们所学的所有Web APIs的知识内容都是基于window对象实现的<br>​<strong>window对象包括</strong>：<code>document, navigator,location,history,screen</code><br><code>​document是实现DOM的基础，他其实是依附于window的属性</code><br>​注：依附于window对象的所有属性和方法，使用时可以省略window		</p>
+<h3 id="定时器-延迟函数"><a href="#定时器-延迟函数" class="headerlink" title="定时器-延迟函数"></a>定时器-延迟函数</h3><p><strong>语法</strong>：<code>setTimeout</code>（回调函数，等待毫秒数）</p>
+<p><code>setTimeout</code>仅仅只执行一次，可以理解为把一段代码延迟执行<br><strong>清除延迟函数</strong><br><code>clearTimeout（）</code>  清除延时函数<br><code>1.let timer = setTimeout（回调函数，等待毫秒数）</code><br><code>2.clearTimeout(timer)</code></p>
+<h3 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h3><p>自己调用自己</p>
+<h3 id="js执行机制"><a href="#js执行机制" class="headerlink" title="js执行机制"></a>js执行机制</h3><p>同步和异步<br><strong>同步任务</strong><br>前一个任务结束，才会执行后一个任务<br><strong>异步任务</strong><br>js异步是回调函数实现的<br>分为以下三种：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">普通事件：click，resize等</span><br><span class="line">资源加载：load，error等</span><br><span class="line">定时器：setInterval   setTimeout等</span><br></pre></td></tr></table></figure>
+
+<p><strong>js的执行机制</strong></p>
+<p>1.先执行执行栈中的同步任务<br>2.异步任务放入任务队列中<br>3.一旦执行栈中的所有同步任务执行完毕，系统就会依次读取任务队列中的异步任务<br>结束等待状态，进入执行栈，开始执行</p>
+<p>event loop（事件循环）：<br>1.主线程执行完毕，查询任务队列，取出一个任务，推入主线程处理<br>2.重复该动作<br>异步队列中，谁先触发就先进入主线程，就先执行谁		</p>
+<h3 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h3><p><code>location对象</code>，它拆分保存了URL地址的各个组成部分<br><code>使用方式</code>：<br>location.属性<br>location.方法<br><strong>常用属性</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.href属性获取完整的URL地址，对其赋值时用于地址的跳转</span><br><span class="line">2.search属性获取地址中携带的参数，符号?后面部分</span><br><span class="line">3.hash属性获取地址中的哈希值，符号#后面的部分</span><br><span class="line">4.reload()方法用来刷新当前页面</span><br><span class="line">传入参数true是强制刷新  </span><br><span class="line">默认是false，刷新</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h3><p><strong>该对象下记录了浏览器自身的相关信息</strong><br>常用属性和方法：<br>通过userAgent检测浏览器的版本及平台</p>
+<h3 id="histroy对象"><a href="#histroy对象" class="headerlink" title="histroy对象"></a>histroy对象</h3><p><strong>该对象与浏览器地址栏的操作相对应，如前进，后退，历史记录等</strong><br>方法和属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">back()     后退功能</span><br><span class="line">forward()    前进功能</span><br><span class="line">go(参数)     参数是1前进1个页面，-1则是后退一个页面</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="swiper插件"><a href="#swiper插件" class="headerlink" title="swiper插件"></a>swiper插件</h2><p>这个自己去了解一下，后面的框架组件库不需要自己写，自己引用即可</p>
+<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><h3 id="localStorage"><a href="#localStorage" class="headerlink" title="localStorage"></a>localStorage</h3><p><strong>特性</strong><br>​			1.生命周期永久生效，除非手动删除，否则关闭页面也会存在<br>​			2.可以多窗口（页面）共享（同一浏览器可以共享）<br>​			3.以键值对的形式存储使用<br><strong>声明</strong>  <code>localStorage.setitem(&#39;key&#39;,&#39;value&#39;)</code><br><strong>存储，获取，删除简单数据类型</strong><br>​			<code>存储数据  localStorage.setItem(&#39;键&#39;,&#39;值&#39;)</code><br>​			<code>删除数据  localStorage.removeltem(&#39;键&#39;)</code><br><strong>存储，获取，删除复杂数据类型</strong></p>
+<p><strong>存储数据</strong><br>本地只能存储字符串，无法存储复杂数据类型，需要将复杂数据类型转换为JSON字符串，在存储本地</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">JSON   属性和值都是双引号包含</span><br><span class="line">JSON.stringify（复杂数据类型）</span><br><span class="line">将复杂数据类型转换为JSON字符串，在存储本地</span><br><span class="line">JSON.parse（JSON字符串）</span><br><span class="line">将JSON字符串转换成对象    取出时使用</span><br><span class="line">例如</span><br><span class="line">let obj = &#123;</span><br><span class="line">    uname:&#x27;pink&#x27;,</span><br><span class="line">    age:18,</span><br><span class="line">    address:&#x27;北京</span><br><span class="line">&#125;</span><br><span class="line">localStorage.setItem(&#x27;obj&#x27; , JSON.stringify(obj))</span><br><span class="line">获取数据 JSON.parse( localStorage.getItem(&#x27;键&#x27;))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="sessionStorage-了解"><a href="#sessionStorage-了解" class="headerlink" title="sessionStorage(了解)"></a>sessionStorage(了解)</h3><p><strong>特性</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.生命周期为关闭窗口</span><br><span class="line">2.在同一个页面下数据可共享</span><br><span class="line">3.以键值对的形式存储使用</span><br><span class="line">4.用法与localStorage基本相同</span><br></pre></td></tr></table></figure>
+
+<p><strong>使用方法与localStorage一样</strong></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>1.表单验证：用户名表单只能输入英文字母，数字或者下划线，昵称输入框中可以输入中文（匹配）<br>2.过滤掉页面内容中的一些敏感词（替换），或从字符串中获取我们想要的特定部分（提取）等</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><strong>第一步：声明变量</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">方法一：new一个RegExp对象</span><br><span class="line">let  变量名   =   new   RegExp(/表达式/)</span><br><span class="line"></span><br><span class="line">方法二：字面量声明</span><br><span class="line">let  变量名  =  /表达式/</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二步：检测</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.变量名.text(要被检测的字符串)</span><br><span class="line">是变量名的变量值被text方法里面的值检测</span><br><span class="line">变量名的变量值是否包含在text方法里面的字符串里面</span><br><span class="line">如果匹配成功，则返回的是一个true，反之返回false</span><br><span class="line"></span><br><span class="line">2.变量名.exec(被检测的字符串) </span><br><span class="line">如果匹配成功，则返回的是一个数组，反之返回null</span><br><span class="line">是变量名的变量值被exec方法里面的值检测</span><br><span class="line">变量名的变量值是否包含在exec方法里面的字符串里面</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p><strong>普通字符：</strong><br>大多数字符仅能描述他们本身，这些字符称作普通字符，例如所有的字母<br>数字，也就是说普通字符只能够匹配字符串中与他们相同的字符</p>
+<p><strong>元字符（特殊字符）</strong><br>是一些具有特殊含义的字符，可以极大的提高了灵活性和强大的匹配能力，比如：规定用户只能输入26个英文字母，普通字符的话abcdefg……但元字符写法[a-z]</p>
+<h4 id="边界符-（表示位置，开头和结尾，必须用什么开头，用什么结尾）"><a href="#边界符-（表示位置，开头和结尾，必须用什么开头，用什么结尾）" class="headerlink" title="边界符  （表示位置，开头和结尾，必须用什么开头，用什么结尾）"></a>边界符  （表示位置，开头和结尾，必须用什么开头，用什么结尾）</h4><p>用来提示字符所处的位置<br>^        表示匹配行首的文本（以谁开始）     &#x2F;^前端&#x2F;<br>$        表示匹配结尾的文本（以谁结尾）    &#x2F;前端$&#x2F;<br>如果^ 和 $  一起使用则是精确定位           &#x2F;^前端$&#x2F;</p>
+<h4 id="量词-表示重复次数"><a href="#量词-表示重复次数" class="headerlink" title="量词    (表示重复次数)"></a>量词    (表示重复次数)</h4><p>设定某个模式出现的次数</p>
+<p>(*)            重复0次或者更多次              &#x2F;a *&#x2F;<br>(+)            重复1次或者更多次              &#x2F;a +&#x2F;<br>？             重复0次或者1次                   &#x2F;^a ?$&#x2F;<br>{n}           重复n次                                 &#x2F;^a {次数}$&#x2F;<br>{n,}          重复n次或更多次                  &#x2F;^a {次数，}$&#x2F;<br>{n,m}       重复n到m次                          &#x2F;^a {次数，}$&#x2F;<br>注意：符号两边千万不要出现空格</p>
+<h4 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h4><p><strong>[]匹配字符集合</strong><br>后面是字符串只要包含abc中任意一个字符，都返回true</p>
+<p>1.在[] 里面加  -   连字符<br>表示一个范围<br>[a-z]       表示a-z取一个<br>[1-9]       表示大小写都可以取一个<br>[a-zA-Z]    表示1-9取一个</p>
+<p>2.在[] 里面加  ^  取反符<br>[ ^1-9]       匹配除去1-9以外的字符</p>
+<p>3 . 匹配   除换行符   以外的任何单个字符</p>
+<p>4 .预定义：指的是某些常见模式的简写方式<br>\d       相当于[0-9]<br>\D      相当于[ ^ 0-9 ]<br>\w      相当于[A-Za-z0-9_]         匹配任意字母，数字，下划线_<br>\W      相当于[ ^A-Za-z0-9_]    匹配    除任意字母，数字，下划线     以外的字符<br>\s      相当于[\t\r\n\v\f]            匹配空格 （换行符、制表符，空格符等）<br>\S      相当于[ ^\t\r\n\v\f]         匹配非空格 （换行符、制表符，空格符等）   的字符	</p>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><p>&#x2F;表达式&#x2F;修饰符<br>i     正则匹配时，字母不区分大小写        ignore<br>g     匹配所有满足正则表达式的效果       global</p>
+<p>replace    替换符<br><strong>字符串.replace(&#x2F;正则表达式&#x2F;,’替换文本’)</strong></p>
+<h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><h3 id="回流与重绘"><a href="#回流与重绘" class="headerlink" title="回流与重绘"></a>回流与重绘</h3><p>html进行结构排版  生成DOM树<br>css进行样式排版  生成样式规则<br>根据DOM树和样式规则生成渲染树<br>回流：根据渲染树，得到节点的位置大小<br>重绘：根据计算和获取的信息对页面进行绘制<br>最后显示在页面</p>
+<h3 id="排他思想"><a href="#排他思想" class="headerlink" title="排他思想"></a>排他思想</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>4<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span>5<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> btn = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;button&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>;i &lt; btn.<span class="property">length</span>;i++) &#123;</span></span><br><span class="line"><span class="language-javascript">        btn[i].<span class="title function_">addEventListener</span>(<span class="string">&#x27;click&#x27;</span>,<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>;j &lt; btn.<span class="property">length</span>;j++ )&#123;</span></span><br><span class="line"><span class="language-javascript">                btn[j].<span class="property">className</span> = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            btn[i].<span class="property">classList</span>.<span class="title function_">add</span>(<span class="string">&#x27;pink&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    &#125; </span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="window-BOM-包括"><a href="#window-BOM-包括" class="headerlink" title="window(BOM)包括"></a>window(BOM)包括</h3><p>navigator对象<br>location对象<br>histroy对象<br>document对象<br>screen对象</p>
+<h3 id="js运行机制"><a href="#js运行机制" class="headerlink" title="js运行机制"></a>js运行机制</h3><p>1）所有的同步任务都在主线程上执行，行成一个执行栈。<br>2）除了主线程之外，还存在一个任务列队，只要异步任务有了运行结果，就在任务列队中植入一个时间标记。<br>3）主线程完成所有任务(执行栈清空），就会读取任务列队，先执行微任务队列在执行宏任务队列。<br>4）重复上面三步。<br>只要主线程空了，就会读取任务列队，这就是js的运行机制，也被称为 event loop（事件循环）</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/star/about" rel="external nofollow noreferrer">冷杨威</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://leng-yangwei.gitee.io/star/star/2023/07207.html">https://leng-yangwei.gitee.io/star/star/2023/07207.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/star/about" target="_blank">冷杨威</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
+                                    <span class="chip bg-color">JavaScript进阶</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/star/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/star/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/star/2023/072053.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/6.jpg" class="responsive-img" alt="Vue配置项">
+                        
+                        <span class="card-title">Vue配置项</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue配置项（实例属性）这篇总结主要介绍Vue配置项
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/Vue/" class="post-category">
+                                    Vue
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/star/2023/07205896.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/19.jpg" class="responsive-img" alt="WebRTC">
+                        
+                        <span class="card-title">WebRTC</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            这里有东西被加密了，需要输入密码查看哦。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/Web%E5%89%8D%E7%AB%AF%E6%89%A9%E5%B1%95/" class="post-category">
+                                    Web前端扩展
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/Web%E5%89%8D%E7%AB%AF%E6%89%A9%E5%B1%95/">
+                        <span class="chip bg-color">Web前端扩展</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 星星<br />'
+            + '文章作者: 冷杨威<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/star/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/star/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/star/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <!-- <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/star/about" target="_blank">冷杨威</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">43.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <br>
+
+            运行天数提醒.
+             -->
+<!-- //             <br> -->
+<!-- //             
+//         </div>
+//         <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:428811986@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=428811986" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 428811986" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+//     </div> -->
+<!-- // </footer> -->
+
+<!-- <div class="progress-bar"></div> --> -->
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/star/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/star/libs/materialize/materialize.min.js"></script>
+    <script src="/star/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/star/libs/aos/aos.js"></script>
+    <script src="/star/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/star/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/star/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/star/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/star/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/star/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/star/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/star/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/star/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
