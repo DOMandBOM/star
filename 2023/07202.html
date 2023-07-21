@@ -280,7 +280,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-21
                 </div>
                 
 
@@ -329,17 +329,42 @@
 <h4 id="4-通配符选择器"><a href="#4-通配符选择器" class="headerlink" title="4.通配符选择器"></a>4.通配符选择器</h4><p><code>* &#123;css属性&#125;</code><br>特点：<strong>找到页面上所有标签，设置样式</strong></p>
 <h3 id="选择器的进阶"><a href="#选择器的进阶" class="headerlink" title="选择器的进阶"></a>选择器的进阶</h3><p><strong>复合选择器</strong><br><code>1.后代选择器</code>：选择器1 选择器2 { css属性 }<br><strong>作用</strong>：寻找所有的后代，包括孙子<br><code>2.子代选择器</code>：选择器1&gt;选择器2{css属性}<br><strong>作用</strong>：仅仅只寻找子代，不会找到孙子<br><code>3.并集选择器</code>：选择器1，选择器2 {css属性}  中间逗号分隔<br><strong>作用</strong>：选中选择器1和选择器2选中的标签，设置样式<br><code>4.交集选择器</code>：选择器1选择器2 {css选择器}<br><strong>作用</strong>：找到页面一个标签内同时拥有选择器1和选择器2的标签，<br><code>&lt;p class=&#39;red&#39;&gt;小哥哥&lt;/p&gt;</code>       p.red {css属性}<br><strong>注意</strong>：交集选择器中如果有标签选择器，标签选择器必须写在最前面<br><code>5. hover伪类选择器</code>：选择器:hover{css属性}<br>在鼠标悬停在元素上时触发<br><code>6.emmet语法</code> ：内部文本    ul&gt;li{我是li的内容}，能够快速生成结构，需要的自己查一下文档。</p>
 <h3 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h3><p>1.<code>父盒子 子盒子:first-child &#123;&#125;</code><br>2.<code>父盒子 子盒子:last-child &#123;&#125;</code><br>3.<code>父盒子 子盒子:nth-child(n) &#123;&#125;</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">偶数  2n  even</span><br><span class="line">奇数 2n-1 odd</span><br><span class="line">前5个  -n+5</span><br><span class="line">后五个 n+5</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">偶数  2n  even
+奇数 2n-1 odd
+前5个  -n+5
+后五个 n+5</code></pre>
 
 <p>4.<code>父盒子 子盒子:nth-last-child(n) &#123;&#125;</code><br>5.<code>父盒子 子盒子:nth-of-type(n) &#123;&#125;</code><br><strong>区别：</strong><br>:nth-child → 直接在所有孩子中数个数<br>:nth-of-type → 先通过该 类型 找到符合的一堆子元素，然后在这一堆子元素中数个数</p>
 <h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>伪元素：通过css模拟出来的html标签<br>::before   ::after<br><strong>注意：</strong><br>1.必须设置content属性才能生效<br>2.伪元素默认是行内元素<br>3.只有双标签才可以使用伪元素</p>
-<h2 id="三-字体和文本样式"><a href="#三-字体和文本样式" class="headerlink" title="三.字体和文本样式"></a>三.字体和文本样式</h2><h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">font-size        字体大小</span><br><span class="line">font-weight      文本粗细    400为正常</span><br><span class="line">font-family      文本字体</span><br><span class="line">font-style       文本风格    normal  正常    italic  斜体</span><br><span class="line">font连写方式    font:文本风格   文本粗细   字体大小/行高   字体</span><br><span class="line">注意：1.必须保留font-size和font-family属性，否则font属性不起作用</span><br><span class="line">	 2.要把单独的样式写在连写的下面，不然会被覆盖</span><br></pre></td></tr></table></figure>
+<h2 id="三-字体和文本样式"><a href="#三-字体和文本样式" class="headerlink" title="三.字体和文本样式"></a>三.字体和文本样式</h2><h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><pre class="language-none"><code class="language-none">font-size        字体大小
+font-weight      文本粗细    400为正常
+font-family      文本字体
+font-style       文本风格    normal  正常    italic  斜体
+font连写方式    font:文本风格   文本粗细   字体大小&#x2F;行高   字体
+注意：1.必须保留font-size和font-family属性，否则font属性不起作用
+	    2.要把单独的样式写在连写的下面，不然会被覆盖</code></pre>
 
-<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">color  文字颜色</span><br><span class="line">text-align  文本水平居中 只能给大盒子使用</span><br><span class="line">text-decoration 下划线样式   </span><br><span class="line">            1.none  默认，用于a标签的取消下划线</span><br><span class="line">			2.underline  下划线</span><br><span class="line">text-indent属性  首行缩进      单位em</span><br><span class="line">line-height  行高</span><br></pre></td></tr></table></figure>
+<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><pre class="language-none"><code class="language-none">color  文字颜色
+text-align  文本水平居中 只能给大盒子使用
+text-decoration 下划线样式   
+      1.none  默认，用于a标签的取消下划线
+			2.underline  下划线
+text-indent属性  首行缩进      单位em
+line-height  行高</code></pre>
 
 
 
-<h2 id="四-背景属性"><a href="#四-背景属性" class="headerlink" title="四.背景属性"></a>四.背景属性</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">背景颜色  background-color</span><br><span class="line">背景图片  background-img:url()</span><br><span class="line">			盒子比图片大，会出现平铺的效果</span><br><span class="line">背景平铺  background-repeat</span><br><span class="line">			1.no-repeat  不平铺</span><br><span class="line">			2.repeat-x  水平方向平铺</span><br><span class="line">			3.repeat-y  垂直方向平铺</span><br><span class="line">背景位置   background-position:水平方向  垂直方向</span><br><span class="line">			向右走为正值</span><br><span class="line">			向下走为正值</span><br><span class="line">背景属性的复合写法：background:color url() no-repeat position</span><br></pre></td></tr></table></figure>
+<h2 id="四-背景属性"><a href="#四-背景属性" class="headerlink" title="四.背景属性"></a>四.背景属性</h2><pre class="language-none"><code class="language-none">背景颜色  background-color
+背景图片  background-img:url()
+			盒子比图片大，会出现平铺的效果
+背景平铺  background-repeat
+			1.no-repeat  不平铺
+			2.repeat-x  水平方向平铺
+			3.repeat-y  垂直方向平铺
+背景位置   background-position:水平方向  垂直方向
+			向右走为正值
+			向下走为正值
+背景属性的复合写法：background:color url() no-repeat position</code></pre>
 
 <h2 id="五-元素的显示模式"><a href="#五-元素的显示模式" class="headerlink" title="五.元素的显示模式"></a>五.元素的显示模式</h2><h3 id="1-块级元素"><a href="#1-块级元素" class="headerlink" title="1.块级元素"></a>1.块级元素</h3><p><strong>特点：</strong><br>1.独占一行<br>2.如果不设置宽高，那么他的宽度由父元素决定，高度由内容撑开<br>3.可以设置宽高<br><strong>如何转换？</strong>转换块级元素   display:block;<br><strong>哪些是块级元素：</strong>div,p h系列，列表， 表格，form…</p>
 <h3 id="2-行内元素"><a href="#2-行内元素" class="headerlink" title="2.行内元素"></a>2.行内元素</h3><p><strong>特点：</strong><br>1.不独占一行,可放多个<br>2.不能设置宽高<br>3.宽高由内容决定<br><strong>如何转换？</strong>转换为行内块元素  display:inline;<br><strong>哪些是行内元素</strong>：a,span,b,i,u…..</p>
@@ -356,16 +381,31 @@
 <h2 id="九浮动"><a href="#九浮动" class="headerlink" title="九浮动"></a>九浮动</h2><p><strong>浮动的作用：</strong>1.图文环绕 ，2.网页布局<br><strong>语法：</strong>float:left&#x2F;right;<br><strong>特点：</strong><br>1.浮动元素会脱标，在标准流中不占位置<br>2.浮动元素比标准流高出半个级别，可以覆盖标准流中的元素<br>3.浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动<br>4.浮动元素有特殊的显示效果：① 一行可以显示多个 ② 可以设置宽高</p>
 <p><strong>注意:浮动的元素不能通过text-align:center或者margin:0 auto</strong></p>
 <h3 id="如何清除浮动？"><a href="#如何清除浮动？" class="headerlink" title="如何清除浮动？"></a>如何清除浮动？</h3><p><strong>1.单伪元素清除浮动</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">clear</span>: both;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
 <p><strong>2.双伪元素清除法</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    <span class="attribute">display</span>: table;</span><br><span class="line"> &#125; </span><br><span class="line"> <span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">     <span class="attribute">clear</span>: both;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::before,
+.clearfix::after</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span> 
+ <span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
+     <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+ <span class="token punctuation">&#125;</span></code></pre>
 
 <p><strong>3.给父盒子设置一个高</strong><br><strong>4.给父元素设置overflow:hidden;</strong><br><strong>5.额外标签法</strong><br>5.1：在父元素内容的最后添加一个块级元素<br>5.2：给添加的块级元素设置 clear:both</p>
 <h2 id="十-定位"><a href="#十-定位" class="headerlink" title="十.定位"></a>十.定位</h2><p>定位场景：1.盒子层叠，2.固定盒子位置</p>
 <h3 id="第一步：设置position"><a href="#第一步：设置position" class="headerlink" title="第一步：设置position"></a>第一步：设置position</h3><p><strong>relative  相对定位</strong>：相对于自己之前的位置移动<br>特点：1.占位置，未脱标。2.配合边偏移使用。3.子绝父相</p>
 <p><strong>absolute  绝对定位</strong>：默认浏览器可视区进行移动<br>如果其祖先元素有定位的属性，就相对于最近的祖先定位元素来移动，祖先定位可以是（绝对，相对，固定）<br>特点：1.不占位置，脱标。2.配合边偏移使用。3.子绝父相<br><strong>水平垂直居中</strong>：</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">left</span>:<span class="number">50%</span> ;</span><br><span class="line"><span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line"><span class="attribute">transform</span>:<span class="built_in">translate</span>(-<span class="number">50%</span>,-<span class="number">50%</span>);</span><br></pre></td></tr></table></figure>
+<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">left</span><span class="token punctuation">:</span>50% <span class="token punctuation">;</span>
+<span class="token property">top</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span>
+<span class="token property">transform</span><span class="token punctuation">:</span><span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 <p><strong>fixed 固定定位</strong>：相对于浏览器可视区进行移动<br>特点：1.不占位置，脱标。2.配合边偏移使用。3.让盒子固定在屏幕中的某个位置</p>
 <p><strong>z-index</strong>：z-index：1；数值越大，越在上面。要结合定位使用，不能单独使用</p>
@@ -374,19 +414,31 @@
 <h3 id="2-cursor-鼠标光标"><a href="#2-cursor-鼠标光标" class="headerlink" title="2.cursor  鼠标光标"></a>2.cursor  鼠标光标</h3><p>这个自己查文档去</p>
 <h3 id="3-圆角边框"><a href="#3-圆角边框" class="headerlink" title="3.圆角边框"></a>3.圆角边框</h3><p>1.border-radius:10px;  数值越大，就越圆<br>2.圆形   50%<br>3.胶囊按钮  设置盒子高度的一半</p>
 <h3 id="4-overflow"><a href="#4-overflow" class="headerlink" title="4.overflow"></a>4.overflow</h3><p>处理溢出的部分</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hidden  隐藏</span><br><span class="line">visible  默认值  溢出的部分显示</span><br><span class="line">scroll  将溢出的部分设置为滚动条，不管内容是否溢出，都会出现</span><br><span class="line">auto  根据内容多少来决定，如果内容溢出才触发滚动条</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">hidden  隐藏
+visible  默认值  溢出的部分显示
+scroll  将溢出的部分设置为滚动条，不管内容是否溢出，都会出现
+auto  根据内容多少来决定，如果内容溢出才触发滚动条</code></pre>
 
 <h3 id="5-显示与隐藏"><a href="#5-显示与隐藏" class="headerlink" title="5.显示与隐藏"></a>5.显示与隐藏</h3><p><strong>display属性</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">block 显示</span><br><span class="line">none   隐藏</span><br><span class="line">注意：隐藏以后不占位置</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">block 显示
+none   隐藏
+注意：隐藏以后不占位置</code></pre>
 
 <p><strong>visibility属性</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hidden  隐藏</span><br><span class="line">visible 显示</span><br><span class="line">占位置</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">hidden  隐藏
+visible 显示
+占位置</code></pre>
 
 <p><strong>opacity元素透明度</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">opacity：0.5；</span><br><span class="line">属性值在0-1之间</span><br><span class="line">注意：opacity会让元素整体透明，包括里面的内容			</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">opacity：0.5；
+属性值在0-1之间
+注意：opacity会让元素整体透明，包括里面的内容			</code></pre>
 
 <p><strong>transparent  透明度</strong></p>
-<h2 id="十二-链接伪类"><a href="#十二-链接伪类" class="headerlink" title="十二.链接伪类"></a>十二.链接伪类</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a:link a链接未访问过的状态</span><br><span class="line">a:visited  a链接访问以后的状态</span><br><span class="line">a:active  选中鼠标按下</span><br><span class="line">a:hover</span><br></pre></td></tr></table></figure>
+<h2 id="十二-链接伪类"><a href="#十二-链接伪类" class="headerlink" title="十二.链接伪类"></a>十二.链接伪类</h2><pre class="language-none"><code class="language-none">a:link a链接未访问过的状态
+a:visited  a链接访问以后的状态
+a:active  选中鼠标按下
+a:hover</code></pre>
 
 <h2 id="十三-焦点伪类"><a href="#十三-焦点伪类" class="headerlink" title="十三.焦点伪类"></a>十三.焦点伪类</h2><p>input:focus</p>
 <h2 id="十四-精灵图"><a href="#十四-精灵图" class="headerlink" title="十四.精灵图"></a>十四.精灵图</h2><p>1.设置背景图片<br>2.设置背景位置值，负值</p>
