@@ -8,7 +8,10 @@
     <meta name="description" content="this这篇总结主要讲解了this指向与如何修改
 
 
-this指向1234561.普通函数                        指向window2.对象的方法                     该方法所属对象3.构造函数  ">
+this指向1.普通函数                指向window
+2.对象的方法              该方法所属对象
+3.构造函数                实例对象
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -280,14 +283,14 @@ this指向1234561.普通函数                        指向window2.对象的方
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    339
+                    341
                 </div>
                 
 
@@ -320,13 +323,18 @@ this指向1234561.普通函数                        指向window2.对象的方
                 <h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p><code>这篇总结主要讲解了this指向与如何修改</code></p>
 <span id="more"></span>
 
-<h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.普通函数                        指向window</span><br><span class="line">2.对象的方法                     该方法所属对象</span><br><span class="line">3.构造函数                         实例对象</span><br><span class="line">4.事件绑定函数                  绑定事件的对象</span><br><span class="line">5.定时器函数                      指向window</span><br><span class="line">6.立即执行函数                  指向window</span><br></pre></td></tr></table></figure>
+<h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h4><pre class="language-none"><code class="language-none">1.普通函数                指向window
+2.对象的方法              该方法所属对象
+3.构造函数                实例对象
+4.事件绑定函数            绑定事件的对象
+5.定时器函数              指向window
+6.立即执行函数            指向window</code></pre>
 
 <h4 id="函数上下文"><a href="#函数上下文" class="headerlink" title="函数上下文"></a>函数上下文</h4><p>局部变量+this指向<br><code>默认情况下，函数内部的this是由调用决定的。无法修改</code><br><strong>解决办法</strong>：<code>函数上下文进行修改</code></p>
 <p><strong>call</strong><br>语法：<code>函数名.call(this指向谁,实参1，实参2......)</code><br>应用场景：万能数据类型检测</p>
 <p>1.typeof 数据 : 有两种数据类型无法检测<br>null和数组无法检测,结果都是 ‘object’<br>2.解决方案:万能数据类型检测<br>Object.prototype.toString.call(数据)</p>
 <p>数组原型的toString是转字符串的<br>Object原型的toString是检测数据类型的</p>
-<p><strong>apply</strong><br>        函数名.apply(this指向谁, 数组或伪数组 )<br>            apply会自动帮你遍历数组，然后按照顺序逐一传参<br>        函数名.apply(this指向谁, [实参1，实参2…..])<br><strong>bind</strong><br><strong>语法：</strong><code>函数名.bind(this指向谁)</code><br>bind不会立即执行函数,而是返回一个修改this之后的新函数<br><strong>场景：</strong>一般用于修改不需要立即执行的函数，例如：定时器，事件处理函数</p>
+<p><strong>apply</strong><br>函数名.apply(this指向谁, 数组或伪数组 )<br>apply会自动帮你遍历数组，然后按照顺序逐一传参<br>函数名.apply(this指向谁, [实参1，实参2…..])<br><strong>bind</strong><br><strong>语法：</strong><code>函数名.bind(this指向谁)</code><br>bind不会立即执行函数,而是返回一个修改this之后的新函数<br><strong>场景：</strong>一般用于修改不需要立即执行的函数，例如：定时器，事件处理函数</p>
 
                 
             </div>
@@ -707,7 +715,7 @@ this指向1234561.普通函数                        指向window2.对象的方
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.6k</span>
+                        class="white-color">43k</span>
             
             
             

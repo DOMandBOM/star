@@ -9,7 +9,10 @@
 
 
 1.父传子      Props语法：
-1234/*(1)传：父传	&amp;lt;子组件 :属性名=&amp;quot;属性值&amp;quot; &amp;gt;&amp;lt;/子组件&amp;gt;(2)收：子收props : &amp;">
+/*(1)传：父传
+	&amp;lt;子组件 :属性名=&#34;属性值&#34; &gt;&amp;lt;/子组件&gt;
+(2)收：子收
+props : &amp;#123;  属性名: 数据类型 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -281,14 +284,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-13
+                    2023-07-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1k
                 </div>
                 
 
@@ -322,58 +325,151 @@
 <span id="more"></span>
 
 <h4 id="1-父传子-Props"><a href="#1-父传子-Props" class="headerlink" title="1.父传子      Props"></a>1.父传子      Props</h4><p><strong>语法</strong>：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*(1)传：父传</span></span><br><span class="line"><span class="comment">	&lt;子组件 :属性名=&quot;属性值&quot; &gt;&lt;/子组件&gt;</span></span><br><span class="line"><span class="comment">(2)收：子收</span></span><br><span class="line"><span class="comment">props : &#123;  属性名: 数据类型 &#125;*/</span></span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*(1)传：父传
+	&lt;子组件 :属性名="属性值" >&lt;/子组件>
+(2)收：子收
+props : &#123;  属性名: 数据类型 &#125;*/</span></code></pre>
 
 <p><strong>单向数据流</strong><br>概念：<code> 父组件传递给子组件的数据，子组件只能使用，不能修改</code><br>原理： <code>值类型赋值的时候拷贝的是数据，如果修改拷贝后的数据，对原数据没有影响，就会导致组件数据不统一。 如果是引用类型，由于拷贝的是地址，修改拷贝后的数据会影响原数据。</code></p>
 <h4 id="2-子传父-自定义事件配合-emit"><a href="#2-子传父-自定义事件配合-emit" class="headerlink" title="2.子传父    自定义事件配合$emit"></a>2.子传父    自定义事件配合$emit</h4><p>1.语法</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*1.传: 子传</span></span><br><span class="line"><span class="comment">	this.$emit( &#x27;自定义事件名&#x27; , 事件对象 )</span></span><br><span class="line"><span class="comment">2.收： 父收</span></span><br><span class="line"><span class="comment">	&lt;子组件 @自定义事件=&quot;事件方法&quot;&gt;&lt;/子组件&gt;*/</span></span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*1.传: 子传
+	this.$emit( '自定义事件名' , 事件对象 )
+2.收： 父收
+	&lt;子组件 @自定义事件="事件方法">&lt;/子组件>*/</span></code></pre>
 
 <h4 id="3-Vuex"><a href="#3-Vuex" class="headerlink" title="3.Vuex "></a>3.<code>Vuex </code></h4><p>是什么？一种用于状态管理的官方库</p>
 <p><strong>场景：</strong>1.非父子关系组件传值，2.数据在多个组件中使用</p>
 <p><strong><code>vuex</code>特点</strong><br>a. 响应式 ：  <code> vuex</code>数据变化了，视图会自动更新<br>b. 所有组件共享数据</p>
 <h5 id="vuex语法"><a href="#vuex语法" class="headerlink" title="vuex语法"></a>vuex语法</h5><p><code>state</code><br>作用：负责存储数据<br>语法:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vuex中</span></span><br><span class="line">state : &#123; 属性名:属性值 &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件中</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>.属性名</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// vuex中</span>
+<span class="token literal-property property">state</span> <span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">属性名</span><span class="token operator">:</span>属性值 <span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 组件中</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>属性名</code></pre>
 
 <p><code>getters</code><br>作用： 相当于state计算属性	<br>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vuex中</span></span><br><span class="line">getters : &#123;</span><br><span class="line">    属性名(state)&#123;</span><br><span class="line">       <span class="keyword">return</span> 属性值</span><br><span class="line">   &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//组件中</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">getters</span>.属性名</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// vuex中</span>
+<span class="token literal-property property">getters</span> <span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">属性名</span><span class="token punctuation">(</span><span class="token parameter">state</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+       <span class="token keyword">return</span> 属性值
+   <span class="token punctuation">&#125;</span> 
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//组件中</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>属性名</code></pre>
 
 <p><code>mutations</code>	<br>作用：修改state数据，mutations是修改state数据的唯一方式<br>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vuex中</span></span><br><span class="line"><span class="attr">mutations</span>:&#123;</span><br><span class="line">     mutation名(state,payload)&#123;</span><br><span class="line">           state.属性名 = payload</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 组件中</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27;mutation名&#x27;</span> , payload )</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//vuex中</span>
+<span class="token literal-property property">mutations</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+     <span class="token function">mutation名</span><span class="token punctuation">(</span><span class="token parameter">state<span class="token punctuation">,</span>payload</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+           state<span class="token punctuation">.</span>属性名 <span class="token operator">=</span> payload
+     <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 组件中</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'mutation名'</span> <span class="token punctuation">,</span> payload <span class="token punctuation">)</span></code></pre>
 
 <p><code>actions</code><br>作用：异步操作更新state<br>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//(1)组件 提交dispatch更新actions</span></span><br><span class="line"><span class="comment">//(2)actions：异步操作	</span></span><br><span class="line"><span class="attr">actions</span>:&#123;</span><br><span class="line">     action名(context,payload)&#123;</span><br><span class="line">           异步操作</span><br><span class="line">           context.<span class="title function_">commit</span>(<span class="string">&#x27;mutation名&#x27;</span> , 异步操作结果)</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//(3)获取异步操作结果，提交mutations更新</span></span><br><span class="line"><span class="comment">//(4)mutations : 同步更新state数据</span></span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//(1)组件 提交dispatch更新actions</span>
+<span class="token comment">//(2)actions：异步操作	</span>
+<span class="token literal-property property">actions</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+     <span class="token function">action名</span><span class="token punctuation">(</span><span class="token parameter">context<span class="token punctuation">,</span>payload</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+           异步操作
+           context<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">'mutation名'</span> <span class="token punctuation">,</span> 异步操作结果<span class="token punctuation">)</span>
+     <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//(3)获取异步操作结果，提交mutations更新</span>
+<span class="token comment">//(4)mutations : 同步更新state数据</span></code></pre>
 
 <p><code>modules</code><br>作用：<code>模块化组织，让vuex中一个模块的数据提取封装在其他js文件中，同时也减少了命名冲突</code></p>
 <p>语法：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.把相关代码封装到另一个文件</span></span><br><span class="line"><span class="comment">//2.开启命名空间namespaced:true</span></span><br><span class="line"><span class="comment">//3.在真正的vuex中的modules写入该模块</span></span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//1.把相关代码封装到另一个文件</span>
+<span class="token comment">//2.开启命名空间namespaced:true</span>
+<span class="token comment">//3.在真正的vuex中的modules写入该模块</span></code></pre>
 
 <h5 id="vuex原始语法-与-辅助函数语法"><a href="#vuex原始语法-与-辅助函数语法" class="headerlink" title="vuex原始语法 与  辅助函数语法"></a><code>vuex</code>原始语法 与  辅助函数语法</h5><p><strong>全局语法</strong><br><code>原始语法</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>.属性名</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">getters</span>.属性名</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27; mutations名 &#x27;</span>，载荷 )</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">dispatch</span>(<span class="string">&#x27;actions名 &#x27;</span>，载荷 )</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>属性名
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">.</span>属性名
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">' mutations名 '</span>，载荷 <span class="token punctuation">)</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'actions名 '</span>，载荷 <span class="token punctuation">)</span></code></pre>
 
 <p><code>辅助语法</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">自动生成计算属性（computed）</span><br><span class="line">		...mapState([ &#x27; 属性名 &#x27; ])</span><br><span class="line">		...mapGetters([ &#x27; 属性名 &#x27; ])</span><br><span class="line">自动生成方法（methods）</span><br><span class="line">		...mapMutations([&#x27; mutations名 &#x27; ])</span><br><span class="line">		...mapActions([&#x27; actions名 &#x27; ])</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">自动生成计算属性（computed）
+		...mapState([ &#39; 属性名 &#39; ])
+		...mapGetters([ &#39; 属性名 &#39; ])
+自动生成方法（methods）
+		...mapMutations([&#39; mutations名 &#39; ])
+		...mapActions([&#39; actions名 &#39; ])</code></pre>
 
 <p><strong>模块化语法</strong><br><code>原始语法</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="property">state</span>.模块名.属性名</span><br><span class="line"><span class="variable language_">this</span>,$store.<span class="property">getters</span>[ <span class="string">&#x27; 模块名/属性名&#x27;</span>]</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&#x27; 模块名/mutations名&#x27;</span>，载荷)</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">dispatch</span>(<span class="string">&#x27;模块名/actions名&#x27;</span>，载荷)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span>state<span class="token punctuation">.</span>模块名<span class="token punctuation">.</span>属性名
+<span class="token keyword">this</span><span class="token punctuation">,</span>$store<span class="token punctuation">.</span>getters<span class="token punctuation">[</span> <span class="token string">' 模块名/属性名'</span><span class="token punctuation">]</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token string">' 模块名/mutations名'</span>，载荷<span class="token punctuation">)</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'模块名/actions名'</span>，载荷<span class="token punctuation">)</span></code></pre>
 
 <p><code>辅助语法</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">自动生成计算属性（computed）</span><br><span class="line">	    ...mapState(’模块名‘，[ &#x27; 属性名 &#x27; ])</span><br><span class="line">		...mapGetters(’模块名‘，[ &#x27; 属性名 &#x27; ])</span><br><span class="line">自动生成方法（methods）</span><br><span class="line">		...mapMutations(’模块名‘，[&#x27; mutations名 &#x27; ])</span><br><span class="line">		...mapActions(’模块名‘，[&#x27; actions名 &#x27; ])</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">自动生成计算属性（computed）
+	    ...mapState(’模块名‘，[ &#39; 属性名 &#39; ])
+		...mapGetters(’模块名‘，[ &#39; 属性名 &#39; ])
+自动生成方法（methods）
+		...mapMutations(’模块名‘，[&#39; mutations名 &#39; ])
+		...mapActions(’模块名‘，[&#39; actions名 &#39; ])</code></pre>
 
 <p><strong>使用模块化语法，必须开启命名空间：<code>namespaced: true</code></strong></p>
 <h4 id="4-EventBus-全局事件总线-实现任意组件的通信"><a href="#4-EventBus-全局事件总线-实现任意组件的通信" class="headerlink" title="4. EventBus &#x2F; 全局事件总线                  实现任意组件的通信"></a>4. <code>EventBus</code> &#x2F; 全局事件总线                  实现任意组件的通信</h4><p><strong>语法：</strong><br>1.在main.js中挂载$bus</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$bus</span> = <span class="keyword">new</span> <span class="title class_">Vue</span>()</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Vue</span>(&#123;</span><br><span class="line">    <span class="title function_">beforeCreate</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$bus</span> = <span class="variable language_">this</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">//或者</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token function">beforeCreate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>$bus <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
 
 <p>2.在A组件中绑定一个事件，当你点击这个事件时，会触发</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$bus.$emit(&#x27;事件名&#x27;,传的值)</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">this.$bus.$emit(&#39;事件名&#39;,传的值)</code></pre>
 
 <p>3.在B组件中的created&#x2F;mounted中去监听事件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$bus.on(&#x27;事件名&#x27;,数据)</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">this.$bus.on(&#39;事件名&#39;,数据)</code></pre>
 
 <h4 id="如何发布一个订阅模式？"><a href="#如何发布一个订阅模式？" class="headerlink" title="如何发布一个订阅模式？"></a>如何发布一个订阅模式？</h4><p>1.通过 $on 监听&#x2F;订阅一个事件；<br>2.通过 $emit 触发&#x2F;发布一个事件；<br>3.一旦发布就会触发 $on 的回调。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Vue</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">bus</span> = &#123;&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$emit</span> = <span class="keyword">function</span> (<span class="params">eventType, ...rest</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">bus</span>[eventType].<span class="title function_">forEach</span>(<span class="function"><span class="params">callback</span> =&gt;</span> <span class="title function_">callback</span>(...rest))</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Vue</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">$on</span> = <span class="keyword">function</span> (<span class="params">eventType, callback</span>) &#123;</span><br><span class="line">    <span class="comment">// 收集属性对应的方法</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">bus</span>[eventType]) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">bus</span>[eventType].<span class="title function_">push</span>(callback)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">bus</span>[eventType] = [callback]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> $bus = <span class="keyword">new</span> <span class="title class_">Vue</span>()</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>bus <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$emit</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span>
+ <span class="token operator">...</span>rest</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span>
+    <span class="token punctuation">(</span><span class="token parameter">callback</span> <span class="token operator">=></span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token operator">...</span>rest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$on</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span>
+ callback</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 收集属性对应的方法</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>callback<span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> $bus <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 <p><strong><code>ES6</code>写法</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Vue</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">bus</span> = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $emit(eventType, ...rest) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">bus</span>[eventType].<span class="title function_">forEach</span>(<span class="function"><span class="params">callback</span> =&gt;</span> <span class="title function_">callback</span>(...rest))</span><br><span class="line">    &#125;</span><br><span class="line">    $on(eventType, callback)&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">bus</span>[eventType]) &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">bus</span>[eventType].<span class="title function_">push</span>(callback)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="variable language_">this</span>.<span class="property">bus</span>[eventType] = [callback]</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">class</span> <span class="token class-name">Vue</span><span class="token punctuation">&#123;</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bus <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">$emit</span><span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span> <span class="token operator">...</span>rest</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">forEach</span>
+        <span class="token punctuation">(</span><span class="token parameter">callback</span> <span class="token operator">=></span> <span class="token function">callback</span><span class="token punctuation">(</span><span class="token operator">...</span>rest<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token function">$on</span><span class="token punctuation">(</span><span class="token parameter">eventType<span class="token punctuation">,</span> callback</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>bus<span class="token punctuation">[</span>eventType<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>callback<span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+    
+<span class="token punctuation">&#125;</span></code></pre>
 
 <p>除了这些还有传值方式，这边的话自己去查文档，这些在工作中足够使用了</p>
 
@@ -756,7 +852,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.6k</span>
+                        class="white-color">43k</span>
             
             
             

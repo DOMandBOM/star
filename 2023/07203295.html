@@ -281,21 +281,21 @@ master（主分支，项目上线的时候用的）、release（测试分支）�
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -324,21 +324,101 @@ master（主分支，项目上线的时候用的）、release（测试分支）�
 <p>本地有一份代码，如何团队协作开发。</p>
 <p><code>master</code>（主分支，项目上线的时候用的）、<code>release</code>（测试分支）、<code>develop</code>（开发分支，并不是让你直接在这个分支写代码，而是一般基于此分支再开一个自己的功能分支，真正写代码的时候，每个人都在自己的功能分支上面写，写完之后再合并到此 develop 分支）、<code>feature/news</code>（自己的功能分支）。</p>
 <p>1、<code>项目经理</code>在 <code>Gitlab</code> 新建一个仓库。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin 远程仓库地址 <span class="comment"># 添加远程仓库地址</span></span><br><span class="line">git remote -v <span class="comment"># 查看添加的远程仓库地址</span></span><br><span class="line">git add . <span class="comment"># 添加到暂存区</span></span><br><span class="line">git commit -m <span class="string">&#x27;init&#x27;</span> <span class="comment"># 本地提交</span></span><br><span class="line">git push -u origin master <span class="comment"># 第一次加 -u，后续在此分支推送的时候，直接 git push 即可</span></span><br><span class="line"></span><br><span class="line">git checkout -b release <span class="comment"># 创建并切换到 release 测试分支</span></span><br><span class="line">git push -u origin release</span><br><span class="line"></span><br><span class="line">git checkout -b develop <span class="comment"># 创建并切换到 develop 开发分支</span></span><br><span class="line">git push -u origin develop</span><br></pre></td></tr></table></figure>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 初始化仓库</span>
+<span class="token function">git</span> init
+
+<span class="token comment"># 添加远程仓库地址</span>
+<span class="token function">git</span> remote <span class="token function">add</span> origin 远程仓库地址 
+
+<span class="token comment"># 查看添加的远程仓库地址</span>
+<span class="token function">git</span> remote <span class="token parameter variable">-v</span> 
+
+ <span class="token comment"># 添加到暂存区</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+
+ <span class="token comment"># 本地提交</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">'init'</span>
+
+<span class="token comment"># 第一次加 -u，后续在此分支推送的时候，直接 git push 即可</span>
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin master 
+
+<span class="token comment"># 创建并切换到 release 测试分支</span>
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> release 
+
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin release
+
+<span class="token comment"># 创建并切换到 develop 开发分支</span>
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> develop 
+
+<span class="token function">git</span> push <span class="token parameter variable">-u</span> origin develop</code></pre>
 
 <p>2、组员操作。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 你刚到公司，老大会给你 Gitlab 的邮箱和用户名，还有一个仓库地址，你需要克隆下来。</span></span><br><span class="line"><span class="comment"># git config --global user.name 老大给的账号 # 配置一下系统的 Git 用户名</span></span><br><span class="line"><span class="comment"># git config --global user.email 老大给的邮箱 # 配置一下系统的 Git 邮箱</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> 老大给的地址 <span class="comment"># 默认克隆下来的是主分支</span></span><br><span class="line">git checkout release <span class="comment"># 如果本地有 release 就切换到本地的 release，如果本地没有就拉取远端的 release 并切换到 release</span></span><br><span class="line">git checkout develop <span class="comment"># 如果本地有 develop 就切换到本地的 develop，如果本地没有就拉取远端的 develop 并切换到 develop</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 假如老大给你布置了一个任务，开发新闻模块</span></span><br><span class="line">git checkout -b feature/news <span class="comment"># 创建并切换到 feature/news 分支</span></span><br><span class="line"><span class="comment"># 在自己的功能分支写代码，写呀写...</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">&#x27;feat: news 列表&#x27;</span></span><br><span class="line"></span><br><span class="line">git checkout develop <span class="comment"># 保证先处于 develop，因为待会要把自己的功能分支合并到这儿</span></span><br><span class="line"></span><br><span class="line">git pull <span class="comment"># 建议最好先拉取一下 develop 的代码，因为同事可能提交了</span></span><br><span class="line"></span><br><span class="line">git merge feature/news</span><br><span class="line"></span><br><span class="line">git push <span class="comment"># git push -u origin develop</span></span><br></pre></td></tr></table></figure>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 你刚到公司，会给你 Gitlab 的邮箱和用户名，仓库地址，你需要克隆下来。</span>
+
+<span class="token comment"># 配置一下系统的 Git 用户名</span>
+<span class="token comment"># git config --global user.name 老大给的账号 </span>
+
+<span class="token comment"># 配置一下系统的 Git 邮箱</span>
+<span class="token comment"># git config --global user.email 老大给的邮箱 </span>
+
+<span class="token function">git</span> clone 老大给的地址 <span class="token comment"># 默认克隆下来的是主分支</span>
+
+ <span class="token comment"># 如果本地有 release 就切换到本地的 release，</span>
+ <span class="token comment">#如果本地没有就拉取远端的 release 并切换到 release</span>
+<span class="token function">git</span> checkout release
+
+ <span class="token comment"># 如果本地有 develop 就切换到本地的 develop，</span>
+ <span class="token comment">#如果本地没有就拉取远端的 develop 并切换到 develop</span>
+<span class="token function">git</span> checkout develop
+
+<span class="token comment"># 假如老大给你布置了一个任务，开发新闻模块</span>
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> feature/news <span class="token comment"># 创建并切换到 feature/news 分支</span>
+<span class="token comment"># 在自己的功能分支写代码，写呀写...</span>
+<span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-m</span> <span class="token string">'feat: news 列表'</span>
+
+<span class="token comment"># 保证先处于 develop，因为待会要把自己的功能分支合并到这儿</span>
+<span class="token function">git</span> checkout develop 
+
+<span class="token function">git</span> pull <span class="token comment"># 建议最好先拉取一下 develop 的代码，因为同事可能提交了</span>
+
+<span class="token function">git</span> merge feature/news
+
+<span class="token function">git</span> push <span class="token comment"># git push -u origin develop</span></code></pre>
 
 <p>3、怎么测试？怎么打包上线？</p>
 <p>测试：<code>自测（自己认知范围内，到处点一点，保证自己的功能没有问题）</code>、专门的测试人员去测；</p>
 <p>一般会有项目经理（前端老大）做如下操作。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">git checkout develop <span class="comment"># 先处于 develop</span></span><br><span class="line">git pull <span class="comment"># 拉取所有人的代码</span></span><br><span class="line">git checkout release <span class="comment"># 切换到测试分支</span></span><br><span class="line"><span class="comment"># 通知测试人员：代码写好了，可以测试了</span></span><br><span class="line"><span class="comment"># 有的公司，有自动话的测试流程，测试人员有权限直接拉取 release 分支的代码，自动打包，测试人员测试打包后的代码</span></span><br><span class="line"><span class="comment"># 有的公司，没有自动化测试的流程，可能你的老大是这样做的，npm run build 直接打包，把打包后的代码发给测试人员去测试，也可能打包后生成一个地址交给测试人员去测试</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 假如测试人员测出 Bug 了，测试人员会通过专门的工具（禅道）给你提 Bug，开发人员会收到 Bug 通知，修复 Bug，修复流程如下。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 一般基于 release 分支专门再开一个 bug 分支，在此分支解决 Bug，解决完毕之后呢合并到 release，最后把 release 推到远端（如果你有权限的话）；如果没有权限，你就把自己的 Bug 分支推到远端，通知你的老大去合并</span></span><br><span class="line"></span><br><span class="line">git checkout -b hotfix/news <span class="comment"># 开了一个专门的 Bug 分支</span></span><br><span class="line"><span class="comment"># 解 Bug ...</span></span><br><span class="line"><span class="comment"># 假如 release 我没有权限</span></span><br><span class="line"><span class="comment"># git push origin hotfix/news # 推到远端，告知老大已解决</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 假如 release 经过测试也没问题，老大合并到 master</span></span><br><span class="line"></span><br><span class="line">git checkout master</span><br><span class="line">git merge release</span><br><span class="line"></span><br><span class="line">npm run build <span class="comment"># 生成 dist 文件，交给后台人员去部署（一般用的是 Nginx）</span></span><br></pre></td></tr></table></figure>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> checkout develop <span class="token comment"># 先处于 develop</span>
+<span class="token function">git</span> pull <span class="token comment"># 拉取所有人的代码</span>
+<span class="token function">git</span> checkout release <span class="token comment"># 切换到测试分支</span>
+<span class="token comment"># 通知测试人员：代码写好了，可以测试了</span>
+
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> hotfix/news <span class="token comment"># 开了一个专门的 Bug 分支</span>
+<span class="token comment"># 解 Bug ...</span>
+<span class="token comment"># 假如 release 我没有权限</span>
+<span class="token comment"># git push origin hotfix/news # 推到远端，告知老大已解决</span>
+
+<span class="token comment"># 假如 release 经过测试也没问题，老大合并到 master</span>
+
+<span class="token function">git</span> checkout master
+<span class="token function">git</span> merge release
+
+<span class="token comment"># 生成 dist 文件，交给后台人员去部署（一般用的是 Nginx）</span>
+<span class="token function">npm</span> run build</code></pre>
 
 <p>4、自己的代码刚写一半，老大通知我其他分支有一个紧急的需求&#x2F;Bug 要我去处理，应该怎么办呢？</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git stash <span class="comment"># 在自己的功能分支，暂存一下没有写完的代码</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换到其他分支去解 Bug 吧，完事之后再回到曾经的功能分支</span></span><br><span class="line"></span><br><span class="line">git checkout feature/user</span><br><span class="line"></span><br><span class="line">git stash apply <span class="comment"># 应用曾经暂存的代码，接着开发</span></span><br></pre></td></tr></table></figure>
+<pre class="language-bash" data-language="bash"><code class="language-bash">
+<span class="token function">git</span> stash <span class="token comment"># 在自己的功能分支，暂存一下没有写完的代码</span>
+
+<span class="token comment"># 切换到其他分支去解 Bug 吧，完事之后再回到曾经的功能分支</span>
+
+<span class="token function">git</span> checkout feature/user
+
+<span class="token function">git</span> stash apply <span class="token comment"># 应用曾经暂存的代码，接着开发</span></code></pre>
 
 <p>5.自己写好了代码，如何再次与远程仓库建立连接？</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 远程仓库地址 </span><br></pre></td></tr></table></figure>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">add</span> origin 远程仓库地址 </code></pre>
 
 <p>6.报错了该如何处理？<br>报错很正常，有很多种原因会造成报错，你看不到报错信息又该怎么办？<br>复制报错信息到百度，前三篇文章必定解决你的问题<br>如果实在不行，利用科学上网？不会？后面会详细写一篇关于科学上网的文章<br>科学上网也不行？这个时候，你赶紧跟你组长说，别拖了项目进度，到时候拖了，那么你就是背锅侠!!!</p>
 
@@ -721,7 +801,7 @@ master（主分支，项目上线的时候用的）、release（测试分支）�
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.6k</span>
+                        class="white-color">43k</span>
             
             
             

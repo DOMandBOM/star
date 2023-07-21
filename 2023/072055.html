@@ -10,7 +10,7 @@
 
 概念:1.vue-cli :  组件化开发工具，底层基于webpack2.脚手架 :  规范的vue项目目录
 如何创建一个vue?:vue create 项目名称脚手架目录
-12">
+no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -282,14 +282,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-13
+                    2023-07-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    497
+                    501
                 </div>
                 
 
@@ -324,20 +324,56 @@
 
 <p><strong>概念:</strong><br>1.<code>vue-cli </code>:  组件化开发工具，底层基于<code>webpack</code><br>2.脚手架 :  规范的<code>vue</code>项目目录</p>
 <p><code>如何创建一个vue?</code>:<code>vue create 项目名称</code><br><strong>脚手架目录</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">node_modules : 第三方包资源文件</span><br><span class="line">public</span><br><span class="line">	favicon.<span class="property">ico</span> : 网站图标</span><br><span class="line">				index.<span class="property">html</span> : 网站首页</span><br><span class="line">src</span><br><span class="line">	<span class="attr">assets</span>: 静态资源(图片)</span><br><span class="line">	logo.<span class="property">png</span></span><br><span class="line"><span class="attr">components</span>: 组件</span><br><span class="line"><span class="title class_">App</span>.<span class="property">vue</span> :  根组件</span><br><span class="line">main.<span class="property">js</span> :  入口文件</span><br><span class="line">.<span class="property">gitignore</span>:  git忽略文件</span><br><span class="line">babel.<span class="property">config</span>.<span class="property">js</span> :  js版本降级</span><br><span class="line">package.<span class="property">json</span> :  依赖包列表+版本</span><br><span class="line"><span class="variable constant_">README</span>.<span class="property">md</span> : 项目说明文件</span><br><span class="line">package-lock.<span class="property">json</span> : 包下载地址</span><br><span class="line">vue.<span class="property">config</span>.<span class="property">js</span> : 项目webpack配置</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">node_modules : 第三方包资源文件
+public
+	favicon.ico : 网站图标
+		index.html : 网站首页
+src
+	assets: 静态资源(图片)
+	logo.png
+components: 组件
+App.vue :  根组件
+main.js :  入口文件
+.gitignore:  git忽略文件
+babel.config.js :  js版本降级
+package.json :  依赖包列表+版本
+README.md : 项目说明文件
+package-lock.json : 包下载地址
+vue.config.js : 项目webpack配置</code></pre>
 
 <p>​	</p>
 <h4 id="1-组件"><a href="#1-组件" class="headerlink" title="1.组件"></a>1.组件</h4><p>是什么 ?</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（1）HTML :  自定义标签</span><br><span class="line">（2）文件 ：  .vue文件</span><br><span class="line">（3）内存 ： vue实例对象</span><br><span class="line">(4) 页面：  盒子</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">1.HTML :  自定义标签
+2.文件 ：  .vue文件
+3.内存 ： vue实例对象
+4.页面：  盒子</code></pre>
 
 <p><strong>组件作用</strong> : <code>盒子复用</code></p>
 <p><strong>组件三要素</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTML结构:  &lt;template&gt;</span><br><span class="line">js代码:  &lt;script&gt;</span><br><span class="line">css样式:  &lt;style&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">HTML结构:  &lt;template&gt;
+js代码:  &lt;script&gt;
+css样式:  &lt;style&gt;</code></pre>
 
-<h4 id="2-脚手架流程"><a href="#2-脚手架流程" class="headerlink" title="2.脚手架流程"></a>2.脚手架流程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(0)创建项目： vue create 项目名称</span><br><span class="line">(1)关闭eslint ( 代码规范检查)</span><br><span class="line">   LintOnSave:false</span><br><span class="line">(2)删除欢迎页面</span><br><span class="line">   删除 components/HelloWorld.vue</span><br><span class="line">   清空App.vue代码</span><br><span class="line">(3)运行项目： 根目录  npm run serve</span><br><span class="line">(4)掌握vue调试技巧</span><br><span class="line">   数据  dev tools 工具</span><br><span class="line">   方法 debugger</span><br></pre></td></tr></table></figure>
+<h4 id="2-脚手架流程"><a href="#2-脚手架流程" class="headerlink" title="2.脚手架流程"></a>2.脚手架流程</h4><pre class="language-none"><code class="language-none">(0)创建项目： vue create 项目名称
+(1)关闭eslint ( 代码规范检查)
+   LintOnSave:false
+(2)删除欢迎页面
+   删除 components&#x2F;HelloWorld.vue
+   清空App.vue代码
+(3)运行项目： 根目录  npm run serve
+(4)掌握vue调试技巧
+   数据  dev tools 工具
+   方法 debugger</code></pre>
 
 <h4 id="3-组件注册"><a href="#3-组件注册" class="headerlink" title="3.组件注册"></a>3.组件注册</h4><p>局部组件：<strong>在哪里导入，只能在哪里使用</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.导入组件：  import 组件名 from &quot;组件路径&quot;</span><br><span class="line">2. 注册组件:  components : &#123; 组件名 &#125;</span><br><span class="line">3. 使用组件: &lt;子组件&gt;&lt;/子组件&gt;</span><br><span class="line">     全局组件：main.js 导入，任何.vue文件可以用</span><br><span class="line">     1.导入组件 ：  import 组件名 from &quot;组件路径&quot;</span><br><span class="line">     2.注册组件: Vue.component( &#x27;标签名&#x27; , 组件名)</span><br><span class="line">     这行代码底层原理是把组件放入Vue.prototype 中</span><br><span class="line">4. 使用组件: &lt;子组件&gt;&lt;/子组件&gt;</span><br></pre></td></tr></table></figure>
+<pre class="language-none"><code class="language-none">1.导入组件：  import 组件名 from &quot;组件路径&quot;
+2. 注册组件:  components : &#123; 组件名 &#125;
+3. 使用组件: &lt;子组件&gt;&lt;&#x2F;子组件&gt;
+    全局组件：main.js 导入，任何.vue文件可以用
+    1.导入组件 ：  import 组件名 from &quot;组件路径&quot;
+    2.注册组件: Vue.component( &#39;标签名&#39; , 组件名)
+    这行代码底层原理是把组件放入Vue.prototype 中
+4. 使用组件: &lt;子组件&gt;&lt;&#x2F;子组件&gt;</code></pre>
 
 <h4 id="组件css作用域：scoped"><a href="#组件css作用域：scoped" class="headerlink" title="组件css作用域：scoped"></a>组件css作用域：scoped</h4><p>1.<code>scoped</code>作用： 设置子组件css作用域，避免子组件样式被父组件覆盖<br>2.<code>scoped</code>原理： 给子组件添加自定义属性<code>data-v-xxxx </code>, 通过属性选择器增加<code>css</code>权重</p>
 
@@ -720,7 +756,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.6k</span>
+                        class="white-color">43k</span>
             
             
             

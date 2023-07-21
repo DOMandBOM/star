@@ -10,7 +10,9 @@
 
 
 1.引用类型不比较值，只会比较地址
-123[] === []    false[1,2,3] === [1,2,3]   false[1,2,3][0] === [1,2">
+[] === []    false
+[1,2,3] === [1,2,3]   false
+[1,2,3][0] === [1,2,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -282,14 +284,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-10
+                    2023-07-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    353
+                    362
                 </div>
                 
 
@@ -323,13 +325,15 @@
 <span id="more"></span>
 
 
-<p><code>1.引用类型不比较值，只会比较地址</code></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[] === []    <span class="literal">false</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] === [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]   <span class="literal">false</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>][<span class="number">0</span>] === [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>][<span class="number">0</span>]   <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>1.引用类型不比较值，只会比较地址</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>    <span class="token boolean">false</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>   <span class="token boolean">false</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>   <span class="token boolean">true</span></code></pre>
 
-<p><code>2.false == 0 输出true；因为在做判断的时候，两者中有boolean（布尔类型），会把boolean先转化为number（数字类型），false为0，true是1。也就是等价于判断 0 == 0 ，结果为true。</code></p>
-<p><code>3.‘ ’ ==  false 输出为true；js中空字符串与0相等，也就意味着空字符串等等于false。</code></p>
-<p><code>4.‘0’ == false 正确输出为true；这里犯了一个错误认为结果会是false，我想的是空字符串等于false，非空字符串等于true，true和false肯定是不等的啊！但是，可但是.......忽略了一个js规则：string（字符串类型）和number作比较的时候，string会先转化成number。此时字符串0转化为了数字0，即： 0 == 0；结果应该为true。</code></p>
-<p><code>5.Boolean（‘0’） 正确输出为true；string转化成Boolean类型，空字符串为false，别的字符串全是true。</code></p>
+<p>2.false &#x3D;&#x3D; 0 输出true；因为在做判断的时候，两者中有boolean（布尔类型），会把boolean先转化为number（数字类型），false为0，true是1。也就是等价于判断 0 &#x3D;&#x3D; 0 ，结果为true。</p>
+<p>3.‘ ’ &#x3D;&#x3D;  false 输出为true；js中空字符串与0相等，也就意味着空字符串等等于false。</p>
+<p>4.‘0’ &#x3D;&#x3D; false 正确输出为true；这里犯了一个错误认为结果会是false，我想的是空字符串等于false，非空字符串等于true，true和false肯定是不等的啊！但是，可但是…….忽略了一个js规则：string（字符串类型）和number作比较的时候，string会先转化成number。此时字符串0转化为了数字0，即： 0 &#x3D;&#x3D; 0；结果应该为true。</p>
+<p>5.Boolean（‘0’） 正确输出为true；string转化成Boolean类型，空字符串为false，别的字符串全是true。</p>
 <p>总结：<br>1.两者做判断时，若有布尔类型，会先把boolean转换成number，即0 (false) 和 1 (true)；<br>2.字符串string直接转换成Boolean类型时，除了空字符串为false外，其余都是true；<br>3.字符串string和number类型做比较的时候，string会转化成number。</p>
 
                 
@@ -711,7 +715,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.6k</span>
+                        class="white-color">43k</span>
             
             
             
