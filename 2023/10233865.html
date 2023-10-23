@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="交换两个变量的值的几种方法, 星星">
-    <meta name="description" content="JavaScript扩展1--这篇主要是交换两个变量的值的几种方法的总结
-
-交换两个变量的值的几种方法方法1  设置一个中间变量let cup1 = &#34;a&#34;;
-let cup2 = &#34;b&#34;;
-let temp = cup1
-cup1 = c">
+    <meta name="keywords" content="拖拽表单vform3框架, 星星">
+    <meta name="description" content="拖拽表单vform3框架vform3官网
+最近这家公司主要负责了一个动态表单的模块，我以前从未做过，感觉这个vform3框架功能十分强大，因此在这里总结一波
+每个公司要求不一致，可能只使用vform自带的表单，完成拖拽效果。我们公司要求自定">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +19,7 @@ cup1 = c">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>交换两个变量的值的几种方法 | 星星</title>
+    <title>拖拽表单vform3框架 | 星星</title>
     <link rel="icon" type="image/png" href="/starry/favicon.png">
     
 
@@ -226,12 +223,12 @@ cup1 = c">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">交换两个变量的值的几种方法</h1>
+                    <h1 class="description center-align post-title">拖拽表单vform3框架</h1>
                 </div>
             </div>
         </div>
@@ -255,8 +252,8 @@ cup1 = c">
                     
                     <div class="article-tag">
                         
-                            <a href="/starry/tags/web%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">web基础</span>
+                            <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -267,8 +264,8 @@ cup1 = c">
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/starry/categories/JavaScript%E6%89%A9%E5%B1%95/" class="post-category">
-                                JavaScript扩展
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -282,21 +279,21 @@ cup1 = c">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-20
+                    2023-10-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    141
+                    750
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -319,32 +316,29 @@ cup1 = c">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><code>JavaScript扩展1--这篇主要是交换两个变量的值的几种方法的总结</code></p>
-<span id="more"></span>
-<h2 id="交换两个变量的值的几种方法"><a href="#交换两个变量的值的几种方法" class="headerlink" title="交换两个变量的值的几种方法"></a>交换两个变量的值的几种方法</h2><h3 id="方法1-设置一个中间变量"><a href="#方法1-设置一个中间变量" class="headerlink" title="方法1  设置一个中间变量"></a>方法1  设置一个中间变量</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> cup1 <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> cup2 <span class="token operator">=</span> <span class="token string">"b"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> temp <span class="token operator">=</span> cup1
-cup1 <span class="token operator">=</span> cup2
-cup2 <span class="token operator">=</span> temp
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cup1<span class="token punctuation">,</span>cup2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="方法2-数组的解构赋值"><a href="#方法2-数组的解构赋值" class="headerlink" title="方法2   数组的解构赋值"></a>方法2   数组的解构赋值</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> cup1 <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> cup2 <span class="token operator">=</span> <span class="token string">"b"</span><span class="token punctuation">;</span>
-<span class="token punctuation">[</span>cup1<span class="token punctuation">,</span>cup2<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>cup2<span class="token punctuation">,</span>cup1<span class="token punctuation">]</span><span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cup1<span class="token punctuation">,</span>cup2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="方法3-放在一个数组，通过索引交换"><a href="#方法3-放在一个数组，通过索引交换" class="headerlink" title="方法3  放在一个数组，通过索引交换"></a>方法3  放在一个数组，通过索引交换</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> cup1 <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> cup2 <span class="token operator">=</span> <span class="token string">"b"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>cup1<span class="token punctuation">,</span>cup2<span class="token punctuation">]</span>
-cup2 <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-cup1 <span class="token operator">=</span> arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cup1<span class="token punctuation">,</span>cup2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<h3 id="方法4"><a href="#方法4" class="headerlink" title="方法4"></a>方法4</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> cup1 <span class="token operator">=</span> <span class="token string">"a"</span><span class="token punctuation">;</span>
-<span class="token keyword">let</span> cup2 <span class="token operator">=</span> <span class="token string">"b"</span><span class="token punctuation">;</span>
-cup1 <span class="token operator">=</span> <span class="token punctuation">[</span>cup2<span class="token punctuation">,</span>cup2<span class="token operator">=</span>cup1<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>cup1<span class="token punctuation">,</span>cup2<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
+                <h2 id="拖拽表单vform3框架"><a href="#拖拽表单vform3框架" class="headerlink" title="拖拽表单vform3框架"></a>拖拽表单vform3框架</h2><p><a target="_blank" rel="noopener" href="https://www.vform666.com/document3.html">vform3官网</a></p>
+<p>最近这家公司主要负责了一个动态表单的模块，我以前从未做过，感觉这个vform3框架功能十分强大，因此在这里总结一波</p>
+<p>每个公司要求不一致，可能只使用vform自带的表单，完成拖拽效果。我们公司要求自定义组件，完成拖拽效果</p>
+<h3 id="1-拉取代码"><a href="#1-拉取代码" class="headerlink" title="1.拉取代码"></a>1.拉取代码</h3><p>1.<code>git clone &#39;https://gitee.com/vdpadmin/vform3-builds&#39;</code></p>
+<p>2.拉取代码后<code>npm i element-plus</code></p>
+<p>3.再<code>npm i</code>一下</p>
+<p>代码拉取好后就可以开始做拖拽了,不要按照官网的方式引入他的组件，因为这样的话有很多东西都达到不了你想要的效果，而是把他的文件拉入到你的项目中的某个路由组件中，开始书写代码</p>
+<h3 id="2-改变路径"><a href="#2-改变路径" class="headerlink" title="2.改变路径"></a>2.改变路径</h3><p>由于你拉进来的代码路径已经发生改变，因此你需要改变其各个导入路径</p>
+<h3 id="3-配置相关文件"><a href="#3-配置相关文件" class="headerlink" title="3.配置相关文件"></a>3.配置相关文件</h3><p>1.根据vform3文件去配置相关路径，注册相关组件</p>
+<p>2.根据vform3文件中的<code>package.json</code>的包，在你自己的项目中去下载对应的包，在去自己的<code>package.json</code>查看包</p>
+<p>3.根据vform3中的<code>vite.config.js</code>去配置相关配置项</p>
+<p>4.一定要把lib文件夹整个给他拉过去</p>
+<p>这时候项目基本就能跑了</p>
+<h3 id="4-开始配置相关页面"><a href="#4-开始配置相关页面" class="headerlink" title="4.开始配置相关页面"></a>4.开始配置相关页面</h3><p><code>form-designer</code>文件夹表单设计器，主要是作用于表单设计的</p>
+<p>这里主要是要改人家的源码，很多东西都不需要你动，根据需求去改</p>
+<p>1.<code>extension</code>这个文件夹中的<code>extension-loader.js</code>文件，主要是作用于自定义的拖拽组件，需要把你自己封装好的自定义组件文件导入进去</p>
+<p>2.在<code>lang</code>文件中的<code>zh-CN_extension.js</code>，配置的是你自己封装的可拖拽组件名，用于显示页面</p>
+<p>3.同样是在<code>extension</code>文件夹中的<code>samples</code>文件夹中去封装组长所提需求的组件，即自定义组件而非自带的组件</p>
+<p>4.同样是在这个文件中，<code>extension-schema.js</code>,这个文件是规定你的这个组件拖拽的同时，右侧可调节的相关属性，比如说宽高，颜色等</p>
+<p>5.固定模块，即你选择模块，自动生成相对的结构样式,<code>code-generator.js</code></p>
+<h3 id="5-注意"><a href="#5-注意" class="headerlink" title="5.注意"></a>5.注意</h3><p>1.在如果使用的是<code>vue3+vite</code>，在使用<code>vite</code>打包，这时候引入<code>axios</code>不能使用之前的<code>vue</code>脚手架的方法。要把引入改为<code>import axios from &quot;axios/dist/axios&quot;</code></p>
+<p>2.在使用该源码时，他有自己的一些<code>svg</code>图标，可能会与自己项目的<code>svg</code>产生冲突，导致图标失效，只需要把他的图标移入到我们的里面。并在一起即可</p>
+<p>3.在配置vite中，引入的是按需引入的<code>createSvgIconsPlugin</code>方法，老版的方法可能会让你代码报错</p>
 
                 
             </div>
@@ -371,7 +365,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/07204.html">https://leng-yangwei.gitee.io/starry/starry/2023/07204.html</a>
+                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/10233865.html">https://leng-yangwei.gitee.io/starry/starry/2023/10233865.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -409,8 +403,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     
                         <div class="article-tag">
                             
-                                <a href="/starry/tags/web%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">web基础</span>
+                                <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -456,46 +450,48 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/starry/2023/07215199.html">
+                <a href="/starry/2023/10233865.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/16.jpg" class="responsive-img" alt="微信小程序">
+                        <img src="/starry/medias/featureimages/3.jpg" class="responsive-img" alt="拖拽表单vform3框架">
                         
-                        <span class="card-title">微信小程序</span>
+                        <span class="card-title">拖拽表单vform3框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这里有东西被加密了，需要输入密码查看哦。
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/starry/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" class="post-category">
-                                    微信小程序
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/starry/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
-                        <span class="chip bg-color">微信小程序</span>
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -509,31 +505,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/starry/2023/072043.html">
+                <a href="/starry/2023/1023456.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/8.jpg" class="responsive-img" alt="构造函数&amp;数据常用函数">
+                        <img src="/starry/medias/featureimages/12.jpg" class="responsive-img" alt="关于数组塌陷问题">
                         
-                        <span class="card-title">构造函数&amp;数据常用函数</span>
+                        <span class="card-title">关于数组塌陷问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            构造函数&amp;数据常用函数这篇总结主要讲解了构造函数&amp;数据常用函数，讲解了对象与数组的多种方法
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-23
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/starry/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    JavaScript高级
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -543,8 +539,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/starry/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">JavaScript高级</span>
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
