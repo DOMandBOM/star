@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="实现el-date-picker组件只允许选择当前与往后的时间如何实现, 星星">
-    <meta name="description" content="实现el-date-picker组件只允许选择当前与往后的时间如何实现本文主要是讲述如何实现关于element-ui框架中DatePicker,DateTimePicker组件只允许选择当前与往后的时间如何实现
-一.实现DatePicker">
+    <meta name="keywords" content="input上传视频文件，同一个文件二次上传无效, 星星">
+    <meta name="description" content="input上传视频文件，同一个文件二次上传无效&amp;lt;el-form-item label=&#34;视频&#34; prop=&#34;url&#34;&gt;
+    &amp;lt;input type=&#34;file&#34; id=&#34;inputFileVideo&#34; ref=&#34;upload">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>实现el-date-picker组件只允许选择当前与往后的时间如何实现 | 星星</title>
+    <title>input上传视频文件，同一个文件二次上传无效 | 星星</title>
     <link rel="icon" type="image/png" href="/starry/favicon.png">
     
 
@@ -222,12 +222,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">实现el-date-picker组件只允许选择当前与往后的时间如何实现</h1>
+                    <h1 class="description center-align post-title">input上传视频文件，同一个文件二次上传无效</h1>
                 </div>
             </div>
         </div>
@@ -278,21 +278,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-25
+                    2023-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    757
+                    442
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -315,104 +315,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="实现el-date-picker组件只允许选择当前与往后的时间如何实现"><a href="#实现el-date-picker组件只允许选择当前与往后的时间如何实现" class="headerlink" title="实现el-date-picker组件只允许选择当前与往后的时间如何实现"></a>实现el-date-picker组件只允许选择当前与往后的时间如何实现</h2><p>本文主要是讲述如何实现关于element-ui框架中<code>DatePicker</code>,<code>DateTimePicker</code>组件只允许选择当前与往后的时间如何实现</p>
-<h3 id="一-实现DatePicker只允许选择当前与往后的时间如何实现"><a href="#一-实现DatePicker只允许选择当前与往后的时间如何实现" class="headerlink" title="一.实现DatePicker只允许选择当前与往后的时间如何实现"></a>一.实现DatePicker只允许选择当前与往后的时间如何实现</h3><p>第一步：绑定时间，设置<code>datatime</code>类型（单选日期类型），设置格式（format），绑定<code>picker-options</code>,设置change事件</p>
-<pre class="language-vue" data-language="vue"><code class="language-vue"> &lt;el-date-picker
-   style&#x3D;&quot;width: 220px&quot;
-   v-model&#x3D;&quot;info.beginTime&quot;
-   type&#x3D;&quot;datetime&quot;
-   placeholder&#x3D;&quot;开始时间&quot;
-   format&#x3D;&quot;yyyy-MM-dd HH:mm&quot;
-   :picker-options&#x3D;&quot;pickerOption&quot; 
-   @change&#x3D;&quot;beginDateChange&quot;
-   &gt;
-&lt;&#x2F;el-date-picker&gt;</code></pre>
-
-<p>第二步：定义pickerOption，限制日期</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-         <span class="token literal-property property">pickerOption</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-             <span class="token function-variable function">disabledDate</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-                 <span class="token keyword">return</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">></span> time<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-             <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-         <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 当能选择的日期大于当前时间戳时，即返回false，反之返回true，即禁用</span></code></pre>
-
-<p>第三步：限制时，分</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
-    <span class="token function">beginDateChange</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>data<span class="token punctuation">)</span> <span class="token keyword">return</span>
-        <span class="token keyword">let</span> startAt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>startAt <span class="token operator">&lt;</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>info<span class="token punctuation">.</span>beginTime <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token comment">// 判断当前的事件戳是否大于选择的时间戳，如果是则设置成当前的事件戳,不过我建议往后面推10分钟,主要看你的需求，同时要封装一个时间函数去转换，或者使用第三方包</span>
-<span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">60</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">*</span><span class="token number">1000</span></code></pre>
+                <h2 id="input上传视频文件，同一个文件二次上传无效"><a href="#input上传视频文件，同一个文件二次上传无效" class="headerlink" title="input上传视频文件，同一个文件二次上传无效"></a>input上传视频文件，同一个文件二次上传无效</h2><pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>视频<span class="token punctuation">"</span></span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>file<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>inputFileVideo<span class="token punctuation">"</span></span> <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upload<span class="token punctuation">"</span></span> <span class="token attr-name">@change</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upAlividChange<span class="token punctuation">"</span></span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">display</span><span class="token punctuation">:</span>none</span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>upAlivid<span class="token punctuation">"</span></span> <span class="token attr-name">:disabled</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawer2edit_upAlivid_disabled<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>!drawer2edit_post.url<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>上传<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-else</span><span class="token punctuation">></span></span>已经上传，可重新上传（修改）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-progress</span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawer2edit_upJindu>0<span class="token punctuation">"</span></span> <span class="token attr-name">:text-inside</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">:stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>20<span class="token punctuation">"</span></span> <span class="token attr-name">:percentage</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drawer2edit_upJindu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-progress</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">></span></span></code></pre>
 
 
 
-<h3 id="二-实现DateTimePicker只允许选择当前与往后的时间如何实现"><a href="#二-实现DateTimePicker只允许选择当前与往后的时间如何实现" class="headerlink" title="二.实现DateTimePicker只允许选择当前与往后的时间如何实现"></a>二.实现DateTimePicker只允许选择当前与往后的时间如何实现</h3><p>第一步：同样时与上方基本一致</p>
-<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;el-date-picker
-                align&#x3D;&quot;right&quot; 
-                @change&#x3D;&quot;dateChange&quot; 
-                v-model&#x3D;&quot;insertData.timeValue&quot;  &#x2F;&#x2F; 这里绑定的是一个数组，之前那个绑定的是一个字符串
-                type&#x3D;&quot;datetimerange&quot;       &#x2F;&#x2F; 多选时间的类型
-                range-separator&#x3D;&quot;至&quot;          &#x2F;&#x2F; 下面3个字段代替了placeholder
-                start-placeholder&#x3D;&quot;开始日期&quot; 
-                end-placeholder&#x3D;&quot;结束日期&quot;
-                :picker-options&#x3D;&quot;pickerOption&quot;
-                format&#x3D;&quot;yyyy-MM-dd HH:mm&quot;&gt;
-&lt;&#x2F;el-date-picker&gt;</code></pre>
-
-<p>第二步：同样限制日期</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-        <span class="token literal-property property">pickerOption</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-            <span class="token function-variable function">disabledDate</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">time</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">return</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">3600</span> <span class="token operator">*</span> <span class="token number">1000</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">></span> time<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p>第三步：封装转换时间函数</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
-    <span class="token function">timeConversion</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">const</span> inputDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-        <span class="token keyword">const</span> year <span class="token operator">=</span> inputDate<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> month <span class="token operator">=</span> inputDate<span class="token punctuation">.</span><span class="token function">getMonth</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 月份从0开始，需要加1</span>
-        <span class="token keyword">const</span> date <span class="token operator">=</span> inputDate<span class="token punctuation">.</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> hours <span class="token operator">=</span> inputDate<span class="token punctuation">.</span><span class="token function">getHours</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> minutes <span class="token operator">=</span> inputDate<span class="token punctuation">.</span><span class="token function">getMinutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> seconds <span class="token operator">=</span> inputDate<span class="token punctuation">.</span><span class="token function">getSeconds</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> formattedDate <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>year<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>month<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>date<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>hours<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>minutes<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">:</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>seconds<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> formattedDate<span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p>第四步：限制时，分</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
-    <span class="token function">dateChange</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">// e是你绑定的那个字段，是一个数组，由于你是多选，即是开始与结束两个元素</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">let</span> startAt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">timeConversion</span><span class="token punctuation">(</span>e<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">let</span> endtAt <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">timeConversion</span><span class="token punctuation">(</span>e<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>startAt <span class="token operator">&lt;</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token comment">// 由于项目问题，我这里开始时间往后面推了10分钟</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>insertData<span class="token punctuation">.</span>start_time <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">timeConversion</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span>  
-                <span class="token comment">// 这里结束推了40分钟</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>insertData<span class="token punctuation">.</span>end_time <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">timeConversion</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">40</span><span class="token operator">*</span><span class="token number">1000</span><span class="token punctuation">)</span>
-                <span class="token comment">// 设置开始，与结束给绑定的数组，让数据回显</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>insertData<span class="token punctuation">.</span>timeValue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token keyword">this</span><span class="token punctuation">.</span>insertData<span class="token punctuation">.</span>start_time<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>insertData<span class="token punctuation">.</span>end_time<span class="token punctuation">]</span>
+<p>1.给input绑定ref</p>
+<p>2.绑定一个change事件</p>
+<p>3.当发生变化时，触发change事件，通过ref拿到DOM对象</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">upAlividChange</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// 获取文件</span>
+    <span class="token keyword">let</span> fileObj <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"inputFileVideo"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">"已选文件对象 \n"</span><span class="token punctuation">,</span> fileObj<span class="token punctuation">)</span>
+    
+    <span class="token comment">//看看是否拿到文件</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fileObj <span class="token operator">===</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> fileObj <span class="token operator">===</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token keyword">return</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>fileObj<span class="token punctuation">.</span>type<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"video"</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'不是视频文件!'</span><span class="token punctuation">)</span>
+    <span class="token keyword">let</span> sizeMB <span class="token operator">=</span> fileObj<span class="token punctuation">.</span>size <span class="token operator">/</span> <span class="token number">1024</span> <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">;</span> <span class="token comment">//视频大小（MB）</span>
+    <span class="token keyword">let</span> duration <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment">//视频时长（秒）</span>
+    <span class="token comment">//获取视频时长，异步非阻塞的</span>
+    <span class="token keyword">var</span> audioElement <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Audio</span><span class="token punctuation">(</span><span class="token constant">URL</span><span class="token punctuation">.</span><span class="token function">createObjectURL</span><span class="token punctuation">(</span>fileObj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    audioElement<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"loadedmetadata"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        duration <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>audioElement<span class="token punctuation">.</span>duration<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">// 是否确认上传</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$confirm</span><span class="token punctuation">(</span><span class="token string">'确定上传吗？'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">_</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>duration <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> $<span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'稍后重试'</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>duration <span class="token operator">*</span> <span class="token number">0.22</span> <span class="token operator">&lt;</span> sizeMB<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> 
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'视频大小超限! 建议视频压缩码率1280kps'</span><span class="token punctuation">)</span>
             <span class="token punctuation">&#125;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>drawer2edit_post<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">''</span><span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>drawer2edit_post<span class="token punctuation">.</span>name <span class="token operator">=</span> fileObj<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> fileObj<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>drawer2edit_post<span class="token punctuation">.</span>size <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span>fileObj<span class="token punctuation">.</span>size <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>drawer2edit_post<span class="token punctuation">.</span>sizeVal <span class="token operator">=</span> sizeMB<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'MB'</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>drawer2edit_post<span class="token punctuation">.</span>duration <span class="token operator">=</span> duration
+            <span class="token keyword">this</span><span class="token punctuation">.</span>drawer2edit_post<span class="token punctuation">.</span>durationVal <span class="token operator">=</span> <span class="token function">ly_secondsToHIS</span><span class="token punctuation">(</span>duration<span class="token punctuation">)</span>
+            
+            <span class="token comment">//调用接口，开始上传</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">createUploader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>alivodUploader <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                alivodUploader<span class="token punctuation">.</span><span class="token function">addFile</span><span class="token punctuation">(</span>fileObj<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token string">'&#123;"Vod":&#123;&#125;&#125;'</span><span class="token punctuation">)</span>
+                alivodUploader<span class="token punctuation">.</span><span class="token function">startUpload</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span>
+            
+            <span class="token comment">//上传完毕后，一定要将其清空，不然第二次上传同样的，则上传不了，且放在最后清空，因为此时你已经上传完毕了</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span><span class="token string">'upload'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span></code></pre>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">_</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span></code></pre>
 
+
+
+
+
+<p><code>清空一般作用于你已经上传完毕以后再去清空</code></p>
 
                 
             </div>
@@ -439,7 +405,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/10253248.html">https://leng-yangwei.gitee.io/starry/starry/2023/10253248.html</a>
+                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/1101665.html">https://leng-yangwei.gitee.io/starry/starry/2023/1101665.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -524,17 +490,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/starry/2023/10253289.html">
+                <a href="/starry/2023/1101665.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/1.jpg" class="responsive-img" alt="文本省略">
+                        <img src="/starry/medias/featureimages/6.jpg" class="responsive-img" alt="input上传视频文件，同一个文件二次上传无效">
                         
-                        <span class="card-title">文本省略</span>
+                        <span class="card-title">input上传视频文件，同一个文件二次上传无效</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -544,9 +511,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -559,6 +526,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -577,13 +545,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/starry/2023/10233865.html">
+                <a href="/starry/2023/1026381.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/3.jpg" class="responsive-img" alt="拖拽表单vform3框架">
+                        <img src="/starry/medias/featureimages/20.jpg" class="responsive-img" alt="如何让路由跳转至新页面？">
                         
-                        <span class="card-title">拖拽表单vform3框架</span>
+                        <span class="card-title">如何让路由跳转至新页面？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -594,7 +562,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
                             </span>
                         <span class="publish-author">
                             
