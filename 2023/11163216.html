@@ -286,14 +286,14 @@ html结构&amp;lt;div clas">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -360,6 +360,11 @@ html结构&amp;lt;div clas">
         <span class="token keyword">this</span><span class="token punctuation">.</span>pushClientSmall<span class="token punctuation">.</span><span class="token function">setRenderView</span><span class="token punctuation">(</span><span class="token string">'videoContainerSmall'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>pushClientSmall<span class="token punctuation">.</span><span class="token function">setVideoQuality</span><span class="token punctuation">(</span><span class="token string">'720p_1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+          <span class="token comment">/*这里是由于阿里云它会根据绑定标签，每推流一次而创建一个video
+          因此分享屏幕可以点多次从而进行多次推流，导致阿里云底层帮你创建多个video
+          因此我们拿到该标签的子集，但是他是伪数组，需要转变为真数组，
+          且删除它的第1个，保留第0个，页面上就永远只有一个小屏
+          */</span>
            <span class="token keyword">if</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"videoContainerSmall"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"videoContainerSmall"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"videoContainerSmall"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span>
         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
     <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
@@ -850,7 +855,7 @@ html结构&amp;lt;div clas">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">48k</span>
+                        class="white-color">48.1k</span>
             
             
             
