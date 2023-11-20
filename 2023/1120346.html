@@ -374,6 +374,7 @@ HTML&amp;lt;!--
                     <span class="token keyword">this</span><span class="token punctuation">.</span>videoEffectManager<span class="token punctuation">.</span><span class="token function">setLayout</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
                       <span class="token punctuation">&#123;</span> <span class="token literal-property property">streamId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>cameraStreamId<span class="token punctuation">,</span> <span class="token literal-property property">x</span><span class="token operator">:</span> <span class="token number">1280</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">y</span><span class="token operator">:</span> <span class="token number">720</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">1280</span><span class="token punctuation">,</span> <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">720</span><span class="token punctuation">,</span> <span class="token literal-property property">zOrder</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
                     <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> <span class="token comment">// 直接退出函数，因为在第一次的时候已经进行一次推流了</span>
                 <span class="token punctuation">&#125;</span>
             <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token comment">// 获取视频管理器实例对象</span>
@@ -830,7 +831,7 @@ HTML&amp;lt;!--
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.3k</span>
+                        class="white-color">49.4k</span>
             
             
             
