@@ -1,0 +1,1412 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="基于阿里云的直播聊天（web主播端）, 星星">
+    <meta name="description" content="基于阿里云的直播聊天（web主播端）这篇是基于阿里云的聊天，某个用户进入直播间，指定某个用户的禁言和解除禁言，全体禁言和全体解除禁言，弥补网上缺乏此类文章，以此记录
+HTML&amp;lt;!--这里使用的tab组件进行聊天与用户列表的切换--&amp;g">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>基于阿里云的直播聊天（web主播端） | 星星</title>
+    <link rel="icon" type="image/png" href="/starry/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/starry/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/starry/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/starry/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/starry/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/starry/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/starry/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/starry/css/my.css">
+<link rel="stylesheet" type="text/css" href="/starry/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/starry/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/starry/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/starry/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/starry/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">星星</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/starry/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/starry/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/starry/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/starry/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/starry/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">星星</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/starry/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/starry/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/starry/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/starry/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/starry/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/20.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">基于阿里云的直播聊天（web主播端）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2023-11-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.8k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    17 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/starry/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="基于阿里云的直播聊天（web主播端）"><a href="#基于阿里云的直播聊天（web主播端）" class="headerlink" title="基于阿里云的直播聊天（web主播端）"></a>基于阿里云的直播聊天（web主播端）</h2><p>这篇是基于阿里云的聊天，某个用户进入直播间，指定某个用户的禁言和解除禁言，全体禁言和全体解除禁言，弥补网上缺乏此类文章，以此记录</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre class="language-HTML" data-language="HTML"><code class="language-HTML">&lt;!--这里使用的tab组件进行聊天与用户列表的切换--&gt;
+&lt;div class&#x3D;&quot;aside&quot;&gt;
+    &lt;el-tabs v-model&#x3D;&quot;activeName&quot; @tab-click&#x3D;&quot;handleClick&quot;&gt;
+        &lt;el-tab-pane label&#x3D;&quot;消息&quot; name&#x3D;&quot;first&quot;&gt;
+            &lt;div class&#x3D;&quot;info&quot;&gt;
+                &lt;!--消息列表模块--&gt;
+                &lt;div class&#x3D;&quot;chat&quot;&gt;
+                    &lt;p class&#x3D;&quot;infoTitle&quot;&gt;童鞋，欢迎来到直播间！为营造良好的学习交流氛围和健康的网络环境，请您在发言时文明用语。&lt;&#x2F;p&gt;
+                    &lt;div class&#x3D;&quot;list-wrap&quot; style&#x3D;&quot;overflow:auto&quot; ref&#x3D;&quot;listWrap&quot;&gt;
+                        &lt;!-- 虚拟列表所有项的高度 --&gt;
+                        &lt;div class&#x3D;&quot;scroll-bar&quot; ref&#x3D;&quot;scrollBar&quot; style&#x3D;&quot;top: 20px;position: relative;&quot;&gt;&lt;&#x2F;div&gt;
+                        &lt;!-- 虚拟列表项 --&gt;
+                        &lt;ul class&#x3D;&quot;list&quot; ref&#x3D;&quot;list&quot; v-if&#x3D;&quot;titleInfo?.live_status&#x3D;&#x3D;&#x3D;1&quot;&gt;
+                            &lt;li v-for&#x3D;&quot;item,index in showList&quot; :key&#x3D;&quot;index&quot;&gt;
+                                &lt;template v-if&#x3D;&quot;item?.userName&quot;&gt;
+                                    &lt;span class&#x3D;&quot;who&quot; style&#x3D;&quot;overflow:auto&quot;&gt;&#123;[item?.userName]&#125; :
+                                        &lt;span class&#x3D;&quot;what&quot; v-text&#x3D;&quot;item.Data&quot;&gt;&lt;&#x2F;span&gt;
+                                    &lt;&#x2F;span&gt;
+                                &lt;&#x2F;template&gt;
+                                &lt;template v-else style&#x3D;&quot;text-align: center;&quot;&gt;
+                                    &lt;p id&#x3D;&quot;userJoin&quot;&gt;&#123;[item.content]&#125;&lt;&#x2F;p&gt;
+                                &lt;&#x2F;template&gt;
+                            &lt;&#x2F;li&gt;
+                        &lt;&#x2F;ul&gt;
+                    &lt;&#x2F;div&gt;
+                &lt;&#x2F;div&gt;
+                &lt;!--发送消息模块--&gt;
+                &lt;div class&#x3D;&quot;sendInfo&quot;&gt;
+                    &lt;el-input v-model&#x3D;&quot;teacherMessage&quot; class&#x3D;&quot;srInfo&quot; type&#x3D;&quot;textarea&quot; :autosize&#x3D;&quot;&#123; minRows: 6, maxRows: 6&#125;&quot; placeholder&#x3D;&quot;请输入...&quot;&gt; &lt;&#x2F;el-input&gt;
+                    &lt;div style&#x3D;&quot;position: absolute;left: 13px;bottom: 5px;cursor: pointer;display: flex;&quot; v-if&#x3D;&quot;!allJy&quot; @click&#x3D;&quot;doChangeJy1&quot;&gt;
+                        &lt;img src&#x3D;&quot;&#x2F;static&#x2F;img&#x2F;index&#x2F;noChat.png&quot; alt&#x3D;&quot;&quot; style&#x3D;&quot;width: 18px;&quot;&gt;
+                        &lt;span style&#x3D;&quot;color:#fff;font-size:12px;&quot;&gt;解除禁言&lt;&#x2F;span&gt;
+                    &lt;&#x2F;div&gt;
+                    &lt;div style&#x3D;&quot;position: absolute;left: 13px;bottom: 5px;cursor: pointer;display: flex;&quot; v-if&#x3D;&quot;allJy&quot; @click&#x3D;&quot;doChangeJy&quot;&gt;
+                        &lt;img src&#x3D;&quot;&#x2F;static&#x2F;img&#x2F;index&#x2F;Chat.png&quot; alt&#x3D;&quot;&quot; style&#x3D;&quot;width: 18px;&quot;&gt;
+                        &lt;span style&#x3D;&quot;color:#fff;font-size:12px;&quot;&gt;全体禁言&lt;&#x2F;span&gt;
+                    &lt;&#x2F;div&gt;
+                    &lt;el-button v-if&#x3D;&quot;teacherMessage?.trim().length&quot; id&#x3D;&quot;sendInfoOk&quot; type&#x3D;&quot;primary&quot; :loading&#x3D;&quot;btnFlagz&quot; @click&#x3D;&quot;teacherSendInfo&quot; v-text&#x3D;&quot;btnFlagz ? &#39;发送中&#39; : &#39;发送&#39;&quot;&gt;&lt;&#x2F;el-button&gt;
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;el-tab-pane&gt;
+        &lt;el-tab-pane label&#x3D;&quot;学生&quot; name&#x3D;&quot;second&quot;&gt;
+            &lt;div class&#x3D;&quot;infinite-list-wrapper&quot; style&#x3D;&quot;overflow:auto&quot;&gt;
+                &lt;div class&#x3D;&quot;nowSum&quot; v-text&#x3D;&quot;&#39;当前在线人数：&#39;+userSum&quot;&gt;&lt;&#x2F;div&gt;
+                &lt;ul v-infinite-scroll&#x3D;&quot;load&quot; style&#x3D;&quot;overflow:auto&quot;&gt;
+                    &lt;li v-for&#x3D;&quot;item,index in userList&quot; style&#x3D;&quot;position: relative;&quot; :key&#x3D;&quot;index&quot;&gt;
+                        &lt;span class&#x3D;&quot;who&quot; style&#x3D;&quot;overflow:auto&quot; v-text&#x3D;&quot;item?.userId&quot;&gt;&lt;&#x2F;span&gt;
+                        &lt;span @click&#x3D;&quot;doHidden1(item,index)&quot; style&#x3D;&quot;position: absolute;right: 10px;top: 5px;cursor: pointer;&quot; v-if&#x3D;&quot;!item?.jy&quot;&gt;&lt;img src&#x3D;&quot;&#x2F;static&#x2F;img&#x2F;index&#x2F;noChat.png&quot; style&#x3D;&quot;width: 18px;&quot;&gt;&lt;&#x2F;span&gt;
+                        &lt;span @click&#x3D;&quot;doHidden2(item,index)&quot; style&#x3D;&quot;position: absolute;right: 10px;top: 5px;cursor: pointer;&quot; v-else&gt;&lt;img src&#x3D;&quot;&#x2F;static&#x2F;img&#x2F;index&#x2F;chat.png&quot; style&#x3D;&quot;width: 18px;&quot;&gt;&lt;&#x2F;span&gt;
+                    &lt;&#x2F;li&gt;
+                &lt;&#x2F;ul&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;el-tab-pane&gt;
+    &lt;&#x2F;el-tabs&gt;
+&lt;&#x2F;div&gt;</code></pre>
+
+
+
+<h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">// 用户进入,离开直播间样式
+#userJoin</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span>pink<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 310px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 28px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #333B47<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 17px 17px 17px 17px<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>255<span class="token punctuation">,</span>0.6<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+    <span class="token property">line-height</span><span class="token punctuation">:</span> 27px<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+  <span class="token selector">.aside</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">box-sizing</span><span class="token punctuation">:</span> border-box<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 0 0 16px<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 360px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 600px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> #1B2128<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token selector">.info</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> relative<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 336px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 546px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #262D37<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+.... 以下的样式就不写了，主要是看Vue代码
+</code></pre>
+
+
+
+<p>以上两点，结构与样式不要过于关注，主要是看下面的<code>Vue</code>代码</p>
+<h3 id="VUE"><a href="#VUE" class="headerlink" title="VUE"></a>VUE</h3><h4 id="1-引入SDK"><a href="#1-引入SDK" class="headerlink" title="1.引入SDK"></a>1.引入SDK</h4><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">'https://g.alicdn.com/video-cloud-fe/aliyun-interaction-sdk/1.0.3/aliyun-interaction-sdk.web.min.js'</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
+
+<h4 id="2-开始代码"><a href="#2-开始代码" class="headerlink" title="2.开始代码"></a>2.开始代码</h4><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 阿里云长连接初始化</span>
+        <span class="token literal-property property">InteractionEngine</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">InteractionInstance</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">deviceId</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token comment">// 推流所有参数对象</span>
+        <span class="token literal-property property">pushObj</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token comment">// 所有列表消息</span>
+        <span class="token literal-property property">showList</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// 消息传输</span>
+        <span class="token literal-property property">InteractionEventNames</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">InteractionMessageTypes</span><span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span>
+        <span class="token comment">// 人员列表</span>
+        <span class="token literal-property property">userSum</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 在线人数</span>
+        <span class="token literal-property property">userList</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">//人员列表</span>
+        <span class="token comment">// 禁言指定人员</span>
+        <span class="token literal-property property">muteUserList</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// 解除禁言</span>
+        <span class="token literal-property property">noMuteUserList</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token comment">// id消息组</span>
+        <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token comment">// 长连接初始化</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionEngine <span class="token operator">=</span> window<span class="token punctuation">.</span>AliyunInteraction<span class="token punctuation">.</span>InteractionEngine
+        <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionEngine<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token comment">// 判断是否为JSON</span>
+        <span class="token function">isJSON</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> str <span class="token operator">==</span> <span class="token string">'string'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+                    <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 消息滑到底部</span>
+        <span class="token function">scrollToBottom</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span><span class="token string">'listWrap'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>scrollTop <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span><span class="token string">'listWrap'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>scrollHeight
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 可以在进入时调用，或者在点击某个按钮时调用，但是，一旦调用，即聊天，禁言，用户进入与离开开始</span>
+        <span class="token function">aliyunSdk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">/* 1.获取sdk 所需 token
+            #1 踩坑1 阿里云官方说是调用 const tokenObj = await Appservices.getToken()去获取SDK所需的token，
+            不是，他根本没给你提供Appservices这个实例，很容易在这里让你的代码就夭折，这里是去掉后端的接口拿所需的token。
+            这里需要后端去看阿里云指定的代码
+            */</span>
+            <span class="token keyword">const</span> resToken <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">syhtAjaxGet</span><span class="token punctuation">(</span><span class="token string">'/api/live/getMessageToken'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">kid</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>openObj<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'kid'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment">//这个是我们后端需要知道在哪里聊天，这里看你们后端需要什么，每个都不一样</span>
+                <span class="token literal-property property">deviceId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionEngine<span class="token punctuation">.</span>getDeviceId<span class="token punctuation">,</span>  <span class="token comment">// 这里的deviceId，官方提供了，必传</span>
+                <span class="token literal-property property">deviceType</span><span class="token operator">:</span> <span class="token string">'web'</span>  <span class="token comment">// 我们是web端，传入web，必传</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+            <span class="token comment">// 2.根据token建立长连接</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">auth</span><span class="token punctuation">(</span>resToken<span class="token punctuation">.</span>data<span class="token punctuation">.</span>AccessToken<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">//这里不用管</span>
+                <span class="token keyword">const</span> params2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                    <span class="token literal-property property">extension</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                        <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'自定义'</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+                <span class="token comment">/* 3.创建消息组
+                必须我们这边发起人创建消息组，不能让后端创建，后端创建的无法进行用户禁言，
+                且安卓，IOS都需要我们传入给后端，用我们的groupId
+                */</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">createGroup</span><span class="token punctuation">(</span>params2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">// 创建消息组成功</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>groupId<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 新创建的 groupId</span>
+                    <span class="token comment">// 将新创建的 groupId发送给后端，让后端记录给安卓与IOS使用</span>
+                   <span class="token keyword">await</span> <span class="token function">syhtAjaxPost</span><span class="token punctuation">(</span><span class="token string">'/api/live/addLiveGroup'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+                        <span class="token literal-property property">kid</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>openObj<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'kid'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token literal-property property">group_id</span><span class="token operator">:</span> res<span class="token punctuation">.</span>groupId
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>groupId <span class="token operator">=</span> res<span class="token punctuation">.</span>groupId  <span class="token comment">// 存入data中，后续使用</span>
+                    
+                    <span class="token comment">// 获取用户列表函数</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getUserList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                        <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id</span>
+                        <span class="token literal-property property">userNick</span><span class="token operator">:</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'teacher_name'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment">// 用户昵称</span>
+                        <span class="token literal-property property">userAvatar</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 非必填，传入头像图片地址</span>
+                        <span class="token literal-property property">userExtension</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 非必填，可传入额外的 JSONString 文本</span>
+                        <span class="token literal-property property">broadCastType</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 系统消息扩散类型，0： 不扩散；1：扩散到指定人; 2：扩散到群组</span>
+                        <span class="token literal-property property">broadCastStatistics</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否扩散统计类消息</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+                    <span class="token comment">// 这里加入的人员与离开的，在第四步的监听中都能监听到</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">joinGroup</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"加入消息组"</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                        <span class="token comment">// 加入消息组失败</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token keyword">const</span> params1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                        <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id，传入我们开始存的</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">getGroup</span><span class="token punctuation">(</span>params1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                        <span class="token comment">// 获取消息组信息成功, res 为消息组信息对象</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> <span class="token string">"消息组信息对象"</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                        <span class="token comment">// 获取消息组信息失败</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment">// 4.监听新来的消息，进入的人员，离开的人员</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionEventNames <span class="token operator">=</span> window<span class="token punctuation">.</span>AliyunInteraction<span class="token punctuation">.</span>InteractionEventNames
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes <span class="token operator">=</span> window<span class="token punctuation">.</span>AliyunInteraction<span class="token punctuation">.</span>InteractionMessageTypes
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>InteractionEventNames<span class="token punctuation">.</span>Message<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">eventData</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'收到信息啦'</span><span class="token punctuation">,</span> eventData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+                            type<span class="token punctuation">,</span>
+                          data<span class="token punctuation">,</span>
+                          messageId<span class="token punctuation">,</span>
+                          senderId<span class="token punctuation">,</span>
+                          senderInfo
+                        <span class="token punctuation">&#125;</span> <span class="token operator">=</span> eventData<span class="token punctuation">;</span>
+                        <span class="token comment">// 这里由于安卓和IOS给我的数据结构不同做些调整，你们根据自己的调整，this.isJSON()是否为JSON的函数封装</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Object]'</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isJSON</span><span class="token punctuation">(</span>senderInfo<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                            post <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>senderInfo<span class="token punctuation">)</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                                <span class="token literal-property property">userName</span><span class="token operator">:</span> post<span class="token punctuation">.</span>userNick<span class="token punctuation">,</span>
+                                <span class="token literal-property property">Data</span><span class="token operator">:</span> data
+                            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span>teacherMessage <span class="token operator">=</span> <span class="token string">''</span>  <span class="token comment">// 清空发言</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">scrollToBottom</span><span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">// 有新消息自动滑到底部</span>
+                        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Object]'</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isJSON</span><span class="token punctuation">(</span>senderInfo<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isJSON</span><span class="token punctuation">(</span>senderInfo<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                                <span class="token literal-property property">userName</span><span class="token operator">:</span> senderInfo<span class="token punctuation">.</span>userNick<span class="token punctuation">,</span>
+                                <span class="token literal-property property">Data</span><span class="token operator">:</span> data
+                            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span>teacherMessage <span class="token operator">=</span> <span class="token string">''</span>
+                            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">scrollToBottom</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">,</span> <span class="token string">"接受信息2"</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">&#125;</span>
+                        <span class="token keyword">switch</span> <span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                            <span class="token comment">// 由于聊天没有点赞，这里不用管</span>
+                            <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSLikeInfo<span class="token operator">:</span>
+                                <span class="token comment">// 点赞事件 1001，data 为点赞数据</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                            <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSUserJoin<span class="token operator">:</span>
+                                <span class="token comment">// 用户加入事件 1002，data 为直播间统计数据</span>
+                                <span class="token comment">// 如果说是老师本人则是您，如果是其他人进入这是用户名 + 进入直播间</span>
+                                <span class="token keyword">if</span> <span class="token punctuation">(</span>senderInfo<span class="token punctuation">.</span>userNick <span class="token operator">===</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'teacher_name'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                                    <span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                                        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">"您已进入直播间"</span>
+                                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                                    <span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                                        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>senderInfo<span class="token punctuation">.</span>userNick<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">已进入直播间</span><span class="token template-punctuation string">`</span></span>
+                                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">&#125;</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                            <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSUserLeave<span class="token operator">:</span>
+                                <span class="token comment">// 用户离开事件 1003，与用户进入一样</span>
+                                <span class="token keyword">if</span> <span class="token punctuation">(</span>senderInfo<span class="token punctuation">.</span>userNick <span class="token operator">===</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'teacher_name'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                                    <span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                                        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">"您已离开直播间"</span>
+                                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                                    <span class="token keyword">this</span><span class="token punctuation">.</span>showList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                                        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>senderInfo<span class="token punctuation">.</span>userNick<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">已离开直播间</span><span class="token template-punctuation string">`</span></span>
+                                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                                <span class="token punctuation">&#125;</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                               <span class="token comment">// 以下的禁言可以在监听这里处理，也可以在禁言的同时处理</span>
+                              <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSMuteGroup<span class="token operator">:</span>
+                                <span class="token comment">// 互动消息组被禁言 1004</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                              <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSCancelMuteGroup<span class="token operator">:</span>
+                                <span class="token comment">// 互动消息组取消禁言 1005</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                              <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSMuteUser<span class="token operator">:</span>
+                                <span class="token comment">// 某个用户被禁言 1006，data 为用户信息</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                              <span class="token keyword">case</span> <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionMessageTypes<span class="token punctuation">.</span>PaaSCancelMuteUser<span class="token operator">:</span>
+                                <span class="token comment">// 某个用户被取消禁言 1007，data 为用户信息</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                              <span class="token keyword">default</span><span class="token operator">:</span>
+                                <span class="token keyword">break</span><span class="token punctuation">;</span>
+                        <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">// 创建消息组失败</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 禁言全体</span>
+        <span class="token keyword">async</span> <span class="token function">doChangeJy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id</span>
+                <span class="token literal-property property">broadCastType</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 系统消息扩散类型，0： 不扩散；1：扩散到指定人; 2：扩散到群组</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">muteAll</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>  <span class="token comment">// 注意：muteAll</span>
+                <span class="token comment">// 消息组禁言成功</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>allJy <span class="token operator">=</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>allJy
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"全体禁言成功"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// 消息组禁言失败</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"全体禁言失败"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 解除全体禁言</span>
+        <span class="token keyword">async</span> <span class="token function">doChangeJy1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id</span>
+                <span class="token literal-property property">broadCastType</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 系统消息扩散类型，0： 不扩散；1：扩散到指定人; 2：扩散到群组</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">cancelMuteAll</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>  <span class="token comment">// 注意：cancelMuteAll</span>
+                <span class="token comment">// 消息组禁言成功</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>allJy <span class="token operator">=</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>allJy
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"全体解除禁言成功"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// 消息组禁言失败 </span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"全体解除禁言失败"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 指定单个禁言</span>
+        <span class="token keyword">async</span> <span class="token function">doHidden1</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> ind</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>muteUserList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>muteUserList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>userId<span class="token punctuation">)</span>
+            <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+              <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id</span>
+              <span class="token literal-property property">muteUserList</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>muteUserList<span class="token punctuation">,</span> <span class="token comment">// 需要禁言的用户列表，最大200个</span>
+              <span class="token comment">// 取消禁言的用户列表字段名为 cancelMuteUserList</span>
+              <span class="token literal-property property">muteTime</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 非必填，禁言的时间，单位为s，如果不传或者传0则采用默认禁言时间</span>
+              <span class="token literal-property property">broadCastType</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 系统消息扩散类型，0： 不扩散；1：扩散到指定人; 2：扩散到群组</span>
+           <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">muteUser</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    item<span class="token punctuation">.</span>jy <span class="token operator">=</span> <span class="token operator">!</span>item<span class="token punctuation">.</span>jy
+                <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$forceUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token string">"禁言"</span><span class="token punctuation">)</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"禁言成功"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// 禁言用户失败</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 解除单个禁言，特别注意，调用的是cancelMuteUser这个，文档写的是cancelMuteAll，妈的，害我一致没搞清楚，网上找了也没有遇到过这种问题的</span>
+        <span class="token comment">// 我当时在想是不是他单词写错了，结果他妈的还真是</span>
+        <span class="token function">doHidden2</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> ind</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>noMuteUserList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>noMuteUserList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>userId<span class="token punctuation">)</span>
+            <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+              <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id</span>
+              <span class="token literal-property property">cancelMuteUserList</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>noMuteUserList<span class="token punctuation">,</span> <span class="token comment">// 需要禁言的用户列表，最大200个</span>
+              <span class="token comment">// 取消禁言的用户列表字段名为 cancelMuteUserList</span>
+              <span class="token literal-property property">muteTime</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 非必填，禁言的时间，单位为s，如果不传或者传0则采用默认禁言时间</span>
+              <span class="token literal-property property">broadCastType</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token comment">// 系统消息扩散类型，0： 不扩散；1：扩散到指定人; 2：扩散到群组</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">cancelMuteUser</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+              item<span class="token punctuation">.</span>jy <span class="token operator">=</span> <span class="token operator">!</span>item<span class="token punctuation">.</span>jy
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$forceUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">"解除禁言成功"</span><span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 禁言用户失败</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 获取用户列表</span>
+        <span class="token keyword">async</span> <span class="token function">getUserList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">const</span> params <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+              <span class="token literal-property property">groupId</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>groupId<span class="token punctuation">,</span> <span class="token comment">// 消息组id</span>
+              <span class="token literal-property property">sortType</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 排序方式,0-时间递增顺序，1-时间递减顺序</span>
+              <span class="token literal-property property">pageNum</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 分页拉取的索引下标,第一次调用传1，后续调用+1</span>
+              <span class="token literal-property property">pageSize</span><span class="token operator">:</span> <span class="token number">50</span><span class="token punctuation">,</span> <span class="token comment">// 分页拉取的大小,默认20条，最大50条</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">listGroupUser</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token comment">// 获取消息组成员列表成功</span>
+                <span class="token keyword">const</span> <span class="token punctuation">&#123;</span>
+                  total<span class="token punctuation">,</span> <span class="token comment">// 总数</span>
+                  userList<span class="token punctuation">,</span> <span class="token comment">// 返回的消息组的在线成员列表</span>
+                  hasMore<span class="token punctuation">,</span> <span class="token comment">// 是否还剩数据</span>
+                <span class="token punctuation">&#125;</span> <span class="token operator">=</span> res<span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> <span class="token string">"人员列表"</span><span class="token punctuation">)</span>
+                <span class="token comment">// 这里不用管，是处理数据，你们按照自己的来就行</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token operator">...</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>userList<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">.</span>jy<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                            item<span class="token punctuation">.</span>jy <span class="token operator">=</span> <span class="token boolean">false</span>
+                        <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span>length <span class="token operator">===</span> userList<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"此时数据不改变"</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> userList<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">eve</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>eve<span class="token punctuation">.</span>userId<span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>userId<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+                      <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">.</span>jy<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        item<span class="token punctuation">.</span>jy <span class="token operator">=</span> <span class="token boolean">false</span>
+                      <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span>length <span class="token operator">></span> userList<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+                    userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">eve</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>eve<span class="token punctuation">.</span>userId<span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span>index</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>userId<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+                      <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>userList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">.</span>jy<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                        item<span class="token punctuation">.</span>jy <span class="token operator">=</span> <span class="token boolean">false</span>
+                      <span class="token punctuation">&#125;</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span>
+                <span class="token punctuation">&#125;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>userSum <span class="token operator">=</span> total
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token comment">// 获取消息组成员列表失败</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token comment">// 断开长链接，在你退出时触发</span>
+        <span class="token function">stopAliYunSdk</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>InteractionInstance<span class="token punctuation">.</span><span class="token function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span> <span class="token string">"长连接断开成功"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> <span class="token string">"长链接断开失败"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+
+
+
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p><strong>坑点一</strong>：就是传入SDK所需要的token，文档写的是<code>const tokenObj = await Appservices.getToken();</code>通过<code>Appservices</code>去获取，其实不是，而是通过后端接口去获取的</p>
+<p><strong>坑点二</strong>：取消指定用户的禁言，文档写的是<code>与之对应的是取消禁言消息组内指定成员接口：cancelMuteAll。</code>,不是他这么写的，他这里文档写错了，你如果按照他这样写，你拿到的永远是1005的状态码，而不是1007的状态码。正确的是<code>cancelMuteUser</code></p>
+<p><strong>坑点三</strong>：要与安卓和IOS规定消息格式，不然会多出很多判断</p>
+<p><strong>坑点四</strong>：<code>groupId</code>要由我们自己创建，而不是拿后端的，安卓与IOS的也是需要我们把<code>groupId</code>传给后端后，再去获取。不然禁言的时候会显示你没有权限禁言</p>
+<p><strong>坑点五</strong>：你可能在发送消息以后无法拿到当前的用户名称，第一种情况是在你发送时，传递的参数用户名没传。第二种情况就是为了进入同一个消息组，在刷新之后无法获取用户名，这种情况你可以通过消息体带给安卓和ios，不然他们无法获取发送消息的名字</p>
+<p><strong>坑点六</strong>：当你消息组创建完毕，将消息组Id传递给后端后，这里是对<strong>坑点五</strong>的补充，在刷新后，又会创建一次消息组，那么安卓与IOS的学生们则与你不会在同一个消息组，需要你通过后端，把你传递过去的消息组Id拿过来，加入，这里则不需要创建了。这里需要写一个判断，如果有消息Id,则不创建，没有则创建消息组。以上没有没写这段代码，就加一个<code>if</code>判断即可</p>
+<p>以上就是基于阿里云聊天的全部代码逻辑与坑点</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/starry/about" rel="external nofollow noreferrer">冷杨威</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/11292646.html">https://leng-yangwei.gitee.io/starry/starry/2023/11292646.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/starry/about" target="_blank">冷杨威</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/starry/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/starry/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/starry/2023/11292646.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/starry/medias/featureimages/20.jpg" class="responsive-img" alt="基于阿里云的直播聊天（web主播端）">
+                        
+                        <span class="card-title">基于阿里云的直播聊天（web主播端）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/starry/2023/11233563.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/starry/medias/featureimages/5.jpg" class="responsive-img" alt="请求验证码接口直接返回一张图片，且打印成功的结果是一串乱码， 应该如何渲染？">
+                        
+                        <span class="card-title">请求验证码接口直接返回一张图片，且打印成功的结果是一串乱码， 应该如何渲染？</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 星星<br />'
+            + '文章作者: 冷杨威<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/starry/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/starry/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/starry/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/starry/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/starry/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/starry/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <!-- <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/starry/about" target="_blank">冷杨威</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">53.4k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <br>
+
+            运行天数提醒.
+             -->
+<!-- //             <br> -->
+<!-- //             
+//         </div>
+//         <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:428811986@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=428811986" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 428811986" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+//     </div> -->
+<!-- // </footer> -->
+
+<!-- <div class="progress-bar"></div> --> -->
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/starry/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/starry/libs/materialize/materialize.min.js"></script>
+    <script src="/starry/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/starry/libs/aos/aos.js"></script>
+    <script src="/starry/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/starry/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/starry/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/starry/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/starry/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/starry/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/starry/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/starry/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/starry/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
