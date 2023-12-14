@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue生命周期, 星星">
-    <meta name="description" content="Vue生命周期这篇总结主要介绍Vue生命周期
-
-
-简介1.又名：生命周期回调函数，生命周期函数，生命周期钩子2.是什么？ Vue在关键时刻帮我们调用的一些特殊名称的函数3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的4">
+    <meta name="keywords" content="element-ui中table组件拖拽, 星星">
+    <meta name="description" content="element-ui中table组件拖拽HTML结构&amp;lt;el-table 
+          ref=&#34;dragRef&#34; 
+          :data=&#34;tableData&#34;   // 绑定的数组
+          v-load">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue生命周期 | 星星</title>
+    <title>element-ui中table组件拖拽 | 星星</title>
     <link rel="icon" type="image/png" href="/starry/favicon.png">
     
 
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue生命周期</h1>
+                    <h1 class="description center-align post-title">element-ui中table组件拖拽</h1>
                 </div>
             </div>
         </div>
@@ -253,8 +253,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/starry/tags/Vue/">
-                                <span class="chip bg-color">Vue</span>
+                            <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -265,8 +265,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/starry/categories/Vue/" class="post-category">
-                                Vue
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -280,21 +280,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-13
+                    2023-12-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    410
+                    535
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -317,16 +317,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h3><p><code>这篇总结主要介绍Vue生命周期</code></p>
-<span id="more"></span>
+                <h2 id="element-ui中table组件拖拽"><a href="#element-ui中table组件拖拽" class="headerlink" title="element-ui中table组件拖拽"></a>element-ui中table组件拖拽</h2><h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><pre class="language-markup" data-language="markup"><code class="language-markup">&lt;el-table 
+          ref="dragRef" 
+          :data="tableData"   // 绑定的数组
+          v-loading="loading"  // 加载动画
+          width="100%" 
+          :default-sort="&#123;
+                         prop: tableSearchParam.sortField, 
+                         order:tableSearchParam.sortType
+                         &#125;"   // 默认排列顺序
+          @sort-change="tableSortChange"  // 当表格的排序条件发生变化的时候会触发该事件
+          :header-cell-style="&#123;textAlign:'center',&#125;"  // 标头样式
+          :cell-style="&#123;textAlign:'center',&#125;"    // 表单样式
+          highlight-current-row     // 选中高亮
+          :row-key="(row) => row.kid"   // 行的key值，一定要绑定唯一值
+          @select-all="selectFreeAll"   // 选中全部  这里我是做批量免费，批量删除的，与拖拽无关
+          @select="selectFree"          // 多选，同上
+          >
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table-column</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>selection<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>55<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table-column</span><span class="token punctuation">></span></span>  // 复选框
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table-column</span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kid<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ID<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table-column</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-table-column</span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>sort<span class="token punctuation">"</span></span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>排序<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table-column</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-table</span><span class="token punctuation">></span></span></code></pre>
 
-<p><strong>简介</strong><br>1.又名：生命周期回调函数，生命周期函数，生命周期钩子<br>2.是什么？ Vue在关键时刻帮我们调用的一些特殊名称的函数<br>3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的<br>4.生命周期函数中的this指向vm  或  组件实例对象<br>每个生命钩子都与data配置项同级</p>
-<p><strong>1.初始化阶段</strong><br><code>beforeCreate</code>     完成<code>vue</code>初始化，没有创建data<br><code>created</code>                完成data创建，没有创建挂载点<br>常用：最早操作data，一般用于发送ajax请求<br><strong>2.挂载阶段</strong><br><code>beforeMount</code>        创建挂载点，没有把data渲染到挂载点<br><code>mounted</code>                完成初始渲染，把data数据渲染到了挂载点上<br>常用： 最早操作<code>dom</code>元素，一般用于<code>dom</code>操作<br><strong>3.更新阶段</strong><br><code>beforeUpdate</code>      <code>data</code>数据发生变化，页面没有刷新<br><code>updated</code>                 将变化后的数据更新到视图<br><strong>4.销毁阶段</strong><br><code>beforeDestroy</code>      <code>vue</code>实例完成销毁前<br><strong>触发销毁条件:</strong><br>                <code>1.对组件使用v-if</code><br>                <code>2.调用vm.$destroy()</code><br>应用场景： 清除<code>setInterval</code>定时器<br><code>destroyed</code>           <code>vue</code>完成销毁   <code>GG</code></p>
-<p><strong>keep-alive的两个钩子（路由独有）</strong><br>activated      被激活的<br>deactivated   失活的</p>
-<p><strong>nextTick钩子</strong></p>
-<p><strong><code>vue</code>初始渲染会走哪些钩子</strong>： <code> </code> <code>beforeCreate </code> <code>created</code> <code>beforeMount</code>   <code>mounted</code>                              </p>
-<p><strong>你常用过哪些钩子</strong><br><code>created : 发送ajax</code><br><code>mounted : 操作dom</code><br><code>beforeDestroy : 清除永久定时器</code></p>
-<p><strong>父子组件生命周期 :  父子子父</strong><br>初始渲染阶段： 父子子父<br>更新阶段： 父子子父<br>销毁阶段：父子子父</p>
+
+
+<h3 id="Vue逻辑"><a href="#Vue逻辑" class="headerlink" title="Vue逻辑"></a>Vue逻辑</h3><p><a target="_blank" rel="noopener" href="https://www.itxst.com/vue-draggable/tutorial.html">vue-draggable中文文档</a></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// #1 引入sortable.js,你们也可以npm下载</span>
+<span class="token comment">//&lt;script src="https://www.itxst.com/package/sortable/Sortable.min.js">&lt;/script></span>
+
+<span class="token comment">// npm install sortablejs --save    npm下载</span>
+<span class="token comment">// import Sortable from "sortablejs";   导入</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        tableData：<span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+        <span class="token function">tableSortChange</span><span class="token punctuation">(</span><span class="token parameter">column<span class="token punctuation">,</span> prop<span class="token punctuation">,</span> order</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>column<span class="token punctuation">.</span>order<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$message</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'warning'</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'请重试'</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span> <span class="token comment">//偶尔会为null，估计是框架bug</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>tableSearchParam<span class="token punctuation">.</span>sortField <span class="token operator">=</span> column<span class="token punctuation">.</span>prop
+            <span class="token keyword">this</span><span class="token punctuation">.</span>tableSearchParam<span class="token punctuation">.</span>sortType <span class="token operator">=</span> column<span class="token punctuation">.</span>order
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">tableUpdateData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 调用接口更新</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token function">initSortable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> that <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>  <span class="token comment">// 存储Vue实例，后面创建的实例会指向window</span>
+            <span class="token comment">// 获取表格row的父节点</span>
+            <span class="token keyword">const</span> el <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">[</span><span class="token string">'dragRef'</span><span class="token punctuation">]</span><span class="token operator">?.</span>$el<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span>
+                <span class="token string">".el-table__body > tbody"</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment">// 创建拖拽实例,实例中的this指向window，因此需要借用that</span>
+            <span class="token keyword">new</span> <span class="token class-name">Sortable</span><span class="token punctuation">(</span>el<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+                <span class="token literal-property property">animation</span><span class="token operator">:</span> <span class="token number">150</span><span class="token punctuation">,</span> <span class="token comment">//动画</span>
+                <span class="token literal-property property">disabled</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// false 启用拖拽</span>
+                <span class="token comment">// 开始拖动事件</span>
+                <span class="token function-variable function">onStart</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"开始拖动"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+                <span class="token comment">// 结束拖动事件</span>
+                <span class="token function-variable function">onEnd</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span>
+                    newIndex<span class="token punctuation">,</span>
+                    oldIndex
+                <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                    <span class="token comment">//oldIndex为拖动前索引，newIndex为拖动后索引</span>
+                    <span class="token comment">// currRow为你删除的那一项，splice返回值是你删除的一个数组</span>
+                    <span class="token keyword">const</span> currRow <span class="token operator">=</span> that<span class="token punctuation">.</span>tableData<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>oldIndex<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    <span class="token comment">// 拿到你删除的给他放入到你拖动后的位置</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>tableData<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>newIndex<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> currRow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                   
+                    <span class="token keyword">let</span> tableIdList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment">// 将拖拽后的数组id进行重新排序</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>tableData<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                      tableIdList<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>alivid<span class="token punctuation">)</span>
+                    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+                    
+                    <span class="token comment">// 请求排序接口。这个赋值是，所需参数</span>
+                    <span class="token keyword">this</span><span class="token punctuation">.</span>addItemList <span class="token operator">=</span> tableIdList
+                    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">sumAddVideo</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+
+
+
+<p>以上就是table拖拽的全部逻辑</p>
 
                 
             </div>
@@ -353,7 +430,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/072054.html">https://leng-yangwei.gitee.io/starry/starry/2023/072054.html</a>
+                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/12146653.html">https://leng-yangwei.gitee.io/starry/starry/2023/12146653.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -391,8 +468,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/starry/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -438,46 +515,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/starry/2023/072057.html">
+                <a href="/starry/2023/12146653.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/5.jpg" class="responsive-img" alt="Vue组件插槽&amp;组件补充">
+                        <img src="/starry/medias/featureimages/9.jpg" class="responsive-img" alt="element-ui中table组件拖拽">
                         
-                        <span class="card-title">Vue组件插槽&amp;组件补充</span>
+                        <span class="card-title">element-ui中table组件拖拽</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            组件插槽这篇总结主要介绍Vue组件插槽&amp;组件相关的补充
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/starry/categories/Vue/" class="post-category">
-                                    Vue
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/starry/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -491,31 +570,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/starry/2023/072057.html">
+                <a href="/starry/2023/12026651.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/12.jpg" class="responsive-img" alt="Vue组件传值">
+                        <img src="/starry/medias/featureimages/6.jpg" class="responsive-img" alt="element-ui中tree组件的同级拖拽">
                         
-                        <span class="card-title">Vue组件传值</span>
+                        <span class="card-title">element-ui中tree组件的同级拖拽</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue组件传值这篇总结主要介绍Vue组件传值
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/starry/categories/Vue/" class="post-category">
-                                    Vue
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -525,8 +604,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/starry/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
