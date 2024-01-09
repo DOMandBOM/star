@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>uniapp顶部颜色如何设置成渐变色？</title>
+      <link href="/starry/2024/010935637.html"/>
+      <url>/starry/2024/010935637.html</url>
+      
+        <content type="html"><![CDATA[<p><code>第一步：在pages.json中</code></p><pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>    <span class="token property">"pages"</span><span class="token operator">:</span><span class="token punctuation">[</span>        <span class="token punctuation">&#123;</span><span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span><span class="token property">"style"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token property">"navigationBarTitleText"</span><span class="token operator">:</span> <span class="token string">"工作台"</span><span class="token punctuation">,</span><span class="token property">"navigationBarBackgroundColor"</span><span class="token operator">:</span> <span class="token string">"#ecfffc"</span><span class="token punctuation">,</span> <span class="token comment">// 背景</span><span class="token property">"navigationStyle"</span><span class="token operator">:</span> <span class="token string">"custom"</span>                  <span class="token comment">// 当设置 "navigationStyle":"custom" 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span>    <span class="token punctuation">]</span><span class="token punctuation">&#125;</span></code></pre><p><code>第二步：找到你所需要设置的页面,设置渐变即可</code></p><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;   &lt;view class&#x3D;&quot;top&quot; ref&#x3D;&quot;top&quot;&gt;&lt;&#x2F;view&gt;&lt;&#x2F;template&gt;&lt;script setup&gt;&lt;&#x2F;script&gt;&lt;style scoped lang&#x3D;&quot;scss&quot;&gt;    .top &#123;width: 100%;height: 88rpx;background: linear-gradient(90deg,rgb(207, 241, 223) 0%,rgb(242, 251, 236) 100%);&#125;&lt;&#x2F;style&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>uniapp scroll-view 隐藏滚动条</title>
       <link href="/starry/2023/122735631.html"/>
       <url>/starry/2023/122735631.html</url>

@@ -4,9 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何让路由跳转至新页面？, 星星">
-    <meta name="description" content="如何让路由跳转至新页面？在工作中写了一个前台项目，用的是vue2，遇到了一个问题，就是有些跳转需要跳转至新页面，解决以后总结一下
-一.关于路由跳转，如何让他跳转至新页面？&amp;lt;router-link target=&#34;_blank&#34; :to">
+    <meta name="keywords" content="uniapp顶部颜色如何设置成渐变色？, 星星">
+    <meta name="description" content="第一步：在pages.json中
+&amp;#123;
+    &#34;pages&#34;:[
+        &amp;#123;
+			&#34;path&#34;: &#34;pages/index/index&#34;,
+			&#34;style&#34;: &amp;#123;
+				&#34;navigationB">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +23,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>如何让路由跳转至新页面？ | 星星</title>
+    <title>uniapp顶部颜色如何设置成渐变色？ | 星星</title>
     <link rel="icon" type="image/png" href="/starry/favicon.png">
     
 
@@ -222,12 +227,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">如何让路由跳转至新页面？</h1>
+                    <h1 class="description center-align post-title">uniapp顶部颜色如何设置成渐变色？</h1>
                 </div>
             </div>
         </div>
@@ -278,14 +283,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-10-26
+                    2024-01-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    310
+                    144
                 </div>
                 
 
@@ -315,28 +320,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="如何让路由跳转至新页面？"><a href="#如何让路由跳转至新页面？" class="headerlink" title="如何让路由跳转至新页面？"></a>如何让路由跳转至新页面？</h2><p>在工作中写了一个前台项目，用的是vue2，遇到了一个问题，就是有些跳转需要跳转至新页面，解决以后总结一下</p>
-<h3 id="一-关于路由跳转，如何让他跳转至新页面？"><a href="#一-关于路由跳转，如何让他跳转至新页面？" class="headerlink" title="一.关于路由跳转，如何让他跳转至新页面？"></a>一.关于路由跳转，如何让他跳转至新页面？</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>router<span class="token operator">-</span>link target<span class="token operator">=</span><span class="token string">"_blank"</span> <span class="token operator">:</span>to<span class="token operator">=</span><span class="token string">"&#123;path:'/home',query:&#123;id:'1'&#125;&#125;"</span><span class="token operator">></span>新页面<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">></span></code></pre>
-
-<p>直接给<code>router-link</code>加入<code>target=&quot;_blank&quot;</code>即可</p>
-<h3 id="对于NavMenu-导航菜单组件如何让他跳转至新页面？"><a href="#对于NavMenu-导航菜单组件如何让他跳转至新页面？" class="headerlink" title="对于NavMenu 导航菜单组件如何让他跳转至新页面？"></a>对于NavMenu 导航菜单组件如何让他跳转至新页面？</h3><p>由于<code>NavMenu</code>是通过<code>router</code>属性激活路由模式，且通过<code>index</code>去进行跳转，而我们如果需要跳转至新页面的话，则需要摒弃这种方式，即把<code>router</code>模式关闭</p>
-<h4 id="如何解决？"><a href="#如何解决？" class="headerlink" title="如何解决？"></a>如何解决？</h4><p>1.绑定select事件， 即菜单激活回调，并且<code>router</code>属性</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>el<span class="token operator">-</span>menu <span class="token operator">:</span><span class="token keyword">default</span><span class="token operator">-</span>active<span class="token operator">=</span><span class="token string">"activeIndex"</span> mode<span class="token operator">=</span><span class="token string">"horizontal"</span> @select<span class="token operator">=</span><span class="token string">"handleSelect"</span><span class="token operator">></span></code></pre>
-
-<p>2.封装函数</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">methods</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">handleSelect</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> keyPath</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">const</span> url <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      <span class="token literal-property property">path</span><span class="token operator">:</span> key
-    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    window<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span>href<span class="token punctuation">,</span> <span class="token string">'_blank'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
+                <p><code>第一步：在pages.json中</code></p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"pages"</span><span class="token operator">:</span><span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+			<span class="token property">"path"</span><span class="token operator">:</span> <span class="token string">"pages/index/index"</span><span class="token punctuation">,</span>
+			<span class="token property">"style"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+				<span class="token property">"navigationBarTitleText"</span><span class="token operator">:</span> <span class="token string">"工作台"</span><span class="token punctuation">,</span>
+				<span class="token property">"navigationBarBackgroundColor"</span><span class="token operator">:</span> <span class="token string">"#ecfffc"</span><span class="token punctuation">,</span> <span class="token comment">// 背景</span>
+				<span class="token property">"navigationStyle"</span><span class="token operator">:</span> <span class="token string">"custom"</span>  
+                <span class="token comment">// 当设置 "navigationStyle":"custom" 取消原生导航栏后，由于窗体为沉浸式，占据了状态栏位置</span>
+			<span class="token punctuation">&#125;</span>
+		<span class="token punctuation">&#125;</span>
+    <span class="token punctuation">]</span>
 <span class="token punctuation">&#125;</span></code></pre>
 
-<p><strong>解释</strong></p>
-<p>1.<code>key </code>即是路径，<code>keyPath</code>返回的是一个路径数组</p>
-<p>2.<code>this.$router.resolve</code>可以将路由路径解析成路由对象，即url是一个路由对象</p>
-<p>3.<code>window.open</code>是原生的js的语法，能够跳转，设置是否跳转新页面，传参等</p>
+
+
+<p><code>第二步：找到你所需要设置的页面,设置渐变即可</code></p>
+<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+   &lt;view class&#x3D;&quot;top&quot; ref&#x3D;&quot;top&quot;&gt;&lt;&#x2F;view&gt;
+&lt;&#x2F;template&gt;
+&lt;script setup&gt;
+&lt;&#x2F;script&gt;
+&lt;style scoped lang&#x3D;&quot;scss&quot;&gt;
+    .top &#123;
+			width: 100%;
+			height: 88rpx;
+			background: linear-gradient(
+				90deg,
+				rgb(207, 241, 223) 0%,
+				rgb(242, 251, 236) 100%
+			);
+		&#125;
+&lt;&#x2F;style&gt;</code></pre>
+
 
                 
             </div>
@@ -363,7 +381,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/1026381.html">https://leng-yangwei.gitee.io/starry/starry/2023/1026381.html</a>
+                    <a href="https://leng-yangwei.gitee.io/starry/starry/2024/010935637.html">https://leng-yangwei.gitee.io/starry/starry/2024/010935637.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -448,17 +466,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/starry/2023/1101665.html">
+                <a href="/starry/2024/010935637.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/6.jpg" class="responsive-img" alt="input上传视频文件，同一个文件二次上传无效">
+                        <img src="/starry/medias/featureimages/23.jpg" class="responsive-img" alt="uniapp顶部颜色如何设置成渐变色？">
                         
-                        <span class="card-title">input上传视频文件，同一个文件二次上传无效</span>
+                        <span class="card-title">uniapp顶部颜色如何设置成渐变色？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -468,9 +487,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -483,6 +502,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -501,13 +521,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/starry/2023/10253289.html">
+                <a href="/starry/2023/122735631.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/1.jpg" class="responsive-img" alt="文本省略">
+                        <img src="/starry/medias/featureimages/10.jpg" class="responsive-img" alt="uniapp scroll-view 隐藏滚动条">
                         
-                        <span class="card-title">文本省略</span>
+                        <span class="card-title">uniapp scroll-view 隐藏滚动条</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -518,7 +538,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-27
                             </span>
                         <span class="publish-author">
                             
