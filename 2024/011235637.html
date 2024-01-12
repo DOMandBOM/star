@@ -4,14 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="深浅拷贝, 星星">
-    <meta name="description" content="深浅拷贝这篇总结深度讲解了深浅拷贝，希望能帮到你
-
-
-
-这篇文章，我说说深浅拷贝，虽然很多人说它只针对引用类型，但是
-1.深拷贝和浅拷贝是只针对Object和Array这样的引用数据类型的,同时，
-2.它只有当拷贝引用数据类型时，拷贝才存在">
+    <meta name="keywords" content="uniapp中，scroll-x为true失效问题, 星星">
+    <meta name="description" content="uniapp中，scroll-x为true失效问题1.scroll-view中的子元素，不能使用浮动float
+2.scroll-view中外层容器使用display：flex是无效的
+3.若想实现flex横向效果，请将需要滑动的子元素设置">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>深浅拷贝 | 星星</title>
+    <title>uniapp中，scroll-x为true失效问题 | 星星</title>
     <link rel="icon" type="image/png" href="/starry/favicon.png">
     
 
@@ -227,12 +223,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/starry/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">深浅拷贝</h1>
+                    <h1 class="description center-align post-title">uniapp中，scroll-x为true失效问题</h1>
                 </div>
             </div>
         </div>
@@ -256,8 +252,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/starry/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                                <span class="chip bg-color">JavaScript高级</span>
+                            <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -268,8 +264,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/starry/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                JavaScript高级
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -283,21 +279,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-20
+                    2024-01-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    816
+                    105
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -320,42 +316,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h2><p><code>这篇总结深度讲解了深浅拷贝，希望能帮到你</code></p>
-<span id="more"></span>
-
-
-<p>这篇文章，我说说深浅拷贝，虽然很多人说它只针对引用类型，但是</p>
-<p>1.<code>深拷贝和浅拷贝是只针对Object和Array这样的引用数据类型的</code>,同时，</p>
-<p>2.<code>它只有当拷贝引用数据类型时，拷贝才存在浅拷贝与深拷贝之分。</code></p>
-<p>他们两个都会开辟一个新的内存空间，浅拷贝中的数据是<code>值类型时</code>，他会拷贝他的值，拷贝的数据是引用类型时，则是他的地址，例如：</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">a</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">b</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">c</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">d</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">f</span><span class="token operator">:</span><span class="token number">5</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">let</span> obj2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assgin</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>obj<span class="token punctuation">)</span>
-<span class="token comment">/*此时里面的a，b都是值类型，当你这个obj这个对象被obj2浅拷贝过去，
-当obj2修改a，b时，是影响不到obj中的a,b的，如果是修改c的数据，
-那么就会影响到obj中c的数据，因为c拷贝的是地址。同时，有些人在想，
-当他利用obj2.c = &#123;d:5,f:888&#125;,他说这么写，obj2的数据明明改变了，
-obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面的，
-这样修改是修改的是整个对象，也就是说，地址都变了，还怎么相互影响？*/</span></code></pre>
-
-<p>深拷贝呢?</p>
-<p>它同样会开辟一个新的空间，只不过他拷贝引用类型的时候拷贝的不再是他的地址，而是他的数据！因此，无论你如何修改他都不会影响原来的数据</p>
-<h4 id="如何进行浅拷贝？"><a href="#如何进行浅拷贝？" class="headerlink" title="如何进行浅拷贝？"></a>如何进行浅拷贝？</h4><p><strong>拷贝对象</strong><br>                <code>方法1:Object.assign(拷贝对象给谁,被拷贝的对象)</code><br>                <code>方法2:展开运算符 &#123;...被拷贝的对象&#125;</code><br><strong>拷贝数组</strong><br>                <code>方法1:Array.prototype.concat() </code><br>                <code>方法2:展开运算符[...arr]</code></p>
-<p><code>此时大多数人都有一个困惑点，在想直接赋值是不是浅拷贝，我可以狠狠的自信的告诉你，不是！不要再认为直接赋值是浅拷贝了，直接赋值拿到的是地址，修改会影响原来的数据</code></p>
-<h4 id="如何进行深拷贝"><a href="#如何进行深拷贝" class="headerlink" title="如何进行深拷贝 ?"></a>如何进行深拷贝 ?</h4><p><strong>常见方法</strong><br><code>方法1：通过递归实现深拷贝</code><br><code>方法2：lodash/cloneDeep</code></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> 新对象 <span class="token operator">=</span>  _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>老对象<span class="token punctuation">)</span></code></pre>
-
-<p><code>方法3：通过JSON.parse(JSON.stringify(js对象))实现</code></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> 新对象 <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>js对象<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-
-<p>在此，我强调一下，利用JSON实现的深拷贝，并非真正意义上的深拷贝。为什么呢？有以下几点原因！</p>
-<p>1.如果obj里面存在时间对象,JSON.parse(JSON.stringify(obj))之后，时间对象变成了字符串。<br>2.如果obj里有RegExp、Error对象，则序列化的结果将只得到空对象。<br>3.如果obj里有函数，undefined，则序列化的结果会把函数， undefined丢失。<br>4.如果obj里有NaN、Infinity和-Infinity，则序列化的结果会变成null。<br>5.JSON.stringify()只能序列化对象的可枚举的自有属性。<br>6.如果obj中的对象是有构造函数生成的，则使用JSON.parse(JSON.stringify(obj))深拷贝后，会丢弃对象的constructor。<br>7.如果对象中存在循环引用的情况也无法正确实现深拷贝。</p>
+                <h3 id="uniapp中，scroll-x为true失效问题"><a href="#uniapp中，scroll-x为true失效问题" class="headerlink" title="uniapp中，scroll-x为true失效问题"></a>uniapp中，scroll-x为true失效问题</h3><p>1.scroll-view中的子元素，不能使用浮动float</p>
+<p>2.scroll-view中外层容器使用display：flex是无效的</p>
+<p>3.若想实现flex横向效果，请将需要滑动的子元素设置为display:inline-block并为其设置宽高</p>
+<p>4.外层容器添加属性 overflow:hidden;white-space:nowrap;</p>
+<p>5.子元素的每一项不能使用flex布局，否则会失效</p>
 
                 
             </div>
@@ -382,7 +347,7 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://leng-yangwei.gitee.io/starry/starry/2023/072034.html">https://leng-yangwei.gitee.io/starry/starry/2023/072034.html</a>
+                    <a href="https://leng-yangwei.gitee.io/starry/starry/2024/011235637.html">https://leng-yangwei.gitee.io/starry/starry/2024/011235637.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -420,8 +385,8 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                     
                         <div class="article-tag">
                             
-                                <a href="/starry/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                                    <span class="chip bg-color">JavaScript高级</span>
+                                <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -467,46 +432,48 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/starry/2023/072043.html">
+                <a href="/starry/2024/011235637.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/8.jpg" class="responsive-img" alt="构造函数&amp;数据常用函数">
+                        <img src="/starry/medias/featureimages/23.jpg" class="responsive-img" alt="uniapp中，scroll-x为true失效问题">
                         
-                        <span class="card-title">构造函数&amp;数据常用函数</span>
+                        <span class="card-title">uniapp中，scroll-x为true失效问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            构造函数&amp;数据常用函数这篇总结主要讲解了构造函数&amp;数据常用函数，讲解了对象与数组的多种方法
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/starry/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    JavaScript高级
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/starry/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">JavaScript高级</span>
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -520,31 +487,31 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/starry/2023/0720324.html">
+                <a href="/starry/2024/010935637.html">
                     <div class="card-image">
                         
                         
-                        <img src="/starry/medias/featureimages/7.jpg" class="responsive-img" alt="盒子水平垂直居中">
+                        <img src="/starry/medias/featureimages/23.jpg" class="responsive-img" alt="uniapp顶部颜色如何设置成渐变色？">
                         
-                        <span class="card-title">盒子水平垂直居中</span>
+                        <span class="card-title">uniapp顶部颜色如何设置成渐变色？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            盒子水平垂直居中这篇总结主要讲解了盒子水平垂直居中的几种方法？
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-01-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/starry/categories/CSS/" class="post-category">
-                                    CSS
+                            <a href="/starry/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -554,8 +521,8 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/starry/tags/web%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">web基础</span>
+                    <a href="/starry/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>

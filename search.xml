@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>uniapp中，scroll-x为true失效问题</title>
+      <link href="/starry/2024/011235637.html"/>
+      <url>/starry/2024/011235637.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="uniapp中，scroll-x为true失效问题"><a href="#uniapp中，scroll-x为true失效问题" class="headerlink" title="uniapp中，scroll-x为true失效问题"></a>uniapp中，scroll-x为true失效问题</h3><p>1.scroll-view中的子元素，不能使用浮动float</p><p>2.scroll-view中外层容器使用display：flex是无效的</p><p>3.若想实现flex横向效果，请将需要滑动的子元素设置为display:inline-block并为其设置宽高</p><p>4.外层容器添加属性 overflow:hidden;white-space:nowrap;</p><p>5.子元素的每一项不能使用flex布局，否则会失效</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>uniapp顶部颜色如何设置成渐变色？</title>
       <link href="/starry/2024/010935637.html"/>
       <url>/starry/2024/010935637.html</url>
