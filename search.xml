@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/starry/2024/0410undefined.html"/>
+      <url>/starry/2024/0410undefined.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="报错-Unhandled-error-during-execution-of-render-function"><a href="#报错-Unhandled-error-during-execution-of-render-function" class="headerlink" title="报错 Unhandled error during execution of render function"></a>报错 Unhandled error during execution of render function</h3><p>场景：在我定义一个form表单数据，由于后端接口给我的数据是过度嵌套，我根据后端格式定义在页面表单时，发生<code>Unhandled error during execution of render function </code>报错。</p><p>原因：过度嵌套，表格嵌套使用没问题，但是新增这种表单嵌套会出现这种问题</p><p>解决：要么结构，要么让后端别嵌套那么多层</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>uniapp中，scroll-x为true失效问题</title>
       <link href="/starry/2024/011235637.html"/>
       <url>/starry/2024/011235637.html</url>
