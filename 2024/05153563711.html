@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="element-ui中tree组件的同级拖拽, 星星">
-    <meta name="description" content="element-ui中tree组件的同级拖拽HTML结构 &amp;lt;el-tree 
-          style=&#34;margin-top: 20px;&#34;  // 样式
-          :data=&#34;treeList&#34;         ">
+    <meta name="keywords" content="PC端横向滚动---Vue3, 星星">
+    <meta name="description" content="PC端横向滚动—Vue3.md&amp;lt;template&amp;gt;
+  &amp;lt;div class&amp;#x3D;&amp;quot;scroll-container&amp;quot; @mousedown&amp;#x3D;&amp;quot;startDrag&amp;quot; ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>element-ui中tree组件的同级拖拽 | 星星</title>
+    <title>PC端横向滚动---Vue3 | 星星</title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -223,12 +222,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">element-ui中tree组件的同级拖拽</h1>
+                    <h1 class="description center-align post-title">PC端横向滚动---Vue3</h1>
                 </div>
             </div>
         </div>
@@ -279,14 +278,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-12-02
+                    2024-05-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    525
+                    576
                 </div>
                 
 
@@ -316,90 +315,93 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="element-ui中tree组件的同级拖拽"><a href="#element-ui中tree组件的同级拖拽" class="headerlink" title="element-ui中tree组件的同级拖拽"></a>element-ui中tree组件的同级拖拽</h2><h3 id="HTML结构"><a href="#HTML结构" class="headerlink" title="HTML结构"></a>HTML结构</h3><pre class="language-markup" data-language="markup"><code class="language-markup"> &lt;el-tree 
-          style="margin-top: 20px;"  // 样式
-          :data="treeList"           // 绑定的tree数组
-          node-key="id"              // 每个节点的标识，绑定data后，你要根据每一项的唯一值去绑定
-          :highlight-current="true"  // 选中高亮
-          @node-click="doChoose"     // 某个项被点击时的回调，能拿到该项的所有数据
-          :default-expand-all="false"   // 不展开所有树节点
-          :expand-on-click-node="true"  // 点击节点打开
-          :default-expanded-keys="expandedKeys" // 默认展开节点的数组
-          draggable // 开启可拖拽
-          :allow-drop="allowDrop"  // 拖拽时判定目标节点能否被放置
-          @node-drop="handleDrop"  // 拖拽成功完成时触发的事件 在这里发送请求，调用刷新列表接口
-          >
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom-tree-node<span class="token punctuation">"</span></span> <span class="token attr-name">slot-scope</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123; node, data &#125;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span> &#123;[data.title || data.name]&#125;(章节)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>custom-tree-node-button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mini<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>()=>doDrawer('修改')<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                 修改
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mini<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>delData('删除')<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                 删除
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mini<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>() => videoCourse(node, data)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                 视频课程
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>mini<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>() => LiveCourse(node, data)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-                 直播课程
-             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
-         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-tree</span><span class="token punctuation">></span></span></code></pre>
+                <h3 id="PC端横向滚动—Vue3-md"><a href="#PC端横向滚动—Vue3-md" class="headerlink" title="PC端横向滚动—Vue3.md"></a>PC端横向滚动—Vue3.md</h3><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;div class&#x3D;&quot;scroll-container&quot; @mousedown&#x3D;&quot;startDrag&quot; @mousemove&#x3D;&quot;onDrag&quot; @mouseup&#x3D;&quot;stopDrag&quot; @mouseleave&#x3D;&quot;stopDrag&quot;&gt;
+    &lt;div class&#x3D;&quot;scroll-content&quot; ref&#x3D;&quot;scrollContent&quot;&gt;
+     &lt;1--不一定要这样，放入需要滚动的列表即可，外部一定要套两层，第一层是确定他的框架，超过了就隐藏，第二层则是设置他的滚动以及他的滚动距离--&gt;
+      &lt;div class&#x3D;&quot;scroll-item&quot; v-for&#x3D;&quot;item in items&quot; :key&#x3D;&quot;item.id&quot;&gt;&#123;&#123; item.name &#125;&#125;&lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
 
+&lt;script setup&gt;
+import &#123; ref &#125; from &#39;vue&#39;;
+const scrollContent &#x3D; ref(null);
+const items &#x3D; ref([
+      &#123; id: 1, name: &#39;Item 1&#39; &#125;,
+      &#123; id: 2, name: &#39;Item 2&#39; &#125;,
+      &#123; id: 3, name: &#39;Item 3&#39; &#125;,
+      &#123; id: 4, name: &#39;Item 4&#39; &#125;,
+      &#123; id: 5, name: &#39;Item 5&#39; &#125;,
+      &#123; id: 6, name: &#39;Item 6&#39; &#125;
+]);
 
+let isDragging &#x3D; false;
+let startX &#x3D; 0;
+let scrollLeft &#x3D; 0;
 
-<h3 id="Vue逻辑"><a href="#Vue逻辑" class="headerlink" title="Vue逻辑"></a>Vue逻辑</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-            <span class="token literal-property property">treeList</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-        <span class="token punctuation">&#125;</span>
-    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
-        <span class="token keyword">async</span> <span class="token function">handleDrop</span><span class="token punctuation">(</span><span class="token parameter">draggingNode<span class="token punctuation">,</span> dropNode<span class="token punctuation">,</span> dropType<span class="token punctuation">,</span> ev</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-            <span class="token keyword">this</span><span class="token punctuation">.</span>treeList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-                arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>id<span class="token punctuation">)</span>
-            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-            <span class="token comment">// 由于接口参数需要顺序调整的Id，存放在arr中</span>
-            <span class="token comment">// 调用顺序调整接口</span>
-            <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">admin_jquery_ajax</span><span class="token punctuation">(</span><span class="token string">'post'</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span><span class="token string">'/api/xxx'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
-                <span class="token literal-property property">ids</span><span class="token operator">:</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">,</span>
-            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>ret <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-                    <span class="token comment">// 请求成功后，调用刷新列表接口</span>
-                    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getSectionTree</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>sectionData<span class="token punctuation">.</span>course_id<span class="token punctuation">)</span> 
-                <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-                <span class="token comment">// 由于拖动的频率比较高，这里就不打印成功提示信息了</span>
-            <span class="token punctuation">&#125;</span><span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                <span class="token comment">// 失败提示信息</span>
-                <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">warning</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>msg<span class="token punctuation">)</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-        <span class="token comment">// 拖拽时判定目标节点能否被放置</span>
-        <span class="token comment">// 'prev'、'inner' 和 'next'，分前、插入、后</span>
-        <span class="token function">allowDrop</span><span class="token punctuation">(</span><span class="token parameter">draggingNode<span class="token punctuation">,</span> dropNode<span class="token punctuation">,</span> type</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>draggingNode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>level <span class="token operator">===</span> dropNode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>level<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>draggingNode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>parentId <span class="token operator">===</span> dropNode<span class="token punctuation">.</span>data<span class="token punctuation">.</span>parentId<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-                    <span class="token comment">//inner类型为插入，不进入判断</span>
-                    <span class="token comment">// 只有prev和next则返回true</span>
-                    <span class="token keyword">return</span> type <span class="token operator">===</span> <span class="token string">"prev"</span> <span class="token operator">||</span> type <span class="token operator">===</span> <span class="token string">"next"</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                    <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                <span class="token punctuation">&#125;</span>
-            <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-                <span class="token comment">// 不同级进行处理</span>
-                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-            <span class="token punctuation">&#125;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
-    <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+&#x2F;&#x2F; isDragging 当用户鼠标按下，isDragging设置为真，为后面鼠标移动事件做铺垫
+const startDrag &#x3D; (e) &#x3D;&gt; &#123;
+     isDragging &#x3D; true;
+     startX &#x3D; e.pageX - scrollContent.value.offsetLeft;
+     scrollLeft &#x3D; scrollContent.value.scrollLeft;  &#x2F;&#x2F;可见内容与实际内容距离
+&#125;;
 
+ const onDrag &#x3D; (e) &#x3D;&gt; &#123;
+    if (!isDragging) return;
+      e.preventDefault();
+      const x &#x3D; e.pageX - scrollContent.value.offsetLeft;
+      const walk &#x3D; (x - startX) * 2; &#x2F;&#x2F; 滚动速度
+      scrollContent.value.scrollLeft &#x3D; scrollLeft - walk;
+ &#125;;
 
+&#x2F;&#x2F; 鼠标事件抬起 isDragging设为false,让鼠标移动事件失效
+const stopDrag &#x3D; () &#x3D;&gt; &#123;
+      isDragging &#x3D; false;
+&#125;;
 
-<p>以上就是element-ui中tree组件的同级拖拽</p>
+&lt;&#x2F;script&gt;
+
+&lt;style scoped&gt;
+.scroll-container &#123;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  user-select: none; &#x2F;* 防止拖动时选择文本 *&#x2F;
+&#125;
+
+.scroll-content &#123;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+&#x2F;* scroll-behavior属性包括： smooth | auto; *&#x2F;
+&#x2F;* auto: 默认值，表示滚动框立即滚动到指定位置。 smooth 表示允许滚动时采用平滑过渡，而不知直接滚动到相应位置，最常见的比如回到顶部按钮和锚点。 *&#x2F;
+  cursor: grab;
+  width: 100%; &#x2F;* 根据需要调整宽度*&#x2F;
+&#125;
+
+.scroll-content:active &#123;
+  cursor: grabbing;  &#x2F;&#x2F; 爪子
+&#125;
+
+.scroll-item &#123;
+  min-width: 100px;
+  margin: 0 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  text-align: center;
+  white-space: nowrap;
+&#125;
+&#x2F;* 隐藏滚动条 这样用户体验更好 *&#x2F;
+::-webkit-scrollbar &#123;
+  width: 0;
+  height: 0;
+  color: transparent;
+&#125;
+&lt;&#x2F;style&gt;
+</code></pre>
+
 
                 
             </div>
@@ -426,7 +428,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/12026651.html">https://DOMandBOM.github.io/star/star/2023/12026651.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2024/05153563711.html">https://DOMandBOM.github.io/star/star/2024/05153563711.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -511,17 +513,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2023/12146653.html">
+                <a href="/star/2024/05153563711.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/9.jpg" class="responsive-img" alt="element-ui中table组件拖拽">
+                        <img src="/star/medias/featureimages/7.jpg" class="responsive-img" alt="PC端横向滚动---Vue3">
                         
-                        <span class="card-title">element-ui中table组件拖拽</span>
+                        <span class="card-title">PC端横向滚动---Vue3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -531,9 +534,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -546,6 +549,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -564,13 +568,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/11303299.html">
+                <a href="/star/2024/0510356371.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/1.jpg" class="responsive-img" alt="element-ui 时间日期选择器datetimerange类型限制类型到当前时分">
+                        <img src="/star/medias/featureimages/13.jpg" class="responsive-img" alt="uniapp跳转页面传对象类型的数据问题">
                         
-                        <span class="card-title">element-ui 时间日期选择器datetimerange类型限制类型到当前时分</span>
+                        <span class="card-title">uniapp跳转页面传对象类型的数据问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -581,7 +585,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-10
                             </span>
                         <span class="publish-author">
                             
