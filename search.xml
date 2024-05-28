@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>将对象中的每个值转换为number</title>
+      <link href="/star/2024/052866512.html"/>
+      <url>/star/2024/052866512.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="将对象中的每个值转换为number"><a href="#将对象中的每个值转换为number" class="headerlink" title="将对象中的每个值转换为number"></a>将对象中的每个值转换为number</h3> <pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> 接收属性 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">fromEntries</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>对象<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> <span class="token function">Number</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre><p><code>Object.entries() 方法返回一个给定对象自身可枚举属性的键值对数组。</code></p><p><code> Object.fromEntries() 把键值对列表转换为一个对象</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PC端横向滚动---Vue3</title>
       <link href="/star/2024/05153563711.html"/>
       <url>/star/2024/05153563711.html</url>

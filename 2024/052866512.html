@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS-web端, 星星">
-    <meta name="description" content="CSS-web端CSS-web端这篇笔记是关于web端能够使用到的css样式语法
+    <meta name="keywords" content="将对象中的每个值转换为number, 星星">
+    <meta name="description" content="将对象中的每个值转换为number const 接收属性 = Object.fromEntries(Object.entries(对象).map(([key, value]) =&gt; [key, Number(value)]));
 
 
-一.CSS基础认知是什么？：层叠样式表作用：专门给html设置样式语法规则：1.选择器  {color:red;}2.css符号都是英文3.键值对写完以后">
+
+Ob">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CSS-web端 | 星星</title>
+    <title>将对象中的每个值转换为number | 星星</title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -224,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CSS-web端</h1>
+                    <h1 class="description center-align post-title">将对象中的每个值转换为number</h1>
                 </div>
             </div>
         </div>
@@ -253,8 +254,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">web基础</span>
+                            <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -265,8 +266,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/star/categories/CSS/" class="post-category">
-                                CSS
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -280,21 +281,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-21
+                    2024-05-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.8k
+                    69
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    1 分
                 </div>
                 
 
@@ -317,132 +318,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CSS-web端"><a href="#CSS-web端" class="headerlink" title="CSS-web端"></a>CSS-web端</h1><p><code>CSS-web端这篇笔记是关于web端能够使用到的css样式语法</code></p>
-<span id="more"></span>
-
-<h2 id="一-CSS基础认知"><a href="#一-CSS基础认知" class="headerlink" title="一.CSS基础认知"></a>一.CSS基础认知</h2><p><strong>是什么？</strong>：层叠样式表<br><strong>作用</strong>：专门给html设置样式<br><strong>语法规则</strong>：<br>1.选择器  {color:red;}<br>2.css符号都是英文<br>3.键值对写完以后需要加分号<br><strong>css引入方式</strong>：<br>内嵌式：将css代码写在html文件中<br>                <code>一般写在title标签下面，&lt;style&gt;&lt;/style&gt;</code></p>
-<p>外联式：写在单独的css文件中			<br>                通过link标签在html文件中引入</p>
-<p>行内式：<code>写在目标标签的开始标签中，style=&#39;color:red;&#39;</code></p>
-<h2 id="二-选择器"><a href="#二-选择器" class="headerlink" title="二.选择器"></a>二.选择器</h2><h3 id="基础选择器"><a href="#基础选择器" class="headerlink" title="基础选择器"></a>基础选择器</h3><h4 id="1-标签选择器"><a href="#1-标签选择器" class="headerlink" title="1.标签选择器"></a>1.标签选择器</h4><p><strong>标签名 {css属性}</strong><br>特点：<strong>找到页面中所有的这个标签</strong></p>
-<h4 id="2-类选择器"><a href="#2-类选择器" class="headerlink" title="2.类选择器"></a>2.类选择器</h4><p><strong>.类名 {css属性}</strong>           class的属性值成为类名<br>特点：<br>        1.仅仅只找该类名的标签<br>        2.不能以数字，中划线开头<br>        3.类名可以有数字，字母，下划线，中划线<br>        4.标签中可以有多个类名</p>
-<h4 id="3-id选择器"><a href="#3-id选择器" class="headerlink" title="3.id选择器"></a>3.id选择器</h4><p><strong>#id属性值 {css属性}</strong><br>特点：<strong>一个id选择器只能选择到一个标签</strong></p>
-<h4 id="4-通配符选择器"><a href="#4-通配符选择器" class="headerlink" title="4.通配符选择器"></a>4.通配符选择器</h4><p><code>* &#123;css属性&#125;</code><br>特点：<strong>找到页面上所有标签，设置样式</strong></p>
-<h3 id="选择器的进阶"><a href="#选择器的进阶" class="headerlink" title="选择器的进阶"></a>选择器的进阶</h3><p><strong>复合选择器</strong><br><code>1.后代选择器</code>：选择器1 选择器2 { css属性 }<br><strong>作用</strong>：寻找所有的后代，包括孙子<br><code>2.子代选择器</code>：选择器1&gt;选择器2{css属性}<br><strong>作用</strong>：仅仅只寻找子代，不会找到孙子<br><code>3.并集选择器</code>：选择器1，选择器2 {css属性}  中间逗号分隔<br><strong>作用</strong>：选中选择器1和选择器2选中的标签，设置样式<br><code>4.交集选择器</code>：选择器1选择器2 {css选择器}<br><strong>作用</strong>：找到页面一个标签内同时拥有选择器1和选择器2的标签，<br><code>&lt;p class=&#39;red&#39;&gt;小哥哥&lt;/p&gt;</code>       p.red {css属性}<br><strong>注意</strong>：交集选择器中如果有标签选择器，标签选择器必须写在最前面<br><code>5. hover伪类选择器</code>：选择器:hover{css属性}<br>在鼠标悬停在元素上时触发<br><code>6.emmet语法</code> ：内部文本    ul&gt;li{我是li的内容}，能够快速生成结构，需要的自己查一下文档。</p>
-<h3 id="结构伪类选择器"><a href="#结构伪类选择器" class="headerlink" title="结构伪类选择器"></a>结构伪类选择器</h3><p>1.<code>父盒子 子盒子:first-child &#123;&#125;</code><br>2.<code>父盒子 子盒子:last-child &#123;&#125;</code><br>3.<code>父盒子 子盒子:nth-child(n) &#123;&#125;</code></p>
-<pre class="language-none"><code class="language-none">偶数  2n  even
-奇数 2n-1 odd
-前5个  -n+5
-后五个 n+5</code></pre>
-
-<p>4.<code>父盒子 子盒子:nth-last-child(n) &#123;&#125;</code><br>5.<code>父盒子 子盒子:nth-of-type(n) &#123;&#125;</code><br><strong>区别：</strong><br>:nth-child → 直接在所有孩子中数个数<br>:nth-of-type → 先通过该 类型 找到符合的一堆子元素，然后在这一堆子元素中数个数</p>
-<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>伪元素：通过css模拟出来的html标签<br>::before   ::after<br><strong>注意：</strong><br>1.必须设置content属性才能生效<br>2.伪元素默认是行内元素<br>3.只有双标签才可以使用伪元素</p>
-<h2 id="三-字体和文本样式"><a href="#三-字体和文本样式" class="headerlink" title="三.字体和文本样式"></a>三.字体和文本样式</h2><h3 id="字体样式"><a href="#字体样式" class="headerlink" title="字体样式"></a>字体样式</h3><pre class="language-none"><code class="language-none">font-size        字体大小
-font-weight      文本粗细    400为正常
-font-family      文本字体
-font-style       文本风格    normal  正常    italic  斜体
-font连写方式    font:文本风格   文本粗细   字体大小&#x2F;行高   字体
-注意：1.必须保留font-size和font-family属性，否则font属性不起作用
-	    2.要把单独的样式写在连写的下面，不然会被覆盖</code></pre>
-
-<h3 id="文本样式"><a href="#文本样式" class="headerlink" title="文本样式"></a>文本样式</h3><pre class="language-none"><code class="language-none">color  文字颜色
-text-align  文本水平居中 只能给大盒子使用
-text-decoration 下划线样式   
-      1.none  默认，用于a标签的取消下划线
-			2.underline  下划线
-text-indent属性  首行缩进      单位em
-line-height  行高</code></pre>
+                <h3 id="将对象中的每个值转换为number"><a href="#将对象中的每个值转换为number" class="headerlink" title="将对象中的每个值转换为number"></a>将对象中的每个值转换为number</h3> <pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> 接收属性 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">fromEntries</span><span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>对象<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> <span class="token function">Number</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 
 
 
-<h2 id="四-背景属性"><a href="#四-背景属性" class="headerlink" title="四.背景属性"></a>四.背景属性</h2><pre class="language-none"><code class="language-none">背景颜色  background-color
-背景图片  background-img:url()
-			盒子比图片大，会出现平铺的效果
-背景平铺  background-repeat
-			1.no-repeat  不平铺
-			2.repeat-x  水平方向平铺
-			3.repeat-y  垂直方向平铺
-背景位置   background-position:水平方向  垂直方向
-			向右走为正值
-			向下走为正值
-背景属性的复合写法：background:color url() no-repeat position</code></pre>
-
-<h2 id="五-元素的显示模式"><a href="#五-元素的显示模式" class="headerlink" title="五.元素的显示模式"></a>五.元素的显示模式</h2><h3 id="1-块级元素"><a href="#1-块级元素" class="headerlink" title="1.块级元素"></a>1.块级元素</h3><p><strong>特点：</strong><br>1.独占一行<br>2.如果不设置宽高，那么他的宽度由父元素决定，高度由内容撑开<br>3.可以设置宽高<br><strong>如何转换？</strong>转换块级元素   display:block;<br><strong>哪些是块级元素：</strong>div,p h系列，列表， 表格，form…</p>
-<h3 id="2-行内元素"><a href="#2-行内元素" class="headerlink" title="2.行内元素"></a>2.行内元素</h3><p><strong>特点：</strong><br>1.不独占一行,可放多个<br>2.不能设置宽高<br>3.宽高由内容决定<br><strong>如何转换？</strong>转换为行内块元素  display:inline;<br><strong>哪些是行内元素</strong>：a,span,b,i,u…..</p>
-<h3 id="3-行内块元素"><a href="#3-行内块元素" class="headerlink" title="3.行内块元素"></a>3.行内块元素</h3><p><strong>特点：</strong><br>1.一行显示多个<br>2.可以设置宽高<br><strong>如何转换？</strong>转换为行内块元素  display：inline-block<br><strong>哪些是行内块元素</strong>img，input等所有表单元素</p>
-<h2 id="六-CSS特性"><a href="#六-CSS特性" class="headerlink" title="六.CSS特性"></a>六.CSS特性</h2><h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>1.字体系列，文本系列控制的属性都能继承<br>2.width，height不能被继承<br>3.a标签无法继承color<br>4.h系列标签无法继承font-size</p>
-<h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>1.给同一个标签设置不同的样式 → 此时样式会层叠叠加 → 会共同作用在标签上</p>
-<p>2.给同一个标签设置相同的样式 → 此时样式会层叠覆盖 → 最终写在最后的样式会生效<br>    注意：当样式冲突时，只有当选择器优先级相同时，才能通过层叠性判断结果</p>
-<h3 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h3><p>1.当同一个元素指定多个选择器，就会有优先级<br>2.！important&gt;行类样式&gt;id选择器&gt;类选择器，伪类选择器&gt;基础选择器&gt;通配符&gt;继承<br>3.!important放在声明后面，声明会变成最大优先级<br>4.选择器 {属性名:属性值 !important;}</p>
-<h2 id="七-盒子模型"><a href="#七-盒子模型" class="headerlink" title="七.盒子模型"></a>七.盒子模型</h2><p><strong>组成：内容+内边距+边框+外边距</strong><br><strong>内边距 padding</strong><br>            1.padding一般都会撑大盒子<br>            2.不会撑大的情况<br>                1.不给子元素设置宽，默认是父盒子的宽<br>                2.给子元素设置padding和border都不会撑大盒子<br><strong>边框 border</strong><br><strong>外边距 margin</strong><br><strong>自动内减 box-sizing: border-box;</strong> 怪异盒子</p>
-<h4 id="1-外边距折叠现象"><a href="#1-外边距折叠现象" class="headerlink" title="1.外边距折叠现象"></a>1.外边距折叠现象</h4><p><strong>① 合并现象</strong><br>1.场景：垂直布局 的 块级元素，上下的margin会合并<br>2.结果：最终两者距离为margin的最大值<br>3.解决方法：只给其中一个盒子设置margin即可<br><strong>② 塌陷现象</strong><br>1.场景：互相嵌套 的 块级元素，子元素的 margin-top 会作用在父元素上<br>2.结果：导致父元素一起往下移动<br>3.解决办法：<br>3.1：给父元素设置border-top 或者 padding-top（分隔父子元素的margin-top）<br>3.2：给父元素设置overflow：hidden<br>3.3：给父元素转换成行内块元素<br>3.4：给父元素设置浮动</p>
-<h4 id="2-行内元素的margin和padding无效情况"><a href="#2-行内元素的margin和padding无效情况" class="headerlink" title="2.行内元素的margin和padding无效情况"></a>2.行内元素的margin和padding无效情况</h4><p>1.场景：给行内元素设置margin和padding时<br>2.结果：<br>2.1：水平方向的margin和padding布局中有效！<br>2.2：垂直方向的margin和padding布局中无效！</p>
-<h2 id="八-标准流"><a href="#八-标准流" class="headerlink" title="八.标准流"></a>八.标准流</h2><p>1.块级元素：从上往下，垂直布局，独占一行</p>
-<p>2.行内元素 或 行内块元素：从左往右，水平布局，空间不够自动折行</p>
-<h2 id="九浮动"><a href="#九浮动" class="headerlink" title="九浮动"></a>九浮动</h2><p><strong>浮动的作用：</strong>1.图文环绕 ，2.网页布局<br><strong>语法：</strong>float:left&#x2F;right;<br><strong>特点：</strong><br>1.浮动元素会脱标，在标准流中不占位置<br>2.浮动元素比标准流高出半个级别，可以覆盖标准流中的元素<br>3.浮动找浮动，下一个浮动元素会在上一个浮动元素后面左右浮动<br>4.浮动元素有特殊的显示效果：① 一行可以显示多个 ② 可以设置宽高</p>
-<p><strong>注意:浮动的元素不能通过text-align:center或者margin:0 auto</strong></p>
-<h3 id="如何清除浮动？"><a href="#如何清除浮动？" class="headerlink" title="如何清除浮动？"></a>如何清除浮动？</h3><p><strong>1.单伪元素清除浮动</strong></p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
-    <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p><strong>2.双伪元素清除法</strong></p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">.clearfix::before,
-.clearfix::after</span> <span class="token punctuation">&#123;</span>
-    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
-    <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
- <span class="token punctuation">&#125;</span> 
- <span class="token selector">.clearfix::after</span> <span class="token punctuation">&#123;</span>
-     <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
- <span class="token punctuation">&#125;</span></code></pre>
-
-<p><strong>3.给父盒子设置一个高</strong><br><strong>4.给父元素设置overflow:hidden;</strong><br><strong>5.额外标签法</strong><br>5.1：在父元素内容的最后添加一个块级元素<br>5.2：给添加的块级元素设置 clear:both</p>
-<h2 id="十-定位"><a href="#十-定位" class="headerlink" title="十.定位"></a>十.定位</h2><p>定位场景：1.盒子层叠，2.固定盒子位置</p>
-<h3 id="第一步：设置position"><a href="#第一步：设置position" class="headerlink" title="第一步：设置position"></a>第一步：设置position</h3><p><strong>relative  相对定位</strong>：相对于自己之前的位置移动<br>特点：1.占位置，未脱标。2.配合边偏移使用。3.子绝父相</p>
-<p><strong>absolute  绝对定位</strong>：默认浏览器可视区进行移动<br>如果其祖先元素有定位的属性，就相对于最近的祖先定位元素来移动，祖先定位可以是（绝对，相对，固定）<br>特点：1.不占位置，脱标。2.配合边偏移使用。3.子绝父相<br><strong>水平垂直居中</strong>：</p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token property">left</span><span class="token punctuation">:</span>50% <span class="token punctuation">;</span>
-<span class="token property">top</span><span class="token punctuation">:</span>50%<span class="token punctuation">;</span>
-<span class="token property">transform</span><span class="token punctuation">:</span><span class="token function">translate</span><span class="token punctuation">(</span>-50%<span class="token punctuation">,</span>-50%<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-
-<p><strong>fixed 固定定位</strong>：相对于浏览器可视区进行移动<br>特点：1.不占位置，脱标。2.配合边偏移使用。3.让盒子固定在屏幕中的某个位置</p>
-<p><strong>z-index</strong>：z-index：1；数值越大，越在上面。要结合定位使用，不能单独使用</p>
-<h3 id="第二步：设置边偏移"><a href="#第二步：设置边偏移" class="headerlink" title="第二步：设置边偏移"></a>第二步：设置边偏移</h3><p>left  right  top  bottom</p>
-<h2 id="十一-装饰"><a href="#十一-装饰" class="headerlink" title="十一.装饰"></a>十一.装饰</h2><h3 id="1-垂直对齐方式"><a href="#1-垂直对齐方式" class="headerlink" title="1.垂直对齐方式"></a>1.垂直对齐方式</h3><p><strong>语法：vertical-align:top&#x2F;middle&#x2F;bottom</strong><br><strong>只能设置给行内&#x2F;行内块元素，设置给图片</strong><br><strong>注意：</strong><br>1.行内&#x2F;行内块的元素都有基线对齐的问题<br>2.不推荐使用行内块让div一行显示，因为可能出现基线对齐的问题<br><strong>解决：</strong>方法1:使用vertical-align<br>           方法2：将行内&#x2F;行内块元素转换为块级元素</p>
-<h3 id="2-cursor-鼠标光标"><a href="#2-cursor-鼠标光标" class="headerlink" title="2.cursor  鼠标光标"></a>2.cursor  鼠标光标</h3><p>这个自己查文档去</p>
-<h3 id="3-圆角边框"><a href="#3-圆角边框" class="headerlink" title="3.圆角边框"></a>3.圆角边框</h3><p>1.border-radius:10px;  数值越大，就越圆<br>2.圆形   50%<br>3.胶囊按钮  设置盒子高度的一半</p>
-<h3 id="4-overflow"><a href="#4-overflow" class="headerlink" title="4.overflow"></a>4.overflow</h3><p>处理溢出的部分</p>
-<pre class="language-none"><code class="language-none">hidden  隐藏
-visible  默认值  溢出的部分显示
-scroll  将溢出的部分设置为滚动条，不管内容是否溢出，都会出现
-auto  根据内容多少来决定，如果内容溢出才触发滚动条</code></pre>
-
-<h3 id="5-显示与隐藏"><a href="#5-显示与隐藏" class="headerlink" title="5.显示与隐藏"></a>5.显示与隐藏</h3><p><strong>display属性</strong></p>
-<pre class="language-none"><code class="language-none">block 显示
-none   隐藏
-注意：隐藏以后不占位置</code></pre>
-
-<p><strong>visibility属性</strong></p>
-<pre class="language-none"><code class="language-none">hidden  隐藏
-visible 显示
-占位置</code></pre>
-
-<p><strong>opacity元素透明度</strong></p>
-<pre class="language-none"><code class="language-none">opacity：0.5；
-属性值在0-1之间
-注意：opacity会让元素整体透明，包括里面的内容			</code></pre>
-
-<p><strong>transparent  透明度</strong></p>
-<h2 id="十二-链接伪类"><a href="#十二-链接伪类" class="headerlink" title="十二.链接伪类"></a>十二.链接伪类</h2><pre class="language-none"><code class="language-none">a:link a链接未访问过的状态
-a:visited  a链接访问以后的状态
-a:active  选中鼠标按下
-a:hover</code></pre>
-
-<h2 id="十三-焦点伪类"><a href="#十三-焦点伪类" class="headerlink" title="十三.焦点伪类"></a>十三.焦点伪类</h2><p>input:focus</p>
-<h2 id="十四-精灵图"><a href="#十四-精灵图" class="headerlink" title="十四.精灵图"></a>十四.精灵图</h2><p>1.设置背景图片<br>2.设置背景位置值，负值</p>
-<h2 id="十五-过渡"><a href="#十五-过渡" class="headerlink" title="十五.过渡"></a>十五.过渡</h2><p>语法：transition:all  2s;<br><strong>注意：</strong><br>1.过渡需要：默认状态 和 hover状态样式不同，才能有过渡效果<br>2.transition属性给需要过渡的元素本身加<br>3.transition属性设置在不同状态中，效果不同的<br>① 给默认状态设置，鼠标移入移出都有过渡效果<br>② 给hover状态设置，鼠标移入有过渡效果，移出没有过渡效果</p>
+<p><code>Object.entries() 方法返回一个给定对象自身可枚举属性的键值对数组。</code></p>
+<p><code> Object.fromEntries() 把键值对列表转换为一个对象</code></p>
 
                 
             </div>
@@ -469,7 +350,7 @@ a:hover</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/07202.html">https://DOMandBOM.github.io/star/star/2023/07202.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2024/052866512.html">https://DOMandBOM.github.io/star/star/2024/052866512.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -507,8 +388,8 @@ a:hover</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">web基础</span>
+                                <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -554,84 +435,36 @@ a:hover</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2023/07206.html">
+                <a href="/star/2024/052866512.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/1.jpg" class="responsive-img" alt="CSS-移动端第二篇">
+                        <img src="/star/medias/featureimages/1.jpg" class="responsive-img" alt="将对象中的每个值转换为number">
                         
-                        <span class="card-title">CSS-移动端第二篇</span>
+                        <span class="card-title">将对象中的每个值转换为number</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CSS-移动端第二篇本篇文章主要总结了移动端适配+less预处理+BootStrap框架
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
-                        <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/star/categories/CSS/" class="post-category">
-                                    CSS
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">web基础</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/star/2023/07202.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/star/medias/featureimages/3.jpg" class="responsive-img" alt="CSS-web端">
-                        
-                        <span class="card-title">CSS-web端</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            CSS-web端CSS-web端这篇笔记是关于web端能够使用到的css样式语法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/CSS/" class="post-category">
-                                    CSS
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -642,8 +475,57 @@ a:hover</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">web基础</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/star/2024/05153563711.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/7.jpg" class="responsive-img" alt="PC端横向滚动---Vue3">
+                        
+                        <span class="card-title">PC端横向滚动---Vue3</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-05-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
