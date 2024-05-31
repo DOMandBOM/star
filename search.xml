@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何利用el-table的selection多选框实现单选的效果</title>
+      <link href="/star/2024/052866516.html"/>
+      <url>/star/2024/052866516.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="如何利用el-table的selection多选框实现单选的效果"><a href="#如何利用el-table的selection多选框实现单选的效果" class="headerlink" title="如何利用el-table的selection多选框实现单选的效果"></a>如何利用el-table的selection多选框实现单选的效果</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><pre class="language-vue" data-language="vue"><code class="language-vue">  &lt;app-table ref&#x3D;&quot;tableSF&quot; height&#x3D;&quot;500px&quot; header-row-class-name&#x3D;&quot;only&quot; :data&#x3D;&quot;addSuiFangData&quot; @select&#x3D;&quot;handleSelectionChange&quot;&gt;            &lt;app-table-column type&#x3D;&quot;selection&quot; width&#x3D;&quot;55&quot;&gt;&lt;&#x2F;el-table-column&gt;            &lt;app-table-column label&#x3D;&quot;随访包名称&quot; prop&#x3D;&quot;planName&quot;&gt;&lt;&#x2F;app-table-column&gt;&lt;&#x2F;app-table&gt;</code></pre><p><code>data：数据绑定</code></p><p><code>selection-change：选择改变，拿到的参数是选择的那项，不要用这个，他这个数据好像底层做了处理，无法立即拿到</code></p><p><code>select：选中触发</code></p><h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><pre class="language-vue" data-language="vue"><code class="language-vue">const selectionSF &#x3D; ref() &#x2F;&#x2F; 存储选中，后续调接口用const tableSF &#x3D; ref()  &#x2F;&#x2F; 拿到实例const handleSelectionChange &#x3D; (arr: any, row: any) &#x3D;&gt; &#123;    &#x2F;&#x2F; arr是你选中的组成的数组，row是你选中的当前项    selectionSF.value &#x3D; row;  &#x2F;&#x2F; 存储，后续调接口要    if (arr.length &gt; 1) &#123;  &#x2F;&#x2F; 如果选中的长度大于1        tableSF.value.clearSelection();  &#x2F;&#x2F; 清空全部选中        tableSF.value.toggleRowSelection(row);  &#x2F;&#x2F; 选中当前    &#125;&#125;;</code></pre><h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">&lt;style scoped>::v-deep .only .el-table-column--selection</span> <span class="token punctuation">&#123;</span>    <span class="token property">visibility</span><span class="token punctuation">:</span> hidden <span class="token important">!important</span><span class="token punctuation">;</span>  // 隐藏但占用原有位置<span class="token punctuation">&#125;</span>&lt;/style></code></pre><p><code>注意：如果一个页面有两个表格，一个不需要全选框，一个需要全选框。这样css的样式会混淆！</code><br><code>第一种方法就是封装成两个组件，通过scoped把两套代码的样式隔离。</code><br><code>第二种方法就是利用table组件提供的header-row-class-name这个api</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何将对象中的每个值转换为number</title>
       <link href="/star/2024/052866512.html"/>
       <url>/star/2024/052866512.html</url>
