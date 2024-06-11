@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>H5页面如何跳转小程序</title>
+      <link href="/star/2024/0611665161.html"/>
+      <url>/star/2024/0611665161.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="H5页面如何跳转小程序"><a href="#H5页面如何跳转小程序" class="headerlink" title="H5页面如何跳转小程序"></a>H5页面如何跳转小程序</h3><p><a href="%5Bhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/url-scheme.html%5D(https://cloud.tencent.com/developer/tools/blog-entry?target=https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/url-scheme.html&source=article&objectId=2389076)">官方地址</a></p><p>想要简单，直接用<code>明文 URL Scheme</code></p><h4 id="步骤1"><a href="#步骤1" class="headerlink" title="步骤1"></a>步骤1</h4><p>微信登陆后，需要指定跳转的小程序登录，根据以下步骤配置：<code>设置-隐私与安全-明文scheme拉起此小程序-配置你要跳转的页面-这里需要使用管理员扫码才能配置成功</code></p><h4 id="步骤2"><a href="#步骤2" class="headerlink" title="步骤2"></a>步骤2</h4><p>在配置成功后，利用<code>a标签跳转</code></p><pre class="language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>weixin://dl/business/appid=填写AppId&amp;path=这里填步骤一配置的路径&amp;query=随便填<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span></code></pre><ol><li>【必填】APPID：通过明文 URL Scheme 打开小程序的 appid ；</li><li>【必填】PATH：通过明文 URL Scheme 打开小程序的页面 path ，必须是已经发布的小程序存在的页面，不可携带 query；</li><li>【选填】QUERY：通过明文 URL Scheme 打开小程序的 query ，最大512个字符，只支持数字，大小写英文以及部分特殊字符：!#$&amp;’()*+,&#x2F;:;&#x3D;?@-._~%&#96;，需要url_encode；</li><li>【选填】ENV_VERSION：要打开的小程序版本,正式版为release，体验版为trial，开发版为develop，仅在微信外打开时生效。注意：若不填写，则默认打开正式版小程序。</li></ol><p>共有两种方法，这是其中一种，比较简单，另一种比较复杂。<a href="https://developers.weixin.qq.com/minigame/dev/wxcloud/guide/staticstorage/jump-miniprogram.html">另一种的官网</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何利用el-table的selection多选框实现单选的效果</title>
       <link href="/star/2024/052866516.html"/>
       <url>/star/2024/052866516.html</url>
