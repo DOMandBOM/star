@@ -285,7 +285,7 @@ export function throttle(fn: (...args: any[]) =&gt; void, delay: number) &amp;">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    261
+                    259
                 </div>
                 
 
@@ -340,7 +340,7 @@ declare global <span class="token punctuation">&#123;</span>
 <span class="token keyword">const</span> <span class="token literal-property property">vThrottle</span><span class="token operator">:</span> Directive <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
     <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">el</span><span class="token operator">:</span> HTMLElement<span class="token punctuation">,</span> <span class="token literal-property property">binding</span><span class="token operator">:</span> DirectiveBinding</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> binding<span class="token punctuation">.</span>value <span class="token operator">!==</span> <span class="token string">"function"</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Expect a function as the value of v-throttle directive</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">v-throttle不是一个函数</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">return</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
 
