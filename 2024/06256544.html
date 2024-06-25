@@ -285,7 +285,7 @@ export function throttle(fn: (...args: any[]) =&gt; void, delay: number) &amp;">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    259
+                    264
                 </div>
                 
 
@@ -345,10 +345,11 @@ declare global <span class="token punctuation">&#123;</span>
         <span class="token punctuation">&#125;</span>
 
         <span class="token keyword">const</span> delay <span class="token operator">=</span> binding<span class="token punctuation">.</span>arg <span class="token operator">?</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>arg<span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> eventTypes <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>modifiers<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>eventTypes<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-            console<span class="token punctuation">.</span><span class="token function">warn</span><span class="token punctuation">(</span><span class="token string">"Expect at least one event modifier"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token keyword">let</span> eventTypes<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>modifiers<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            eventTypes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"click"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+            eventTypes <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>modifiers<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span>
 
         <span class="token keyword">const</span> throttledFunction <span class="token operator">=</span> <span class="token function">throttle</span><span class="token punctuation">(</span>binding<span class="token punctuation">.</span>value<span class="token punctuation">,</span> delay<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -380,6 +381,7 @@ app<span class="token punctuation">.</span><span class="token function">directiv
 
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 使用</span>
 v<span class="token operator">-</span>throttle<span class="token operator">:</span>时间<span class="token punctuation">.</span>事件<span class="token operator">=</span><span class="token string">"函数"</span>
+默认事件click
 v<span class="token operator">-</span>throttle<span class="token operator">:</span><span class="token number">5000</span><span class="token operator">=</span>"
       <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
