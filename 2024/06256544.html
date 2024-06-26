@@ -278,14 +278,14 @@ export function throttle(fn: (...args: any[]) =&gt; void, delay: number) &amp;">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-25
+                    2024-06-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    264
+                    335
                 </div>
                 
 
@@ -396,6 +396,9 @@ v<span class="token operator">-</span>throttle<span class="token operator">:</sp
         <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
               console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">&#125;</span>"</code></pre>
+
+<p><strong>事件节流自定义指令</strong><br><code>v-throttle:时间.事件=&quot;函数 || 函数名&quot;</code><br><code>v-throttle:时间.事件=&quot;() =&gt; 函数名(形参)&quot;</code><br>默认事件：<code>click</code></p>
+<p><strong>节流函数使用</strong><br>1.import { throttle } from “@&#x2F;services&#x2F;utils&#x2F;throttle”;<br>2.const 函数名 &#x3D; throttle(()&#x3D;&gt;{函数逻辑}，500)</p>
 
                 
             </div>
