@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JS查找对象中为空的值，返回第一个空值, 星星">
-    <meta name="description" content="JS 查找对象中为空的值，返回第一个空值const findFirstEmptyValue = (obj: &amp;#123;&amp;#125;) =&gt; &amp;#123;
-  for (const [key, value] of Object.entrie">
+    <meta name="keywords" content="vue组件上传到npm, 星星">
+    <meta name="description" content="先要去 npm 官网去注册一个账号
+1.创建并配置项目npm init vue@latest    // 创建新的 Vue 3 项目
+
+这里如果创建不成功，看自己的 node 版本，vue3 好像只支持要 18 以上，没有的话重装 node">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JS查找对象中为空的值，返回第一个空值 | 星星</title>
+    <title>vue组件上传到npm | 星星</title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -222,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JS查找对象中为空的值，返回第一个空值</h1>
+                    <h1 class="description center-align post-title">vue组件上传到npm</h1>
                 </div>
             </div>
         </div>
@@ -278,21 +280,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-26
+                    2024-08-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    80
+                    540
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -315,22 +317,109 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="JS-查找对象中为空的值，返回第一个空值"><a href="#JS-查找对象中为空的值，返回第一个空值" class="headerlink" title="JS 查找对象中为空的值，返回第一个空值"></a>JS 查找对象中为空的值，返回第一个空值</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">findFirstEmptyValue</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">obj</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>key<span class="token punctuation">,</span> value<span class="token punctuation">]</span> <span class="token keyword">of</span> Object<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>
-      value <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">||</span>
-      value <span class="token operator">===</span> <span class="token keyword">undefined</span> <span class="token operator">||</span>
-      value <span class="token operator">===</span> <span class="token string">''</span> <span class="token operator">||</span>
-      <span class="token punctuation">(</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> value<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">||</span>
-      <span class="token punctuation">(</span><span class="token keyword">typeof</span> value <span class="token operator">===</span> <span class="token string">'object'</span> <span class="token operator">&amp;&amp;</span>
-        <span class="token operator">!</span>Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span>
-        Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span>
-    <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">return</span> key
+                <p>先要去 npm 官网去注册一个账号</p>
+<h2 id="1-创建并配置项目"><a href="#1-创建并配置项目" class="headerlink" title="1.创建并配置项目"></a>1.创建并配置项目</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm init vue@latest    <span class="token comment">// 创建新的 Vue 3 项目</span></code></pre>
+
+<p>这里如果创建不成功，看自己的 node 版本，vue3 好像只支持要 18 以上，没有的话重装 node</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">Project name<span class="token operator">:</span> your<span class="token operator">-</span>project<span class="token operator">-</span>name
+Add TypeScript<span class="token operator">?</span> Yes
+Add <span class="token constant">JSX</span> Support<span class="token operator">?</span> No
+Add Vue Router <span class="token keyword">for</span> Single Page Application development<span class="token operator">?</span> No
+Add Pinia <span class="token keyword">for</span> state management<span class="token operator">?</span> No
+Add Vitest <span class="token keyword">for</span> Unit Testing<span class="token operator">?</span> No
+Add Cypress <span class="token keyword">for</span> both Unit and End<span class="token operator">-</span>to<span class="token operator">-</span>End testing<span class="token operator">?</span> No
+Add ESLint <span class="token keyword">for</span> code quality<span class="token operator">?</span> Yes
+Add Prettier <span class="token keyword">for</span> code formatting<span class="token operator">?</span> Yes
+这一项                              No</code></pre>
+
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 切换到你项目的文件下，安装依赖</span>
+cd your<span class="token operator">-</span>project<span class="token operator">-</span>name
+npm install</code></pre>
+
+<h2 id="2-安装组件库"><a href="#2-安装组件库" class="headerlink" title="2.安装组件库"></a>2.安装组件库</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm install ant<span class="token operator">-</span>design<span class="token operator">-</span>vue                 <span class="token comment">// 我这使用的ant</span></code></pre>
+
+<h3 id="3-main-ts"><a href="#3-main-ts" class="headerlink" title="3.main.ts"></a>3.main.ts</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createApp <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App.vue'</span>
+<span class="token keyword">import</span> Antd <span class="token keyword">from</span> <span class="token string">'ant-design-vue'</span>
+<span class="token keyword">import</span> <span class="token string">'ant-design-vue/dist/antd.css'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Antd<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span></code></pre>
+
+<p>这里写了，则在你的新项目中则不需要去导入 ant，而我们这个就成了独立的了</p>
+<h3 id="4-封装组件"><a href="#4-封装组件" class="headerlink" title="4.封装组件"></a>4.封装组件</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 建议格式   这样可以导出多个组件</span>
+components
+组件名
+hook
+types
+index<span class="token punctuation">.</span>vue
+组件名
+hook
+types
+index<span class="token punctuation">.</span>vue</code></pre>
+
+<h3 id="5-创建入口文件-index-ts"><a href="#5-创建入口文件-index-ts" class="headerlink" title="5.创建入口文件 index.ts"></a>5.创建入口文件 index.ts</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> App <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> 组件名 <span class="token keyword">from</span> <span class="token string">'./components/组件名'</span>
+
+<span class="token keyword">export</span> <span class="token punctuation">&#123;</span> 组件名 <span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">install</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">app</span><span class="token operator">:</span> App</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    app<span class="token punctuation">.</span><span class="token function">component</span><span class="token punctuation">(</span><span class="token string">'组件名'</span><span class="token punctuation">,</span> 组件名<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h2 id="3-配置打包工具"><a href="#3-配置打包工具" class="headerlink" title="3.配置打包工具"></a>3.配置打包工具</h2><h3 id="1-vite-config-ts"><a href="#1-vite-config-ts" class="headerlink" title="1.vite.config.ts"></a>1.vite.config.ts</h3><pre class="language-json" data-language="json"><code class="language-json">import <span class="token punctuation">&#123;</span> defineConfig <span class="token punctuation">&#125;</span> from 'vite';
+import vue from '@vitejs/plugin-vue';
+import dts from 'vite-plugin-dts';
+
+<span class="token comment">// https://vitejs.dev/config/</span>
+export default defineConfig(<span class="token punctuation">&#123;</span>
+  plugins<span class="token operator">:</span> <span class="token punctuation">[</span>vue()<span class="token punctuation">,</span> dts()<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  build<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    lib<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      entry<span class="token operator">:</span> './src/index.ts'<span class="token punctuation">,</span>
+      name<span class="token operator">:</span> '组件名（大驼峰）'<span class="token punctuation">,</span>
+      fileName<span class="token operator">:</span> (format) => `组件名(小写-连接).$<span class="token punctuation">&#123;</span>format<span class="token punctuation">&#125;</span>.js`<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    rollupOptions<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      external<span class="token operator">:</span> <span class="token punctuation">[</span>'vue'<span class="token punctuation">,</span> 'ant-design-vue'<span class="token punctuation">]</span><span class="token punctuation">,</span>
+      output<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        globals<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+          vue<span class="token operator">:</span> 'Vue'<span class="token punctuation">,</span>
+          'ant-design-vue'<span class="token operator">:</span> 'AntDesignVue'
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
     <span class="token punctuation">&#125;</span>
   <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> <span class="token keyword">null</span> <span class="token comment">// 如果没有找到空值，返回 null</span>
+<span class="token punctuation">&#125;</span>);
+</code></pre>
+
+<h3 id="2-安装-vite-插件"><a href="#2-安装-vite-插件" class="headerlink" title="2.安装 vite 插件"></a>2.安装 vite 插件</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm install @vitejs<span class="token operator">/</span>plugin<span class="token operator">-</span>vue vite<span class="token operator">-</span>plugin<span class="token operator">-</span>dts</code></pre>
+
+<h2 id="4-package-json"><a href="#4-package-json" class="headerlink" title="4. package.json"></a>4. package.json</h2><pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"your-package-name"</span><span class="token punctuation">,</span> <span class="token comment">// 包唯一的名称，因为npm是根据包名搜搜的</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Your package description"</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"dist/组件名(小写-连接).umd.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"dist/组件名(小写-连接).es.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"types"</span><span class="token operator">:</span> <span class="token string">"dist/index.d.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"dist"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"vite build"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"peerDependencies"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"vue"</span><span class="token operator">:</span> <span class="token string">"^3.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"ant-design-vue"</span><span class="token operator">:</span> <span class="token string">"*"</span> <span class="token comment">// 适用于任何版本，怕与项目框架版本冲突</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"Your Name"</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"MIT"</span>
 <span class="token punctuation">&#125;</span></code></pre>
+
+<h2 id="5-打包，上传"><a href="#5-打包，上传" class="headerlink" title="5.打包，上传"></a>5.打包，上传</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm login   <span class="token comment">// 登录</span>
+npm build   <span class="token comment">// 打包</span>
+npm publish <span class="token operator">--</span>access <span class="token keyword">public</span>  <span class="token comment">// 上传且公共可见</span></code></pre>
 
                 
             </div>
@@ -357,7 +446,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2024/062665489.html">https://DOMandBOM.github.io/star/star/2024/062665489.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2024/0801654421.html">https://DOMandBOM.github.io/star/star/2024/0801654421.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -442,17 +531,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2024/073165442.html">
+                <a href="/star/2024/0801654421.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/19.jpg" class="responsive-img" alt="如何向npm上传你封装的js工具代码？">
+                        <img src="/star/medias/featureimages/7.jpg" class="responsive-img" alt="vue组件上传到npm">
                         
-                        <span class="card-title">如何向npm上传你封装的js工具代码？</span>
+                        <span class="card-title">vue组件上传到npm</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -462,9 +552,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -477,6 +567,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -495,13 +586,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2024/06256544.html">
+                <a href="/star/2024/073165442.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/20.jpg" class="responsive-img" alt="Vue3+TS 封装所有事件通用的节流自定义指令">
+                        <img src="/star/medias/featureimages/19.jpg" class="responsive-img" alt="如何向npm上传你封装的js工具代码？">
                         
-                        <span class="card-title">Vue3+TS 封装所有事件通用的节流自定义指令</span>
+                        <span class="card-title">如何向npm上传你封装的js工具代码？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -512,7 +603,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-31
                             </span>
                         <span class="publish-author">
                             
