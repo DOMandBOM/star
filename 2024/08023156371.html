@@ -1,0 +1,1581 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="ant-base-form的使用, 星星">
+    <meta name="description" content="本人封装了一个基于 ant 的 form 表单，以下是使用方法
+表单属性
+
+
+属性名
+解释
+
+
+
+fields
+规定你需要生成表单的值结构
+
+
+formLayout
+表单布局
+
+
+defaultSpan
+你的表单默认占用宽度
+
+
+ref
+获">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>ant-base-form的使用 | 星星</title>
+    <link rel="icon" type="image/png" href="/star/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/star/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/star/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/star/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/star/css/my.css">
+<link rel="stylesheet" type="text/css" href="/star/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/star/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/star/css/post.css">
+
+
+
+
+    
+
+
+
+    <script src="/star/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/star/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">星星</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/star/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">星星</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/star/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">ant-base-form的使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2024-08-02
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    13 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/star/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>本人封装了一个基于 ant 的 form 表单，以下是使用方法</p>
+<h1 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h1><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fields</td>
+<td>规定你需要生成表单的值结构</td>
+</tr>
+<tr>
+<td>formLayout</td>
+<td>表单布局</td>
+</tr>
+<tr>
+<td>defaultSpan</td>
+<td>你的表单默认占用宽度</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>获取表单的 ref，用于提交按钮</td>
+</tr>
+<tr>
+<td>initialValues</td>
+<td>初始值，用于表单回显以及表单重置</td>
+</tr>
+<tr>
+<td>formRules</td>
+<td>自定义校验表单</td>
+</tr>
+</tbody></table>
+<h2 id="fields-属性配置"><a href="#fields-属性配置" class="headerlink" title="fields 属性配置"></a>fields 属性配置</h2><p><code>fields是一个数组对象结构</code></p>
+<h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>解释</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>绑定的数据名</td>
+<td>string</td>
+</tr>
+<tr>
+<td>label</td>
+<td>左侧名称</td>
+<td>string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>数据类型</td>
+<td>string</td>
+</tr>
+<tr>
+<td>required</td>
+<td>星星，只起到展示左右（主要是为插槽校验考虑）</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>errorMessage</td>
+<td>必填错误信息</td>
+<td>string</td>
+</tr>
+<tr>
+<td>requiredFlag</td>
+<td>确定是否为必填项</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>componentProps</td>
+<td>ant 组件本身自带的属性</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>span</td>
+<td>表单占用宽度，取值这个即不会取值默认</td>
+<td>number</td>
+</tr>
+<tr>
+<td>slot</td>
+<td>插槽</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>dependency</td>
+<td>根据前面的表单选中的内容而决定是否展示</td>
+<td>{ dependsOn: “根据那个表单的类型，绑定他的值”, value: “当前面绑定的值为某个时，显示这个表单的值”,}</td>
+</tr>
+<tr>
+<td>slotFlag</td>
+<td>不使用表单 a-form-item 的插槽</td>
+<td>true 则不使用</td>
+</tr>
+</tbody></table>
+<h3 id="type-类型"><a href="#type-类型" class="headerlink" title="type 类型"></a>type 类型</h3><table>
+<thead>
+<tr>
+<th>Type 类型 默认是 input</th>
+<th>原生</th>
+<th>解释</th>
+<th>数据格式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>input</td>
+<td>a-input</td>
+<td>输入框</td>
+<td></td>
+</tr>
+<tr>
+<td>input-number</td>
+<td>a-input-number</td>
+<td>数字输入框</td>
+<td></td>
+</tr>
+<tr>
+<td>select</td>
+<td>a-select</td>
+<td>下拉框</td>
+<td></td>
+</tr>
+<tr>
+<td>radio</td>
+<td>a-radio</td>
+<td>单选</td>
+<td></td>
+</tr>
+<tr>
+<td>checkbox</td>
+<td>a-checkbox</td>
+<td>多选</td>
+<td></td>
+</tr>
+<tr>
+<td>cascader</td>
+<td>a-cascader</td>
+<td>级联</td>
+<td>[{}]</td>
+</tr>
+<tr>
+<td>date</td>
+<td>a-date</td>
+<td>日期</td>
+<td></td>
+</tr>
+<tr>
+<td>switch</td>
+<td>a-switch</td>
+<td>开关</td>
+<td></td>
+</tr>
+<tr>
+<td>time</td>
+<td>a-time</td>
+<td>时间</td>
+<td>HH:mm:ss</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td>a-textarea</td>
+<td>文本域</td>
+<td></td>
+</tr>
+<tr>
+<td>imgUpload</td>
+<td>a-upload</td>
+<td>原本的上传包括了图片上传以及文件上传，html 结构和样式无法统一，因此建议使用插槽去做，不要使用组件</td>
+<td></td>
+</tr>
+<tr>
+<td>treeSelect</td>
+<td>a-tree-select</td>
+<td>tree 的下拉</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>以下是需要注意的点</p>
+<h4 id="time-类型注意点"><a href="#time-类型注意点" class="headerlink" title="time 类型注意点"></a>time 类型注意点</h4><p><code>time类型</code>需要下载 ant datajs,并且需要导入且按照他的定义格式，我个人觉得太麻烦了，通过绑定<code>value-format=&quot;HH:mm:ss&quot;</code>这个值去定义会好很多，例如</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"time"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"时间"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"time"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token string-property property">"value-format"</span><span class="token operator">:</span> <span class="token string">"HH:mm:ss"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span></code></pre>
+
+<h4 id="cascader-注意点"><a href="#cascader-注意点" class="headerlink" title="cascader 注意点"></a>cascader 注意点</h4><p>在使用级联选择器时，当父亲的宽度低于子孙原生宽度时，报错<code>ResizeObserver loop limit exceeded </code>，由于他是由递归写成的，结构的改变会导致他的不断的回流，直到报错。</p>
+<p>解决办法：</p>
+<p>在给他赋值初始值为<code>  cascader: [&#123;&#125;]</code>，亦或者忽略</p>
+<h4 id="select-注意点"><a href="#select-注意点" class="headerlink" title="select 注意点"></a>select 注意点</h4><p>在我们使用 select 组件时，一般需要会需要自定义 label,value,options 字段，这这里面如何处理？直接使用 ant 的属性即可</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+           <span class="token string-property property">"field-names"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"name"</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span> <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token string">"children"</span> <span class="token punctuation">&#125;</span>
+       <span class="token punctuation">&#125;</span></code></pre>
+
+<p><code>cascader，treeSelect组件同理</code>(使用名 fieldNames)</p>
+<h4 id="checkbox-与-radio"><a href="#checkbox-与-radio" class="headerlink" title="checkbox 与 radio"></a>checkbox 与 radio</h4><p>checkbox 有时会包住<code>a-checkbox</code>使用，由于代码底层使用的动态组件，我并未对其封装，如果需要用，请使用插槽，平常用法：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">[</span>数据<span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>radio 同理</p>
+<h3 id="required-errorMessage-requiredFlag-解释"><a href="#required-errorMessage-requiredFlag-解释" class="headerlink" title="required&amp;errorMessage&amp;requiredFlag 解释"></a>required&amp;errorMessage&amp;requiredFlag 解释</h3><p>这两个属性是相辅相成的，需要同时进行，required 并非真正的进行校验。而是只是有个必选的星号在那里，处理逻辑并未沿用 ant 组件内部校验，而是通过自己的业务逻辑去判断并产生消息提示</p>
+<p><code>requiredFlag</code>需定义才能开启校验，required 只是星号，主要是为了插槽的表单做校验</p>
+<p><code>errorMessage</code>不是必须的，底层做了保底，如果不传，则会采用默认信息提示</p>
+<h4 id="插槽表单如何校验？"><a href="#插槽表单如何校验？" class="headerlink" title="插槽表单如何校验？"></a>插槽表单如何校验？</h4><p>1.插槽表单无需定义 required&amp;errorMessage,只需要 required，让他把星号展示出来。</p>
+<p>2.在提交按钮校验后去判断他这个值并进行校验</p>
+<p>示例：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">baseForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">handleSubmit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">formData</span><span class="token operator">:</span> Record<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">></span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>baseForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span>formData<span class="token punctuation">.</span>memberProjectCategoryId<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">"项目分类不能为空"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+              <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+   <span class="token comment">// 调用接口</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h3 id="componentProps"><a href="#componentProps" class="headerlink" title="componentProps"></a>componentProps</h3><p><code>componentProps</code>可以说是最重要的，打个比方，我写一个文本域，即备注表单，我们需要如何定义<code>fields</code>配置。</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> fields <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'remark'</span><span class="token punctuation">,</span>            <span class="token comment">// 绑定值</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span><span class="token string">'备注'</span><span class="token punctuation">,</span>              <span class="token comment">// 左侧标题</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span><span class="token string">'textarea'</span><span class="token punctuation">,</span>          <span class="token comment">// 表单类型</span>
+    <span class="token literal-property property">required</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>            <span class="token comment">// 是否校验</span>
+    <span class="token literal-property property">errorMessage</span><span class="token operator">:</span><span class="token string">'请填写备注'</span>   <span class="token comment">// 校验信息</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<p>这样，一条表单就配置好了。但是此时你想要把文本域展示默认值，同时控制在 2-4 行，同时限制他的字数，并显示剩余字数，如何处理？使用<code>componentProps</code>这个属性，继上面的代码继续</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> fields <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'remark'</span><span class="token punctuation">,</span>            <span class="token comment">// 绑定值</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span><span class="token string">'备注'</span><span class="token punctuation">,</span>              <span class="token comment">// 左侧标题</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span><span class="token string">'textarea'</span><span class="token punctuation">,</span>          <span class="token comment">// 表单类型</span>
+    <span class="token literal-property property">required</span><span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>            <span class="token comment">// 是否校验</span>
+    <span class="token literal-property property">errorMessage</span><span class="token operator">:</span><span class="token string">'请填写备注'</span><span class="token punctuation">,</span>   <span class="token comment">// 校验信息</span>
+    <span class="token literal-property property">componentProps</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+         <span class="token string-property property">"auto-size"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">minRows</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">maxRows</span><span class="token operator">:</span> <span class="token number">4</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>   <span class="token comment">// 控制在2-4行</span>
+          <span class="token literal-property property">maxlength</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>                            <span class="token comment">// 最大字数</span>
+          <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">"文本"</span><span class="token punctuation">,</span>                       <span class="token comment">// 默认文本</span>
+          <span class="token string-property property">"show-count"</span><span class="token operator">:</span> <span class="token boolean">true</span>                        <span class="token comment">// 展示剩余数字</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<p>注意：对象的键，原本就是字符串，因此我们对于带 - 的属性把他写成字符串即可</p>
+<p>这样就 ok 了，<code>componentProps</code>中的属性均来自 ant 组件，想要加什么效果加好了即可。</p>
+<h3 id="span-属性"><a href="#span-属性" class="headerlink" title="span 属性"></a>span 属性</h3><p>共 24 份，设置了<code>span</code>这个值，将替代默认<code>defaultSpan</code></p>
+<h3 id="slot-属性"><a href="#slot-属性" class="headerlink" title="slot 属性"></a>slot 属性</h3><p><code>slot</code>即插槽，他的值为布尔值，true 为开启插槽，反正不开启，如何使用？</p>
+<p>比如你想要在某条表单后面写入插槽，只需要在<code>fields</code>将他定义在那条数据的后面即可,例如：</p>
+<h4 id="第一步-定义"><a href="#第一步-定义" class="headerlink" title="第一步 定义"></a>第一步 定义</h4><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token literal-property property">fields</span><span class="token operator">:</span> Field<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'username'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'Username'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">errorMessage</span><span class="token operator">:</span> <span class="token string">'请输入姓名'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'sex'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'性别'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">errorMessage</span><span class="token operator">:</span> <span class="token string">'请输入性别'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">slot</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre>
+
+<p>以上示例即把性别插入姓名后方，如果需要插入到他的前面，即需要把数据放在他的前面即可</p>
+<h4 id="第二步-使用"><a href="#第二步-使用" class="headerlink" title="第二步 使用"></a>第二步 使用</h4><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;CustomForm
+  ref&#x3D;&quot;customForm&quot;
+  :fields&#x3D;&quot;fields&quot;
+  formLayout&#x3D;&quot;vertical&quot;
+  :initialValues&#x3D;&quot;initialValues&quot;
+  :defaultSpan&#x3D;&quot;8&quot;
+&gt;
+          &lt;template #sex&#x3D;&quot;&#123; field, formData &#125;&quot;&gt;
+              &lt;div&gt;
+                  &lt;a-input v-model:value&#x3D;&quot;formData.sex&quot; placeholder&#x3D;&quot;你好&quot;&gt;&lt;&#x2F;a-input&gt;
+              &lt;&#x2F;div&gt;
+          &lt;&#x2F;template&gt;
+&lt;&#x2F;CustomForm&gt;</code></pre>
+
+<p>看示例，作用域插槽绑定的插槽名，就是你定义的那条数据的<code>name</code>属性值，#sex， 同时你可以在你插入的内容中绑定数据，作用域插槽把数据都给你传递回来了，如何绑定？<code>formData</code>是用于回显的数据对象，给他绑定上对应，即：<code>formData</code>就是<code>initialValues</code></p>
+<h2 id="formLayout"><a href="#formLayout" class="headerlink" title="formLayout"></a>formLayout</h2><p>formLayout 就是 form 表单如何布局，ant 给了三种属性值 分别是</p>
+<table>
+<thead>
+<tr>
+<th>horizontal</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vertical</td>
+<td></td>
+</tr>
+<tr>
+<td>inline</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="defaultSpan"><a href="#defaultSpan" class="headerlink" title="defaultSpan"></a>defaultSpan</h2><p>defaultSpan 就是你表单默认占多少位置，如果数据设置了 span,则会被替换掉，默认值是 24 份</p>
+<h2 id="initialValues"><a href="#initialValues" class="headerlink" title="initialValues"></a>initialValues</h2><p>initialValues 是数据初始值，可以用于数据初始化及数据回显</p>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p>用于获取表单的实例对象，用于表单的提交，可以通过他拿到所填数据，以及数据校验</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> customForm <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">onSubmit</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  customForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">handleSubmit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">formData</span><span class="token operator">:</span> Record<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">></span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Form Submitted:'</span><span class="token punctuation">,</span> formData<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p><code>formData</code>就是你提交表单所需数据</p>
+<h3 id="dependency"><a href="#dependency" class="headerlink" title="dependency"></a>dependency</h3><p>用于根据前面表单的数据动态展示后面的表单<br><code>dependsOn</code>: 绑定哪个表单？ 他的值写绑定表单的绑定值<br><code>value</code>:绑定表单选中某个值显示</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">  <span class="token literal-property property">dependency</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token literal-property property">dependsOn</span><span class="token operator">:</span> <span class="token string">"radioValue"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">"female"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 选中radioValue值，当他的值为female，则显示</span></code></pre>
+
+<h3 id="slotFlag"><a href="#slotFlag" class="headerlink" title="slotFlag"></a>slotFlag</h3><p>这个主要是作用域表单的隐藏与显示，可以作为动态表单，slot 插槽隐藏时，会有一块占地区域，如果不想要，则使用 slotFlag,且自己在外部套用一层 a-form-item</p>
+<pre class="language-vue" data-language="vue"><code class="language-vue">&#x2F;&#x2F; 使用slot的插槽 隐藏占用位置
+&lt;template #associationProjectCode&#x3D;&quot;&#123; field, formData &#125;&quot;&gt;
+  &lt;a-select
+    v-model:value&#x3D;&quot;formData.associationProjectCode&quot;
+    optionLabelProp&#x3D;&quot;label&quot;
+    show-search
+    placeholder&#x3D;&quot;请选择诊疗项目&quot;
+    :default-active-first-option&#x3D;&quot;false&quot;
+    :show-arrow&#x3D;&quot;false&quot;
+    :filter-option&#x3D;&quot;false&quot;
+    :not-found-content&#x3D;&quot;null&quot;
+    :options&#x3D;&quot;option&quot;
+    @search&#x3D;&quot;handleSearch&quot;
+    @change&#x3D;&quot;handleChange&quot;
+  &gt;&lt;&#x2F;a-select&gt;
+&lt;&#x2F;template&gt;
+
+&#x2F;&#x2F; 使用slotFlag的插槽 隐藏不占位置 建议在使用表单的事件时使用
+&lt;template v-if&#x3D;&quot;treeId &#x3D;&#x3D; 0&quot; #memberProjectCategoryId&#x3D;&quot;&#123; field, formData &#125;&quot;&gt;
+  &lt;a-form-item
+    :label&#x3D;&quot;field.label&quot;
+    :required&#x3D;&quot;field.required&quot;
+    :name&#x3D;&quot;field.formName&quot;
+  &gt;
+    &lt;a-select
+      v-model:value&#x3D;&quot;formData.memberProjectCategoryId&quot;
+      optionLabelProp&#x3D;&quot;label&quot;
+      show-search
+      placeholder&#x3D;&quot;请选择诊疗项目&quot;
+      :default-active-first-option&#x3D;&quot;false&quot;
+      :show-arrow&#x3D;&quot;false&quot;
+      :filter-option&#x3D;&quot;false&quot;
+      :not-found-content&#x3D;&quot;null&quot;
+      :options&#x3D;&quot;options&quot;
+      @search&#x3D;&quot;handleSearch&quot;
+      @change&#x3D;&quot;handleChange&quot;
+    &gt;&lt;&#x2F;a-select&gt;
+  &lt;&#x2F;a-form-item&gt;
+&lt;&#x2F;template&gt;</code></pre>
+
+<p>动态表单建议使用 dependency，而不是使用 slotFlag,如果需要触发表单的某个事件时，使用 slotFlag.</p>
+<h3 id="formRules"><a href="#formRules" class="headerlink" title="formRules"></a>formRules</h3><p>用于自定义表单，需要配合 formName 使用</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">"username"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">"姓名"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">"input"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">formName</span><span class="token operator">:</span> <span class="token string">"username"</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span></code></pre>
+
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> formRules <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Please input Activity name'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'change'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span> <span class="token literal-property property">min</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">max</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Length should be 3 to 5'</span><span class="token punctuation">,</span> <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'blur'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h2 id="5-下载使用"><a href="#5-下载使用" class="headerlink" title="5.下载使用"></a>5.下载使用</h2><h4 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h4><pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm i ant<span class="token operator">-</span>base<span class="token operator">-</span>form   <span class="token comment">//下载</span></code></pre>
+
+<h4 id="2-在-main-ts-引入"><a href="#2-在-main-ts-引入" class="headerlink" title="2.在 main.ts 引入"></a>2.在 main.ts 引入</h4><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> BaseForm <span class="token keyword">from</span> <span class="token string">'ant-base-form'</span>
+<span class="token keyword">import</span> <span class="token string">'ant-base-form/dist/style.css'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">createApp</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>BaseForm<span class="token punctuation">)</span></code></pre>
+
+<p>注意，如若样式结构出现问题，则需要将 ant 组件库及样式先引入，再引入这个，同时使用是也放在 ant 后，如若未出现，则正常使用</p>
+<h4 id="3-在需要使用的组件中使用"><a href="#3-在需要使用的组件中使用" class="headerlink" title="3.在需要使用的组件中使用"></a>3.在需要使用的组件中使用</h4><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;
+  &lt;BaseForm
+    ref&#x3D;&quot;baseForm&quot;
+    :fields&#x3D;&quot;fields&quot;
+    formLayout&#x3D;&quot;vertical&quot;
+    :initialValues&#x3D;&quot;initialValues&quot;
+    :defaultSpan&#x3D;&quot;8&quot;
+  &gt;
+    &#x2F;&#x2F; 插槽
+    &lt;template #sex&#x3D;&quot;&#123; field, formData &#125;&quot;&gt;
+      &lt;div&gt;
+        &lt;a-input v-model:value&#x3D;&quot;formData.sex&quot; placeholder&#x3D;&quot;你好&quot;&gt;&lt;&#x2F;a-input&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;template&gt;
+  &lt;&#x2F;BaseForm&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script lang&#x3D;&quot;ts&quot; setup&gt;
+&#x2F;&#x2F; 初始值
+const initialValues &#x3D; &#123;
+  username: &#39;&#39;,
+  sex: &#39;&#39;,
+  aaaa: &#39;&#39;,
+&#125;
+
+&#x2F;&#x2F; 生成表单类型
+const fields &#x3D; [
+  &#123;
+    name: &#39;username&#39;,
+    label: &#39;Username&#39;,
+    type: &#39;input&#39;,
+    errorMessage: &#39;请输入姓名&#39;,
+    required: true,
+    span: 12,
+  &#125;,
+  &#123;
+    name: &#39;sex&#39;,
+    label: &#39;性别&#39;,
+    type: &#39;input&#39;,
+    errorMessage: &#39;请输入性别&#39;,
+    required: true,
+    slot: true,
+    span: &#39;24&#39;,
+  &#125;,
+  &#123;
+    name: &#39;aaaa&#39;,
+    label: &#39;aaaaa&#39;,
+    type: &#39;textarea&#39;,
+    componentProps: &#123;
+      &#39;auto-size&#39;: &#123; minRows: 5, maxRows: 5 &#125;,
+      maxlength: 10,
+      placeholder: &#39;文本&#39;,
+      &#39;show-count&#39;: true,
+    &#125;,
+  &#125;,
+]
+
+&#x2F;&#x2F; 点击提交  拿到表单数据
+const baseForm &#x3D; ref()
+
+&#x2F;&#x2F; 绑定表单的按钮，用于数据校验以及拿到数据
+const onSubmit &#x3D; () &#x3D;&gt; &#123;
+  baseForm.value.handleSubmit((formData: Record&lt;string, any&gt;) &#x3D;&gt; &#123;
+    console.log(&#39;Form Submitted:&#39;, formData)
+  &#125;)
+&#125;
+&lt;&#x2F;script&gt;</code></pre>
+
+<h2 id="6-示例"><a href="#6-示例" class="headerlink" title="6.示例"></a>6.示例</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 初始值</span>
+<span class="token keyword">const</span> initialValues <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">area</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">flag</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">checkbox</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">radio</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">remark</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 生成表单类型</span>
+<span class="token keyword">const</span> <span class="token literal-property property">fields</span><span class="token operator">:</span> any <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'username'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'姓名'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'input'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">formName</span><span class="token operator">:</span> <span class="token string">'username'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'area'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'地区'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'select'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">formName</span><span class="token operator">:</span> <span class="token string">'area'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Apple'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'梨'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Pear'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'橘子'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Orange'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'date'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'时间'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'date'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">formName</span><span class="token operator">:</span> <span class="token string">'date'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">format</span><span class="token operator">:</span> <span class="token string">'YYYY/MM/DD'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">forName</span><span class="token operator">:</span> <span class="token string">'date'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'flag'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'开关'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'switch'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'checkbox'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'多选'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'checkbox'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Apple'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'梨'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Pear'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'橘子'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Orange'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'radio'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'单选'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'radio'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">componentProps</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'苹果'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Apple'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'梨'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Pear'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'橘子'</span><span class="token punctuation">,</span> <span class="token literal-property property">value</span><span class="token operator">:</span> <span class="token string">'Orange'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'remark'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'备注'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'textarea'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">span</span><span class="token operator">:</span> <span class="token string">'12'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> formRules <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">username</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Please input Activity name'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'change'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#123;</span> <span class="token literal-property property">min</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token literal-property property">max</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Length should be 3 to 5'</span><span class="token punctuation">,</span> <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'blur'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">area</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Please select Activity zone'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'change'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">date</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">required</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token string">'Please pick a date'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'change'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'object'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 点击提交  拿到表单数据</span>
+<span class="token keyword">const</span> baseForm <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 表单自定义校验</span>
+<span class="token keyword">const</span> <span class="token function-variable function">onSubmit1</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  baseForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">customRuleSubmit</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">formData</span><span class="token operator">:</span> Record<span class="token operator">&lt;</span>string<span class="token punctuation">,</span> any<span class="token operator">></span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Form Submitted:'</span><span class="token punctuation">,</span> formData<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h2 id="7-数据重置"><a href="#7-数据重置" class="headerlink" title="7.数据重置"></a>7.数据重置</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript">baseForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">resetForm</span><span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<h2 id="8-数据回显"><a href="#8-数据回显" class="headerlink" title="8.数据回显"></a>8.数据回显</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript">baseForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">dataPlayBack</span><span class="token punctuation">(</span>回显数据对象<span class="token punctuation">)</span></code></pre>
+
+<h2 id="9-数据回显定义某一个数据或更改某一个数据"><a href="#9-数据回显定义某一个数据或更改某一个数据" class="headerlink" title="9.数据回显定义某一个数据或更改某一个数据"></a>9.数据回显定义某一个数据或更改某一个数据</h2><pre class="language-javascript" data-language="javascript"><code class="language-javascript">baseForm<span class="token punctuation">.</span>value<span class="token punctuation">.</span>formData<span class="token punctuation">.</span>属性值 <span class="token operator">=</span> 数据</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/star/about" rel="external nofollow noreferrer">冷杨威</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://DOMandBOM.github.io/star/star/2024/08023156371.html">https://DOMandBOM.github.io/star/star/2024/08023156371.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/star/about" target="_blank">冷杨威</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/star/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/star/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/star/2024/08023156371.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/19.jpg" class="responsive-img" alt="ant-base-form的使用">
+                        
+                        <span class="card-title">ant-base-form的使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/star/2024/0801654421.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/star/medias/featureimages/7.jpg" class="responsive-img" alt="vue组件上传到npm">
+                        
+                        <span class="card-title">vue组件上传到npm</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 星星<br />'
+            + '文章作者: 冷杨威<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/star/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/star/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/star/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/star/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <!-- <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2024</span>
+            
+            <a href="/star/about" target="_blank">冷杨威</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">80.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <br>
+
+            运行天数提醒.
+             -->
+<!-- //             <br> -->
+<!-- //             
+//         </div>
+//         <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:428811986@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=428811986" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 428811986" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+//     </div> -->
+<!-- // </footer> -->
+
+<!-- <div class="progress-bar"></div> --> -->
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/star/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/star/libs/materialize/materialize.min.js"></script>
+    <script src="/star/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/star/libs/aos/aos.js"></script>
+    <script src="/star/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/star/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/star/js/matery.js"></script>
+
+    
+        <!-- <script src='https://unpkg.com/mermaid@latest/dist/mermaid.min.js'></script> -->
+        <script src='/star/libs/mermaid/mermaid.min.js'></script>
+        <script>
+          if (window.mermaid) {
+            mermaid.initialize({theme: 'forest'});
+          }
+        </script>
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/star/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/star/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/star/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/star/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/star/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+
+    
+    <script src="/star/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
