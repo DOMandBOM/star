@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Vue3父子组件props传参,onMounted获取为undefine问题</title>
+      <link href="/star/2024/08123563711.html"/>
+      <url>/star/2024/08123563711.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Vue3-父子组件-props-传参-onMounted-获取为-undefine-问题"><a href="#Vue3-父子组件-props-传参-onMounted-获取为-undefine-问题" class="headerlink" title="Vue3 父子组件 props 传参,onMounted 获取为 undefine 问题"></a>Vue3 父子组件 props 传参,onMounted 获取为 undefine 问题</h3><p>父组件在子组件挂载时（onMounted ），去获取 props 的值，那么 onMounted 钩子中访问到的将是初始值，且后续变化无法进行监听</p><p>解决办法：通过<code>Watch</code>去监听传递过来的值，从而做出反应</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git pull报错</title>
       <link href="/star/2024/08093575.html"/>
       <url>/star/2024/08093575.html</url>
