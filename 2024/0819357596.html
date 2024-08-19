@@ -4,15 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="uniapp scroll-view 隐藏滚动条, 星星">
-    <meta name="description" content="uniapp scroll-view 隐藏滚动条方式1：
-/deep/ ::-webkit-scrollbar &amp;#123;
-  display: none;
-&amp;#125;
+    <meta name="keywords" content="vue3批量动态生成函数, 星星">
+    <meta name="description" content="vue3 批量动态生成函数import &amp;#123; ref &amp;#125; from &#39;vue&#39;
 
-方式2：
-::-webkit-scrollbar &amp;#123;
-">
+const funcs = ref(&amp;#123;&amp;#125;)
+
+function createFunction(name, body) &amp;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -24,7 +21,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>uniapp scroll-view 隐藏滚动条 | 星星</title>
+    <title>vue3批量动态生成函数 | 星星</title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -228,12 +225,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">uniapp scroll-view 隐藏滚动条</h1>
+                    <h1 class="description center-align post-title">vue3批量动态生成函数</h1>
                 </div>
             </div>
         </div>
@@ -284,14 +281,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-12-27
+                    2024-08-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    104
+                    146
                 </div>
                 
 
@@ -321,22 +318,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="uniapp-scroll-view-隐藏滚动条"><a href="#uniapp-scroll-view-隐藏滚动条" class="headerlink" title="uniapp scroll-view 隐藏滚动条"></a>uniapp scroll-view 隐藏滚动条</h2><p><strong>方式1：</strong></p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">/deep/ ::-webkit-scrollbar</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+                <h3 id="vue3-批量动态生成函数"><a href="#vue3-批量动态生成函数" class="headerlink" title="vue3 批量动态生成函数"></a>vue3 批量动态生成函数</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ref <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+
+<span class="token keyword">const</span> funcs <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">createFunction</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> body</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  funcs<span class="token punctuation">.</span>value<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> body
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">generateFunctions</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">customApiList</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>customApiList<span class="token punctuation">)</span> <span class="token keyword">return</span>
+  customApiList<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>
+    <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> string<span class="token punctuation">,</span>
+      <span class="token literal-property property">customFn</span><span class="token operator">:</span> Function<span class="token punctuation">,</span>
+      customApi<span class="token operator">?</span><span class="token operator">:</span> any<span class="token punctuation">,</span>
+      <span class="token literal-property property">message</span><span class="token operator">:</span> any<span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> item<span class="token punctuation">.</span>customFn <span class="token operator">===</span> <span class="token string">'function'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">createFunction</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>name<span class="token punctuation">,</span> item<span class="token punctuation">.</span>customFn<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">newP</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+          item<span class="token punctuation">.</span><span class="token function">customApi</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token operator">...</span>modalInfo<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token operator">...</span>newP <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            <span class="token function">ElMessage</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+              <span class="token literal-property property">message</span><span class="token operator">:</span> item<span class="token punctuation">.</span>message<span class="token punctuation">,</span>
+              <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'success'</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+            drawerFlag<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">false</span>
+            emits <span class="token operator">&amp;&amp;</span> <span class="token function">emits</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+            <span class="token function">getList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+        <span class="token function">createFunction</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>name<span class="token punctuation">,</span> fn<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">)</span>
 <span class="token punctuation">&#125;</span></code></pre>
 
-<p><strong>方式2：</strong></p>
-<pre class="language-css" data-language="css"><code class="language-css"><span class="token selector">::-webkit-scrollbar</span> <span class="token punctuation">&#123;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-
-
-<p><strong>注意：</strong><br>如果在样式中加入了<code>scoped</code>属性，即是对局部进行样式私有化，此时以上两种均不生效。</p>
-<p>解决：在外部再写一个style,放非私有化样式，将已死代码放入其中，让他们进行样式穿透即可</p>
+<p><code>customApiList为自定义函数列表，是一个对象数组，传递函数名，自定义函数，非自定义函数以及其他参数</code></p>
 
                 
             </div>
@@ -363,7 +382,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/122735631.html">https://DOMandBOM.github.io/star/star/2023/122735631.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2024/0819357596.html">https://DOMandBOM.github.io/star/star/2024/0819357596.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -448,17 +467,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2024/010935637.html">
+                <a href="/star/2024/0819357596.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/23.jpg" class="responsive-img" alt="uniapp顶部颜色如何设置成渐变色？">
+                        <img src="/star/medias/featureimages/8.jpg" class="responsive-img" alt="vue3批量动态生成函数">
                         
-                        <span class="card-title">uniapp顶部颜色如何设置成渐变色？</span>
+                        <span class="card-title">vue3批量动态生成函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -468,9 +488,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-01-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -483,6 +503,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -501,13 +522,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/12146653.html">
+                <a href="/star/2024/08123563711.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/9.jpg" class="responsive-img" alt="element-ui中table组件拖拽">
+                        <img src="/star/medias/featureimages/11.jpg" class="responsive-img" alt="Vue3父子组件props传参,onMounted获取为undefine问题">
                         
-                        <span class="card-title">element-ui中table组件拖拽</span>
+                        <span class="card-title">Vue3父子组件props传参,onMounted获取为undefine问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -518,7 +539,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-12
                             </span>
                         <span class="publish-author">
                             
