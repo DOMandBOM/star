@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>npm publish --access public 一直转圈问题</title>
+      <link href="/star/2024/082135759611.html"/>
+      <url>/star/2024/082135759611.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="npm-publish-–access-public-一直转圈问题"><a href="#npm-publish-–access-public-一直转圈问题" class="headerlink" title="npm publish –access public 一直转圈问题"></a>npm publish –access public 一直转圈问题</h3><p>如果 npm publish –access public 一直转圈</p><p>npm 缓存问题：先尝试清除 npm 缓存。可以使用命令<code>npm cache clean --force</code></p><p>如果仍然转圈，删除 node_modules 与 package-lock.json 这两个文件，再 npm i,并且重新 npm login</p><p>注意：一定要把镜像换到 npm 镜像中</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue3批量动态生成函数</title>
       <link href="/star/2024/0819357596.html"/>
       <url>/star/2024/0819357596.html</url>
