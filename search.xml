@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>npm i下载一直转圈且报网络代理错误？</title>
+      <link href="/star/2024/0827357596111.html"/>
+      <url>/star/2024/0827357596111.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="npm-i-下载一直转圈且报网络代理错误？"><a href="#npm-i-下载一直转圈且报网络代理错误？" class="headerlink" title="npm i 下载一直转圈且报网络代理错误？"></a>npm i 下载一直转圈且报网络代理错误？</h3><p>解决：</p><pre class="language-text" data-language="text"><code class="language-text">npm config get proxynpm config get https-proxy</code></pre><p>查看是否有代理，如果有，你有没有科学上网的网址。请你把他们设置成 null，不然会一直报代理错误，同时请不要翻墙</p><pre class="language-javascript" data-language="javascript"><code class="language-javascript">npm config <span class="token keyword">set</span> proxy <span class="token keyword">null</span>npm config <span class="token keyword">set</span> https<span class="token operator">-</span>proxy <span class="token keyword">null</span></code></pre><p>如果有，则看网址对不对，不对的话重新设置</p><pre class="language-none"><code class="language-none">npm config set proxy http:&#x2F;&#x2F;your-proxy-server:portnpm config set https-proxy http:&#x2F;&#x2F;your-proxy-server:port</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>npm publish --access public 一直转圈问题</title>
       <link href="/star/2024/082135759611.html"/>
       <url>/star/2024/082135759611.html</url>
