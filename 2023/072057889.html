@@ -4,11 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue生命周期, 星星">
-    <meta name="description" content="Vue生命周期这篇总结主要介绍Vue生命周期
+    <meta name="keywords" content="Vue组件插槽&amp;组件补充, 星星">
+    <meta name="description" content="组件插槽这篇总结主要介绍Vue组件插槽&amp;amp;组件相关的补充
 
 
-简介1.又名：生命周期回调函数，生命周期函数，生命周期钩子2.是什么？ Vue在关键时刻帮我们调用的一些特殊名称的函数3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的4">
+1.匿名插槽插槽作用 : 父组件 传递html结构 给子组件插槽语法：
+/*1.传：父组件
+	&amp;lt;子组件&gt;   html结构   &amp;lt;/子组件&gt;
+2.收：子组件
+	">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue生命周期 | 星星</title>
+    <title>Vue组件插槽&amp;组件补充 | 星星</title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -229,7 +233,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue生命周期</h1>
+                    <h1 class="description center-align post-title">Vue组件插槽&amp;组件补充</h1>
                 </div>
             </div>
         </div>
@@ -280,21 +284,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-13
+                    2024-11-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    410
+                    578
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -317,16 +321,82 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h3><p><code>这篇总结主要介绍Vue生命周期</code></p>
+                <h3 id="组件插槽"><a href="#组件插槽" class="headerlink" title="组件插槽"></a>组件插槽</h3><p><code>这篇总结主要介绍Vue组件插槽&amp;组件相关的补充</code></p>
 <span id="more"></span>
 
-<p><strong>简介</strong><br>1.又名：生命周期回调函数，生命周期函数，生命周期钩子<br>2.是什么？ Vue在关键时刻帮我们调用的一些特殊名称的函数<br>3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的<br>4.生命周期函数中的this指向vm  或  组件实例对象<br>每个生命钩子都与data配置项同级</p>
-<p><strong>1.初始化阶段</strong><br><code>beforeCreate</code>     完成<code>vue</code>初始化，没有创建data<br><code>created</code>                完成data创建，没有创建挂载点<br>常用：最早操作data，一般用于发送ajax请求<br><strong>2.挂载阶段</strong><br><code>beforeMount</code>        创建挂载点，没有把data渲染到挂载点<br><code>mounted</code>                完成初始渲染，把data数据渲染到了挂载点上<br>常用： 最早操作<code>dom</code>元素，一般用于<code>dom</code>操作<br><strong>3.更新阶段</strong><br><code>beforeUpdate</code>      <code>data</code>数据发生变化，页面没有刷新<br><code>updated</code>                 将变化后的数据更新到视图<br><strong>4.销毁阶段</strong><br><code>beforeDestroy</code>      <code>vue</code>实例完成销毁前<br><strong>触发销毁条件:</strong><br>                <code>1.对组件使用v-if</code><br>                <code>2.调用vm.$destroy()</code><br>应用场景： 清除<code>setInterval</code>定时器<br><code>destroyed</code>           <code>vue</code>完成销毁   <code>GG</code></p>
-<p><strong>keep-alive的两个钩子（路由独有）</strong><br>activated      被激活的<br>deactivated   失活的</p>
-<p><strong>nextTick钩子</strong></p>
-<p><strong><code>vue</code>初始渲染会走哪些钩子</strong>： <code> </code> <code>beforeCreate </code> <code>created</code> <code>beforeMount</code>   <code>mounted</code>                              </p>
-<p><strong>你常用过哪些钩子</strong><br><code>created : 发送ajax</code><br><code>mounted : 操作dom</code><br><code>beforeDestroy : 清除永久定时器</code></p>
-<p><strong>父子组件生命周期 :  父子子父</strong><br>初始渲染阶段： 父子子父<br>更新阶段： 父子子父<br>销毁阶段：父子子父</p>
+<h4 id="1-匿名插槽"><a href="#1-匿名插槽" class="headerlink" title="1.匿名插槽"></a>1.匿名插槽</h4><p><strong>插槽作用</strong> : <code>父组件 传递html结构 给子组件</code><br><strong>插槽语法</strong>：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*1.传：父组件
+	&lt;子组件>   html结构   &lt;/子组件>
+2.收：子组件
+	&lt;slot> 默认结构 &lt;/slot>*/</span></code></pre>
+
+<h4 id="2-具名插槽"><a href="#2-具名插槽" class="headerlink" title="2.具名插槽"></a>2.具名插槽</h4><p><strong>具名插槽作用</strong>: <code>父组件 传递多个位置html结构 给子组件</code><br><strong>具名插槽语法：</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*1.父组件传
+&lt;子组件>  
+     &lt;template v-slot:插槽名> 
+             html结构 
+     &lt;/template>
+&lt;/子组件>
+
+2.子组件收
+&lt;slot name="插槽名"> 默认结构 &lt;slot>
+v-slot指令只能用于 template 标签
+v-slot:插槽名    简写成   #           */</span></code></pre>
+
+<h4 id="3-作用域插槽"><a href="#3-作用域插槽" class="headerlink" title="3.作用域插槽"></a>3.作用域插槽</h4><p><strong>作用域插槽作用：</strong> 子组件 传递 数据 给 父组件 的 插槽 使用<br><strong>作用域插槽语法</strong>：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*1.传： 子组件
+	&lt;slot 属性名="属性值"> 默认结构 &lt;/slot>
+2.收 ： 父组件
+&lt;子组件>  
+     &lt;template v-slot="对象"> 
+             html结构 
+     &lt;/template>
+&lt;/子组件>*/</span></code></pre>
+
+<h3 id="组件补充"><a href="#组件补充" class="headerlink" title="组件补充"></a>组件补充</h3><h4 id="1-组件使用-v-model"><a href="#1-组件使用-v-model" class="headerlink" title="1.组件使用 v-model"></a>1.组件使用 v-model</h4><p>本质是 语法糖</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*1.父传子 props传递 :value
+2.子传父 $emit传递 @input*/</span></code></pre>
+
+<h4 id="2-ref-使用"><a href="#2-ref-使用" class="headerlink" title="2. ref 使用"></a>2. ref 使用</h4><p><strong>作用：</strong><code> 获取 DOM元素 +  子组件实例</code><br><strong>语法：</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*(1)声明ref:    &lt;标签 ref="属性名">&lt;/标签>
+(2)使用ref:   this.$refs.属性名*/</span></code></pre>
+
+<p><strong>注意点:</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*1.给原生标签使用ref :  获取的是dom对象
+2.给自定义标签(组件)使用ref:  获取的是vm实例
+3.应用：在父组件中调用子组件的方法*/</span></code></pre>
+
+<h4 id="3-nextTick"><a href="#3-nextTick" class="headerlink" title="3.nextTick"></a>3.<code>nextTick</code></h4><p><strong>作用</strong> ： <code>等待当前队列DOM异步更新之后执行</code><br><strong>原因：</strong></p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/*vue更新视图的过程是异步的：底层是promise微任务
+因此开发中就会遇到已经修改了数据，但是视图没更新
+$nextTick:等待当前队列更新完视图之后执行*/</span></code></pre>
+
+<p>语法：<br><code>this.$nextTick( ()=&gt;&#123;  //代码  &#125; )</code><br><code>await this.$nextTick</code></p>
+<h4 id="4-动态组件"><a href="#4-动态组件" class="headerlink" title="4.动态组件"></a>4.动态组件</h4><p>作用： 多个组件 使用同一个挂载点<br>语法： <code>&lt;component :is=&quot;组件名&quot;&gt;&lt;/component&gt;</code><br>示例：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+  <span class="token operator">&lt;</span>div<span class="token operator">></span>
+   <span class="token operator">&lt;</span>component <span class="token operator">:</span>is<span class="token operator">=</span><span class="token string">"uname"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>component<span class="token operator">></span>
+   <span class="token operator">&lt;</span>button @click<span class="token operator">=</span><span class="token string">"getUser"</span><span class="token operator">></span>点我切换<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token keyword">import</span> MyUser <span class="token keyword">from</span> <span class="token string">'@/components/MyUser.vue'</span>
+<span class="token keyword">import</span> MyLogin <span class="token keyword">from</span> <span class="token string">'@/components/MyLogin.vue'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'App'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">components</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>MyUser<span class="token punctuation">,</span>MyLogin<span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">uname</span><span class="token operator">:</span><span class="token string">'MyLogin'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">methods</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+    <span class="token function">getUser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>uname <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>uname <span class="token operator">===</span> <span class="token string">'MyUser'</span><span class="token operator">?</span><span class="token string">'MyLogin'</span><span class="token operator">:</span><span class="token string">'MyUser'</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code></pre>
 
                 
             </div>
@@ -353,7 +423,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/072054.html">https://DOMandBOM.github.io/star/star/2023/072054.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2023/072057889.html">https://DOMandBOM.github.io/star/star/2023/072057889.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -442,19 +512,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/star/2023/072057889.html">
+                <a href="/star/2023/07204488.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/5.jpg" class="responsive-img" alt="Vue组件插槽&amp;组件补充">
+                        <img src="/star/medias/featureimages/11.jpg" class="responsive-img" alt="Vue指令">
                         
-                        <span class="card-title">Vue组件插槽&amp;组件补充</span>
+                        <span class="card-title">Vue指令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            组件插槽这篇总结主要介绍Vue组件插槽&amp;组件相关的补充
+                            Vue常用指令这篇总结主要介绍Vue指令
                         
                     </div>
                     <div class="publish-info">
@@ -491,19 +561,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/072057.html">
+                <a href="/star/2023/072054.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/12.jpg" class="responsive-img" alt="Vue组件传值">
+                        <img src="/star/medias/featureimages/5.jpg" class="responsive-img" alt="Vue生命周期">
                         
-                        <span class="card-title">Vue组件传值</span>
+                        <span class="card-title">Vue生命周期</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue组件传值这篇总结主要介绍Vue组件传值
+                            Vue生命周期这篇总结主要介绍Vue生命周期
                         
                     </div>
                     <div class="publish-info">
