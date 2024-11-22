@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ant的日期组件获取当天日期以及第二天日期</title>
+      <link href="/star/2024/1122315637211.html"/>
+      <url>/star/2024/1122315637211.html</url>
+      
+        <content type="html"><![CDATA[<h4 id="ant-的日期组件获取当天日期以及第二天日期"><a href="#ant-的日期组件获取当天日期以及第二天日期" class="headerlink" title="ant 的日期组件获取当天日期以及第二天日期"></a>ant 的日期组件获取当天日期以及第二天日期</h4><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> moment <span class="token keyword">from</span> <span class="token string">'moment'</span><span class="token keyword">import</span> dayjs<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> Dayjs <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'dayjs'</span><span class="token comment">// 当天</span><span class="token function">dayjs</span><span class="token punctuation">(</span><span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DDTHH:mm:ss'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'YYYY/MM/DD'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment">// 第二天</span>  <span class="token function">dayjs</span><span class="token punctuation">(</span><span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'days'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DDTHH:mm:ss'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'YYYY/MM/DD'</span><span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ant的select组件初始选中项且无法删除应当如何处理？</title>
       <link href="/star/2024/101831563721.html"/>
       <url>/star/2024/101831563721.html</url>
