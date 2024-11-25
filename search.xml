@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>滚动条样式设置</title>
+      <link href="/star/2024/112532465.html"/>
+      <url>/star/2024/112532465.html</url>
+      
+        <content type="html"><![CDATA[<pre class="language-vue" data-language="vue"><code class="language-vue">&lt;style&gt;::-webkit-scrollbar &#123;  &#x2F;*滚动条整体样式*&#x2F;  width: 10px; &#x2F;*高宽分别对应横竖滚动条的尺寸*&#x2F;  height: 10px;&#125;::-webkit-scrollbar-track &#123;  background: transparent !important; &#x2F;* 滚动条轨道背景 *&#x2F;&#125;::-webkit-scrollbar-thumb &#123;  background-color: #edeef2 !important; &#x2F;* 滚动条颜色 *&#x2F;  border-radius: 4px !important; &#x2F;* 滚动条圆角 *&#x2F;&#125;::-webkit-scrollbar-thumb:hover &#123;  background-color: #6b6d6f !important; &#x2F;* 悬停时颜色 *&#x2F;&#125;&lt;&#x2F;style&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ant的日期组件获取当天日期以及第二天日期</title>
       <link href="/star/2024/1122315637211.html"/>
       <url>/star/2024/1122315637211.html</url>
