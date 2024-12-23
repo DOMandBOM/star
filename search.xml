@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Vue3做REM适配</title>
+      <link href="/star/2024/122335637563.html"/>
+      <url>/star/2024/122335637563.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Vue3-做-REM-适配"><a href="#Vue3-做-REM-适配" class="headerlink" title="Vue3 做 REM 适配"></a>Vue3 做 REM 适配</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">1.</span>下载 postcss<span class="token operator">-</span>pxtoremnpm install postcss<span class="token operator">-</span>pxtorem <span class="token operator">--</span>save<span class="token operator">-</span>dev</code></pre><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">2</span><span class="token punctuation">.</span>vue<span class="token punctuation">.</span>config<span class="token punctuation">.</span>ts配置<span class="token comment">// vue.config.js</span>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">&#123;</span>  <span class="token literal-property property">css</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>    <span class="token literal-property property">loaderOptions</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>      <span class="token literal-property property">postcss</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>        <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>          <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'postcss-pxtorem'</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>            <span class="token literal-property property">rootValue</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token comment">// 设置1rem = 100px</span>            <span class="token literal-property property">propList</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 需要转换的属性，* 表示所有</span>          <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>        <span class="token punctuation">]</span>      <span class="token punctuation">&#125;</span>    <span class="token punctuation">&#125;</span>  <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code></pre><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token number">3</span><span class="token punctuation">.</span>main<span class="token punctuation">.</span>ts<span class="token operator">/</span>App<span class="token punctuation">.</span>vue配置<span class="token comment">// main.ts 或 App.vue 中</span><span class="token keyword">function</span> <span class="token function">setRem</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  <span class="token keyword">const</span> baseSize <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment">// 基础的 font-size（根元素的font-size），1px 对应 1rem</span>  <span class="token keyword">const</span> clientWidth <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>clientWidth <span class="token operator">||</span> window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">;</span>  <span class="token keyword">const</span> rem <span class="token operator">=</span> clientWidth <span class="token operator">/</span> <span class="token number">1920</span> <span class="token operator">*</span> baseSize<span class="token punctuation">;</span> <span class="token comment">// 假设设计稿宽度为375px，屏幕宽度与设计稿宽度的比例计算出根字体大小</span>  document<span class="token punctuation">.</span>documentElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>rem<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">px</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token comment">// 初始化设置根字体大小</span><span class="token function">setRem</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 当屏幕大小发生变化时，重新计算根字体大小</span>window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> setRem<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>表格的增删改查</title>
       <link href="/star/2024/11286548996.html"/>
       <url>/star/2024/11286548996.html</url>
