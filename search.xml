@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Excel数据转换成表格</title>
+      <link href="/star/2025/0113357596.html"/>
+      <url>/star/2025/0113357596.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="Excel-数据转换成表格"><a href="#Excel-数据转换成表格" class="headerlink" title="Excel 数据转换成表格"></a>Excel 数据转换成表格</h3><p>1.下载 xlsx <code>npm i xlsx</code></p><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;template&gt;  &lt;div&gt;    &lt;!-- 文件上传 --&gt;    &lt;el-upload      class&#x3D;&quot;upload-demo&quot;      drag      :action&#x3D;&quot;&#39;&#39;&quot;      :show-file-list&#x3D;&quot;false&quot;      :before-upload&#x3D;&quot;handleBeforeUpload&quot;      :on-change&#x3D;&quot;handleFileChange&quot;    &gt;      &lt;i class&#x3D;&quot;el-icon-upload&quot;&gt;&lt;&#x2F;i&gt;      &lt;div class&#x3D;&quot;el-upload__text&quot;&gt;点击或拖拽文件上传&lt;&#x2F;div&gt;    &lt;&#x2F;el-upload&gt;    &lt;!-- 表格展示数据 --&gt;    &lt;el-table :data&#x3D;&quot;tableData&quot; border&gt;      &lt;el-table-column        v-for&#x3D;&quot;(column, index) in tableColumns&quot;        :key&#x3D;&quot;index&quot;        :label&#x3D;&quot;column&quot;        :prop&#x3D;&quot;column&quot;      &gt;&lt;&#x2F;el-table-column&gt;    &lt;&#x2F;el-table&gt;  &lt;&#x2F;div&gt;&lt;&#x2F;template&gt;&lt;script setup&gt;import &#123; ref &#125; from &#39;vue&#39;;  &#x2F;&#x2F; 引入 Vue 3 的响应式 APIimport * as XLSX from &#39;xlsx&#39;;  &#x2F;&#x2F; 引入 xlsx 库import &#123; ElMessage &#125; from &#39;element-plus&#39;;  &#x2F;&#x2F; 引入 ElMessage 提示框   &#x2F;&#x2F; 响应式数据    const tableData &#x3D; ref([]);  &#x2F;&#x2F; 存储表格数据    const tableColumns &#x3D; ref([]);  &#x2F;&#x2F; 存储表头列名    &#x2F;&#x2F; 上传文件前的钩子函数，检查文件类型    const handleBeforeUpload &#x3D; (file) &#x3D;&gt; &#123;      const isExcel &#x3D;        file.type &#x3D;&#x3D;&#x3D; &#39;application&#x2F;vnd.openxmlformats-officedocument.spreadsheetml.sheet&#39; ||        file.type &#x3D;&#x3D;&#x3D; &#39;application&#x2F;vnd.ms-excel&#39;;      if (!isExcel) &#123;        ElMessage.error(&#39;请选择 Excel 文件&#39;);      &#125;      return isExcel;    &#125;;    &#x2F;&#x2F; 文件上传后处理函数    const handleFileChange &#x3D; (file) &#x3D;&gt; &#123;      const reader &#x3D; new FileReader();      reader.onload &#x3D; (e) &#x3D;&gt; &#123;        const data &#x3D; e.target.result;        &#x2F;&#x2F; 使用 xlsx 库解析 Excel 文件        const workbook &#x3D; XLSX.read(data, &#123; type: &#39;binary&#39; &#125;);        &#x2F;&#x2F; 获取工作表（假设读取第一个工作表）        const sheetName &#x3D; workbook.SheetNames[0];        const worksheet &#x3D; workbook.Sheets[sheetName];        &#x2F;&#x2F; 将工作表转为 JSON 数据        const jsonData &#x3D; XLSX.utils.sheet_to_json(worksheet, &#123; header: 1 &#125;);        if (jsonData.length) &#123;          &#x2F;&#x2F; 解析表头（第一行作为列名）          tableColumns.value &#x3D; jsonData[0];          &#x2F;&#x2F; 解析表格数据（从第二行开始）          tableData.value &#x3D; jsonData.slice(1).map((row) &#x3D;&gt; &#123;            const rowData &#x3D; &#123;&#125;;            tableColumns.value.forEach((col, index) &#x3D;&gt; &#123;              rowData[col] &#x3D; row[index] || &#39;&#39;; &#x2F;&#x2F; 防止某些单元格为空            &#125;);            return rowData;          &#125;);        &#125;      &#125;;      reader.readAsBinaryString(file.raw); &#x2F;&#x2F; 读取文件内容    &#125;;&#125;;&lt;&#x2F;script&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue3做REM适配</title>
       <link href="/star/2024/122335637563.html"/>
       <url>/star/2024/122335637563.html</url>
