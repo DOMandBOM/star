@@ -4,8 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="uniapp跳转页面传对象类型的数据问题, ">
-    <meta name="description" content="uniapp跳转页面传对象类型的数据问题你跳转页面传对象类型，第二个页面拿到的数据会是[object,object],这是你会想着转JSON之后传过去，你这样传过去能获取到为字符串的数据，此时你会想着使用JSON.parse()去给他反序列">
+    <meta name="keywords" content="pc端配套移动端（一）, ">
+    <meta name="description" content="pc 端配套移动端（一）公司 PC 端适配移动端，以下是方法其一，根据视口大小，改变路由配置。这是一个方向
+// router
+
+import &amp;#123; createRouter, createWebHistory &amp;#125; fro">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>uniapp跳转页面传对象类型的数据问题 | </title>
+    <title>pc端配套移动端（一） | </title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -155,12 +158,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">uniapp跳转页面传对象类型的数据问题</h1>
+                    <h1 class="description center-align post-title">pc端配套移动端（一）</h1>
                 </div>
             </div>
         </div>
@@ -211,21 +214,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-05-10
+                    2025-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    191
+                    520
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -248,19 +251,141 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="uniapp跳转页面传对象类型的数据问题"><a href="#uniapp跳转页面传对象类型的数据问题" class="headerlink" title="uniapp跳转页面传对象类型的数据问题"></a>uniapp跳转页面传对象类型的数据问题</h3><p>你跳转页面传对象类型，第二个页面拿到的数据会是<code>[object,object]</code>,这是你会想着转<code>JSON</code>之后传过去，你这样传过去能获取到为字符串的数据，此时你会想着使用<code>JSON.parse()</code>去给他反序列化回来，此时会报一个<code>JOSN.parse()报错Unexpected end of JSON input at JSON.parse (＜anonymous＞)</code>错误，但是你不反序列化又不行，因为你需要这组数据。</p>
-<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>1.先对数据进行序列化，再编码，进行传递</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript">uni<span class="token punctuation">.</span><span class="token function">navigateTo</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-      <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/pages/doctor/healthServiceobj=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token function">encodeURIComponent</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                <h3 id="pc-端配套移动端（一）"><a href="#pc-端配套移动端（一）" class="headerlink" title="pc 端配套移动端（一）"></a>pc 端配套移动端（一）</h3><p>公司 PC 端适配移动端，以下是方法其一，根据视口大小，改变路由配置。这是一个方向</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// router</span>
 
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createRouter<span class="token punctuation">,</span> createWebHistory <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ref<span class="token punctuation">,</span> watch <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token comment">// @ts-ignore</span>
+<span class="token keyword">import</span> Index <span class="token keyword">from</span> <span class="token string">'@/views/dashboard/index.vue'</span>
 
+<span class="token keyword">const</span> pcRoutes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// ... 保持原有 pcRoutes 配置不变 ...</span>
+<span class="token punctuation">]</span>
 
-<p>2.接收数据后，先解码，再反序列化即可</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">&#123;</span>obj<span class="token punctuation">&#125;</span></span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    infoObj<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token function">decodeURIComponent</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<span class="token keyword">const</span> mobileRoutes <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token comment">// 建议添加移动端路由配置，而不是空数组</span>
+  <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'mobile-dashboard'</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token keyword">import</span><span class="token punctuation">(</span><span class="token string">'@/views/mobile/index.vue'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token comment">// ... 其他移动端路由</span>
+<span class="token punctuation">]</span>
 
+<span class="token comment">// 创建响应式的窗口宽度</span>
+<span class="token keyword">const</span> windowWidth <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>innerWidth<span class="token punctuation">)</span>
+
+<span class="token comment">// 创建路由实例</span>
+<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token function">createRouter</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">history</span><span class="token operator">:</span> <span class="token function">createWebHistory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">routes</span><span class="token operator">:</span> windowWidth<span class="token punctuation">.</span>value <span class="token operator">>=</span> <span class="token number">1024</span> <span class="token operator">?</span> pcRoutes <span class="token operator">:</span> mobileRoutes<span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 监听窗口大小变化</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleResize</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  windowWidth<span class="token punctuation">.</span>value <span class="token operator">=</span> window<span class="token punctuation">.</span>innerWidth
+  <span class="token function">updateRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 更新路由配置</span>
+<span class="token keyword">const</span> <span class="token function-variable function">updateRoutes</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// 获取当前路由路径</span>
+  <span class="token keyword">const</span> currentPath <span class="token operator">=</span> router<span class="token punctuation">.</span>currentRoute<span class="token punctuation">.</span>value<span class="token punctuation">.</span>path
+
+  <span class="token comment">// 清除现有路由</span>
+  router<span class="token punctuation">.</span><span class="token function">getRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      router<span class="token punctuation">.</span><span class="token function">removeRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 添加新路由</span>
+  <span class="token keyword">const</span> newRoutes <span class="token operator">=</span> windowWidth<span class="token punctuation">.</span>value <span class="token operator">>=</span> <span class="token number">1024</span> <span class="token operator">?</span> pcRoutes <span class="token operator">:</span> mobileRoutes
+  newRoutes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 重新导航到当前页面以触发路由更新</span>
+  router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>currentPath<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 添加防抖处理</span>
+<span class="token keyword">const</span> <span class="token function-variable function">debounce</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fn<span class="token punctuation">,</span> delay</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> timer <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>timer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">clearTimeout</span><span class="token punctuation">(</span>timer<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+    timer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token function">fn</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> delay<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">// 使用防抖处理的 resize 事件监听</span>
+window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> <span class="token function">debounce</span><span class="token punctuation">(</span>handleResize<span class="token punctuation">,</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 初始化检查</span>
+<span class="token function">handleResize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> router</code></pre>
+
+<pre class="language-vue" data-language="vue"><code class="language-vue">app.vue
+
+&lt;template&gt;
+  &lt;div class&#x3D;&quot;app&quot;&gt;
+    &lt;router-view v-slot&#x3D;&quot;&#123; Component &#125;&quot;&gt;
+      &lt;transition name&#x3D;&quot;fade&quot; mode&#x3D;&quot;out-in&quot;&gt;
+        &lt;component :is&#x3D;&quot;Component&quot; &#x2F;&gt;
+      &lt;&#x2F;transition&gt;
+    &lt;&#x2F;router-view&gt;
+  &lt;&#x2F;div&gt;
+&lt;&#x2F;template&gt;
+
+&lt;style&gt;
+.fade-enter-active,
+.fade-leave-active &#123;
+  transition: opacity 0.3s ease;
+&#125;
+
+.fade-enter-from,
+.fade-leave-to &#123;
+  opacity: 0;
+&#125;
+&lt;&#x2F;style&gt;</code></pre>
+
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">router
+
+<span class="token comment">// 在 updateRoutes 函数中添加加载状态</span>
+<span class="token keyword">const</span> isRouteUpdating <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">updateRoutes</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>
+    isRouteUpdating<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">true</span>
+    <span class="token keyword">const</span> currentPath <span class="token operator">=</span> router<span class="token punctuation">.</span>currentRoute<span class="token punctuation">.</span>value<span class="token punctuation">.</span>path
+
+    <span class="token comment">// 清除现有路由</span>
+    router<span class="token punctuation">.</span><span class="token function">getRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>route<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        router<span class="token punctuation">.</span><span class="token function">removeRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">.</span>name<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// 添加新路由</span>
+    <span class="token keyword">const</span> newRoutes <span class="token operator">=</span> windowWidth<span class="token punctuation">.</span>value <span class="token operator">>=</span> <span class="token number">1024</span> <span class="token operator">?</span> pcRoutes <span class="token operator">:</span> mobileRoutes
+    newRoutes<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">route</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      router<span class="token punctuation">.</span><span class="token function">addRoute</span><span class="token punctuation">(</span>route<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">await</span> router<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>currentPath<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'路由更新失败:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+    <span class="token comment">// 可以添加错误提示或跳转到错误页面</span>
+  <span class="token punctuation">&#125;</span> <span class="token keyword">finally</span> <span class="token punctuation">&#123;</span>
+    isRouteUpdating<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token boolean">false</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
                 
             </div>
@@ -287,7 +412,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2024/0510356371.html">https://DOMandBOM.github.io/star/star/2024/0510356371.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2025/012037965.html">https://DOMandBOM.github.io/star/star/2025/012037965.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -372,17 +497,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2024/05153563711.html">
+                <a href="/star/2025/012037965.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/7.jpg" class="responsive-img" alt="PC端横向滚动---Vue3">
+                        <img src="/star/medias/featureimages/21.jpg" class="responsive-img" alt="pc端配套移动端（一）">
                         
-                        <span class="card-title">PC端横向滚动---Vue3</span>
+                        <span class="card-title">pc端配套移动端（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -392,9 +518,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-05-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -407,6 +533,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -425,13 +552,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2024/0430315637.html">
+                <a href="/star/2025/0113357596.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/18.jpg" class="responsive-img" alt="如何中途关闭axios请求？">
+                        <img src="/star/medias/featureimages/9.jpg" class="responsive-img" alt="Excel数据转换成表格">
                         
-                        <span class="card-title">如何中途关闭axios请求？</span>
+                        <span class="card-title">Excel数据转换成表格</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -442,7 +569,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-13
                             </span>
                         <span class="publish-author">
                             
