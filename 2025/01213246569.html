@@ -4,12 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue-Router, ">
-    <meta name="description" content="Vue-Router路由这篇总结主要介绍Vue-Router
-
-
-1.路由概念路径(hash值) 与 页面 一一对应关系原理： 监听网页hash值
-2.路由作用&amp;#x2F;场景 ：单页面应用： SPA（singal page applica">
+    <meta name="keywords" content="PC端配套移动端（二）, ">
+    <meta name="description" content="PC 端配套移动端（二）第二套方案是最快捷的，不需要写两套页面，而是通过缩放，根据比例显示大小，这种只适合游戏网页等年轻人查看的网页。如果是中年往上的用户，建议使用第一套，中年用户眼睛逐渐远视眼。这种对于用户体检不好
+App.vue
+&amp;lt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue-Router | </title>
+    <title>PC端配套移动端（二） | </title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -159,12 +157,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue-Router</h1>
+                    <h1 class="description center-align post-title">PC端配套移动端（二）</h1>
                 </div>
             </div>
         </div>
@@ -188,8 +186,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/star/tags/Vue/">
-                                <span class="chip bg-color">Vue</span>
+                            <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -200,8 +198,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/star/categories/Vue/" class="post-category">
-                                Vue
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -215,21 +213,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-20
+                    2025-01-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    498
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    2 分
                 </div>
                 
 
@@ -252,100 +250,98 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Vue-Router路由"><a href="#Vue-Router路由" class="headerlink" title="Vue-Router路由"></a>Vue-Router路由</h3><p><code>这篇总结主要介绍Vue-Router</code></p>
-<span id="more"></span>
+                <h3 id="PC-端配套移动端（二）"><a href="#PC-端配套移动端（二）" class="headerlink" title="PC 端配套移动端（二）"></a>PC 端配套移动端（二）</h3><p>第二套方案是最快捷的，不需要写两套页面，而是通过缩放，根据比例显示大小，这种只适合游戏网页等年轻人查看的网页。如果是中年往上的用户，建议使用第一套，中年用户眼睛逐渐远视眼。这种对于用户体检不好</p>
+<pre class="language-vue" data-language="vue"><code class="language-vue">App.vue
+&lt;template&gt;
+  &lt;router-view &#x2F;&gt;
+&lt;&#x2F;template&gt;
+&lt;script setup&gt;
+import &#123; nextTick, onMounted, onUnmounted, reactive &#125; from &#39;vue&#39;
 
-<h4 id="1-路由概念"><a href="#1-路由概念" class="headerlink" title="1.路由概念"></a>1.路由概念</h4><p>路径(hash值) 与 页面 一一对应关系<br><strong>原理：</strong> 监听网页hash值</p>
-<h4 id="2-路由作用-场景-："><a href="#2-路由作用-场景-：" class="headerlink" title="2.路由作用&#x2F;场景 ："></a>2.路由作用&#x2F;场景 ：</h4><p>单页面应用： <code>SPA（singal page application）</code><br>            （1）加载快：局部刷新<br>            （2）数据传输方便</p>
-<h4 id="3-路由配置"><a href="#3-路由配置" class="headerlink" title="3.路由配置"></a>3.路由配置</h4><p>自动生成路由配置：vue add router</p>
-<pre class="language-none"><code class="language-none">0.导入vue-router
-    import VueRouter from &#39;vue-router&#39;
-    Vue.use(VueRouter)
-1.导入 页面组件
-	import 组件名 from &#39;组件路径&#39;
-2.配置 路由规则(地址和页面一一对应)
-		const routes &#x3D; [
-              &#123; path: &#39;&#x2F;路径&#39; , component : 组件名  &#125;
-          ]
-3.创建 路由对象
-4.挂载 App根组件
-5.路由 出口
-6.路由 导航</code></pre>
+const deviceInfo &#x3D; reactive(&#123;
+  isMobile: false,
+  isPC: false,
+&#125;)
 
-<h4 id="4-路由模式"><a href="#4-路由模式" class="headerlink" title="4.路由模式"></a>4.路由模式</h4><p>​	hash模式：路径有#号， 不会给服务器发请求<br>​	history模式: 路径没有#号， 会给服务器发请求。需要服务器单独配置</p>
-<h4 id="5-重定向"><a href="#5-重定向" class="headerlink" title="5.重定向"></a>5.重定向</h4><p>把 路径a 变成 路径b<br>在配置路由规则中，<code>&#123;path:&#39; / &#39;,redirect:&#39;/路径&#39;&#125;</code><br>重定向只是修改路径，不会路由匹配</p>
-<h4 id="6-路由导航-跳转-传参（A页面-B页面）"><a href="#6-路由导航-跳转-传参（A页面-B页面）" class="headerlink" title="6.路由导航(跳转)传参（A页面-&gt;B页面）"></a>6.路由导航(跳转)传参（A页面-&gt;B页面）</h4><h5 id="声明式导航-a标签"><a href="#声明式导航-a标签" class="headerlink" title="声明式导航(a标签)"></a>声明式导航(a标签)</h5><p><strong>query参数</strong><br>            A页面传 ：<code> url?参数名=参数值</code><br>            B页面收:<code>  $route.query.参数名</code>  </p>
-<p><strong>params参数</strong><br>路由规则中配置：参数名			</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径/:参数名1/:参数名2'</span> <span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span>组件名<span class="token punctuation">&#125;</span></code></pre>
+onMounted(async () &#x3D;&gt; &#123;
+  await nextTick() &#x2F;&#x2F; 确保DOM已经渲染完成
+  window.addEventListener(&#39;resize&#39;, handleResize)
 
-<p>​          A页面传 ：<code> url/参数值</code><br>​          B页面收:  <code>$router.params.参数名</code></p>
-<h5 id="编程式导航-push方法"><a href="#编程式导航-push方法" class="headerlink" title="编程式导航(push方法)"></a>编程式导航(push方法)</h5><p><strong>query参数</strong><br>特点： (1)参数会在地址栏显示  (2)页面刷新之后还在</p>
-<p>A页面传 </p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径'</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">query</span><span class="token operator">:</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">参数名</span><span class="token operator">:</span>参数值  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+  const width &#x3D; window.innerWidth
 
-<p>B页面收:  <code> $route.query.参数名</code></p>
-<p><strong>params参数</strong><br>特点：需要在路由文件中配置路由名(内存传参，刷新就会消失)</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径名'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'路由名'</span> <span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span>组件名 <span class="token punctuation">&#125;</span></code></pre>
+  &#x2F;&#x2F; 假设小于 768px 为移动设备
+  deviceInfo.isMobile &#x3D; width &lt; 768
+  deviceInfo.isPC &#x3D; !deviceInfo.isMobile
 
-<p>A页面传 ： 				</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">name</span><span class="token operator">:</span><span class="token string">'路由名'</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">params</span><span class="token operator">:</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">参数名</span><span class="token operator">:</span>参数值  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+  console.log(deviceInfo.isMobile, width, deviceInfo.isPC)
 
-<p>B页面收:  <code> $route.params</code>.参数名</p>
-<h4 id="7-二级路由"><a href="#7-二级路由" class="headerlink" title="7.二级路由"></a>7.二级路由</h4><p>1.在router&#x2F;index.js中配置二级路由规则</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"> <span class="token punctuation">&#123;</span> <span class="token literal-property property">path</span><span class="token operator">:</span><span class="token string">'/路径'</span><span class="token punctuation">,</span> <span class="token literal-property property">component</span><span class="token operator">:</span>组件<span class="token punctuation">,</span> <span class="token literal-property property">children</span> <span class="token operator">:</span> <span class="token punctuation">[</span> 
-   <span class="token comment">// 二级路由配置</span>
-<span class="token punctuation">]</span> <span class="token punctuation">&#125;</span></code></pre>
+  handleResize()
+&#125;)
 
-<p>2.给页面添加二级路由出口</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token operator">&lt;</span>router<span class="token operator">-</span>view<span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>view<span class="token operator">></span></code></pre>
+&#x2F;&#x2F; 在组件卸载时移除事件监听
+onUnmounted(() &#x3D;&gt; &#123;
+  window.removeEventListener(&#39;resize&#39;, handleResize)
+&#125;)
 
-<h4 id="8-路由导航守卫"><a href="#8-路由导航守卫" class="headerlink" title="8.路由导航守卫"></a>8.路由导航守卫</h4><h5 id="全局前置路由守卫"><a href="#全局前置路由守卫" class="headerlink" title="全局前置路由守卫"></a>全局前置路由守卫</h5><p><code>beforeEach</code></p>
-<p><strong>何时被调用？</strong><br>1.初始化时被调用<br>2.每次路由被切换之前被调用</p>
-<p><strong>语法：</strong></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-         执行代码
-         <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//同意放行   不写这个调用则是不放行</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token comment">//to：去哪里？   meta，程序员自定义配置的属性</span>
-<span class="token comment">//from:从哪来？</span>
-<span class="token comment">//next:是否放行</span></code></pre>
+const handleResize &#x3D; () &#x3D;&gt; &#123;
+  const width &#x3D; window.innerWidth
 
-<h5 id="全局后置路由守卫"><a href="#全局后置路由守卫" class="headerlink" title="全局后置路由守卫"></a>全局后置路由守卫</h5><p><code>afterEach</code></p>
-<p><strong>何时被调用？</strong>				<br>1.初始化时被调用<br>2.每次路由被切换之后被调用</p>
-<p><strong>语法：</strong></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript">router<span class="token punctuation">.</span><span class="token function">afterEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span><span class="token keyword">from</span></span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-         执行代码
-         
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-<span class="token comment">//to：去哪里？   meta，程序员自定义配置的属性</span>
-<span class="token comment">//from:从哪来？</span>
-<span class="token comment">//next:是否放行</span></code></pre>
+  &#x2F;&#x2F; 假设小于 768px 为移动设备
+  deviceInfo.isMobile &#x3D; width &lt; 768
+  deviceInfo.isPC &#x3D; !deviceInfo.isMobile
 
+  console.log(deviceInfo.isMobile, width, deviceInfo.isPC)
 
-<h5 id="独享路由守卫-写在路由配置信息中，与path-component-meta同级"><a href="#独享路由守卫-写在路由配置信息中，与path-component-meta同级" class="headerlink" title="独享路由守卫(写在路由配置信息中，与path,component,meta同级)"></a>独享路由守卫(写在路由配置信息中，与path,component,meta同级)</h5><p><code>beforeEnter</code><br><strong>语法：</strong></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">beforeEnter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-         执行代码       
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+  if (!deviceInfo.isPC) &#123;
+    const height &#x3D; window.innerHeight
+    const standardWidth &#x3D; 768
+    const standardHeight &#x3D; window.innerHeight
 
-<p><code>只有前置，没有后置</code><br><code>由于他没有后置路由守卫，那么它可以配合全局的后置路由守卫一起使用</code></p>
-<h5 id="组件内路由守卫"><a href="#组件内路由守卫" class="headerlink" title="组件内路由守卫"></a>组件内路由守卫</h5><p>顾名思义：是写在组件之中的<br><code>beforeRouteEnter</code><br>通过路由规则，进入该组件时被调用</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">beforeRouteEnter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-         执行代码  
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+    if (width &lt; standardWidth || height &lt; standardHeight) &#123;
+      const scaleX &#x3D; width &#x2F; standardWidth
+      const scaleY &#x3D; height &#x2F; standardHeight
+      const scale &#x3D; Math.min(scaleX, scaleY)
+      document.body.style.transform &#x3D; &#96;scale($&#123;scale&#125;)&#96;
+      document.body.style.transformOrigin &#x3D; &#39;left top&#39;
+      document.body.style.width &#x3D; &#96;$&#123;standardWidth&#125;px&#96;
+      document.body.style.height &#x3D; &#96;$&#123;standardHeight&#125;px&#96;
+    &#125; else &#123;
+      document.body.style.transform &#x3D; &#39;none&#39;
+      document.body.style.width &#x3D; &#39;100%&#39;
+      document.body.style.height &#x3D; &#39;100%&#39;
+      document.body.style.overflow &#x3D; &#39;auto&#39;
+    &#125;
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;
+&lt;style&gt;
+::-webkit-scrollbar &#123;
+  &#x2F;*滚动条整体样式*&#x2F;
+  width: 10px;
+  &#x2F;*高宽分别对应横竖滚动条的尺寸*&#x2F;
+  height: 10px;
+&#125;
 
-<p><code>beforeRouteLeave</code><br>通过路由规则，离开该组件时被调用</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">beforeRouteLeave</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span>from<span class="token punctuation">,</span>next</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
-         执行代码
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span></code></pre>
+::-webkit-scrollbar-track &#123;
+  background: transparent !important;
+  &#x2F;* 滚动条轨道背景 *&#x2F;
+&#125;
 
-<p><strong>路由导航守卫作用：</strong><br>示例1： 有的页面需要登录才能进入， 有的页面不需要。 可以通过导航守卫进行拦截，如果是需要登录权限的。就可以判断用户是否登录。 如果登录了，就正常跳转。 没登录，就主动跳转到登录页。<br>示例2：有的会员页面，需要开通会员才能进入。  可以通过导航守卫进行拦截，当用户想要跳转会员页面的时候，可以判断用户是否已经是会员。 如果是，就正常跳转。 如果不是，就跳转到开通会员页面</p>
-<h4 id="混淆单词"><a href="#混淆单词" class="headerlink" title="混淆单词"></a>混淆单词</h4><p>routes    路由规则 数组<br>router    路由实例对象<br>$route    路由信息（获取参数）<br>$router   路由实例对象( 页面跳转)</p>
+::-webkit-scrollbar-thumb &#123;
+  background-color: #edeef2 !important;
+  &#x2F;* 滚动条颜色 *&#x2F;
+  border-radius: 4px !important;
+  &#x2F;* 滚动条圆角 *&#x2F;
+&#125;
+
+::-webkit-scrollbar-thumb:hover &#123;
+  background-color: #6b6d6f !important;
+  &#x2F;* 悬停时颜色 *&#x2F;
+&#125;
+body &#123;
+  margin: 0 !important;
+&#125;
+&lt;&#x2F;style&gt;</code></pre>
 
                 
             </div>
@@ -372,7 +368,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/072058.html">https://DOMandBOM.github.io/star/star/2023/072058.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2025/01213246569.html">https://DOMandBOM.github.io/star/star/2025/01213246569.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -410,8 +406,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/star/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -457,46 +453,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2023/072048.html">
+                <a href="/star/2025/01213246569.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/8.jpg" class="responsive-img" alt="关于值比较">
+                        <img src="/star/medias/featureimages/17.jpg" class="responsive-img" alt="PC端配套移动端（二）">
                         
-                        <span class="card-title">关于值比较</span>
+                        <span class="card-title">PC端配套移动端（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于值比较这篇总结主要扩展一下值的比较，因为很多笔试都会有这种
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    JavaScript高级
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">JavaScript高级</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -510,31 +508,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/07204488.html">
+                <a href="/star/2025/012037965.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/11.jpg" class="responsive-img" alt="Vue指令">
+                        <img src="/star/medias/featureimages/21.jpg" class="responsive-img" alt="pc端配套移动端（一）">
                         
-                        <span class="card-title">Vue指令</span>
+                        <span class="card-title">pc端配套移动端（一）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue常用指令这篇总结主要介绍Vue指令
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/Vue/" class="post-category">
-                                    Vue
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -544,8 +542,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>

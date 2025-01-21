@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>PC端配套移动端（二）</title>
+      <link href="/star/2025/01213246569.html"/>
+      <url>/star/2025/01213246569.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="PC-端配套移动端（二）"><a href="#PC-端配套移动端（二）" class="headerlink" title="PC 端配套移动端（二）"></a>PC 端配套移动端（二）</h3><p>第二套方案是最快捷的，不需要写两套页面，而是通过缩放，根据比例显示大小，这种只适合游戏网页等年轻人查看的网页。如果是中年往上的用户，建议使用第一套，中年用户眼睛逐渐远视眼。这种对于用户体检不好</p><pre class="language-vue" data-language="vue"><code class="language-vue">App.vue&lt;template&gt;  &lt;router-view &#x2F;&gt;&lt;&#x2F;template&gt;&lt;script setup&gt;import &#123; nextTick, onMounted, onUnmounted, reactive &#125; from &#39;vue&#39;const deviceInfo &#x3D; reactive(&#123;  isMobile: false,  isPC: false,&#125;)onMounted(async () &#x3D;&gt; &#123;  await nextTick() &#x2F;&#x2F; 确保DOM已经渲染完成  window.addEventListener(&#39;resize&#39;, handleResize)  const width &#x3D; window.innerWidth  &#x2F;&#x2F; 假设小于 768px 为移动设备  deviceInfo.isMobile &#x3D; width &lt; 768  deviceInfo.isPC &#x3D; !deviceInfo.isMobile  console.log(deviceInfo.isMobile, width, deviceInfo.isPC)  handleResize()&#125;)&#x2F;&#x2F; 在组件卸载时移除事件监听onUnmounted(() &#x3D;&gt; &#123;  window.removeEventListener(&#39;resize&#39;, handleResize)&#125;)const handleResize &#x3D; () &#x3D;&gt; &#123;  const width &#x3D; window.innerWidth  &#x2F;&#x2F; 假设小于 768px 为移动设备  deviceInfo.isMobile &#x3D; width &lt; 768  deviceInfo.isPC &#x3D; !deviceInfo.isMobile  console.log(deviceInfo.isMobile, width, deviceInfo.isPC)  if (!deviceInfo.isPC) &#123;    const height &#x3D; window.innerHeight    const standardWidth &#x3D; 768    const standardHeight &#x3D; window.innerHeight    if (width &lt; standardWidth || height &lt; standardHeight) &#123;      const scaleX &#x3D; width &#x2F; standardWidth      const scaleY &#x3D; height &#x2F; standardHeight      const scale &#x3D; Math.min(scaleX, scaleY)      document.body.style.transform &#x3D; &#96;scale($&#123;scale&#125;)&#96;      document.body.style.transformOrigin &#x3D; &#39;left top&#39;      document.body.style.width &#x3D; &#96;$&#123;standardWidth&#125;px&#96;      document.body.style.height &#x3D; &#96;$&#123;standardHeight&#125;px&#96;    &#125; else &#123;      document.body.style.transform &#x3D; &#39;none&#39;      document.body.style.width &#x3D; &#39;100%&#39;      document.body.style.height &#x3D; &#39;100%&#39;      document.body.style.overflow &#x3D; &#39;auto&#39;    &#125;  &#125;&#125;&lt;&#x2F;script&gt;&lt;style&gt;::-webkit-scrollbar &#123;  &#x2F;*滚动条整体样式*&#x2F;  width: 10px;  &#x2F;*高宽分别对应横竖滚动条的尺寸*&#x2F;  height: 10px;&#125;::-webkit-scrollbar-track &#123;  background: transparent !important;  &#x2F;* 滚动条轨道背景 *&#x2F;&#125;::-webkit-scrollbar-thumb &#123;  background-color: #edeef2 !important;  &#x2F;* 滚动条颜色 *&#x2F;  border-radius: 4px !important;  &#x2F;* 滚动条圆角 *&#x2F;&#125;::-webkit-scrollbar-thumb:hover &#123;  background-color: #6b6d6f !important;  &#x2F;* 悬停时颜色 *&#x2F;&#125;body &#123;  margin: 0 !important;&#125;&lt;&#x2F;style&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>pc端配套移动端（一）</title>
       <link href="/star/2025/012037965.html"/>
       <url>/star/2025/012037965.html</url>
