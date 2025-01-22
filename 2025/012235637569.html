@@ -4,14 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="this, ">
-    <meta name="description" content="this这篇总结主要讲解了this指向与如何修改
-
-
-this指向1.普通函数                指向window
-2.对象的方法              该方法所属对象
-3.构造函数                实例对象
-">
+    <meta name="keywords" content="Vue3 阻止页面跳转, ">
+    <meta name="description" content="Vue3 阻止页面跳转当数据未保存，用户想要跳转其他页面时，可以做以下操作。提醒用户
+第一步监听网页，例如刷新，关闭窗口，或跳转到其他页面的情况&amp;lt;script setup&amp;gt;
+import &amp;#123; onMounted, on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +19,7 @@ this指向1.普通函数                指向window
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>this | </title>
+    <title>Vue3 阻止页面跳转 | </title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -161,12 +157,12 @@ this指向1.普通函数                指向window
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">this</h1>
+                    <h1 class="description center-align post-title">Vue3 阻止页面跳转</h1>
                 </div>
             </div>
         </div>
@@ -190,8 +186,8 @@ this指向1.普通函数                指向window
                     
                     <div class="article-tag">
                         
-                            <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                                <span class="chip bg-color">JavaScript高级</span>
+                            <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -202,8 +198,8 @@ this指向1.普通函数                指向window
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/star/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                JavaScript高级
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -217,14 +213,14 @@ this指向1.普通函数                指向window
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-21
+                    2025-01-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    341
+                    334
                 </div>
                 
 
@@ -254,21 +250,47 @@ this指向1.普通函数                指向window
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p><code>这篇总结主要讲解了this指向与如何修改</code></p>
-<span id="more"></span>
+                <h3 id="Vue3-阻止页面跳转"><a href="#Vue3-阻止页面跳转" class="headerlink" title="Vue3 阻止页面跳转"></a>Vue3 阻止页面跳转</h3><p>当数据未保存，用户想要跳转其他页面时，可以做以下操作。提醒用户</p>
+<h4 id="第一步监听网页，例如刷新，关闭窗口，或跳转到其他页面的情况"><a href="#第一步监听网页，例如刷新，关闭窗口，或跳转到其他页面的情况" class="headerlink" title="第一步监听网页，例如刷新，关闭窗口，或跳转到其他页面的情况"></a>第一步监听网页，例如刷新，关闭窗口，或跳转到其他页面的情况</h4><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;script setup&gt;
+import &#123; onMounted, onBeforeUnmount &#125; from &#39;vue&#39;
 
-<h4 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h4><pre class="language-none"><code class="language-none">1.普通函数                指向window
-2.对象的方法              该方法所属对象
-3.构造函数                实例对象
-4.事件绑定函数            绑定事件的对象
-5.定时器函数              指向window
-6.立即执行函数            指向window</code></pre>
+const handleBeforeUnload &#x3D; (event) &#x3D;&gt; &#123;
+  const message &#x3D; &#39;你有未保存的更改，确定要离开吗？&#39;
+  event.returnValue &#x3D; message &#x2F;&#x2F; 这是为了在浏览器中显示提示
+  return message &#x2F;&#x2F; 一些浏览器（例如 Chrome）也会使用这个消息
+&#125;
 
-<h4 id="函数上下文"><a href="#函数上下文" class="headerlink" title="函数上下文"></a>函数上下文</h4><p>局部变量+this指向<br><code>默认情况下，函数内部的this是由调用决定的。无法修改</code><br><strong>解决办法</strong>：<code>函数上下文进行修改</code></p>
-<p><strong>call</strong><br>语法：<code>函数名.call(this指向谁,实参1，实参2......)</code><br>应用场景：万能数据类型检测</p>
-<p>1.typeof 数据 : 有两种数据类型无法检测<br>null和数组无法检测,结果都是 ‘object’<br>2.解决方案:万能数据类型检测<br>Object.prototype.toString.call(数据)</p>
-<p>数组原型的toString是转字符串的<br>Object原型的toString是检测数据类型的</p>
-<p><strong>apply</strong><br>函数名.apply(this指向谁, 数组或伪数组 )<br>apply会自动帮你遍历数组，然后按照顺序逐一传参<br>函数名.apply(this指向谁, [实参1，实参2…..])<br><strong>bind</strong><br><strong>语法：</strong><code>函数名.bind(this指向谁)</code><br>bind不会立即执行函数,而是返回一个修改this之后的新函数<br><strong>场景：</strong>一般用于修改不需要立即执行的函数，例如：定时器，事件处理函数</p>
+&#x2F;&#x2F; 页面加载时，添加事件监听
+onMounted(() &#x3D;&gt; &#123;
+  window.addEventListener(&#39;beforeunload&#39;, handleBeforeUnload)
+&#125;)
+
+&#x2F;&#x2F; 页面卸载时，移除事件监听
+onBeforeUnmount(() &#x3D;&gt; &#123;
+  window.removeEventListener(&#39;beforeunload&#39;, handleBeforeUnload)
+&#125;)
+&lt;&#x2F;script&gt;</code></pre>
+
+<h4 id="第二步，Vue3-内部的路由跳转-onBeforeRouteLeave"><a href="#第二步，Vue3-内部的路由跳转-onBeforeRouteLeave" class="headerlink" title="第二步，Vue3 内部的路由跳转 onBeforeRouteLeave"></a>第二步，Vue3 内部的路由跳转 onBeforeRouteLeave</h4><pre class="language-vue" data-language="vue"><code class="language-vue">&lt;script setup&gt;
+import &#123; onBeforeRouteLeave &#125; from &#39;vue-router&#39;
+
+onBeforeRouteLeave((to, from, next) &#x3D;&gt; &#123;
+  const isSaved &#x3D; false &#x2F;&#x2F; 假设这是一个标记，判断是否保存了数据
+
+  if (!isSaved) &#123;
+    const confirmLeave &#x3D; window.confirm(&#39;你有未保存的更改，确定要离开吗？&#39;)
+    if (confirmLeave) &#123;
+      next() &#x2F;&#x2F; 允许导航
+    &#125; else &#123;
+      next(false) &#x2F;&#x2F; 阻止导航
+    &#125;
+  &#125; else &#123;
+    next() &#x2F;&#x2F; 如果已保存，允许导航
+  &#125;
+&#125;)
+&lt;&#x2F;script&gt;</code></pre>
+
+<p>做这两个步骤即可。能够阻止用户跳转其他页面</p>
 
                 
             </div>
@@ -295,7 +317,7 @@ this指向1.普通函数                指向window
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/072036.html">https://DOMandBOM.github.io/star/star/2023/072036.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2025/012235637569.html">https://DOMandBOM.github.io/star/star/2025/012235637569.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -333,8 +355,8 @@ this指向1.普通函数                指向window
                     
                         <div class="article-tag">
                             
-                                <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                                    <span class="chip bg-color">JavaScript高级</span>
+                                <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -380,46 +402,48 @@ this指向1.普通函数                指向window
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2023/072055.html">
+                <a href="/star/2025/012235637569.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/4.jpg" class="responsive-img" alt="Vue-Cli脚手架">
+                        <img src="/star/medias/featureimages/8.jpg" class="responsive-img" alt="Vue3 阻止页面跳转">
                         
-                        <span class="card-title">Vue-Cli脚手架</span>
+                        <span class="card-title">Vue3 阻止页面跳转</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Vue-cli脚手架这篇总结主要介绍Vue-Cli脚手架
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/Vue/" class="post-category">
-                                    Vue
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -433,31 +457,31 @@ this指向1.普通函数                指向window
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/07203295.html">
+                <a href="/star/2025/01213246569.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/6.jpg" class="responsive-img" alt="Git工作该如何处理？">
+                        <img src="/star/medias/featureimages/17.jpg" class="responsive-img" alt="PC端配套移动端（二）">
                         
-                        <span class="card-title">Git工作该如何处理？</span>
+                        <span class="card-title">PC端配套移动端（二）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git工作该如何处理？该文章主要总结了工作中常见的git问题，以及如何解决？
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/Git/" class="post-category">
-                                    Git
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -467,8 +491,8 @@ this指向1.普通函数                指向window
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
-                        <span class="chip bg-color">JavaScript进阶</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
