@@ -4,14 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="深浅拷贝, ">
-    <meta name="description" content="深浅拷贝这篇总结深度讲解了深浅拷贝，希望能帮到你
-
-
-
-这篇文章，我说说深浅拷贝，虽然很多人说它只针对引用类型，但是
-1.深拷贝和浅拷贝是只针对Object和Array这样的引用数据类型的,同时，
-2.它只有当拷贝引用数据类型时，拷贝才存在">
+    <meta name="keywords" content="表格数据多选回显, ">
+    <meta name="description" content="表格数据多选回显import &amp;#123; ref &amp;#125; from &#39;vue&#39;
+// onlyValue: table的row-key绑定的唯一值
+// echoData: 每次需要回显的数据
+export const useTab">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>深浅拷贝 | </title>
+    <title>表格数据多选回显 | </title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -161,12 +158,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">深浅拷贝</h1>
+                    <h1 class="description center-align post-title">表格数据多选回显</h1>
                 </div>
             </div>
         </div>
@@ -190,8 +187,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                                <span class="chip bg-color">JavaScript高级</span>
+                            <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -202,8 +199,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/star/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                JavaScript高级
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -217,21 +214,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-20
+                    2025-01-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    816
+                    527
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -254,42 +251,113 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h2><p><code>这篇总结深度讲解了深浅拷贝，希望能帮到你</code></p>
-<span id="more"></span>
+                <h3 id="表格数据多选回显"><a href="#表格数据多选回显" class="headerlink" title="表格数据多选回显"></a>表格数据多选回显</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> ref <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token comment">// onlyValue: table的row-key绑定的唯一值</span>
+<span class="token comment">// echoData: 每次需要回显的数据</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">useTableEcho</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">onlyValue</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> arr <span class="token operator">=</span> ref<span class="token operator">&lt;</span>any<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 所有被勾选的数据存储</span>
+  <span class="token keyword">const</span> tableData <span class="token operator">=</span> ref<span class="token operator">&lt;</span>any<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 当前页表格数据</span>
+  <span class="token keyword">const</span> tableRef <span class="token operator">=</span> <span class="token function">ref</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 表格Ref</span>
+  <span class="token keyword">const</span> allTableList <span class="token operator">=</span> ref<span class="token operator">&lt;</span>any<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment">// 存储表格所有数据</span>
 
-
-<p>这篇文章，我说说深浅拷贝，虽然很多人说它只针对引用类型，但是</p>
-<p>1.<code>深拷贝和浅拷贝是只针对Object和Array这样的引用数据类型的</code>,同时，</p>
-<p>2.<code>它只有当拷贝引用数据类型时，拷贝才存在浅拷贝与深拷贝之分。</code></p>
-<p>他们两个都会开辟一个新的内存空间，浅拷贝中的数据是<code>值类型时</code>，他会拷贝他的值，拷贝的数据是引用类型时，则是他的地址，例如：</p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">a</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">b</span><span class="token operator">:</span><span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token literal-property property">c</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
-    <span class="token literal-property property">d</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">,</span>
-    <span class="token literal-property property">f</span><span class="token operator">:</span><span class="token number">5</span>
+  <span class="token comment">// 单选</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">change</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">selection</span><span class="token operator">:</span> any<span class="token punctuation">,</span> <span class="token literal-property property">row</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> item <span class="token operator">===</span> row<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>
+        arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> item <span class="token operator">==</span> row<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token number">1</span>
+      <span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>row<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token punctuation">&#125;</span>
+    arr<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">]</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 多选</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">allChange</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">selection</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>selection<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      arr<span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">...</span>arr<span class="token punctuation">.</span>value<span class="token punctuation">,</span> <span class="token operator">...</span>selection<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      tableData<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>
+            arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">domain</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> domain <span class="token operator">==</span> item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token number">1</span>
+          <span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 是否选中</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">toggleSelection</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">rows<span class="token operator">?</span><span class="token operator">:</span> any<span class="token punctuation">[</span><span class="token punctuation">]</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>rows<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      rows<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">row</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        tableRef<span class="token punctuation">.</span>value<span class="token operator">!</span><span class="token punctuation">.</span><span class="token function">toggleRowSelection</span><span class="token punctuation">(</span>row<span class="token punctuation">,</span> <span class="token keyword">undefined</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      tableRef<span class="token punctuation">.</span>value<span class="token operator">!</span><span class="token punctuation">.</span><span class="token function">clearSelection</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 计算统计回显数据</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">addEchoData</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">echoData</span><span class="token operator">:</span> any<span class="token punctuation">,</span> flag<span class="token operator">?</span><span class="token operator">:</span> boolean</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>echoData<span class="token punctuation">.</span>value<span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> flag<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      echoData<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token comment">// 获取所打开页面的所有数据,同时回显已选择的数据</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">addAllData</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token function">nextTick</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      tableData<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>allTableList<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">domian</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> domian<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span> <span class="token operator">==</span> item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          allTableList<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">const</span> newArr <span class="token operator">=</span> tableData<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span>
+        arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item1</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> tableData<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item2</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> item1 <span class="token operator">===</span> item2<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">)</span>
+      <span class="token function">toggleSelection</span><span class="token punctuation">(</span>newArr<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// 所选中的数据 用于提交时给接口的参数</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">changeData</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> allTableList<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">item</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> arr<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span>item<span class="token punctuation">[</span>onlyValue<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+    change<span class="token punctuation">,</span>
+    allChange<span class="token punctuation">,</span>
+    toggleSelection<span class="token punctuation">,</span>
+    arr<span class="token punctuation">,</span>
+    tableData<span class="token punctuation">,</span>
+    tableRef<span class="token punctuation">,</span>
+    addAllData<span class="token punctuation">,</span>
+    addEchoData<span class="token punctuation">,</span>
+    allTableList<span class="token punctuation">,</span>
+    changeData<span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span>
-<span class="token keyword">let</span> obj2 <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assgin</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>obj<span class="token punctuation">)</span>
-<span class="token comment">/*此时里面的a，b都是值类型，当你这个obj这个对象被obj2浅拷贝过去，
-当obj2修改a，b时，是影响不到obj中的a,b的，如果是修改c的数据，
-那么就会影响到obj中c的数据，因为c拷贝的是地址。同时，有些人在想，
-当他利用obj2.c = &#123;d:5,f:888&#125;,他说这么写，obj2的数据明明改变了，
-obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面的，
-这样修改是修改的是整个对象，也就是说，地址都变了，还怎么相互影响？*/</span></code></pre>
 
-<p>深拷贝呢?</p>
-<p>它同样会开辟一个新的空间，只不过他拷贝引用类型的时候拷贝的不再是他的地址，而是他的数据！因此，无论你如何修改他都不会影响原来的数据</p>
-<h4 id="如何进行浅拷贝？"><a href="#如何进行浅拷贝？" class="headerlink" title="如何进行浅拷贝？"></a>如何进行浅拷贝？</h4><p><strong>拷贝对象</strong><br>                <code>方法1:Object.assign(拷贝对象给谁,被拷贝的对象)</code><br>                <code>方法2:展开运算符 &#123;...被拷贝的对象&#125;</code><br><strong>拷贝数组</strong><br>                <code>方法1:Array.prototype.concat() </code><br>                <code>方法2:展开运算符[...arr]</code></p>
-<p><code>此时大多数人都有一个困惑点，在想直接赋值是不是浅拷贝，我可以狠狠的自信的告诉你，不是！不要再认为直接赋值是浅拷贝了，直接赋值拿到的是地址，修改会影响原来的数据</code></p>
-<h4 id="如何进行深拷贝"><a href="#如何进行深拷贝" class="headerlink" title="如何进行深拷贝 ?"></a>如何进行深拷贝 ?</h4><p><strong>常见方法</strong><br><code>方法1：通过递归实现深拷贝</code><br><code>方法2：lodash/cloneDeep</code></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> 新对象 <span class="token operator">=</span>  _<span class="token punctuation">.</span><span class="token function">cloneDeep</span><span class="token punctuation">(</span>老对象<span class="token punctuation">)</span></code></pre>
-
-<p><code>方法3：通过JSON.parse(JSON.stringify(js对象))实现</code></p>
-<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> 新对象 <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>js对象<span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-
-<p>在此，我强调一下，利用JSON实现的深拷贝，并非真正意义上的深拷贝。为什么呢？有以下几点原因！</p>
-<p>1.如果obj里面存在时间对象,JSON.parse(JSON.stringify(obj))之后，时间对象变成了字符串。<br>2.如果obj里有RegExp、Error对象，则序列化的结果将只得到空对象。<br>3.如果obj里有函数，undefined，则序列化的结果会把函数， undefined丢失。<br>4.如果obj里有NaN、Infinity和-Infinity，则序列化的结果会变成null。<br>5.JSON.stringify()只能序列化对象的可枚举的自有属性。<br>6.如果obj中的对象是有构造函数生成的，则使用JSON.parse(JSON.stringify(obj))深拷贝后，会丢弃对象的constructor。<br>7.如果对象中存在循环引用的情况也无法正确实现深拷贝。</p>
+<span class="token comment">/**
+ * 使用方法:
+ * 1.引入 import &#123; useTableEcho &#125; from '~/src/hooks/useTableEcho'
+ * 2.调用 const &#123; change, allChange, arr, tableData, tableRef, addAllData, addEchoData, allTableList, changeData &#125; = useTableEcho('唯一值')
+ * 3.table定义 ref="tableRef" :data="tableData" @select="change" @select-all="allChange" row-key="绑定唯一值"
+ * 4.拉取列表时 调用addEchoData(需回显的数据, flag),统计回显数据
+ * 5.统计回显数据后,异步调用,进行数据回显
+      nextTick(() => &#123;
+        addAllData()
+      &#125;)
+ * 6.提交时,调用changeData() ,他会把你选中的数据返回给你  const a = changeData(),你传入后端即可
+ * 7.与此hook相关的数据全部清空
+     arr.value = []
+     allTableList.value = []
+     tableData.value = []
+     tableRef.value!.clearSelection()
+ */</span></code></pre>
 
                 
             </div>
@@ -316,7 +384,7 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/072034.html">https://DOMandBOM.github.io/star/star/2023/072034.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2025/01233246569.html">https://DOMandBOM.github.io/star/star/2025/01233246569.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -354,8 +422,8 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                     
                         <div class="article-tag">
                             
-                                <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                                    <span class="chip bg-color">JavaScript高级</span>
+                                <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -401,46 +469,48 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2023/072043.html">
+                <a href="/star/2025/01233246569.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/8.jpg" class="responsive-img" alt="构造函数&amp;数据常用函数">
+                        <img src="/star/medias/featureimages/1.jpg" class="responsive-img" alt="表格数据多选回显">
                         
-                        <span class="card-title">构造函数&amp;数据常用函数</span>
+                        <span class="card-title">表格数据多选回显</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            构造函数&amp;数据常用函数这篇总结主要讲解了构造函数&amp;数据常用函数，讲解了对象与数组的多种方法
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    JavaScript高级
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">JavaScript高级</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -454,31 +524,31 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/0720324.html">
+                <a href="/star/2025/012235637569.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/7.jpg" class="responsive-img" alt="盒子水平垂直居中">
+                        <img src="/star/medias/featureimages/8.jpg" class="responsive-img" alt="Vue3 阻止页面跳转">
                         
-                        <span class="card-title">盒子水平垂直居中</span>
+                        <span class="card-title">Vue3 阻止页面跳转</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            盒子水平垂直居中这篇总结主要讲解了盒子水平垂直居中的几种方法？
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/CSS/" class="post-category">
-                                    CSS
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
@@ -488,8 +558,8 @@ obj1为啥不变？拜托大哥，麻烦你把堆和栈搞明白了再学后面�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/web%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">web基础</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
