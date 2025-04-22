@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="LogicFlow的Vue3自定义节点, ">
-    <meta name="description" content="LogicFlow 的 Vue3 自定义节点1.介绍官方的 Vue 自定义节点
-​ 当项目业务像贪吃蛇疯狂吃豆子一样越变越复杂，我摩拳擦掌把算盘打到了 LogicFlow 的自定义节点身上！想象中这官网得是个知识大礼包，我搓着手点进去，结果">
+    <meta name="description" content="LogicFlow 的 Vue3 自定义节点1.介绍​ 当项目业务像贪吃蛇疯狂吃豆子一样越变越复杂，我摩拳擦掌把算盘打到了 LogicFlow 的自定义节点身上！想象中这官网得是个知识大礼包，我搓着手点进去，结果页面直接给我表演了个 “速通">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -226,7 +225,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -249,10 +248,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="LogicFlow-的-Vue3-自定义节点"><a href="#LogicFlow-的-Vue3-自定义节点" class="headerlink" title="LogicFlow 的 Vue3 自定义节点"></a>LogicFlow 的 Vue3 自定义节点</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p><a href="'https://site.logic-flow.cn/tutorial/advanced/vue'">官方的 Vue 自定义节点</a></p>
-<p>​ 当项目业务像贪吃蛇疯狂吃豆子一样越变越复杂，我摩拳擦掌把算盘打到了 LogicFlow 的自定义节点身上！想象中这官网得是个知识大礼包，我搓着手点进去，结果页面直接给我表演了个 “速通”—— 就一个案例，唰地一下结束了，仿佛是在玩网页版 “大家来找茬”，可找来找去就那孤零零的一个例子！</p>
+                <h2 id="LogicFlow-的-Vue3-自定义节点"><a href="#LogicFlow-的-Vue3-自定义节点" class="headerlink" title="LogicFlow 的 Vue3 自定义节点"></a>LogicFlow 的 Vue3 自定义节点</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>​ 当项目业务像贪吃蛇疯狂吃豆子一样越变越复杂，我摩拳擦掌把算盘打到了 LogicFlow 的自定义节点身上！想象中这官网得是个知识大礼包，我搓着手点进去，结果页面直接给我表演了个 “速通”—— 就一个案例，唰地一下结束了，仿佛是在玩网页版 “大家来找茬”，可找来找去就那孤零零的一个例子！</p>
 <p>我跟打不死的小强似的，转头杀进搜索引擎。好家伙，打开一堆博客，不是把官网案例 Ctrl+V 得明明白白，博主们像在参加 “复制粘贴武林大会”，比谁手速快；就是惜字如金，说的内容还没我家猫打翻的猫粮颗粒多，气得我直拍大腿，靠，看源码！</p>
-<h3 id="2-LogicFlow-的-Api-介绍"><a href="#2-LogicFlow-的-Api-介绍" class="headerlink" title="2.LogicFlow 的 Api 介绍"></a>2.LogicFlow 的 Api 介绍</h3><p><a href="'https://site.logic-flow.cn/api/model/graph-model'">官网 Api</a></p>
+<h3 id="2-LogicFlow-的-Api-介绍"><a href="#2-LogicFlow-的-Api-介绍" class="headerlink" title="2.LogicFlow 的 Api 介绍"></a>2.LogicFlow 的 Api 介绍</h3><p>官网 Api:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/model/graph-model">https://site.logic-flow.cn/api/model/graph-model</a>‘</p>
 <p><img src="/star/image/CustomVue/img1.png" alt="img1"><br>上表，请记住<code>graphModel</code>和<code>nodeModel</code>，这两个 Api 集合。</p>
 <p><a id="logicflow-api-intro"></a></p>
 <table>
@@ -289,7 +287,7 @@
 <li>由于数据驱动视图的机制，我们对<code>节点和边</code>的所有操作事实上就是对 model 的操作。大多数情况下，我们不建议直接对<code> nodeModel 和 edgeModel的属性</code>进行<code>赋值操作</code>，而是调用 <code>model ， edgeModel</code> 或者 <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/model/graph-model">graphModel</a> 上提供的方法。</li>
 </ol>
 <p>总结：以上自己熟悉熟悉即可，不要通过<code>graphModel和nodeModel和edgeModel</code>的属性进行赋值操作，均是只读。要改属性请调用方法。</p>
-<h3 id="3-让我们看看官方-Vue3-的自定义节点"><a href="#3-让我们看看官方-Vue3-的自定义节点" class="headerlink" title="3.让我们看看官方 Vue3 的自定义节点"></a>3.让我们看看官方 Vue3 的自定义节点</h3><p><a href="'https://site.logic-flow.cn/tutorial/advanced/vue'">官方的 Vue 自定义节点</a></p>
+<h3 id="3-让我们看看官方-Vue3-的自定义节点"><a href="#3-让我们看看官方-Vue3-的自定义节点" class="headerlink" title="3.让我们看看官方 Vue3 的自定义节点"></a>3.让我们看看官方 Vue3 的自定义节点</h3><p>官方的 Vue 自定义节点:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/tutorial/advanced/vue">https://site.logic-flow.cn/tutorial/advanced/vue</a>‘</p>
 <p><img src="/star/image/CustomVue/img2.png" alt="img2"></p>
 <p>由上图可知，提供了一个包<code>@logicflow/vue-node-registry</code>，要是有 Vue 自定义节点请先下载这个包</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @logicflow/core <span class="token parameter variable">--save</span>       <span class="token comment"># LogicFlow核心包</span>
@@ -342,7 +340,8 @@ const del &#x3D; () &#x3D;&gt; &#123;
 
 <p>以上代码就是 Vue 的自定义节点，他的<code>Html结构与Css样式</code>我就不展示了，我只展示关键代码</p>
 <h4 id="4-1-关键点一：数据从何而来？"><a href="#4-1-关键点一：数据从何而来？" class="headerlink" title="4.1.关键点一：数据从何而来？"></a>4.1.关键点一：数据从何而来？</h4><p><img src="/star/image/CustomVue/img3.png" alt="img3"></p>
-<p><a href="'https://site.logic-flow.cn/tutorial/advanced/vue'">官方的 Vue 自定义节点</a>在我们看见官方的演示中，并未进行<code>provide</code>传递数据。那 inject 数据从何而来？</p>
+<p>官方的 Vue 自定义节点:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/tutorial/advanced/vue">https://site.logic-flow.cn/tutorial/advanced/vue</a>‘</p>
+<p>在我们看见官方的演示中，并未进行<code>provide</code>传递数据。那 inject 数据从何而来？</p>
 <p><code>const TeleportContainer = getTeleport()</code>注意这行代码，让我们看看他的内部逻辑</p>
 <p><img src="/star/image/CustomVue/img5.png" alt="img5"></p>
 <p>这 4 个暴露出的函数就是这个文件的全部，解释请看图即可，其中，让我们看看<code>connect函数</code></p>
@@ -421,7 +420,7 @@ onMounted(() &#x3D;&gt; &#123;
 </li>
 </ol>
 <p>注意：千万不要自作聪明，去传参拿数据，去写自定义事件，我告诉你，一个都没用，渲染数据就用<code>getNode</code>,触发事件就用<code>getGraph</code>，getGraph 与 graphModel，只相差<code>flowId</code>一个参数，<code>getNode</code>就是整个自定义节点，即 View，他包含了<code>getGraph</code>。</p>
-<p><a href="'https://site.logic-flow.cn/api/event-center'">官网事件</a></p>
+<p>官网事件:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/event-center">https://site.logic-flow.cn/api/event-center</a>‘</p>
 <p>找到监听事件<code>on,off,once,emit</code></p>
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 父组件</span>
 <span class="token comment">// 编辑与移除事件结果</span>
@@ -542,7 +541,7 @@ onMounted(() &#x3D;&gt; &#123;
 <li>很多时候一定要基本遵循官方要求去操作数据，<code>   lf.value.graphModel.edgeType = &#39;CustomNodeLine&#39;</code>，graphModel 的属性都是只读的，能找到他的方法去调用就去调用，一般都存在，官网找不到就去 TS 中去找，这种就是正确写法<code>lf.value.graphModel.setDefaultEdgeType(&#39;CustomNodeLine&#39;)</code></li>
 </ol>
 <p>自定义节点完结，如有错误，留言更正，希望对你们有帮助。</p>
-<p><a href="'http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow'">演示地址(需要科学上网)</a></p>
+<p>演示地址(需要科学上网):’<a target="_blank" rel="noopener" href="http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow">http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow</a>‘</p>
 
                 
             </div>
@@ -925,7 +924,7 @@ onMounted(() &#x3D;&gt; &#123;
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">89.8k</span>
+                        class="white-color">89.9k</span>
             
             
             
