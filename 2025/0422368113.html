@@ -250,9 +250,8 @@
             <div id="articleContent">
                 <h2 id="LogicFlow-的-Vue3-自定义节点"><a href="#LogicFlow-的-Vue3-自定义节点" class="headerlink" title="LogicFlow 的 Vue3 自定义节点"></a>LogicFlow 的 Vue3 自定义节点</h2><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>​ 当项目业务像贪吃蛇疯狂吃豆子一样越变越复杂，我摩拳擦掌把算盘打到了 LogicFlow 的自定义节点身上！想象中这官网得是个知识大礼包，我搓着手点进去，结果页面直接给我表演了个 “速通”—— 就一个案例，唰地一下结束了，仿佛是在玩网页版 “大家来找茬”，可找来找去就那孤零零的一个例子！</p>
 <p>我跟打不死的小强似的，转头杀进搜索引擎。好家伙，打开一堆博客，不是把官网案例 Ctrl+V 得明明白白，博主们像在参加 “复制粘贴武林大会”，比谁手速快；就是惜字如金，说的内容还没我家猫打翻的猫粮颗粒多，气得我直拍大腿，靠，看源码！</p>
-<h3 id="2-LogicFlow-的-Api-介绍"><a href="#2-LogicFlow-的-Api-介绍" class="headerlink" title="2.LogicFlow 的 Api 介绍"></a>2.LogicFlow 的 Api 介绍</h3><p>官网 Api:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/model/graph-model">https://site.logic-flow.cn/api/model/graph-model</a>‘</p>
+<h3 id="2-LogicFlow-的-Api-介绍"><a href="#2-LogicFlow-的-Api-介绍" class="headerlink" title="2.LogicFlow 的 Api 介绍"></a>2.LogicFlow 的 Api 介绍</h3><p>官网 Api: <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/model/graph-model">https://site.logic-flow.cn/api/model/graph-model</a></p>
 <p><img src="/star/image/CustomVue/img1.png" alt="img1"><br>上表，请记住<code>graphModel</code>和<code>nodeModel</code>，这两个 Api 集合。</p>
-<p><a id="logicflow-api-intro"></a></p>
 <table>
 <thead>
 <tr>
@@ -284,10 +283,10 @@
 <p>说明：</p>
 <ol>
 <li><strong>注意</strong>graphModel 上所有的属性都是只读，要想修改，请使用提供的对应方法进行修改。</li>
-<li>由于数据驱动视图的机制，我们对<code>节点和边</code>的所有操作事实上就是对 model 的操作。大多数情况下，我们不建议直接对<code> nodeModel 和 edgeModel的属性</code>进行<code>赋值操作</code>，而是调用 <code>model ， edgeModel</code> 或者 <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/model/graph-model">graphModel</a> 上提供的方法。</li>
+<li>由于数据驱动视图的机制，我们对<code>节点和边</code>的所有操作事实上就是对 model 的操作。大多数情况下，我们不建议直接对<code> nodeModel 和 edgeModel的属性</code>进行<code>赋值操作</code>，而是调用 <code>model ， edgeModel</code> 或者 graphModel: <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/model/graph-model">https://site.logic-flow.cn/api/model/graph-model</a> 上提供的方法。</li>
 </ol>
 <p>总结：以上自己熟悉熟悉即可，不要通过<code>graphModel和nodeModel和edgeModel</code>的属性进行赋值操作，均是只读。要改属性请调用方法。</p>
-<h3 id="3-让我们看看官方-Vue3-的自定义节点"><a href="#3-让我们看看官方-Vue3-的自定义节点" class="headerlink" title="3.让我们看看官方 Vue3 的自定义节点"></a>3.让我们看看官方 Vue3 的自定义节点</h3><p>官方的 Vue 自定义节点:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/tutorial/advanced/vue">https://site.logic-flow.cn/tutorial/advanced/vue</a>‘</p>
+<h3 id="3-让我们看看官方-Vue3-的自定义节点"><a href="#3-让我们看看官方-Vue3-的自定义节点" class="headerlink" title="3.让我们看看官方 Vue3 的自定义节点"></a>3.让我们看看官方 Vue3 的自定义节点</h3><p>官方的 Vue 自定义节点: <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/tutorial/advanced/vue">https://site.logic-flow.cn/tutorial/advanced/vue</a></p>
 <p><img src="/star/image/CustomVue/img2.png" alt="img2"></p>
 <p>由上图可知，提供了一个包<code>@logicflow/vue-node-registry</code>，要是有 Vue 自定义节点请先下载这个包</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> @logicflow/core <span class="token parameter variable">--save</span>       <span class="token comment"># LogicFlow核心包</span>
@@ -340,7 +339,7 @@ const del &#x3D; () &#x3D;&gt; &#123;
 
 <p>以上代码就是 Vue 的自定义节点，他的<code>Html结构与Css样式</code>我就不展示了，我只展示关键代码</p>
 <h4 id="4-1-关键点一：数据从何而来？"><a href="#4-1-关键点一：数据从何而来？" class="headerlink" title="4.1.关键点一：数据从何而来？"></a>4.1.关键点一：数据从何而来？</h4><p><img src="/star/image/CustomVue/img3.png" alt="img3"></p>
-<p>官方的 Vue 自定义节点:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/tutorial/advanced/vue">https://site.logic-flow.cn/tutorial/advanced/vue</a>‘</p>
+<p>官方的 Vue 自定义节点: <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/tutorial/advanced/vue">https://site.logic-flow.cn/tutorial/advanced/vue</a></p>
 <p>在我们看见官方的演示中，并未进行<code>provide</code>传递数据。那 inject 数据从何而来？</p>
 <p><code>const TeleportContainer = getTeleport()</code>注意这行代码，让我们看看他的内部逻辑</p>
 <p><img src="/star/image/CustomVue/img5.png" alt="img5"></p>
@@ -403,14 +402,12 @@ onMounted(() &#x3D;&gt; &#123;
 <p>在注册节点时，调用了<code>register</code>函数，继续往下看</p>
 <p><img src="/star/image/CustomVue/img9.png" alt="img9"></p>
 <p>我们自定义的组件其实就是图中的<code>View</code>，注意：我说的是自定义的组件，不是自定义节点。我们不传递自定义的 view，View 使用的是<code>VueNodeView</code></p>
-<p><img src="/star/.%5Cimage%5Cimg10.png" alt="img10"></p>
+<p><img src="/star/image/CustomVue/img10.png" alt="img10"></p>
 <p>这里是代码位置，让我们看看内部代码。</p>
 <p><img src="/star/image/CustomVue/img11.png" alt="img11"></p>
 <p><code>Vue2</code>我们就不看了，直接看<code>Vue3</code>的代码，当在激活时，触发 connect 函数，函数在这里触发了。那当没有激活时，那下面那段代码是什么意思？</p>
 <h4 id="4-3-未激活时，会发生什么？"><a href="#4-3-未激活时，会发生什么？" class="headerlink" title="4.3.未激活时，会发生什么？"></a>4.3.未激活时，会发生什么？</h4><p>请问上面的未激活说明了什么？自己去看看<code>teleport.ts</code>代码，说明了并未调用<code>getTeleport</code>这个函数，那么就说明，自定义节点并不只是通过<code>getTeleport()</code>函数这一种写法，说明了还有另一种写法，这种写法不需要传递<code>flowId</code>,不需要写入<code>getTeleport()</code>的组件， 只不过这种写法官方并没有示例与说明。这种写法我就不演示了，我感觉官方的写法就挺好用的。我试了，是可行的。有兴趣的可以自己去试一下</p>
-<h4 id="4-4-数据的使用"><a href="#4-4-数据的使用" class="headerlink" title="4.4.数据的使用"></a>4.4.数据的使用</h4><p>前面 3 点，讲清楚了<code>getNode,getGraph</code>这两个数据是从何而来。现在说说他们的作用，先仔细看看前面的部分</p>
-<p><a href="#logicflow-api-intro">点击跳转到 LogicFlow 的 Api 介绍部分</a></p>
-<p>点不动的话，就去看<code>第2点LogicFlow的Api介绍</code></p>
+<h4 id="4-4-数据的使用"><a href="#4-4-数据的使用" class="headerlink" title="4.4.数据的使用"></a>4.4.数据的使用</h4><p>前面 3 点，讲清楚了<code>getNode,getGraph</code>这两个数据是从何而来。现在说说他们的作用，先仔细看看前面的部分,去看<code>第2点LogicFlow的Api介绍</code></p>
 <ol>
 <li><p>尽量不要去改内部的属性，修改属性自己去官网找方法</p>
 </li>
@@ -420,7 +417,7 @@ onMounted(() &#x3D;&gt; &#123;
 </li>
 </ol>
 <p>注意：千万不要自作聪明，去传参拿数据，去写自定义事件，我告诉你，一个都没用，渲染数据就用<code>getNode</code>,触发事件就用<code>getGraph</code>，getGraph 与 graphModel，只相差<code>flowId</code>一个参数，<code>getNode</code>就是整个自定义节点，即 View，他包含了<code>getGraph</code>。</p>
-<p>官网事件:’<a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/event-center">https://site.logic-flow.cn/api/event-center</a>‘</p>
+<p>官网事件: <a target="_blank" rel="noopener" href="https://site.logic-flow.cn/api/event-center">https://site.logic-flow.cn/api/event-center</a></p>
 <p>找到监听事件<code>on,off,once,emit</code></p>
 <pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 父组件</span>
 <span class="token comment">// 编辑与移除事件结果</span>
@@ -541,7 +538,7 @@ onMounted(() &#x3D;&gt; &#123;
 <li>很多时候一定要基本遵循官方要求去操作数据，<code>   lf.value.graphModel.edgeType = &#39;CustomNodeLine&#39;</code>，graphModel 的属性都是只读的，能找到他的方法去调用就去调用，一般都存在，官网找不到就去 TS 中去找，这种就是正确写法<code>lf.value.graphModel.setDefaultEdgeType(&#39;CustomNodeLine&#39;)</code></li>
 </ol>
 <p>自定义节点完结，如有错误，留言更正，希望对你们有帮助。</p>
-<p>演示地址(需要科学上网):’<a target="_blank" rel="noopener" href="http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow">http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow</a>‘</p>
+<p>演示地址(需要科学上网): <a target="_blank" rel="noopener" href="http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow">http://localhost:5173/LogicFlow-Lyw/custom-vue-logic-flow</a></p>
 
                 
             </div>
