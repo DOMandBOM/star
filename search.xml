@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ElemenetPlus 的 Table 组件的二次封装</title>
+      <link href="/star/2025/05066651238.html"/>
+      <url>/star/2025/05066651238.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="ElemenetPlus-的-Table-组件的二次封装"><a href="#ElemenetPlus-的-Table-组件的二次封装" class="headerlink" title="ElemenetPlus 的 Table 组件的二次封装"></a>ElemenetPlus 的 Table 组件的二次封装</h2><p>本插件是基于 ElemenetPlus+Vue3 二次封装的 table 组件</p><p>插件地址：<a href="https://www.npmjs.com/package/base-table-v3">https://www.npmjs.com/package/base-table-v3</a></p><p><strong>API 介绍：</strong></p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>column</td><td>表格项</td></tr><tr><td>ref</td><td>拿去内部 el-table 的 ref</td></tr><tr><td>defaultSlot</td><td>el-table 的 default 插槽开启，由于与子集插槽名冲突，需开启才能使用，其余的均可直接使用</td></tr></tbody></table><p><code>注意：其余参数，事件，插槽与el-table一致，直接传入即可</code></p><h3 id="1-column"><a href="#1-column" class="headerlink" title="1. column"></a>1. column</h3><p><strong>Api 介绍：</strong></p><table><thead><tr><th>名称</th><th>说明</th><th>使用</th></tr></thead><tbody><tr><td>type</td><td>类型 与 el-table 的 type 参数一致</td><td></td></tr><tr><td>align</td><td>默认：’center’</td><td></td></tr><tr><td>prop</td><td>1.配置 el-table-item 的 prop， 2.用于区分插槽</td><td></td></tr><tr><td>headerSlot</td><td>开启头部插槽，默认：false</td><td>插槽名为 prop-default，参数与 el-table-item 一致，以此类推</td></tr><tr><td>defaultSlot</td><td>开启默认插槽，默认：false</td><td>查看上方</td></tr><tr><td>filterIconSlot</td><td>开启过滤图标插槽，默认：false</td><td>查看上上方</td></tr></tbody></table><p><code>注意：其余参数，事件，插槽与el-table-item一致，直接传入即可</code></p><h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2. 使用"></a>2. 使用</h3><pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">import</span> ElementPlus <span class="token keyword">from</span> <span class="token string">'element-plus'</span><span class="token keyword">import</span> <span class="token string">'element-plus/dist/index.css'</span><span class="token keyword">import</span> BaseTableV3 <span class="token keyword">from</span> <span class="token string">'base-table-v3'</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>ElementPlus<span class="token punctuation">)</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>BaseTableV3<span class="token punctuation">)</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 组件封装 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 组件封装 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue-node-registry API 文档</title>
       <link href="/star/2025/042966512336.html"/>
       <url>/star/2025/042966512336.html</url>
