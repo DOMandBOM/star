@@ -4,11 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="npm和跨域, ">
-    <meta name="description" content="npm和跨域这篇主要总结了npm的使用以及对跨域的解释
-
-npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
-使用流程1.初始化npm 在你的项目根目录下：npm init -y 会生成项目的配置文件：package.js">
+    <meta name="keywords" content="el-tree插槽，鼠标移入移出展开与关闭子节点, ">
+    <meta name="description" content="el-tree 插槽，鼠标移入移出展开与关闭子节点&amp;#x2F;&amp;#x2F; 结构
+&amp;lt;el-tree :data&amp;#x3D;&amp;quot;treeData&amp;quot; node-key&amp;#x3D;&amp;quot;id&amp;quot; :props">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +18,7 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>npm和跨域 | </title>
+    <title>el-tree插槽，鼠标移入移出展开与关闭子节点 | </title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -158,12 +156,12 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">npm和跨域</h1>
+                    <h1 class="description center-align post-title">el-tree插槽，鼠标移入移出展开与关闭子节点</h1>
                 </div>
             </div>
         </div>
@@ -187,8 +185,8 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                     
                     <div class="article-tag">
                         
-                            <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
-                                <span class="chip bg-color">JavaScript进阶</span>
+                            <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">工作总结</span>
                             </a>
                         
                     </div>
@@ -199,8 +197,8 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/star/categories/npm/" class="post-category">
-                                npm
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                工作总结
                             </a>
                         
                     </div>
@@ -214,21 +212,21 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-07-20
+                    2025-05-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    701
+                    266
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -251,40 +249,55 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="npm和跨域"><a href="#npm和跨域" class="headerlink" title="npm和跨域"></a><code>npm</code>和跨域</h1><p><code>这篇主要总结了npm的使用以及对跨域的解释</code></p>
-<span id="more"></span>
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a><code>npm</code></h2><p><strong>是什么？</strong>包管理工具<br>作用：下载&#x2F;删除&#x2F;更新包</p>
-<h3 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h3><p><strong>1.初始化<code>npm</code></strong><br> 在你的项目根目录下：<code>npm init -y</code><br> 会生成项目的配置文件：<code>package.json</code></p>
-<p><strong>2.下载(安装)包</strong> ： <code>npm install</code> 包名  或者 <code>npm install</code> 包名@版本号<br> 1.去<code>npm</code>官网搜索这个包名<br> 2.如果可以搜索到，就会找这个包的下载地址<br> 3.下载包的一切资源<br> 4.生成<code>node_modules</code>文件夹 和 <code>package-lock.json</code>文件</p>
-<p><strong>3.使用包</strong></p>
-<p>模块化语法导入包<br>语法去官网查看</p>
-<p><code>package.json</code>:项目配置文件，记录项目信息，使用哪些包及版本node_modules:包资源文件夹，存放包所有的资源及对应的依赖包<br><code>package-lock.json</code>:记录包的下载地址，提高包的更新速度</p>
-<h3 id="npm包的种类"><a href="#npm包的种类" class="headerlink" title="npm包的种类"></a><code>npm</code>包的种类</h3><p><code>npm</code>包根据使用范围分为全局包和本地包<br>本地包又根据使用时间分为开发依赖包和生产依赖包</p>
-<h4 id="全局包"><a href="#全局包" class="headerlink" title="全局包"></a>全局包</h4><p>安装在c盘，对整个电脑生效<br>语法：<code>npm install 包名 -g</code></p>
-<h4 id="本地包"><a href="#本地包" class="headerlink" title="本地包"></a>本地包</h4><p>安装在项目node_modules中<br>语法：<code>npm install 包名</code></p>
-<p>开发依赖包：包只在开发阶段使用，在上线之后不需要使用了<br>语法：<code>npm i 包名 -D</code></p>
-<p>生产依赖包：即在开发阶段使用，也会在上线之后使用</p>
-<h3 id="npm命令总结"><a href="#npm命令总结" class="headerlink" title="npm命令总结"></a><code>npm</code>命令总结</h3><pre class="language-none"><code class="language-none">初始化npm                 npm init -y
-下载包                         npm i 包名
-根据package.json下载所有的包    npm i
-切换镜源  npm inpm config set registry&#x3D;https:&#x2F;&#x2F;registry.npmmirror.com&#x2F;   淘宝镜像源          npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org&#x2F;    
-查看镜像源            npm config list    
-删除包                         npm  uninstall 包名
-下载全局包                 npm i 包名 -g
-下载开发依赖包         npm i 包名 -D
-更新你电脑当前的     npm  npm install npm -g
-查看node安装目录   where node
-查看npm安装目录    where npm
-查看全局包安装路径 npm list -g --deptch</code></pre>
+                <h3 id="el-tree-插槽，鼠标移入移出展开与关闭子节点"><a href="#el-tree-插槽，鼠标移入移出展开与关闭子节点" class="headerlink" title="el-tree 插槽，鼠标移入移出展开与关闭子节点"></a>el-tree 插槽，鼠标移入移出展开与关闭子节点</h3><pre class="language-vue" data-language="vue"><code class="language-vue">&#x2F;&#x2F; 结构
+&lt;el-tree :data&#x3D;&quot;treeData&quot; node-key&#x3D;&quot;id&quot; :props&#x3D;&quot;defaultProps&quot;&gt;
+     &lt;template #default&#x3D;&quot;&#123; node, data &#125;&quot;&gt;
+         &lt;span class&#x3D;&quot;custom-tree-node&quot; @mouseleave&#x3D;&quot;handleNodeLeave(data, node)&quot;
+                    @mouseover&#x3D;&quot;handleNodeMenu(data, node)&quot; :data-node-id&#x3D;&quot;node.id&quot;&gt;
+                 &#123;&#123; node.label &#125;&#125;
+         &lt;&#x2F;span&gt;
+      &lt;&#x2F;template&gt;
+&lt;&#x2F;el-tree&gt;</code></pre>
 
+<p><code>@mouseleave=&quot;mouseleave(data, node)&quot;</code> 移入事件</p>
+<p><code>@mouseover=&quot;handleNodeMenu(data, node)&quot;</code> 移出事件</p>
+<p><code>:data-node-id=&quot;node.id&quot;</code> 自定义属性</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 逻辑</span>
+<span class="token comment">// 移入</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleNodeMenu</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">data</span><span class="token operator">:</span> any<span class="token punctuation">,</span> <span class="token literal-property property">node</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>closeTimer<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">clearTimeout</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>closeTimer<span class="token punctuation">)</span>
+    node<span class="token punctuation">.</span>closeTimer <span class="token operator">=</span> <span class="token keyword">null</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>childNodes<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>node<span class="token punctuation">.</span>expanded<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    node<span class="token punctuation">.</span><span class="token function">expand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 开启</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 移出</span>
+<span class="token keyword">const</span> <span class="token function-variable function">mouseleave</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">data</span><span class="token operator">:</span> any<span class="token punctuation">,</span> <span class="token literal-property property">node</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  node<span class="token punctuation">.</span>closeTimer <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">checkHoverState</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>node<span class="token punctuation">.</span>expanded<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        node<span class="token punctuation">.</span><span class="token function">collapse</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// 关闭</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">150</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">// 递归查询</span>
+<span class="token keyword">const</span> <span class="token function-variable function">checkHoverState</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">node</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">checkChildren</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">childNodes</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> childNodes<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">child</span><span class="token operator">:</span> any</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> childEl <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">[data-node-id="</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>child<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">"]</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> childEl<span class="token operator">?.</span><span class="token function">matches</span><span class="token punctuation">(</span><span class="token string">':hover'</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token function">checkChildren</span><span class="token punctuation">(</span>child<span class="token punctuation">.</span>childNodes <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token function">checkChildren</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>childNodes <span class="token operator">||</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>是什么？<strong>指 <code>ajax</code>地址 和 页面地址 不同源</strong></p>
-<p><strong>注意：</strong><br><code>ajax</code>地址：跨域只会出现在<code>ajax</code>请求中<br>页面地址：<code>location.href </code></p>
-<h4 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h4><p>两个地址的 协议名 域名 端口号 都一致</p>
-<p><strong>为什么会有同源策略？</strong><br>为了用户安全，如果<code>ajax</code>地址 与 页面地址不同源，浏览器认为你给不同的服务器发送请求，可能会遭受攻击，浏览器就拒绝接收服务器响应的数据</p>
-<p>跨域的过程：请求发出去了，服务器也接收了，服务器也响应了，但浏览器拒绝接收服务器数据</p>
-<p>如何解决跨域？<br>1<code>.CORS </code>             <code>res.setHeader(&#39;Access-Control-Allow-Origin&#39;, &#39;*&#39;)</code><br>2.jsonp技术<br>3.代理服务器</p>
+<span class="token comment">/**
+  const currentNodeEl = document.querySelector(`[data-node-id="$&#123;node.id&#125;"]`)
+  if (currentNodeEl?.matches(':hover')) return true
+**/</span></code></pre>
 
                 
             </div>
@@ -311,7 +324,7 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2023/07204484.html">https://DOMandBOM.github.io/star/star/2023/07204484.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2025/052066556.html">https://DOMandBOM.github.io/star/star/2025/052066556.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -349,8 +362,8 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                     
                         <div class="article-tag">
                             
-                                <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
-                                    <span class="chip bg-color">JavaScript进阶</span>
+                                <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">工作总结</span>
                                 </a>
                             
                         </div>
@@ -396,46 +409,48 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2023/072046.html">
+                <a href="/star/2025/052066556.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/16.jpg" class="responsive-img" alt="js面向对象">
+                        <img src="/star/medias/featureimages/23.jpg" class="responsive-img" alt="el-tree插槽，鼠标移入移出展开与关闭子节点">
                         
-                        <span class="card-title">js面向对象</span>
+                        <span class="card-title">el-tree插槽，鼠标移入移出展开与关闭子节点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js面向对象这篇总结主要讲解了js面向对象，编程思想+构造函数+原型对象
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/JavaScript%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    JavaScript高级
+                            <a href="/star/categories/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" class="post-category">
+                                    工作总结
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/JavaScript%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">JavaScript高级</span>
+                    <a href="/star/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">工作总结</span>
                     </a>
                     
                 </div>
@@ -449,31 +464,31 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2023/072035.html">
+                <a href="/star/2025/0514665123814.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/23.jpg" class="responsive-img" alt="ES6模块化和Webpack">
+                        <img src="/star/medias/featureimages/22.jpg" class="responsive-img" alt="ElemenetPlus 的 Form 组件的二次封装">
                         
-                        <span class="card-title">ES6模块化和Webpack</span>
+                        <span class="card-title">ElemenetPlus 的 Form 组件的二次封装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ES6模块化和Webpack这篇总结主要讲解了ES6模块化和CommonJS模块化以及Webpack
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/star/categories/Webpack/" class="post-category">
-                                    Webpack
+                            <a href="/star/categories/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/" class="post-category">
+                                    组件封装
                                 </a>
                             
                             
@@ -483,8 +498,8 @@ npm是什么？包管理工具作用：下载&amp;#x2F;删除&amp;#x2F;更新包
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/star/tags/JavaScript%E8%BF%9B%E9%98%B6/">
-                        <span class="chip bg-color">JavaScript进阶</span>
+                    <a href="/star/tags/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/">
+                        <span class="chip bg-color">组件封装</span>
                     </a>
                     
                 </div>
