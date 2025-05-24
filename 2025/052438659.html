@@ -4,10 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Rem适配, ">
-    <meta name="description" content="(function flexible(window, document) &amp;#123;
-  var docEl = document.documentElement
-  var dpr = window.devicePixelRatio |">
+    <meta name="keywords" content="生产环境接口报错“Failed to load response data No data found for resource with given identifier”, ">
+    <meta name="description" content="生产环境接口报错“Failed to load response data No data found for resource with given identifier”首先排查是的跨域，接口请求超时，请求地址是否正确。
+场景：开发环境">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Rem适配 | </title>
+    <title>生产环境接口报错“Failed to load response data No data found for resource with given identifier” | </title>
     <link rel="icon" type="image/png" href="/star/favicon.png">
     
 
@@ -157,12 +156,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/star/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Rem适配</h1>
+                    <h1 class="description center-align post-title">生产环境接口报错“Failed to load response data No data found for resource with given identifier”</h1>
                 </div>
             </div>
         </div>
@@ -213,14 +212,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2024-06-19
+                    2025-05-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    131
+                    233
                 </div>
                 
 
@@ -250,49 +249,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token function">flexible</span><span class="token punctuation">(</span><span class="token parameter">window<span class="token punctuation">,</span> document</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> docEl <span class="token operator">=</span> document<span class="token punctuation">.</span>documentElement
-  <span class="token keyword">var</span> dpr <span class="token operator">=</span> window<span class="token punctuation">.</span>devicePixelRatio <span class="token operator">||</span> <span class="token number">1</span>
+                <h2 id="生产环境接口报错“Failed-to-load-response-data-No-data-found-for-resource-with-given-identifier”"><a href="#生产环境接口报错“Failed-to-load-response-data-No-data-found-for-resource-with-given-identifier”" class="headerlink" title="生产环境接口报错“Failed to load response data No data found for resource with given identifier”"></a>生产环境接口报错“Failed to load response data No data found for resource with given identifier”</h2><p>首先排查是的跨域，接口请求超时，请求地址是否正确。</p>
+<p>场景：开发环境接口正常，生产环境报错，且偶现报错</p>
+<p>原因：数据量过大，导致报错。让后端在数据库拿到数据后，截取 50 条数据返回到前端。打包部署后在，在生产环境测试接口是否仍然出现偶现的报错，如果没出现，基本上就确定了是数据量过大造成的</p>
+<p>解决：</p>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript">location <span class="token operator">/</span>api<span class="token operator">/</span> <span class="token punctuation">&#123;</span>
+    # 缓冲区配置（关键修改）
+    # 读取响应头的缓冲区大小<span class="token punctuation">,</span>proxy_buffer_size 不能小于proxy_buffers
+    proxy_buffer_size        128k<span class="token punctuation">;</span>  # 不能小于下方的128k
+    proxy_buffers            <span class="token number">256</span> 128k<span class="token punctuation">;</span>  # 总缓冲容量 <span class="token operator">=</span> <span class="token number">256</span> × 128KB <span class="token operator">=</span> 32MB
+    proxy_busy_buffers_size  256k<span class="token punctuation">;</span>  # 必须 ≥ <span class="token function">max</span><span class="token punctuation">(</span>proxy_buffer_size<span class="token punctuation">,</span> proxy_buffers单缓冲区大小<span class="token punctuation">)</span>
+    proxy_temp_file_write_size 256k<span class="token punctuation">;</span>  # 临时文件写入大小（与busy_buffers匹配）
 
-  <span class="token comment">// adjust body font size</span>
-  <span class="token keyword">function</span> <span class="token function">setBodyFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span>body<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      document<span class="token punctuation">.</span>body<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> <span class="token number">12</span> <span class="token operator">*</span> dpr <span class="token operator">+</span> <span class="token string">'px'</span>
-    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
-      document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span><span class="token punctuation">,</span> setBodyFontSize<span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token function">setBodyFontSize</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-  <span class="token comment">// set 1rem = viewWidth / 10</span>
-  <span class="token keyword">function</span> <span class="token function">setRemUnit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> rem <span class="token operator">=</span> docEl<span class="token punctuation">.</span>clientWidth <span class="token operator">/</span> <span class="token number">10</span>
-    docEl<span class="token punctuation">.</span>style<span class="token punctuation">.</span>fontSize <span class="token operator">=</span> rem <span class="token operator">+</span> <span class="token string">'px'</span>
-  <span class="token punctuation">&#125;</span>
-
-  <span class="token function">setRemUnit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-  <span class="token comment">// reset rem unit on page resize</span>
-  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'resize'</span><span class="token punctuation">,</span> setRemUnit<span class="token punctuation">)</span>
-  window<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'pageshow'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>persisted<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token function">setRemUnit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-
-  <span class="token comment">// detect 0.5px supports</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>dpr <span class="token operator">>=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    <span class="token keyword">var</span> fakeBody <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'body'</span><span class="token punctuation">)</span>
-    <span class="token keyword">var</span> testElement <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
-    testElement<span class="token punctuation">.</span>style<span class="token punctuation">.</span>border <span class="token operator">=</span> <span class="token string">'.5px solid transparent'</span>
-    fakeBody<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>testElement<span class="token punctuation">)</span>
-    docEl<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>fakeBody<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>testElement<span class="token punctuation">.</span>offsetHeight <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      docEl<span class="token punctuation">.</span>classList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">'hairlines'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span>
-    docEl<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>fakeBody<span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">(</span>window<span class="token punctuation">,</span> document<span class="token punctuation">)</span></code></pre>
+    # 其他配置保持不变
+    <span class="token operator">...</span>
+<span class="token punctuation">&#125;</span></code></pre>
 
                 
             </div>
@@ -319,7 +290,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://DOMandBOM.github.io/star/star/2024/06186545.html">https://DOMandBOM.github.io/star/star/2024/06186545.html</a>
+                    <a href="https://DOMandBOM.github.io/star/star/2025/052438659.html">https://DOMandBOM.github.io/star/star/2025/052438659.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -404,17 +375,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/star/2024/061965451.html">
+                <a href="/star/2025/052438659.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/19.jpg" class="responsive-img" alt="H5单页面如何去做适配？">
+                        <img src="/star/medias/featureimages/12.jpg" class="responsive-img" alt="生产环境接口报错“Failed to load response data No data found for resource with given identifier”">
                         
-                        <span class="card-title">H5单页面如何去做适配？</span>
+                        <span class="card-title">生产环境接口报错“Failed to load response data No data found for resource with given identifier”</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -424,9 +396,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -439,6 +411,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -457,13 +430,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/star/2024/061766512348.html">
+                <a href="/star/2025/052066556.html">
                     <div class="card-image">
                         
                         
-                        <img src="/star/medias/featureimages/17.jpg" class="responsive-img" alt="vue3批量注册全局组件">
+                        <img src="/star/medias/featureimages/23.jpg" class="responsive-img" alt="el-tree插槽，鼠标移入移出展开与关闭子节点">
                         
-                        <span class="card-title">vue3批量注册全局组件</span>
+                        <span class="card-title">el-tree插槽，鼠标移入移出展开与关闭子节点</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -474,7 +447,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-05-20
                             </span>
                         <span class="publish-author">
                             

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>生产环境接口报错“Failed to load response data No data found for resource with given identifier”</title>
+      <link href="/star/2025/052438659.html"/>
+      <url>/star/2025/052438659.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="生产环境接口报错“Failed-to-load-response-data-No-data-found-for-resource-with-given-identifier”"><a href="#生产环境接口报错“Failed-to-load-response-data-No-data-found-for-resource-with-given-identifier”" class="headerlink" title="生产环境接口报错“Failed to load response data No data found for resource with given identifier”"></a>生产环境接口报错“Failed to load response data No data found for resource with given identifier”</h2><p>首先排查是的跨域，接口请求超时，请求地址是否正确。</p><p>场景：开发环境接口正常，生产环境报错，且偶现报错</p><p>原因：数据量过大，导致报错。让后端在数据库拿到数据后，截取 50 条数据返回到前端。打包部署后在，在生产环境测试接口是否仍然出现偶现的报错，如果没出现，基本上就确定了是数据量过大造成的</p><p>解决：</p><pre class="language-javascript" data-language="javascript"><code class="language-javascript">location <span class="token operator">/</span>api<span class="token operator">/</span> <span class="token punctuation">&#123;</span>    # 缓冲区配置（关键修改）    # 读取响应头的缓冲区大小<span class="token punctuation">,</span>proxy_buffer_size 不能小于proxy_buffers    proxy_buffer_size        128k<span class="token punctuation">;</span>  # 不能小于下方的128k    proxy_buffers            <span class="token number">256</span> 128k<span class="token punctuation">;</span>  # 总缓冲容量 <span class="token operator">=</span> <span class="token number">256</span> × 128KB <span class="token operator">=</span> 32MB    proxy_busy_buffers_size  256k<span class="token punctuation">;</span>  # 必须 ≥ <span class="token function">max</span><span class="token punctuation">(</span>proxy_buffer_size<span class="token punctuation">,</span> proxy_buffers单缓冲区大小<span class="token punctuation">)</span>    proxy_temp_file_write_size 256k<span class="token punctuation">;</span>  # 临时文件写入大小（与busy_buffers匹配）    # 其他配置保持不变    <span class="token operator">...</span><span class="token punctuation">&#125;</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工作总结 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 工作总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>el-tree插槽，鼠标移入移出展开与关闭子节点</title>
       <link href="/star/2025/052066556.html"/>
       <url>/star/2025/052066556.html</url>
